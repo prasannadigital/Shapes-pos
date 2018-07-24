@@ -1,0 +1,344 @@
+<style>
+  .wrap {
+    width: 100%;
+  }
+
+  .floatleft {
+    float: right;
+    width: 85%;
+    height: 600px;
+  }
+
+  .floatright {
+    float: left;
+    height: 600px;
+    width: 15%;
+  }
+</style>
+
+<body>
+  <div class="tabs-services">
+    <app-header></app-header>
+  </div>
+
+  
+  <div class="modal fade" id="add-membership">
+      <div class="modal-dialog">
+        <div class="customer-info">
+          <h2>Add Membership </h2>
+          <div class="customer-info-form">
+            <form style="margin: 16px;">
+              <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 col-form-label">Membership Name</label>
+                <div class="col-md-10">
+                  <input class="form-control" type="text" name="memName" [(ngModel)]="memName" value="" id="example-text-input">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 col-form-label">Category Name</label>
+                <select name="category" [ngModel]=" selectedCategoryObject | json" (ngModelChange)="changeCategory($event)">
+                  <option *ngFor=" let o of categoryArray" [value]="o | json">{{o.category_name}}</option>
+                </select>
+              </div>
+              <div class="form-group row">
+                <label for="example-text-input" class="col-md-2 col-form-label">select Sub Category:</label>
+                <div class="col-md-10">
+                  <select name="subcategory" [ngModel]=" selectedSubCategoryObject | json" (ngModelChange)="changeSubCategory($event)">
+                    <option *ngFor=" let o of subCategoryArray" [value]="o | json">{{o.sub_category_name}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="example-tel-input" class="col-md-2 col-form-label">Membership Price:</label>
+                <div class="col-md-10">
+                  <input type="text" name="memPrice" [(ngModel)]="memPrice" id="">
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label for="example-tel-input" class="col-md-2 col-form-label">Membership Code:</label>
+                  <div class="col-md-10">
+                    <input type="text" name="memCode" [(ngModel)]="memCode" id="">
+                  </div>
+                </div>
+              <div class="form-group row">
+                <label for="example-email-input" class="col-md-2 col-form-label">validityin Days</label>
+                <div class="col-md-10">
+                  <input type="text" name="memValidityDate" [(ngModel)]="memValidityDate" id="">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" (click)="addMembershipClick()">Submit</button>
+            </form>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <div class="wrap">
+    <div class="floatright">
+      <div style="margin: 36px;">
+        <button style="width: 105px;" (click)="membershipClick()" type="button" class="btn">Memberships</button>
+      </div>
+      <div style="margin: 36px;">
+        <button style="width: 105px;" (click)="packageClick()" type="button" class="btn">Packages</button>
+      </div>
+      <div style="margin: 36px;">
+        <button style="width: 105px;" (click)="productsClick()" type="button" class="btn">Products</button>
+      </div>
+      <div style="margin: 36px;">
+        <button style="width: 105px;" (click)="staffClick()" type="button" class="btn">staff</button>
+      </div>
+    </div>
+    <div class="floatleft ">
+      <div *ngIf="isShowMembership">
+        <div style="margin: 36px;">
+          <button style="width: 200px;" data-toggle="modal" data-target="#add-membership" type="button" class="btn">Add Memberships</button>
+        </div>
+        <div style="margin: 36px;">
+          <button style="width: 200px;" (click)="showActiveMembershipClick()" type="button" class="btn">Show Active Membership</button>
+        </div>
+        <div style="margin: 36px;">
+          <button style="width: 200px;" (click)="showInactiveMembershipClick()" type="button" class="btn">Show Inactive Membership</button>
+        </div>
+      </div>
+      <div *ngIf="isShowPackage"> second div</div>
+    </div>
+  </div>
+  <div style="clear: both;">
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="col-md-5 input-group-addon" style="padding-right: 25px;height: 34px;">
+          <i class="glyphicon glyphicon-search"></i>
+        </div>
+        <div class="col-md-*">
+          <input style="margin-bottom: 4px;width: 172px;" class="form-control" type="text" name="search" [(ngModel)]="filter">
+        </div>
+      </div>
+
+      <div class="pull-right">
+        <button class="btn btn-xs btn-success" data-toggle="modal" data-target="#addmembership" style="margin-bottom: -18px;margin-right: 2px;">Add &nbsp;&nbsp;
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        </button>
+        <button class="btn btn-xs btn-info" (click)="downloadPdf()" style="margin-bottom: -18px;margin-right: 2px;">
+          <i class="far fa-file-pdf"></i>
+        </button>
+        <button class="btn btn-xs btn-warning" (click)="downloadExcel()" style="margin-bottom: -18px;">
+          <i class="far fa-file-excel"></i>
+        </button>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Edit / Delete</th>
+            <th>Membership Name
+              <span (click)="sort('name')" class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+              <input class="form-control" type="text" name="search" [(ngModel)]="filter2">
+            </th>
+            <th>Category Name
+              <span (click)="sort('cat')" class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+              <input class="form-control" type="text" name="search" [(ngModel)]="filter1">
+            </th>
+            <th>Sub Category Name
+              <span (click)="sort('subcat')" class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+              <input class="form-control" type="text" name="search" [(ngModel)]="filter3">
+            </th>
+            <th>Price
+              <span (click)="sort('price')" class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+              <input class="form-control" type="text" name="search" [(ngModel)]="filter4">
+            </th>
+            <th>Validity In Days
+              <span (click)="sort('Validity')" class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+              <input class="form-control" type="text" name="search" [(ngModel)]="filter5">
+            </th>
+            <th>Membership Description
+              <span (click)="sort('genre')" class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+              <input class="form-control" type="text" name="search" [(ngModel)]="filter6">
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let membership of memberships | orderBy: key : reverse | filter:filter | filter:filter1:filter2:filter3:filter4:filter5:filter6 | paginate: { itemsPerPage: id, currentPage: p }; let i = index" [class.active]="i == selectedRow">
+            <td style="display: block;">
+              <button style="padding: 6px;margin: 2px;" type="button" class="btn btn-info" data-toggle="modal" data-target="#addmembership"
+                (click)="onEdit(membership)">
+                <i class="glyphicon glyphicon-pencil"></i>
+              </button>
+              <button style="padding: 6px;margin: 2px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#addmembership"
+                (click)="onEdit(membership)">
+                <i class="glyphicon glyphicon-trash"></i>
+              </button>
+            </td>
+            <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.membership_name}}</td>
+            <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.category_name}}</td>
+            <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.sub_category_name}}</td>
+            <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.membership_price}}</td>
+            <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.membership_validity_in_days}}</td>
+            <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.membership_description}}</td>
+          </tr>
+        </tbody>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </table>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- <div class="tab-content" id="myTabContent">
+      <div id="sales" role="tabpanel" aria-labelledby="sales-tab">
+        <div class="sales-tab">
+          <br/>
+          <div class="modal fade" id="addmembership">
+            <div class="modal-dialog">
+              <div class="customer-info">
+                <h2>Membership </h2>
+                <div class="customer-info-form">
+                  <form style="margin: 16px;">
+                    <div class="form-group row">
+                      <label for="example-text-input" class="col-md-2 col-form-label">Membership Name</label>
+                      <div class="col-md-10">
+                        <input class="form-control" type="text" name="memName" [(ngModel)]="memName" value="" id="example-text-input">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="example-text-input" class="col-md-2 col-form-label">Category Name</label>
+                      <select name="category" [ngModel]=" selectedCategoryObject | json" (ngModelChange)="changeCategory($event)">
+                        <option *ngFor=" let o of categoryArray" [value]="o | json">{{o.category_name}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group row">
+                      <label for="example-text-input" class="col-md-2 col-form-label">select Sub Category:</label>
+                      <div class="col-md-10">
+                        <select name="subcategory" [ngModel]=" selectedSubCategoryObject | json" (ngModelChange)="changeSubCategory($event)">
+                          <option *ngFor=" let o of subCategoryArray" [value]="o | json">{{o.sub_category_name}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="example-tel-input" class="col-md-2 col-form-label">Membership Price:</label>
+                      <div class="col-md-10">
+                        <input type="text" name="memDiscount" [(ngModel)]="memDiscount" id="">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label for="example-email-input" class="col-md-2 col-form-label">validityin Days</label>
+                      <div class="col-md-10">
+                        <input type="text" name="memValidityDate" [(ngModel)]="memValidityDate" id="">
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="submiteMembership()">Submit</button>
+                  </form>
+                  <div class="clear"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br/>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="col-md-5 input-group-addon" style="padding-right: 25px;height: 34px;">
+                  <i class="glyphicon glyphicon-search"></i>
+                </div>
+                <div class="col-md-*">
+                  <input style="margin-bottom: 4px;width: 172px;" class="form-control" type="text" name="search" [(ngModel)]="filter">
+                </div>
+              </div>
+
+              <div class="pull-right">
+                <button class="btn btn-xs btn-success" data-toggle="modal" data-target="#addmembership" style="margin-bottom: -18px;margin-right: 2px;">Add &nbsp;&nbsp;
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                </button>
+                <button class="btn btn-xs btn-info" (click)="downloadPdf()" style="margin-bottom: -18px;margin-right: 2px;">
+                  <i class="far fa-file-pdf"></i>
+                </button>
+                <button class="btn btn-xs btn-warning" (click)="downloadExcel()" style="margin-bottom: -18px;">
+                  <i class="far fa-file-excel"></i>
+                </button>
+              </div>
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Edit / Delete</th>
+                    <th>Membership Name
+                      <span (click)="sort('name')" class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      <input class="form-control" type="text" name="search" [(ngModel)]="filter2">
+                    </th>
+                    <th>Category Name
+                      <span (click)="sort('cat')" class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      <input class="form-control" type="text" name="search" [(ngModel)]="filter1">
+                    </th>
+                    <th>Sub Category Name
+                      <span (click)="sort('subcat')" class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      <input class="form-control" type="text" name="search" [(ngModel)]="filter3">
+                    </th>
+                    <th>Price
+                      <span (click)="sort('price')" class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      <input class="form-control" type="text" name="search" [(ngModel)]="filter4">
+                    </th>
+                    <th>Validity In Days
+                      <span (click)="sort('Validity')" class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      <input class="form-control" type="text" name="search" [(ngModel)]="filter5">
+                    </th>
+                    <th>Membership Description
+                      <span (click)="sort('genre')" class="glyphicon sort-icon" *ngIf="key =='genre'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                      <input class="form-control" type="text" name="search" [(ngModel)]="filter6">
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let membership of memberships | orderBy: key : reverse | filter:filter | filter:filter1:filter2:filter3:filter4:filter5:filter6 | paginate: { itemsPerPage: id, currentPage: p }; let i = index" [class.active]="i == selectedRow">
+                    <td style="display: block;">
+                      <button style="padding: 6px;margin: 2px;" type="button" class="btn btn-info" data-toggle="modal" data-target="#addmembership"
+                        (click)="onEdit(membership)">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                      </button>
+                      <button style="padding: 6px;margin: 2px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#addmembership"
+                        (click)="onEdit(membership)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                      </button>
+                    </td>
+                    <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.membership_name}}</td>
+                    <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.category_name}}</td>
+                    <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.sub_category_name}}</td>
+                    <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.membership_price}}</td>
+                    <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.membership_validity_in_days}}</td>
+                    <td data-toggle="modal" data-target="#addmembership" (click)="onEdit(membership)">{{membership.membership_description}}</td>
+                  </tr>
+                </tbody>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </table>
+            </div>
+          </div>
+
+
+          <app-footer></app-footer>
+      
+        </div>
+        <div class="clear"></div>
+      </div>    
+    </div>
+    <div class="clear"></div> -->
+  <div class="clear"></div>
+  <app-footer></app-footer>
+</body>

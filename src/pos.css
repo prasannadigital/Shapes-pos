@@ -1,0 +1,1228 @@
+.inventort-hand {
+    background: #fff;
+    border: 5px solid #da8c42;
+    padding: 2px;
+}
+.ih-button {
+    border: 1px solid #000;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #f5c585;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.in-section-1-left {
+    padding-left: 0;
+}
+.in-section-1 .form-group {
+    margin-bottom: 0px;
+}
+.in-section-1{
+	padding:20px 0;
+}
+.in-section-1-right {
+    padding-right: 0;
+}
+.in-section-2 .form-group {
+    margin-bottom: 0px;
+}
+.in-section-2 .btn {
+    padding: 9px 12px;
+}
+.in-section-1 .btn {
+    padding: 9px 12px;
+}
+.in-section-2{
+	padding:20px 0;
+}
+.in-section-2 .form-check {
+    text-align: left;
+}
+.in-section-2 .form-check-label{
+	font-size: 15px;
+    line-height: 1.8;
+}
+.in-section-3 .generate-cs {
+    padding-top: 0px;
+	text-align:center;
+	padding-bottom:30px;
+}
+.form-control {
+    color: #000 !important;   
+}
+.inventortage {
+    background: #ffe8b6;
+    border: 5px solid #da8c42;
+    padding: 4px;
+}
+.inventortage1 {
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+.in-section-5 {
+    min-height: 200px;
+}
+.agreement-terms{
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.ag-button{
+	border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+	margin-bottom: 30px;
+}
+.fr-element.fr-view {
+    min-height: 200px !important;
+}
+.fr-sticky-on {
+    position: relative !important;
+}
+.fr-sticky-dummy {
+    display: none !important;
+}
+.agreement-terms2-right {
+    text-align: right;
+}
+.agreement-terms2 .form-check {
+    text-align: left;
+	padding-left:15px;
+}
+.agreement-terms2-right h4{
+	border: 1px solid #ccc;
+    display: inline-block;
+    text-align: left;
+    padding: 4px 10px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+	margin: 0;
+}
+.agreement-terms2-left h4 {
+    margin: 0;
+    padding: 10px 0;
+}
+.agreement-terms2 {
+    padding: 20px 0;
+}
+.agreement-terms3 input {
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 50px;
+	text-align:center;
+}
+.agreement-terms3 textarea {
+	 width: 300px;
+    margin: 0 auto;
+	text-align:center;
+}
+
+.np-button{
+	border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+	margin-bottom: 30px;
+}
+.slect-radio .form-check {
+    text-align: left;
+}
+.slect-radio-ch label {
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 500;
+	color:#000;
+}
+.new-appointment3 {
+    text-align: right;
+    padding-right: 20px;
+    padding-bottom: 30px;
+}
+.new-appointment3 .btn {
+    width: 120px;
+    margin-right: 20px;
+    background: #848484;
+    color: #fff;
+    font-size: 20px;
+}
+.addnewclass{
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.anc-button{
+	    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.anc1-button {
+    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 2px 10px;
+    font-size: 19px;
+    background: #f1f1f1;
+    text-decoration: none;
+    color: #000;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+
+.btn-update {
+    margin-top: 21px;
+    margin-bottom: 20px;
+    width: 150px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    font-weight: 600;
+}
+.addnewclass2 .btn {
+    display: inline-block;
+    padding: 9px 12px;
+}
+.btn-add{
+    width: 200px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    font-weight: 600;
+	margin: 20px auto;
+}
+.add-package{
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.add-package-button{
+	border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.add-package1 {
+    background: #f1f1f1;
+    padding: 20px 0 10px;
+    margin-top: 6px;
+    border: 1px solid #b5b4b4;
+	margin-bottom: 10px;
+}
+.ap-button{
+	border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 2px 10px;
+    font-size: 19px;
+    background: #f1f1f1;
+    text-decoration: none;
+    color: #000;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 0;
+}
+.add-package2 .form-group {
+    margin-bottom: 0;
+    padding: 40px 0;
+}
+.add-package3 .form-check {
+    text-align: left;
+}
+.add-package3 {
+    padding: 30px 0 20px;
+    border: 1px solid #000;
+    margin-top: 3px;
+	margin-bottom: 30px;
+}
+.assign-con{
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.assign-con-button{
+	    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.assign-con1-right .form-control {
+    float: right;
+    width: 200px;
+}
+.assign-con1 {
+    padding: 30px 0;
+}
+.assign-con2 {
+    min-height: 300px;
+    border: 2px solid #848484;
+}
+.btn-add-a  {
+    margin-right: 20px;
+    background: #848484;
+    color: #fff;
+    font-size: 18px;
+}
+.btn-add-a a {
+    margin-right: 20px;
+    background: #848484;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    text-decoration: none;
+}
+.col-md-6.cl-sm-6.assign-con3-right {
+    text-align: right;
+	    font-size: 18px;
+}
+.btn-add-c {
+    font-size: 18px;
+	margin-right: 30px;
+}
+.btn-add-b {
+    font-size: 18px;
+}
+.assign-con3 {
+    padding: 20px 0;
+}
+.assign-arr3 label {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+}
+.assign-arr3  .form-check {
+    text-align: center;
+}
+.assign-arr3{
+	min-height:200px;
+}
+.assign-arr2{
+	min-height:200px;
+}
+.btn-add-a:hover {
+    background: #336699;
+    color: #fff;
+}
+.assign-gift2 label {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+}
+.assign-gift2  .form-check {
+    text-align: center;
+}
+.assign-gift3 {
+    text-align: right;
+    padding-bottom: 20px;
+}
+.assgin-prou .input-group {
+    width: 300px;
+}
+.assgin-prou  .form-check {
+    text-align: left;
+}
+.assgin-prou .form-control {
+    width: 300px;
+}
+.assign-produt3 {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+.assgin-prou h4 {
+    text-align: center;
+    padding: 30px 0;
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+.cancel-group {
+    background: #fff;
+    border: 5px solid #da8c42;
+}
+.cgl-button{
+	border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 0px;
+}
+.cancel-group1 {
+    padding: 30px 0 10px;
+}
+.cancel-group1 .btn {
+    display: inline-block;
+    padding: 9px 12px;
+}
+.cancel-group3  .form-check {
+    text-align: left;
+}
+.cancel-group3 .form-check-label {
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 500;
+    color: #000;
+}
+.cgl-button1 {
+    background: #f2f2f2;
+    padding: 7px;
+    font-size: 19px;
+    font-weight: 600;
+    border: 1px solid #969696;
+}
+.cancel-group5 {
+    margin-top: 10px;
+}
+.btn.can-button {
+    background: #7b7b7b;
+    font-size: 18px;
+    margin-right: 17px;
+    color: #fff;
+    line-height: 1.8;
+    padding: 3px 20px;
+}
+.cancel-footer {
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+.new-appointment {
+    background: #fff;
+    border: 5px solid #da8c42;
+}
+.ms-set-1{
+	    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.ms-set-1-left {
+    padding: 0;
+}
+.ms-set-1-right {
+    text-align: right;
+}
+.ms-set-1-right button {
+    background: #8e8e8e;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+	padding: 4px 12px;
+}
+.membership-setup {
+    background: #fff;
+    border: 5px solid #da8c42;
+}
+.ms-set-2 .form-check {
+    text-align: left;
+}
+.ms-set-2 {
+    padding: 20px 0;
+}
+.ms-set-2 .form-group {
+    margin-bottom: 0;
+}
+.ms-set-3 .form-check {
+    text-align: left;
+}
+.ms-set-3 a {
+    font-size: 16px;
+    color: #336699;
+    text-decoration: underline;
+    line-height: 1.8;
+}
+.mi-button {
+    background: #f2f2f2;
+    padding: 5px 0 5px 11px;
+    font-weight: 600;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+.ms-set-3 .col-md-6.col-sm-6 {
+    padding: 0;
+}
+.ms-set-4 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ms-set-4 li {
+    display: inline-block;
+    margin-bottom: 25px;
+}
+.ms-set-4 li span {
+    border: 1px solid #ccc;
+    width: 50px !important;
+    height: 50px;
+    border-radius: 100%;
+    padding: 10px;
+    margin-left: 10px;
+    background: #ffe8bf;
+    line-height: 1.8;
+    margin-right: 10px;
+}
+.ms-set-6 .form-check {
+    text-align: left;
+}
+.membership-setup label {
+    font-size: 15px;
+    line-height: 1.8;
+}
+.ms-set-6 .form-check-label {
+    width: 400px;
+}
+.ms-set-3 {
+    border: 1px solid #808080;
+    margin: 5px 2px 0px 2px;
+}
+.ms-set-6 {
+    margin-top: 10px;
+    border: 1px solid #808080;
+}
+.ms-set-7 {
+    text-align: center;
+    padding: 20px 0;
+}
+.ms-set-7 .btn-secondary {
+    width: 100px;
+    margin-right: 17px;
+    font-size: 16px;
+}
+.ms-set-6 .control-label {
+    padding: 0;
+}
+.col-md-6.col-sm-6.ms-set-2-left {
+    padding: 0;
+}
+.package{
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.ms-set-1-right {
+    padding: 0;
+}
+.package-1 {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.edit_text {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 18px;
+    background: #ccc;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
+}
+.package-2 .form-group {
+    margin-bottom: 0;
+}
+
+.package-2 {
+    padding: 20px 0;
+    background: #f1f1f1;
+    border: 1px solid #b1b1b1;
+}
+.package-3 .form-check {
+    text-align: left;
+}
+
+.package-3 .control-label {
+    padding: 0;
+}
+.package-3 {
+    border: 1px solid #ccc;
+    margin-top: 9px;
+}
+.package-3 h4 {
+    background: #cac9c9;
+    padding: 5px 12px;
+    font-weight: 600;
+    margin: 0 0 16px 0px;
+}
+.package-4-left #exampleInputtype {
+    width: 200px;
+}
+.package-4-left .form-check-label {
+    width: 223px;
+}
+.package-5 {
+    float: right;
+    padding: 20px 0;
+}
+.btn-pl-5 {
+    width: 100px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 10px;
+	background: #8e8d8d;
+	color:#fff;
+}
+.pickcontractitems {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.pti-button {
+	border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+	margin-bottom:50px;
+}
+.pti1-button {
+    text-align: center;
+}
+.pti1-button a {
+    background: #e4e9ef;
+    display: block;
+    margin-bottom: 14px;
+    padding: 30px 0;
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+}
+.pickcontractitems1 {
+    min-height: 550px;
+}
+.setcontract1 .form-check {
+    text-align: left;
+}
+.setcontract {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.setcontract-button {
+	border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+	margin-bottom:30px;
+}
+.setcontract1 .form-check-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+.setcontract1 #exampleFormControlInput1 {
+       width: 313px;
+}
+.setcontract1 .btn-secondary {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.accountpayments {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.accountpayments-button {
+	    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+	margin-bottom:20px;
+}
+.accountpayments1 .form-check-label {
+    font-size: 16px;
+    font-weight: 500;
+}
+.accountpayments1 .form-check {
+    text-align: left;
+    margin-top: 6px;
+    margin-bottom: 0;
+}
+.accountpayments2 {
+    text-align: center;
+    padding: 20px;
+}
+.accountpayments2 .btn-link {
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    width: 100px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+    margin-right: 20px;
+    background: #f1f1f1;
+    font-size: 16px;
+}
+.addgiftcard {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.agc-button {
+	border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.addgiftcard1 .form-check {
+    text-align: left;
+    position: relative;
+    top: 8px;
+}
+.addgiftcard2 .form-check {
+    text-align: left;
+}
+.addgiftcard2 .btn-secondary {
+    background: #dad8d8;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.new-contract {
+    min-height: 500px;
+	padding-bottom:20px;
+}
+.assign-class2 {
+    min-height: 500px;
+}
+.edit-promotion {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.edit-promotion{
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.eap-button{
+	border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+	margin-bottom:20px;
+}
+.edit-promotion1 .form-check {
+    text-align: left;
+    position: relative;
+    top: 7px;
+}
+.editselectd1 .form-group {
+    margin-bottom: 0;
+}
+.editselectd1 {
+    padding: 20px 0;
+    text-align: center;
+}
+.editselectd {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.Gift-Cards {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.GC-button {
+	border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.Gift-Cards1 .btn-secondary {
+    width: 120px;
+    margin-right: 20px;
+    background: #848484;
+    color: #fff;
+    font-size: 20px;
+	border-radius:0px;
+}
+.Gift-Cards1 {
+    text-align: right;
+    padding-bottom: 20px;
+}
+.Gift-Cards2 {
+    padding-bottom: 20px;
+}
+.Gift-Cards4 .btn-sm {
+    font-size: 16px;
+    padding: 5px 20px;
+    color: #fff;
+    background: #949393;
+}
+.gc-3-button {
+    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 0px 10px;
+    font-size: 18px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: capitalize;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.Gift-Cards3 h3 {
+    margin: 0;
+    padding: 20px 0;
+    margin-left: 14px;
+}
+.manage-sales {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.ms-button {
+	border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.manage-sales1 h4 {
+    font-size: 20px;
+    margin: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.manage-sales3 h4 {
+	font-size: 20px;
+    margin: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.saleid-g {
+    border: 2px solid #acacac;
+    text-align: center;
+    padding: 5px 20px;
+    font-size: 16px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    /* display: inline-block; */
+    text-align: center;
+    width: 150px;
+    margin: 0 auto 21px auto;
+}
+.manage-sales4 h4 {
+	font-size: 20px;
+    margin: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.organize-pricing {
+    padding: 20px 0;
+    text-align: center;
+}
+.organize-pricing .btn-secondary {
+    padding: 5px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.organize-pricing1 {
+    min-height: 400px;
+}
+.organize-pricing2 h4 {
+    margin: 0;
+    padding: 20px;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.og-button {
+    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.pricing-options {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.pricing-options2 .form-check {
+    text-align: left;
+}
+.po-2-rigth .col-md-4.btn.btn-default {
+    margin-left: -15px;
+    background: #ccc;
+}
+.pricing-options3 {
+    min-height: 300px;
+}
+.seasonal-offers  .btn-secondary {
+    margin-right: 20px;
+    background: #848484;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 0px;
+}
+.seasonal-offers {
+    text-align: right;
+    padding-bottom: 20px;
+}
+.btn-secondary1 {
+    margin-right: 20px;
+    background: none;
+    color: #000;
+    font-size: 18px;
+    border-radius: 0px;
+	width:200px;
+}
+.btn-secondary1 .form-control {
+    height: 42px;
+}
+.btn-secondary2 {
+    margin-right: 20px;
+    background: none;
+    color: #000;
+    font-size: 18px;
+    border-radius: 0px;
+    border: 1px solid #ccc;
+}
+.seasonal-offers1 .btn-secondary2 {
+    width: 150px;
+    padding: 5px 10px;
+    border-color: #ccc;
+    text-align: center;
+}
+.seasonal-offers1{
+	padding-bottom:30px;
+}
+.seasonal-offers2 {
+    min-height: 300px;
+}
+.am-button {
+    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+}
+.am-button1 {
+    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+.active-members {
+    background: #fff;
+    border: 5px solid #da8c42;
+}
+.add-ne1 .form-check {
+    text-align: left;
+}
+.add-ne-button {
+    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.add-ne {
+    background: #fff;
+    border: 5px solid #da8c42;
+}
+.add-ne1 .form-check-label {
+    font-size: 15px;
+}
+.title-button {
+    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 8px 10px;
+    font-size: 20px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.add-schedule {
+    background: #fff;
+    border: 5px solid #da8c42;
+}
+.as-button {
+    background: #f2f2f2;
+    padding: 5px;
+    font-size: 18px;
+    padding: 5px 10px;
+	margin-bottom: 20px;
+}
+.add-schedule1 .form-check {
+    text-align: left;
+}
+.form-check-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+.col-md-9.days ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.days ul li {
+    float: left;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 5px 26px;
+}
+.as-1-button {
+    padding: 5px 20px;
+    font-size: 18px;
+    margin-right: 15px;
+}
+.add-schedule2 {
+    text-align: right;
+    padding: 20px 10px;
+}
+.advanced-settings {
+    background: #fff;
+    border: 5px solid #da8c42;
+}
+.edit-pricing{
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.edit-pricing .form-check {
+    text-align: left;
+}
+.session-lable {
+    width: 171px;
+}
+.edit-time {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.ep-section2-button {
+    border: 1px solid #ccc;
+    display: block;
+    text-align: left;
+    padding: 3px 10px;
+    font-size: 18px;
+    background: #eeeeef;
+    text-decoration: none;
+    color: #000;
+    text-transform: capitalize;
+    line-height: 1.8;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.edit-time1 .btn {
+    display: inline-block;
+    padding: 8px 12px;
+}
+.edit-time1 small, .small {
+    font-size: 85%;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.pricing {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.pricing-options1 .form-check {
+    text-align: left;
+}
+.pricing-options1 label {
+    font-size: 16px;
+    line-height: 1.8;
+	font-weight:600;
+}
+.po-set-ti {
+    font-size: 19px !important;
+    text-decoration: underline;
+    font-weight: 600 !important;
+}
+.view-time2 .form-check {
+    text-align: left;
+}
+.view-time2 .average-revenue2 {
+    text-align: left;
+}
+.view-time3 {
+    padding-top: 30px;
+}
+.view-time3 th {
+    text-align: left;
+    font-size: 18px;
+}
+.view-time {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.manager-tap-left {
+    padding: 0;
+    overflow-x: hidden;
+    height: 400px;
+}
+#myTabContent {
+    border: 1px solid #a5a3a3;
+}
+.customer-info1 {
+	background: #fff;
+    border: 5px solid #da8c42;
+}
+.customer-info-form {
+    padding: 10px 20px 20px;
+}
+.visit1 {
+    min-height: 300px;
+}
+.add-client h3 {
+    text-align: center;
+    font-weight: 600;
+}
