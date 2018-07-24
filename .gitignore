@@ -1,0 +1,13 @@
+/target
+/.idea
+**/.DS_Store
+*.iml
+*/node_modules
+**/dist/
+**/semantic
+.project
+.settings/
+.classpath
+**/.vs
+**.log
+src/main/resources/static
