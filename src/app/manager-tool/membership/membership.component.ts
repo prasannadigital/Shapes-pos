@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import {Membership}  from '../../model/membership.model';
 import {Http} from '@angular/http';
 import {Paginator} from 'primeng/paginator';
+import { MembershipServiceService} from '../../services/membership-service.service';
 
 @Component({
   selector: 'app-membership',
@@ -21,13 +22,13 @@ export class MembershipComponent implements OnInit {
   temp2: any[] = [];
 data=new Array();
 
-  constructor(private http: Http, private globals: Globals) { 
+  constructor(private http: Http, private globals: Globals,private service: MembershipServiceService) { 
    
   }
 
   ngOnInit() {
  
-    this.http.get(this.globals.api + 'memberships').subscribe(memberships=>{
+    this.service.getMembership().subscribe(memberships=>{
       this.memberships=memberships.json();
       this.cols = [
         { field: 'membership_name', header: 'membership_name' },
