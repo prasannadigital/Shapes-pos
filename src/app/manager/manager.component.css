@@ -2,3 +2,19 @@
     background-color:#123456 !important;
     color: white;
   }
+  .wrap {
+    width: 100%;
+  }
+
+  .floatleft {
+    float: right;
+    width: 85%;
+    height: 600px;
+  }
+
+  .floatright {
+    float: left;
+    height: 600px;
+    width: 15%;
+  }
+  

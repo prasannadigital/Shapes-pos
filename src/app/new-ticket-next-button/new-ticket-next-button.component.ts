@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-//import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Http, Response, RequestOptions, Headers} from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Globals } from '../global/global-urls';
 import { Services } from '../services/common-services';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead/typeahead-match.class';
 declare var $: any;
-import{NewTicketNextButtonServiceService} from '../services/new-ticket-next-button-service.service';
-
 
 @Component({
   selector: 'app-new-ticket-next-button',
@@ -30,18 +27,15 @@ export class NewTicketNextButtonComponent implements OnInit {
   _package = false;
 
 
-  constructor(private http: Http, private globals: Globals, private router: Router, private services: Services,private service:NewTicketNextButtonServiceService) {
-   // this.http.get(this.globals.api + 'categorys')
-    this.service.getCategory().subscribe(data => {
+  constructor(private http: HttpClient, private globals: Globals, private router: Router, private services: Services) {
+    this.http.get(this.globals.api + 'categorys').subscribe(data => {
       this.categories = data;
     });
 
-   // this.http.get(this.globals.api + 'memberships')
-   this.service.getMembership() .subscribe(data => {
+    this.http.get(this.globals.api + 'memberships').subscribe(data => {
       this.memberships = data;
     });
-    //this.http.get(this.globals.api + 'packages')
-   this.service.getPackage() .subscribe(data => {
+    this.http.get(this.globals.api + 'packages').subscribe(data => {
       this.packages = data;
     });
     // this.services.setcategoryValue(3);

@@ -102,20 +102,20 @@
                 <!-- Firstname-->
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="newCustomerData.firstName" required placeholder="First Name">
+                  <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="firstName" required placeholder="First Name">
                 </div>
                 <div class="form-group">
                   <label>Last Name</label>
-                  <input type="text" class="form-control" name="lastName" [(ngModel)]="newCustomerData.lastName" required placeholder="Last Name">
+                  <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName" required placeholder="Last Name">
                 </div>
 
                 <div class="form-group">
                   <label>Birthday</label>
-                  <input type="date" class="form-control" name="DOB" [(ngModel)]="newCustomerData.DOB" required placeholder="Birthday">
+                  <input type="date" class="form-control" name="DOB" [(ngModel)]="DOB" required placeholder="Birthday">
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlSelect2">Gender</label>
-                  <select [(ngModel)]="newCustomerData.gender" name="firstName" class="form-control">
+                  <select [(ngModel)]="gender" name="firstName" class="form-control">
                     <option value="" disabled selected>Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -123,11 +123,11 @@
                 </div>
                 <div class="form-group">
                   <label>Phone</label>
-                  <input type="text" class="form-control" [(ngModel)]="newCustomerData.mobileNo" name="mobileNo" placeholder="Home or Mobile">
+                  <input type="text" class="form-control" [(ngModel)]="mobileNo" name="mobileNo" placeholder="Home or Mobile">
                 </div>
                 <div class="form-group">
                   <label>Email</label>
-                  <input type="email" [(ngModel)]="newCustomerData.MailId" name="MailId" class="form-control" placeholder="name@example.com">
+                  <input type="email" [(ngModel)]="MailId" name="MailId" class="form-control" placeholder="name@example.com">
                 </div>
                 <div class="form-group">
                   <label>Address</label>
@@ -281,19 +281,19 @@
           <div class="form-group row">
             <label for="example-text-input" class="col-md-2 col-form-label">First Name</label>
             <div class="col-md-10">
-              <input class="form-control" type="text" [(ngModel)]="newCustomerData.custFirstName" name="custFirstName" value="" id="example-text-input">
+              <input class="form-control" type="text" [(ngModel)]="custFirstName" name="custFirstName" value="" id="example-text-input">
             </div>
           </div>
           <div class="form-group row">
             <label for="example-text-input" class="col-md-2 col-form-label">Last Name</label>
             <div class="col-md-10">
-              <input class="form-control" type="text" value="" [(ngModel)]="newCustomerData.custLastName" name="custLastName" id="example-text-input">
+              <input class="form-control" type="text" value="" [(ngModel)]="custLastName" name="custLastName" id="example-text-input">
             </div>
           </div>
           <div class="form-group row">
             <label for="example-text-input" class="col-md-2 col-form-label">Gender</label>
             <div class="col-md-10">
-              <select class="form-control" [(ngModel)]="newCustomerData.custGender" name="custGender" id="exampleSelect1">
+              <select class="form-control" [(ngModel)]="custGender" name="custGender" id="exampleSelect1">
                 <option value="" disabled selected>Select Gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -303,20 +303,20 @@
           <div class="form-group row">
             <label for="example-tel-input" class="col-md-2 col-form-label">Phone Number</label>
             <div class="col-md-10">
-              <input class="form-control" [(ngModel)]="newCustomerData.custNo" name="custNo" type="tel" value="" id="example-tel-input">
+              <input class="form-control" [(ngModel)]="custNo" name="custNo" type="tel" value="" id="example-tel-input">
             </div>
           </div>
 
           <div class="form-group row">
             <label for="example-email-input" class="col-md-2 col-form-label">Email</label>
             <div class="col-md-10">
-              <input class="form-control" [(ngModel)]="newCustomerData.custEmail" name="custEmail" type="email" value="" id="example-email-input" placeholder="example@example.com">
+              <input class="form-control" [(ngModel)]="custEmail" name="custEmail" type="email" value="" id="example-email-input" placeholder="example@example.com">
             </div>
           </div>
           <div class="form-group row">
             <label for="example-text-input" class="col-md-2 col-form-label">Customer Status</label>
             <div class="col-md-10">
-              <input class="form-control" [(ngModel)]="newCustomerData.custStatus" name="custStatus" type="text" value="" id="example-text-input">
+              <input class="form-control" [(ngModel)]="custStatus" name="custStatus" type="text" value="" id="example-text-input">
             </div>
           </div>
           <div class="form-check">
@@ -498,12 +498,12 @@
     <div class="col-md-6 col-sm-6 col-xs-12 select-customer-right">
       <div class="sur-info" data-toggle="modal" data-target="#costomerInfo">
         <h3>Customer Info</h3>
-        <!-- <div class="col-md-12">
+        <div class="col-md-12">
           First Name: {{custFirstName}} Last Name : {{custLastName}} Gender :{{custGender}}
         </div>
         <div class="col-md-4">
           First Name: {{custFirstName}} Last Name : {{custLastName}} Gender :{{custGender}}
-        </div> -->
+        </div>
       </div>
       <div class="sur-membership" data-toggle="modal" (click)="membershipInfo()" data-target="#membershipInfo">
         <h3>Membership / Package</h3>

@@ -1,8 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
+
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -24,10 +25,10 @@ import { NewTicketNextButtonInvoiceComponent } from './new-ticket-next-button-in
 import { NewTicketInvoicePaymentComponent } from './new-ticket-invoice-payment/new-ticket-invoice-payment.component';
 import { MembershipComponent } from './manager-tool/membership/membership.component'; // <-- import the module
 // import { ApiFrontendURLSComponent } from './api-frontend-urls/api-frontend-urls.component';
-import {LoginServiceService} from './services/login-service.service';
-import {ManagerServiceService} from './services/manager-service.service';
-import {NewTicketServiceService} from './services/new-ticket-service.service';
-import{NewTicketNextButtonInvoiceServiceService} from './services/new-ticket-next-button-invoice-service.service';
+import {TableModule} from 'primeng/table';
+import { HttpModule } from '@angular/http';
+import {PaginatorModule} from 'primeng/paginator';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -57,19 +58,21 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpModule,
     RouterModule.forRoot(routes, { useHash: true }),
     TypeaheadModule.forRoot(),
     AlertModule.forRoot(),
     Ng2SearchPipeModule, //including into imports
     Ng2OrderModule, // importing the sorting package here
-    NgxPaginationModule
+    NgxPaginationModule,
+    TableModule,
+    HttpModule,
+    PaginatorModule
   ],
-  providers: [Globals, AuthGuard, Services,LoginServiceService,ManagerServiceService,NewTicketServiceService,
-    NewTicketNextButtonInvoiceServiceService],
+  providers: [Globals, AuthGuard, Services],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
