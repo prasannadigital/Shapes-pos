@@ -26,9 +26,9 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/omega/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "src/styles.css",
-              "src/bootstrap.css",
-              "src/pos.css"
+              "src/styles.css"
+              
+             
             ],
             "scripts": [
               "./node_modules/jspdf/dist/jspdf.min.js",
