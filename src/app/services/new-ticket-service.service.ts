@@ -8,7 +8,7 @@ export class NewTicketServiceService {
 
   constructor(private http:Http) { }
   public saveNewCustomer(data:any){
-    return  this.http.post(environment.host+ +'users', data)
+    return  this.http.post(environment.host+ 'users', data)
   }
   public getMembershipInfo(id:any){
     return this.http.get(environment.host+'sales/visit/'+id)

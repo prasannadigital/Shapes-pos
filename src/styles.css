@@ -8146,7 +8146,7 @@ html {
       font-weight: 600;
       font-size: 21px;
   }
-  .cisl-buttons a {
+  .cisl-buttons span {
       border: 1px solid #ccc;
       display: block;
       text-align: center;

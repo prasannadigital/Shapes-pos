@@ -1,10 +1,134 @@
-
 <div class="tabs-services">
   <app-header></app-header>
 </div>
+<div class="clock-in-services">
+  <div class="clock-in-services1">
+    <form>
+       <div class="form-group row">
+      <label for="inputEmail3" class="col-md-4 col-form-label">Employee Id</label>
+      <div class="col-md-8">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Employee Id">
+      </div>
+      </div>
+      <div class="form-group row">
+      <label for="inputPassword3" class="col-md-4 col-form-label">Employee Password</label>
+      <div class="col-md-8">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Employee Password">
+      </div>
+      </div>
+    </form>
+    <div class="clear"></div>
+  </div>
+  
+  <div class="clock-in-services2">
+    <div class="clock-in-date">
+        <div class="col-md-4 col-sm-4 date-time-left">
+          <h3>Employee Name:</h3>
+        </div>
+        <div class="col-md-4 col-sm-4 date-time-center"><h3>Vimal Patel</h3></div>
+        <div class="col-md-4 col-sm-4 date-time-right"><h3>Employee Id: #007</h3></div>
+      <div class="clear"></div>
+    </div><!---employee data-->
+    
+    <div class="full-date">
+      <div class="col-md-6 col-sm-6 full-date-left">
+        <h4>Current Date: {{today | date:'fullDate'}}<span id="demonew"></span></h4>
+      </div>
+      <div class="col-md-6 col-sm-6 full-date-right">
+        <h4>Current Time: {{today | date:'mediumTime'}} <span id="demo"></span></h4>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="col-md-3 col-sm-4 clock-in-services2-left">
+      <div class="cisl-buttons"><span >Clock In</span></div>
+      <div class="cisl-buttons"><span >Break Out</span></div>
+      <div class="cisl-buttons"><span >Break In</span></div>
+      <div class="cisl-buttons"><span >Clock Out</span></div>
+      <div class="cisl-buttons1">Total Hours Worked Today <input type="text" name="name" value=""></div>
+    </div>
+    <div class="col-md-6 col-sm-4 clock-in-services2-center">
+    <h4>Clock In / Out</h4>
+      <table width="100%">
+        <tr>
+          <th width="25%"></th>
+          <th width="25%">Clock Time</th>
+          <th width="25%">Edited Time</th>
+          <th width="25%">Position</th>
+        </tr>
+        <tr>
+          <td>In</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Out</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>In</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Out</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>In</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Out</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>In</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Out</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>In</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Out</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-3 col-sm-4 clock-in-services2-right">
+    <h4>Reports</h4>
+    <div class="cisr-buttons"><a href="#">Print Today's Appointment</a></div>
+    <div class="cisr-buttons"><a href="#">Print Next Today's Appointment</a></div>
+    <div class="cisr-buttons"><a href="#">Print Month's Appointment</a></div>
+    <div class="cisr-buttons"><a href="#">Print Mini Production Report</a></div>
+    </div>
+    
+    <div class="clear"></div>
+  </div>
+  
+<div class="clear"></div>
+</div>
 
-
-<p>
-  time-clocks works!
-</p>
 
