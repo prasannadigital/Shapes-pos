@@ -15,9 +15,7 @@ export class TimeClocksComponent implements OnInit {
   constructor(private service:TimeClokServiceService,private http: HttpClient, private router: Router, private globals: Globals) { }
 
   today: number;
-  password = "";
-  mailId = "";
-  alerts: any[] = [];
+  
 
   ngOnInit() {
     this.getTimeAndDate();
@@ -29,25 +27,5 @@ export class TimeClocksComponent implements OnInit {
   this.today = Date.now();
  }
  
- loginSubmite()
- {
-  var data = {
-    password: this.password,
-    email_id: this.mailId
-  }
-  if (this.mailId && this.password) {
-    this.http.post(this.globals.api + 'auth/login', data).subscribe(loginData => {
-      if (Object.keys(loginData).length) {
-        sessionStorage.setItem('userSession', JSON.stringify(loginData));
-        this.router.navigate(['time-clock']);
-      }
-    });
-  } else {
-    this.alerts = [{
-      type: 'danger',
-      msg: `Invalid credentials`,
-      timeout: 1000
-    }];
-  }
- }
+ 
 }
