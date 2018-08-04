@@ -31,6 +31,7 @@ export class NewTicketComponent implements OnInit {
   products ;
   alls;
   public userDetails: FormGroup;
+  submitted = false;
   
   constructor(private http: HttpClient, private globals: Globals, private router: Router) {
     setTheme('bs3');
@@ -47,7 +48,9 @@ export class NewTicketComponent implements OnInit {
   addNewCustomer() {
 
   }
+ 
   saveCustomer() {
+    this.submitted=true;
     console.log("save")
     var data = {
       firstname: this.firstName,

@@ -102,11 +102,13 @@
                 <!-- Firstname-->
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="firstName" required placeholder="First Name">
+                  <input type="text"  name="fname" class="form-control" [(ngModel)]="firstName" ngModel required #fname="ngModel" placeholder="First Name">
+                  <div *ngIf="fname.errors?.required && submitted" style="color:red">First Name is required </div>
                 </div>
                 <div class="form-group">
                   <label>Last Name</label>
-                  <input type="text" class="form-control" name="lastName" [(ngModel)]="lastName" required placeholder="Last Name">
+                  <input type="text" class="form-control" name="lname" [(ngModel)]="lastName" ngModel required #lname="ngModel" placeholder="Last Name">
+                  <div *ngIf="lname.errors?.required && submitted" style="color:red">Last Name is required </div>
                 </div>
 
                 <div class="form-group">
@@ -120,14 +122,17 @@
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                   </select>
+                  
                 </div>
                 <div class="form-group">
                   <label>Phone</label>
-                  <input type="text" class="form-control" [(ngModel)]="mobileNo" name="mobileNo" placeholder="Home or Mobile">
+                  <input type="text" class="form-control" [(ngModel)]="mobileNo" name="mobile" placeholder="Home or Mobile" ngModel required #mobile="ngModel">
+                  <div *ngIf="mobile.errors?.required && submitted" style="color:red">Phone Number is required </div>
                 </div>
                 <div class="form-group">
                   <label>Email</label>
-                  <input type="email" [(ngModel)]="MailId" name="MailId" class="form-control" placeholder="name@example.com">
+                  <input type="email" [(ngModel)]="MailId" name="Mail" class="form-control" placeholder="name@example.com" ngmodel required #Mail="ngModel">
+                  <div *ngIf="Mail.errors?.required && submitted" style="color:red">Email is required </div>
                 </div>
                 <div class="form-group">
                   <label>Address</label>

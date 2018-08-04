@@ -17,12 +17,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['dashboard']);
   }
   
-  redirectToManager(){
-    this.router.navigate(['management']);
-  }
-
+  
   newTicket(){
     console.log("new ticket");
     this.router.navigate(['new-ticket']);
   }
+
 }
