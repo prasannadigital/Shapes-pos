@@ -6,7 +6,7 @@
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#appointments" role="tab" aria-controls="appointments" aria-selected="false" routerLink='/appointments'>Appointments</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#time"  role="tab" aria-controls="time" aria-selected="false" routerLink='/time-clocks'>Time clocks</a>
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#time" data-toggle="modal" data-target="#allInfo" role="tab" aria-controls="time" aria-selected="false" routerLink='/time-clocks'>Time clocks</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#schedule"   role="tab" aria-controls="schedule" aria-selected="false" routerLink = '/schedule'>Schedule</a>
@@ -25,3 +25,49 @@
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#setup" role="tab" aria-controls="setup" aria-selected="false" routerLink='/setup'>Setup</a>
   </li>
 </ul>
+<div class="modal fade" id="allInfo">
+  <div class="modal-dialog">
+<div class="login-form">
+  <div class="login_form">
+    <form>
+      <div class="form-group">
+        <div class="col-md-4 col-sm-6 login_form-left">
+          <label>Employee Id</label>
+        </div>
+        <div class="col-md-8 col-sm-6 login_form-right">
+          <input type="text" class="form-control" [(ngModel)]="mailId" name="some" placeholder="Employee Id">
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-4 login_form-left">
+          <label>Employee Password</label>
+        </div>
+        <div class="col-md-8 col-sm-6 login_form-right">
+          <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Employee Password">
+          <div *ngFor="let alert of alerts">
+            <alert  [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)"><strong>{{ alert.msg }}</strong></alert>
+          </div>
+        </div>
+        
+        <div class="clear"></div>
+      </div>
+      <div class="login_form-submit">
+        <button type="submit" (click)="loginSubmite()" class="btn btn-primary submit-button">Sign In</button>
+      </div>
+      
+      <div class="sign_form">
+        <div class="col-md-3 col-md-offset-3 sign_form-left">
+          <a>Sign Up?</a>
+        </div>
+        <div class="col-md-6 col-sm-6 sign_form-right">
+          <a>Cancel</a>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+
