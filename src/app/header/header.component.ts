@@ -15,8 +15,11 @@ export class HeaderComponent implements OnInit {
   mailId = "";
   
   alerts: any[] = [];
-  loginData=new Array();
-  
+  //loginData=new Array();
+  loginData:any={
+    'status':'',
+    'userData':''
+  }
   
 
 
@@ -44,9 +47,9 @@ export class HeaderComponent implements OnInit {
       email_id: this.mailId
     }
     if (this.mailId && this.password) {
-      this.http.post(this.globals.api + 'auth/login', data).subscribe(loginData => {
-        console.log(loginData)
-        if (loginData.status==200) {
+      this.http.post(this.globals.api + 'time-clocks/login', data).subscribe(loginData => {
+        console.log("jhzxgjhcghjzx"+loginData)
+        if (this.loginData.status===200) {
           console.log('hii')
           $("#allInfo").modal('hide');
           this.router.navigate(['time-clocks']);
