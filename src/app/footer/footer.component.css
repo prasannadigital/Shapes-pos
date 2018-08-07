@@ -1,0 +1,17 @@
+
+.select-stylist-footer-right{
+    padding:0px 6px 4px 0px;
+}
+.col-sm-3{
+    width:21%;
+}
+.col-sm-3 span{
+    border: 1px solid gray;
+    padding: 22px;
+}
+.button-group{
+    margin-top:50px;
+    margin-bottom: 50px;
+    
+}
+
