@@ -15,3 +15,22 @@
     
 }
 
+.customer-info h2{
+    background: #da8c42;
+    border:none;
+
+}
+.navbar-default{
+    
+    background: #da8c42;
+    border:none;
+
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active {
+    background: #da8c42;
+
+}
+.label-ticket{
+    text-align:center;
+    margin-bottom: 50px;
+}
