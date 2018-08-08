@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Globals } from '../../global/global-urls';
-import { Router } from '@angular/router';
 import {Membership}  from '../../model/membership.model';
 import {Http} from '@angular/http';
 import {Paginator} from 'primeng/paginator';
@@ -14,19 +13,15 @@ import { MembershipServiceService} from '../../services/membership-service.servi
   styleUrls: ['./membership.component.css']
 })
 export class MembershipComponent implements OnInit {
- 
   cols: any[];
   memberships:any=[]
-    
-  
   temp2: any[] = [];
-data=new Array();
-
-  constructor(private http: Http, private globals: Globals,private service: MembershipServiceService) { 
-   
-  }
+  data=new Array();
+  catagroyData = new Array();
+  constructor(private router: Router,private http: Http, private globals: Globals,private service: MembershipServiceService) {}
 
   ngOnInit() {
+
  
     this.service.getMembership().subscribe(memberships=>{
       this.memberships=memberships.json();
@@ -39,7 +34,9 @@ data=new Array();
    
     })
   }
-
+  backToMembership(){
+    this.router.navigate(['management']);
+  }
   
  
 

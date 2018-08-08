@@ -9,6 +9,15 @@ export class MembershipServiceService {
 
   constructor(private http:Http) { }
   getMembership(){
-    return this.http.get(environment.host+'memberships')
+    return this.http.get(environment.host+'memberships');
+  }
+  getCategoryList(){
+    return this.http.get(environment.host+'categorys');
+  }
+  getSub_CategoryList(id:number){
+    return this.http.get(environment.host+'sub-categorys/'+id);
+  }
+  saveMembershipDetails(data:any){
+    return this.http.post(environment.host+'memberships', data);
   }
 }

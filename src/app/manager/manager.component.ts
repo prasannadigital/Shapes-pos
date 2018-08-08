@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Globals } from '../global/global-urls';
 import { Angular5Csv } from 'angular5-csv/Angular5-csv';
-
+import { MembershipServiceService} from '../services/membership-service.service';
 import { Router } from '@angular/router';
 // import * as jsPDF from 'jspdf';
 // import { autoTable } from 'jspdf-autotable';
@@ -17,6 +17,17 @@ declare var $: any;
 })
 
 export class ManagerComponent implements OnInit {
+  addMembership: any = {
+    'sub_cat_id': '',
+    'cat_id': '',
+    'membership_name': '',
+    'membership_code': '',
+    'membership_discount': '',
+    'membership_price': '',
+    'membership_validity_in_days': ''
+  };
+  catagroyData = new Array();
+  sub_catagroyData = new Array();
   categoryArray: any[];
   temp: any[] = [];
   subCategoryArray: any[];
@@ -35,7 +46,7 @@ export class ManagerComponent implements OnInit {
   private isShowMembership = false;
   private isShowPackage = false;
 
-  constructor(private http: HttpClient, private globals: Globals, private router: Router) {
+  constructor(private service: MembershipServiceService,private http: HttpClient, private globals: Globals, private router: Router) {
     this.http.get(this.globals.api + 'categorys').subscribe(data => {
       this.temp.push([
         {
@@ -71,6 +82,9 @@ export class ManagerComponent implements OnInit {
     console.log(this.selectedSubCategoryObject)
   }
   ngOnInit() {
+    this.service.getCategoryList().subscribe(response => {
+      this.catagroyData = response.json();
+    }); 
   }
 
   downloadExcel() {
@@ -126,28 +140,19 @@ export class ManagerComponent implements OnInit {
   }
 
   addMembershipClick() {
-    var data = {
-      cat_id: this.selectedCategoryObject.cat_id,
-      sub_cat_id: this.selectedSubCategoryObject.sub_cat_id,
-      membership_name: this.memName,
-      membership_description: this.memDesc,
-      membership_img: this.memImage,
-      membership_discount: this.memDiscount,
-      membership_price: this.memPrice,
-      membership_validity_in_days: this.memValidityDate,
-      membership_code: this.memCode,
-      rec_status: 1,
-      membership_services: null,
-      branch_ids: null,
-      is_global: null
-    }
-    console.log(data)
-    this.http.post(this.globals.api + 'memberships', data).subscribe(memberShipData => {
-      console.log(memberShipData)
-      $("#add-membership").modal('hide');
-    });
+    console.log(this.addMembership)
+    this.service.saveMembershipDetails(this.addMembership).subscribe(response => {
+      console.log(response);
+    })
+    $("#add-membership").modal('hide');
+    this.addMembership.cat_id="";
+    this.addMembership.sub_cat_id="";
+    this.addMembership.membership_name="";
+    this.addMembership.membership_code="";
+    this.addMembership.membership_discount="";
+    this.addMembership.membership_price="";
+    this.addMembership.membership_validity_in_days="";
   }
-
   id = 10;
 
   key: string = 'name';
@@ -184,5 +189,15 @@ export class ManagerComponent implements OnInit {
   showInactiveMembershipClick() {
 
   }
-
+  setSub_catagroy(cat_id: any): void {
+    this.addMembership.cat_id= cat_id;
+    this.service.getSub_CategoryList(this.addMembership.cat_id).subscribe(response => {
+      this.sub_catagroyData = response.json();
+      console.log( this.sub_catagroyData);
+    }); 
+   
+}
+setTitleTypeClient(sub_cat_id: any): void {
+  this.addMembership.sub_cat_id= sub_cat_id;
+}
 }

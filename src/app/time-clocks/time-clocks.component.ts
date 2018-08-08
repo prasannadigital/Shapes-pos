@@ -80,8 +80,8 @@ export class TimeClocksComponent implements OnInit {
   if (this.mailId && this.password) {
     this.http.post(this.globals.api + 'time-clocks/login', data).subscribe(response => {
     this.test1=response;
-    console.log(this.test1);
-    console.log(this.test1.emp_id);
+    //console.log(this.test1);
+    //console.log(this.test1.emp_id);
     //this.data.id=this.test1.id;
     this.data.time_clock_id=this.test1.time_clock_id;
     this.data.emp_id=this.test1.emp_id;
