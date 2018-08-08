@@ -10887,3 +10887,37 @@ margin-top: 5px;
 .backBtn{
   margin: 10px;
 }
+/******** service next css *****/
+.next-customer h2{
+  background: #f5c585;
+    padding: 5px 0px;
+    text-align: center;
+    margin: 0px 0 0 0;
+    font-weight: 600;
+    font-size: 20px;
+  
+    display:block;
+}
+.ticket-left ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float:left;
+}
+.ticket-left li{
+  display: inline-block;
+}
+.ticket-left a{
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  background: #e4e9ef;
+  padding: 15px 1px;
+  box-shadow: 0 0 0 1px #acacac;
+  width: 105px;
+  color: #000;
+  margin-left: 12px;
+}
+.ticket-left i{
+  font-size: 25px;
+}

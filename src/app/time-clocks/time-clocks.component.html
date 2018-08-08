@@ -129,10 +129,10 @@
       <div class="clear"></div>
     </div>
     <div class="col-md-3 col-sm-4 clock-in-services2-left">
-      <div class="cisl-buttons"><button (click)="clockInTime();">Clock In</button></div>
-      <div class="cisl-buttons"><button (click)="breakOutTime();" >Break Out</button></div>
-      <div class="cisl-buttons"><button (click)="breakInTime();">Break In</button></div>
-      <div class="cisl-buttons"><button (click)="clockOutTime();">Clock Out</button></div>
+      <div class="cisl-buttons"><button (click)="clockInTime();" [disabled]="disable_time_in ">Clock In</button></div>
+      <div class="cisl-buttons"><button (click)="breakOutTime();"  [disabled]="disable_break_out">Break Out</button></div>
+      <div class="cisl-buttons"><button (click)="breakInTime(); " [disabled]="disable_break_in">Break In</button></div>
+      <div class="cisl-buttons"><button (click)="clockOutTime();" [disabled]="disable_time_out">Clock Out</button></div>
       <div class="cisl-buttons1">Total Hours Worked Today <input type="text" name="name" value=""></div>
     </div>
     <div class="col-md-6 col-sm-4 clock-in-services2-center">

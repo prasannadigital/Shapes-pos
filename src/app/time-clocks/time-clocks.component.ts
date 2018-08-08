@@ -12,6 +12,11 @@ declare var $: any;
   styleUrls: ['./time-clocks.component.css']
 })
 export class TimeClocksComponent implements OnInit {
+  disable_time_in=false;
+  disable_break_out=true;
+  disable_break_in=true;
+  disable_time_out=true;
+  
 
   constructor(private service:TimeClokServiceService,private http: HttpClient, private router: Router, private globals: Globals) { }
  emp_id='';
@@ -56,6 +61,7 @@ export class TimeClocksComponent implements OnInit {
   
 
   ngOnInit() {
+    
    this.loginPopUp();
     this.getTimeAndDate();
             setInterval(() => {
@@ -100,7 +106,16 @@ export class TimeClocksComponent implements OnInit {
     this.data.remarks=this.test1.remarks;
     this.data.total_hours=this.test1.total_hours;
       //console.log(loginData);
-    
+      if(this.data.check_in_time){
+        this.disable_time_in=true;
+        this.disable_break_out=false;
+        this.disable_break_in=false;
+      }
+      if(!this.data.check_out_time){
+        this.disable_time_out=false;
+
+      }
+      
     });
   } else {
     this.alerts = [{
@@ -115,7 +130,12 @@ clockInTime(){
  console.log(this.data.check_in_time);
  this.service.saveInandOutTime(this.data).subscribe(response => {
    console.log(response);
+   
  });
+ this.disable_time_in=true;
+ this.disable_break_out=false;
+ this.disable_time_out=false;
+ 
   //alert("hfjhdsjfh");
 }
 clockOutTime(){
@@ -130,10 +150,14 @@ breakOutTime(){
 if(this.data.break_out1=== null){
   this.data.break_out1 = Date.now();
   console.log(this.data);
+  
   this.service.saveInandOutTime(this.data).subscribe(response => {
     console.log(response);
   });
+  this.disable_break_out=true;
+  this.disable_break_in=false;
   return true;
+ 
   //alert("hfjhdsjfh");
 }
 if(this.data.break_out2=== null){
@@ -141,6 +165,8 @@ if(this.data.break_out2=== null){
   this.service.saveInandOutTime(this.data).subscribe(response => {
     console.log(response);
   });
+  this.disable_break_out=true;
+  this.disable_break_in=false;
   return true;
   //alert("hfjhdsjfh");
 }
@@ -149,6 +175,8 @@ if(this.data.break_out3=== null){
   this.service.saveInandOutTime(this.data).subscribe(response => {
     console.log(response);
   });
+  this.disable_break_out=true;
+  this.disable_break_in=false;
   return true;
   //alert("hfjhdsjfh");
 }
@@ -157,6 +185,8 @@ if(this.data.break_out4=== null){
   this.service.saveInandOutTime(this.data).subscribe(response => {
     console.log(response);
   });
+  this.disable_break_out=true;
+  this.disable_break_in=false;
   return true;
   //alert("hfjhdsjfh");
 }
@@ -168,6 +198,8 @@ if(this.data.break_in1=== null){
   this.service.saveInandOutTime(this.data).subscribe(response => {
     console.log(response);
   });
+  this.disable_break_out=false;
+  this.disable_break_in=true;
   return true;
   //alert("hfjhdsjfh");
 }
@@ -176,6 +208,8 @@ if(this.data.break_in2=== null){
   this.service.saveInandOutTime(this.data).subscribe(response => {
     console.log(response);
   });
+  this.disable_break_out=false;
+  this.disable_break_in=true;
   return true;
   //alert("hfjhdsjfh");
 }
@@ -184,6 +218,8 @@ if(this.data.break_in3=== null){
   this.service.saveInandOutTime(this.data).subscribe(response => {
     console.log(response);
   });
+  this.disable_break_out=false;
+  this.disable_break_in=true;
   return true;
   //alert("hfjhdsjfh");
 }
@@ -192,6 +228,8 @@ if(this.data.break_in4=== null){
   this.service.saveInandOutTime(this.data).subscribe(response => {
     console.log(response);
   });
+  this.disable_break_out=false;
+  this.disable_break_in=true;
   return true;
   //alert("hfjhdsjfh");
 }
