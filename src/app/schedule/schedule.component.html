@@ -2,9 +2,98 @@
 <div class="tabs-services">
     <app-header></app-header>
   </div>
-  
-  
-  <p>
-    schedule works!
-  </p>
+  <form #form= ngForm ngValidate (submit)="getShedule()" >
+    <div class="card">
+      <div class="card-block">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="row">
+              <label class="col-sm-4 col-form-label">Start Date:</label>
+              <div class="col-sm-8">
+                <div class="input-group">
+                  <input type="text"  name="shedule.startdate"  [(ngModel)]="shedule.startdate" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <label class="col-sm-4 col-form-label required">Staff:</label>
+              <div class="col-sm-8">
+                <div class="input-group">
+                  <select name="shedule.emp_id" class="form-control" (ngModelChange)="setStaff($event)" [(ngModel)]="shedule.employee_id" >
+                    <option *ngFor="let data1 of this.empData" [ngValue]="data1.employee_id">{{data1.employee_name}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+            <label class="col-sm-4 col-form-label ">End Date:</label>
+            <div class="col-sm-8">
+              <div class="input-group">
+                <input type="text" name="shedule.enddate"  [(ngModel)]="shedule.enddate" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <label class="col-sm-4 col-form-label required">Locations:</label>
+            <div class="col-sm-8">
+              <div class="input-group">
+                <select name="shedule.branchid" class="form-control" (ngModelChange)="setBranch($event)" [(ngModel)]="shedule.branch_id" >
+                  <option *ngFor="let data1 of this.locationData" [ngValue]="data1.branch_id">{{data1.branch_name}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      <div class="row">
+          
+          <div class="col-sm-2">
+            <div class="float-right">
+              <button type="submit" class="btn btn-warning float-right" value="Save" >Generate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="tableShow" [style.visibility]="titleStyle" >
+    <div>
+    <h1>Shedule for </h1>
+  </div>
+  <div>
+  <p-table [value]="appointmentsData" [paginator]="true" [rows]="5" [globalFilterFields]="['membership_name','membership_code','membership_price','rec_status']" >
+    <ng-template pTemplate="caption">
+            <div style="text-align: right">        
+                <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+                <input type="text" pInputText size="30" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+            </div>
+        </ng-template>
+<ng-template pTemplate="header">
+  <tr >
+     <th *ngFor="let col of cols" [pSortableColumn]="col.field">
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+
+     </th>
+  </tr>
+</ng-template>
+<ng-template pTemplate="body" let-Schedule>
+  <tr >
+     <td *ngFor="let col of cols">
+            {{Schedule[col.field]}}
+     </td>
+  </tr>
+</ng-template>
+
+</p-table>
+</div>
+</div>
   <app-footer></app-footer>
