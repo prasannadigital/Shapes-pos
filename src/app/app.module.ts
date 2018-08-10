@@ -37,6 +37,7 @@ import { TimeClocksComponent } from './time-clocks/time-clocks.component';
 import { ReportsComponent } from './reports/reports.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { SetupComponent } from './setup/setup.component';
+import { InactiveMembershipComponent } from './manager-tool/inactive-membership/inactive-membership.component';
 
 
 
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'new-ticket-next-button-invoice', component: NewTicketNextButtonInvoiceComponent, canActivate: [AuthGuard] },
   { path: 'new-ticket-next-button-invoice-payment', component: NewTicketInvoicePaymentComponent, canActivate: [AuthGuard] },
   { path: 'management', component: ManagerComponent, canActivate: [AuthGuard] },
+  { path: 'inactive-membership', component: InactiveMembershipComponent, canActivate: [AuthGuard] },
   { path: 'management-membership', component: MembershipComponent, canActivate: [AuthGuard] },
   { path:'schedule',component:ScheduleComponent, canActivate: [AuthGuard] },
   { path:'appointments',component:AppointmentsComponent,canActivate: [AuthGuard]},
@@ -77,7 +79,8 @@ const routes: Routes = [
     TimeClocksComponent,
     ReportsComponent,
     InventoryComponent,
-    SetupComponent    
+    SetupComponent,
+    InactiveMembershipComponent    
   ],
   imports: [
     BrowserModule,
