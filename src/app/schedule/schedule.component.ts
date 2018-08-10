@@ -8,6 +8,7 @@ import {SheduleServiceService} from '../services/shedule-service.service'
 })
 export class ScheduleComponent implements OnInit {
   cols:any[];
+  selectedEmpName:string;
   titleStyle="hidden";
   shedule:any={
    'startdate':'',
@@ -53,7 +54,10 @@ setStaff(employee_id: any,employee_name:any): void {
   this.shedule.employee_id= employee_id;
   this.service.getSelectedEmployee(this.shedule.employee_id).subscribe(response => {
     this.selectedEmpData = response.json();
-   console.log(this.selectedEmpData);
+    var data =this.selectedEmpData.pop();
+    this.selectedEmpName=data.employee_name;
+   console.log(data.employee_name);
+   console.log(this.selectedEmpName);
 });
 }
 setBranch(branch_id: any): void {
