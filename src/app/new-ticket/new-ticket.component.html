@@ -286,13 +286,13 @@
           <div class="form-group row">
             <label for="example-text-input" class="col-md-2 col-form-label">First Name</label>
             <div class="col-md-10">
-              <input class="form-control" type="text" [(ngModel)]="custFirstName" name="custFirstName" value="" id="example-text-input">
+              <input class="form-control" type="text" [(ngModel)]="custFirstName" name="custFirstName" value="" id="example-text-input1">
             </div>
           </div>
           <div class="form-group row">
             <label for="example-text-input" class="col-md-2 col-form-label">Last Name</label>
             <div class="col-md-10">
-              <input class="form-control" type="text" value="" [(ngModel)]="custLastName" name="custLastName" id="example-text-input">
+              <input class="form-control" type="text" value="" [(ngModel)]="custLastName" name="custLastName" id="example-text-input2">
             </div>
           </div>
           <div class="form-group row">
@@ -321,7 +321,7 @@
           <div class="form-group row">
             <label for="example-text-input" class="col-md-2 col-form-label">Customer Status</label>
             <div class="col-md-10">
-              <input class="form-control" [(ngModel)]="custStatus" name="custStatus" type="text" value="" id="example-text-input">
+              <input class="form-control" [(ngModel)]="custStatus" name="custStatus" type="text" value="" id="example-text-input3">
             </div>
           </div>
           <div class="form-check">
@@ -503,12 +503,7 @@
     <div class="col-md-6 col-sm-6 col-xs-12 select-customer-right">
       <div class="sur-info" data-toggle="modal" data-target="#costomerInfo">
         <h3>Customer Info</h3>
-        <div class="col-md-12">
-          First Name: {{custFirstName}} Last Name : {{custLastName}} Gender :{{custGender}}
-        </div>
-        <div class="col-md-4">
-          First Name: {{custFirstName}} Last Name : {{custLastName}} Gender :{{custGender}}
-        </div>
+       
       </div>
       <div class="sur-membership" data-toggle="modal" (click)="membershipInfo()" data-target="#membershipInfo">
         <h3>Membership / Package</h3>
