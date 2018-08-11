@@ -66,7 +66,7 @@
   </form>
   <div class="tableShow" [style.visibility]="titleStyle" >
     <div>
-    <h1>Shedule for {{selectedEmpName}} </h1>
+    <h1>Shedule for {{this.selectedEmpName}} </h1>
   </div>
   <div>
   <p-table [value]="appointmentsData" [paginator]="true" [rows]="5" [globalFilterFields]="['membership_name','membership_code','membership_price','rec_status']" >
