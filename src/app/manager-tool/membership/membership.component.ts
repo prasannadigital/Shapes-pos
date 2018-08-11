@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Globals } from '../../global/global-urls';
 import {Membership}  from '../../model/membership.model';
 import {Http} from '@angular/http';
 import {Paginator} from 'primeng/paginator';
@@ -18,7 +17,7 @@ export class MembershipComponent implements OnInit {
   temp2: any[] = [];
   data=new Array();
   catagroyData = new Array();
-  constructor(private router: Router,private http: Http, private globals: Globals,private service: MembershipServiceService) {}
+  constructor(private router: Router,private http: Http,private service: MembershipServiceService) {}
 
   ngOnInit() {
 

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
-import { Globals } from '../global/global-urls';
+
+import { environment } from '../../environments/environment';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Globals } from '../global/global-urls';
 export class LoginComponent implements OnInit {
   password = "";
   mailId = "";
-  constructor(private http: HttpClient, private router: Router, private globals: Globals) {
+  constructor(private http: HttpClient, private router: Router,) {
 
   }
 
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
       email_id: this.mailId
     }
     if (this.mailId && this.password) {
-      this.http.post(this.globals.api + 'auth/login', data).subscribe(loginData => {
+      this.http.post(environment.host + 'auth/login', data).subscribe(loginData => {
         if (Object.keys(loginData).length) {
           sessionStorage.setItem('userSession', JSON.stringify(loginData));
           this.router.navigate(['dashboard']);

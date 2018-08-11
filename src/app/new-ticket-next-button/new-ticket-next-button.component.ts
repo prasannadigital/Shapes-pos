@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Globals } from '../global/global-urls';
+
+import {environment} from '../../environments/environment';
 import { Services } from '../services/common-services';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead/typeahead-match.class';
 declare var $: any;
@@ -27,15 +28,15 @@ export class NewTicketNextButtonComponent implements OnInit {
   _package = false;
 
 
-  constructor(private http: HttpClient, private globals: Globals, private router: Router, private services: Services) {
-    this.http.get(this.globals.api + 'categorys').subscribe(data => {
+  constructor(private http: HttpClient,  private router: Router, private services: Services) {
+    this.http.get(environment.host + 'categorys').subscribe(data => {
       this.categories = data;
     });
 
-    this.http.get(this.globals.api + 'memberships').subscribe(data => {
+    this.http.get(environment.host + 'memberships').subscribe(data => {
       this.memberships = data;
     });
-    this.http.get(this.globals.api + 'packages').subscribe(data => {
+    this.http.get(environment.host + 'packages').subscribe(data => {
       this.packages = data;
     });
     // this.services.setcategoryValue(3);
@@ -53,7 +54,7 @@ export class NewTicketNextButtonComponent implements OnInit {
       this._service = true;
       this._membership = false;
       this._package = false;
-      this.http.get(this.globals.api + 'services/category/' + event.item.cat_id).subscribe(data => {
+      this.http.get(environment.host + 'services/category/' + event.item.cat_id).subscribe(data => {
         this.commonValues = data;
       });
     } else {
@@ -86,7 +87,7 @@ export class NewTicketNextButtonComponent implements OnInit {
       this._membership = false;
       this._package = false;
       url = 'services/category/' + val.cat_id;
-      this.http.get(this.globals.api + 'services/category/' + val.cat_id).subscribe(data => {
+      this.http.get(environment.host + 'services/category/' + val.cat_id).subscribe(data => {
         this.commonValues = data;
       });
     } else {
@@ -150,7 +151,7 @@ export class NewTicketNextButtonComponent implements OnInit {
 
   catProdMemSearch(val) {
     if (val.length >= 3) {
-      this.http.get(this.globals.api + 'sales/cat-mem-product/' + val).subscribe(data => {
+      this.http.get(environment.host + 'sales/cat-mem-product/' + val).subscribe(data => {
         this.temp.push(data);
         this.catProdMemResult = this.temp[0];
       });
@@ -159,7 +160,7 @@ export class NewTicketNextButtonComponent implements OnInit {
 
   stylishSearch(val) {
     if (val.length >= 3) {
-      this.http.get(this.globals.api + 'sales/stylist/' + val).subscribe(data => {
+      this.http.get(environment.host + 'sales/stylist/' + val).subscribe(data => {
         this.temp.push(data);
         this.stylishResult = this.temp[0];
       });

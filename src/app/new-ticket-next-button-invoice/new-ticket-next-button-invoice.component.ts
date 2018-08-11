@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Services } from '../services/common-services';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Globals } from '../global/global-urls';
+
+import {environment} from '../../environments/environment';
 import * as _ from 'lodash';
 
 @Component({
@@ -18,10 +19,10 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   selectResult;
   commonValues;
   _subTypeOfService;
-  constructor(private services: Services, private http: HttpClient, private globals: Globals) {
+  constructor(private services: Services, private http: HttpClient,) {
     this.selectResult = JSON.parse(sessionStorage.getItem('selectedServices'));
     this.titleName = 'Service';
-    this.http.get(this.globals.api + 'categorys').subscribe(data => {
+    this.http.get(environment.host + 'categorys').subscribe(data => {
       this.common = data;
     });
   }
@@ -36,7 +37,7 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
     } else if (val.membership_name) {
       this.commonValues = Array.of(val);
     } else if (_.size(val) && val.category_name) {
-      this.http.get(this.globals.api + 'services/category/' + val.cat_id).subscribe(data => {
+      this.http.get(environment.host+ 'services/category/' + val.cat_id).subscribe(data => {
         console.log(data)
         this.commonValues = Array.of(data);
       });
@@ -66,7 +67,7 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   serviceClick() {
     this.titleName = 'Service';
     this.edited = true;
-    this.http.get(this.globals.api + 'categorys').subscribe(data => {
+    this.http.get(environment.host + 'categorys').subscribe(data => {
       this.common = data;
     });
   }
@@ -74,7 +75,7 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   productClick() {
     this.titleName = 'Product';
     this.edited = true;
-    this.http.get(this.globals.api + 'products').subscribe(data => {
+    this.http.get(environment.host+ 'products').subscribe(data => {
       this.common = data;
     });
   }
@@ -82,7 +83,7 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   packagesClick() {
     this.titleName = 'Package';
     this.edited = true;
-    this.http.get(this.globals.api + 'packages').subscribe(data => {
+    this.http.get(environment.host + 'packages').subscribe(data => {
       this.common = data;
     });
   }
@@ -90,7 +91,7 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   membershipClick() {
     this.titleName = 'Membership';
     this.edited = true;
-    this.http.get(this.globals.api + 'memberships').subscribe(data => {
+    this.http.get(environment.host + 'memberships').subscribe(data => {
       this.common = data;
     });
   }

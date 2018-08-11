@@ -125,9 +125,14 @@ export class TimeClocksComponent implements OnInit {
     }];
   }
 }
+// time_in=new Date(this.data.check_in_time);
+// first_break_out=new Date(this.data.break_out1)
+// milisecondsDiff = (this.first_break_out - this.time_in);
+// diff=Math.floor(this.milisecondsDiff/(1000*60*60)).toLocaleString(undefined, {minimumIntegerDigits: 2}) + ":" + (Math.floor(this.milisecondsDiff/(1000*60))%60).toLocaleString(undefined, {minimumIntegerDigits: 2})  + ":" + (Math.floor(this.milisecondsDiff/1000)%60).toLocaleString(undefined, {minimumIntegerDigits: 2}) 
 clockInTime(){
   this.data.check_in_time = Date.now();
  console.log(this.data.check_in_time);
+ //console.log(this.time_in);
  this.service.saveInandOutTime(this.data).subscribe(response => {
    console.log(response);
    
@@ -143,10 +148,13 @@ clockOutTime(){
   this.service.saveInandOutTime(this.data).subscribe(response => {
     console.log(response);
   });
+
   //alert("hfjhdsjfh");
 }
 breakOutTime(){
   console.log(this.break_out1);
+  //console.log(this.first_break_out)
+
 if(this.data.break_out1=== null){
   this.data.break_out1 = Date.now();
   console.log(this.data);
@@ -154,6 +162,7 @@ if(this.data.break_out1=== null){
   this.service.saveInandOutTime(this.data).subscribe(response => {
     console.log(response);
   });
+  //console.log(this.diff)
   this.disable_break_out=true;
   this.disable_break_in=false;
   return true;

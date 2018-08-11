@@ -4,6 +4,7 @@ import { Globals } from '../global/global-urls';
 import { Angular5Csv } from 'angular5-csv/Angular5-csv';
 import { MembershipServiceService} from '../services/membership-service.service';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 // import * as jsPDF from 'jspdf';
 // import { autoTable } from 'jspdf-autotable';
 // import 'jspdf-autotable';
@@ -45,6 +46,7 @@ export class ManagerComponent implements OnInit {
   memberships: any;
   private isShowMembership = false;
   private isShowPackage = false;
+  
 
   constructor(private service: MembershipServiceService,private http: HttpClient, private globals: Globals, private router: Router) {
     this.http.get(this.globals.api + 'categorys').subscribe(data => {
@@ -60,11 +62,11 @@ export class ManagerComponent implements OnInit {
       ]);
       this.categoryArray = this.temp[0];
     });
-    this.http.get(this.globals.api + 'sub-categorys').subscribe(data => {
+    this.http.get(environment.host + 'sub-categorys').subscribe(data => {
       this.temp1.push(data);
       this.subCategoryArray = this.temp1[0];
     });
-    this.http.get(this.globals.api + 'memberships').subscribe(memberShipData => {
+    this.http.get(environment.host + 'memberships').subscribe(memberShipData => {
       console.log(memberShipData)
       this.temp2.push(memberShipData);
       this.memberships = this.temp2[0];

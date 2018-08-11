@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead/typeahead-match.class';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { setTheme } from 'ngx-bootstrap/utils';
-import { Globals } from '../global/global-urls';
+import {environment} from '../../environments/environment';
 // import { map } from 'rxjs/operators';
 
 @Component({
@@ -33,7 +33,7 @@ export class NewTicketComponent implements OnInit {
   public userDetails: FormGroup;
   submitted = false;
   
-  constructor(private http: HttpClient, private globals: Globals, private router: Router) {
+  constructor(private http: HttpClient, private router: Router) {
     setTheme('bs3');
     this.userDetails = new FormGroup({
       firstName: new FormControl(this.firstName, [Validators.required, Validators.minLength(6), Validators.maxLength(9)]),
@@ -61,7 +61,7 @@ export class NewTicketComponent implements OnInit {
       dob: this.DOB
     }
     console.log(data);
-    this.http.post(this.globals.api+'users', data).subscribe(data => {
+    this.http.post(environment.host+'users', data).subscribe(data => {
       console.log("sucess")
       console.log(data);
     });
@@ -94,13 +94,13 @@ export class NewTicketComponent implements OnInit {
   membershipInfo(){
     console.log("HIIII")
     console.log(this.selectedOption.user_id)
-    this.http.get(this.globals.api+'sales/visit/'+this.selectedOption.user_id).subscribe(data => {
+    this.http.get(environment.host+'sales/visit/'+this.selectedOption.user_id).subscribe(data => {
       console.log(data);
     });
   }
 
   visitInfo(){
-    this.http.get(this.globals.api+'sales/visit/'+this.selectedOption.user_id).subscribe(data => {
+    this.http.get(environment.host+'sales/visit/'+this.selectedOption.user_id).subscribe(data => {
       console.log(data);
       this.visits = data;
       console.log(this.visits)
@@ -110,7 +110,7 @@ export class NewTicketComponent implements OnInit {
   allInfo(){
     console.log("HIIII")
     // console.log(this.selectedOption.user_id)
-    this.http.get(this.globals.api+'sales/all-history/'+this.selectedOption.user_id).subscribe(data => {
+    this.http.get(environment.host+'sales/all-history/'+this.selectedOption.user_id).subscribe(data => {
       this.alls = data;
       console.log(data);
     });
@@ -119,7 +119,7 @@ export class NewTicketComponent implements OnInit {
   productInfo(){
     console.log("HIIII")
     console.log(this.selectedOption.user_id)
-    this.http.get(this.globals.api+'sales/product-history/'+this.selectedOption.user_id).subscribe(data => {
+    this.http.get(environment.host+'sales/product-history/'+this.selectedOption.user_id).subscribe(data => {
       console.log(data);
       this.products = data;
     });
@@ -128,7 +128,7 @@ export class NewTicketComponent implements OnInit {
   serviceInfo(){
     console.log("HIIII")
     // console.log(this.selectedOption.user_id)
-    this.http.get(this.globals.api+'sales/service-history/'+this.selectedOption.user_id).subscribe(data => {
+    this.http.get(environment.host+'sales/service-history/'+this.selectedOption.user_id).subscribe(data => {
       console.log(data);
       this.services = data;
     });
@@ -137,7 +137,7 @@ export class NewTicketComponent implements OnInit {
   customerSearch(val) {
     
     if (val.length >= 3) {     
-      this.http.get(this.globals.api+'users/search/' + val).subscribe(data => {
+      this.http.get(environment.host+'users/search/' + val).subscribe(data => {
         this.temp.push(data);
         this.states = this.temp.pop();  
         console.log(this.states);
