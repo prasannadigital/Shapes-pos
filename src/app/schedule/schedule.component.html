@@ -22,7 +22,7 @@
               <div class="col-sm-8">
                 <div class="input-group">
                   <select name="shedule.emp_id" class="form-control" (ngModelChange)="setStaff($event)" [(ngModel)]="shedule.employee_id" >
-                    <option *ngFor="let data1 of this.empData" [ngValue]="data1.employee_id">{{data1.employee_name}}</option>
+                    <option *ngFor="let data1 of this.empData"  [ngValue]="data1.employee_id">{{data1.employee_name}}</option>
                   </select>
                 </div>
               </div>

@@ -187,6 +187,7 @@ export class ManagerComponent implements OnInit {
   }
 
   showInactiveMembershipClick() {
+    this.router.navigate(['inactive-membership'])
 
   }
   setSub_catagroy(cat_id: any): void {

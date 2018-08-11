@@ -8,7 +8,10 @@ import {environment} from '../../environments/environment';
 export class ManagerServiceService {
 
   constructor(private http:Http) { }
- public getManager(){
+  getManager(){
 return  this.http.get(environment.host+ 'categorys')
+  }
+   getInactiveMembership(){
+    return this.http.get(environment.host+'memberships/active-or-inactive/0')
   }
 }
