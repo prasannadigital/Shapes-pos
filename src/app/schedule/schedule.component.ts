@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {MessageService} from 'primeng/api';
-import {SheduleServiceService} from '../services/shedule-service.service'
+import {SheduleServiceService} from '../services/shedule-service.service';
+import * as moment from 'moment/moment';
 @Component({
   selector: 'schedule',
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit {
+  public date1:any;
+  public date2:any;
   cols:any[];
   selectedEmpName:string;
   titleStyle="hidden";
@@ -36,16 +39,30 @@ export class ScheduleComponent implements OnInit {
   showSuccess() {
     this.messageService.add({key: 'tl',severity:'success', summary: 'Success Message', detail:'Order submitted'});
 }
+gggg1(){
+  let day1 = this.date1.getDate();
+  let month1 = this.date1.getMonth()+1;
+  let year1 =this.date1.getFullYear();
+  let newDate1 = moment(this.date1).format('YYYY-MM-DD').toString();
+  
+  console.log(newDate1);
+  this.shedule.startdate=newDate1
+
+}
+gggg2(){
+  let day2 = this.date2.getDate();
+  let month2 = this.date2.getMonth()+1;
+  let year2 =this.date2.getFullYear();
+  let newDate2 = moment(this.date2).format('YYYY-MM-DD').toString();
+  console.log(newDate2);
+  this.shedule.enddate=newDate2;
+
+}
 getShedule(){
   console.log(this.shedule);
   this.service.getEmpAppointments(this.shedule.startdate,this.shedule.enddate,this.shedule.employee_id,this.shedule.branch_id).subscribe(response => {
   this.appointmentsData = response.json();
-  this.cols = [
-    { field: 'order_date',header: 'order_date' },
-    { field: 'services', header: 'services' },
-    { field: 'locale', header: 'locale' }
-    
-];
+ 
    this.titleStyle="visible";
   console.log(this.appointmentsData);
 }); 

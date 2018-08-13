@@ -38,8 +38,8 @@ import { ReportsComponent } from './reports/reports.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { SetupComponent } from './setup/setup.component';
 import { InactiveMembershipComponent } from './manager-tool/inactive-membership/inactive-membership.component';
-
-
+import {CalendarModule} from 'primeng/calendar';
+import * as moment from 'moment/moment';
 
 
 const routes: Routes = [
@@ -97,6 +97,7 @@ const routes: Routes = [
     TableModule,
     HttpModule,
     PaginatorModule,
+    CalendarModule,
     DialogModule,
     ToastModule
   ],

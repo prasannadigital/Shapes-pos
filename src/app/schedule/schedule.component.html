@@ -3,97 +3,99 @@
     <app-header></app-header>
   </div>
   <form #form= ngForm ngValidate (submit)="getShedule()" >
-    <div class="card">
-      <div class="card-block">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="row">
-              <label class="col-sm-4 col-form-label">Start Date:</label>
-              <div class="col-sm-8">
-                <div class="input-group">
-                  <input type="text"  name="shedule.startdate"  [(ngModel)]="shedule.startdate" class="form-control">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="row">
-              <label class="col-sm-4 col-form-label required">Staff:</label>
-              <div class="col-sm-8">
-                <div class="input-group">
-                  <select name="shedule.emp_id" class="form-control" (ngModelChange)="setStaff($event)" [(ngModel)]="shedule.employee_id" >
-                    <option *ngFor="let data1 of this.empData"  [ngValue]="data1.employee_id">{{data1.employee_name}}</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="row">
-            <label class="col-sm-4 col-form-label ">End Date:</label>
-            <div class="col-sm-8">
-              <div class="input-group">
-                <input type="text" name="shedule.enddate"  [(ngModel)]="shedule.enddate" class="form-control">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="row">
-            <label class="col-sm-4 col-form-label required">Locations:</label>
-            <div class="col-sm-8">
-              <div class="input-group">
-                <select name="shedule.branchid" class="form-control" (ngModelChange)="setBranch($event)" [(ngModel)]="shedule.branch_id" >
-                  <option *ngFor="let data1 of this.locationData" [ngValue]="data1.branch_id">{{data1.branch_name}}</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-      <div class="row">
-          
-          <div class="col-sm-2">
-            <div class="float-right">
-              <button type="submit" class="btn btn-warning float-right" value="Save" >Generate</button>
-            </div>
-          </div>
+  <div class="tab-schedule1">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="form-group">
+    <label for="input" class="col-md-5 control-label">Start Date</label>
+      <div class="col-md-7">
+        <div class="input-group">
+          <p-calendar name="shedule.startdate" [ngModel]="date1" [showIcon]="true" dateFormat="yy-mm-dd" (ngModelChange)="gggg1($event)"></p-calendar>
         </div>
       </div>
+      <div class="clear"></div>
+     </div>
     </div>
-  </form>
-  <div class="tableShow" [style.visibility]="titleStyle" >
-    <div>
-    <h1>Shedule for {{this.selectedEmpName}} </h1>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="form-group">
+    <label for="input" class="col-md-5 control-label">End Date</label>
+      <div class="col-md-7">
+        <div class="input-group">
+          <p-calendar  name="shedule.enddate" [ngModel]="date2"[showIcon]="true" dateFormat="yy-mm-dd" (ngModelChange)="gggg2($event)"></p-calendar>
+        </div>
+      </div>
+      <div class="clear"></div>
+     </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="form-group">
+      <label for="input" class="col-md-3 control-label">Staff</label>
+      <div class="col-md-9">
+        <select name="shedule.emp_id" class="form-control" (ngModelChange)="setStaff($event)" [(ngModel)]="shedule.employee_id" >
+          <option *ngFor="let data1 of this.empData"  [ngValue]="data1.employee_id">{{data1.employee_name}}</option>
+        </select>
+      </div>
+      <div class="clear"></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="form-group">
+      <label for="input" class="col-md-3 control-label">Locations</label>
+      <div class="col-md-9">
+          <select name="shedule.branchid" class="form-control" (ngModelChange)="setBranch($event)" [(ngModel)]="shedule.branch_id" >
+              <option *ngFor="let data1 of this.locationData" [ngValue]="data1.branch_id">{{data1.branch_name}}</option>
+            </select>
+      </div>
+      <div class="clear"></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="form-group">
+      <label for="input" class="col-md-10 control-label">Include Inactive Staff Members</label>
+      <div class="col-md-2">
+       <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        </div>
+      </div>
+      <div class="clear"></div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="generate-cs" style="padding:0;">
+          <button type="submit" class="btn btn-warning float-right" value="Save"  >Generate</button>
+        <span title="Export to PDF"><i class="fas fa-file-pdf"></i></span>
+        <span title="Tag Add"><i class="fas fa-tag"></i></span>
+        <span class="tag-new-icon" title="Tag New"><i class="fas fa-tag"></i></span>
+        <span title="Export to Excel"><i class="far fa-file-excel"></i></span>
+        <span title="Print this Report"><i class="fas fa-print"></i></span>
+      </div>
+    </div>
+    <div class="clear"></div>
   </div>
-  <div>
-  <p-table [value]="appointmentsData" [paginator]="true" [rows]="5" [globalFilterFields]="['membership_name','membership_code','membership_price','rec_status']" >
-    <ng-template pTemplate="caption">
-            <div style="text-align: right">        
-                <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
-                <input type="text" pInputText size="30" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
-            </div>
-        </ng-template>
-<ng-template pTemplate="header">
-  <tr >
-     <th *ngFor="let col of cols" [pSortableColumn]="col.field">
-            {{col.header}}
-            <p-sortIcon [field]="col.field"></p-sortIcon>
-
-     </th>
-  </tr>
-</ng-template>
-<ng-template pTemplate="body" let-Schedule>
-  <tr >
-     <td *ngFor="let col of cols">
-            {{Schedule[col.field]}}
-     </td>
-  </tr>
-</ng-template>
-
-</p-table>
-</div>
+</form>
+  <div class="tableShow" [style.visibility]="titleStyle" >
+  <div class="tab-schedule2">
+  <h3>Schedule For {{this.selectedEmpName}} </h3>
+  <table width="100%">
+    <thead>
+    <tr>
+      <th>order_date</th>
+      <th>
+          services </th>
+      <th>locale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let item of appointmentsData">
+        <td>{{item.order_date}}</td>
+        <td>{{item.services}}</td>
+        <td>{{item.locale}}</td>
+      </tr>
+    </tbody>
+    
+  </table>
+  
+  
+  <div class="clear"></div>
+  </div>
 </div>
   <app-footer></app-footer>
