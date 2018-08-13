@@ -18,3 +18,19 @@
     width: 15%;
   }
   
+  #v-pills-tab {
+    width: 100%;
+    float: left;
+}
+ .staff-box a {
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    display: block;
+    background: #f9f9f9;
+    text-decoration: none;
+    color: #6b6b6b;
+    letter-spacing: 1px;
+    font-size: 20px;
+    text-transform: uppercase;
+}

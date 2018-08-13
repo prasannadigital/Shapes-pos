@@ -2,104 +2,708 @@
 <body>
   <div class="tabs-services">
     <app-header></app-header>
-  </div>
 
+  <div class="tab-pane " id="manager" role="tabpanel" aria-labelledby="manager-tab">
+				<div class="manager-tap">
+					<div class="col-md-3 col-sm-3 col-xs-12 manager-tap-left">
+						<div class="nav flex-column nav-pills rs-1-left-button" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+						  <a class="nav-link active " id="v-pills-home-tab" data-toggle="pill" href="#Communications" role="tab" aria-controls="Communications" aria-selected="true">Communications and Marketing</a>
+						  
+						  <a class="nav-link " id="v-pills-profile-tab" data-toggle="pill" href="#Staff" role="tab" aria-controls="Staff" aria-selected="false">Staff</a>
+						  
+						  <a class="nav-link " id="v-pills-messages-tab" data-toggle="pill" href="#Clients" role="tab" aria-controls="Clients" aria-selected="false">Clients</a>
+						  
+						  <a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#Memberships" role="tab" aria-controls="Memberships" aria-selected="false">Memberships</a>
+						  
+						   <a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#Packages" role="tab" aria-controls="Packages" aria-selected="false">Packages</a>
+						   
+						   <a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Promotions</a>
+						   
+							<a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Gift Cards</a>
+							
+							 <a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Products</a>
+							 
+							  <a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Inventory</a>
+							  
+							<a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Pricing</a>
+							
+						 <a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Discounts</a>
+						</div>
+						</div>
+						<div class="col-md-9 col-sm-9 col-xs-12 manager-tap-right">
+						  
+						 <div class="tab-content" id="v-pills-tabContent">
+						  <div class="tab-pane active" id="Communications" role="tabpanel" aria-labelledby="Communications">Communications</div>
+						 <!--------------Communications end--------------> 
+						  
+						  <div class="tab-pane fade" id="Staff" role="tabpanel" aria-labelledby="Staff">
+							<div class="sales-staff">
+								<div class="staff-section">
+									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+										<h3><a href="#"><img src="../img/clockinandout.jpg">&nbsp;&nbsp; CLOCK IN/OUT</a></h3>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+										<h3><a href="#"><img src="../img/viewedit.jpg">&nbsp;&nbsp; View / Edit Time Clock</a></h3>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+										<h3><a href="#"><img src="../img/permissions.jpg">&nbsp;&nbsp; Staff Permissions</a></h3>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+										<h3><a href="#"><img src="../img/schuled.jpg">&nbsp;&nbsp; Schedule View</a></h3>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+										<h3><a href="#"><img src="../img/staff.jpg">&nbsp;&nbsp; Staff Members</a></h3>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+										<h3><a href="#"><img src="../img/schuled.jpg">&nbsp;&nbsp; schedule  Add / Edit</a></h3>
+									</div>
+									<div class="clear"> </div>
+								</div>
+									
+							</div>
+						  
+						  </div>
+						   <!--------------Staffend--------------> 
+						  
+						  
+						  <div class="tab-pane fade" id="Clients" role="tabpanel" aria-labelledby="Clients">
+													 <div id="pages">
+							<div class="manager-tab-clients page" id="tools" data-page="tools">
+								<div class="clint-tiltle">
+									<div class="col-md-8 col-xs-12 col-sm-8">
+										<h3>Cancel Group Lesson & Appointment Reservations</h3>
+										<h4>Cancellation Options</h4>
+									</div>
+									<div class="col-md-4 col-xs-12 col-sm-4">
+										<div class="dropdown"  style="text-align: center;">
+										  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											Tools
+											<span class="caret"></span>
+										  </button>
+										  <ul class="dropdown-menu menu-tools" id="menu-tools"  aria-labelledby="dropdownMenu1">
+											<li><a data-page="tools" href="#">Tools </a></li>
+											<li><a data-page="cancelation" href="#">cancelation</a></li> 
+										  </ul>
+										</div>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="clint-dates">
+									<div class="col-md-6 col-sm-6 col-xs-12" style="padding-left:0;">
+										<div class="form-group">
+										<label for="input" class="col-md-5 control-label">Start Date</label>
+										<div class="col-md-7">
+											<div class="input-group">
+												<input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
+												<span class="input-group-btn"><button type="button" class="btn btn-primary" data-toggle="datepicker"><i class="fa fa-calendar"></i></button></span>
+											</div>
+										</div>
+										<div class="clear"></div>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label for="input" class="col-md-6 control-label">Appointment start time</label>
+											<div class="col-md-6">
+											  <select class="form-control">
+												  <option>All Times</option>
+												  <option>2</option>
+												  <option>3</option>
+												  <option>4</option>
+												  <option>5</option>
+												</select>
+											</div>
+											<div class="clear"></div>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12" style="padding-left:0;">
+										<div class="form-group">
+										<label for="input" class="col-md-5 control-label">End Date</label>
+										<div class="col-md-7">
+											<div class="input-group">
+												<input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
+												<span class="input-group-btn"><button type="button" class="btn btn-primary" data-toggle="datepicker"><i class="fa fa-calendar"></i></button></span>
+											</div>
+										</div>
+										<div class="clear"></div>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12">
+										<div class="form-group">
+											<label for="input" class="col-md-6 control-label">Appointment End time</label>
+											<div class="col-md-6">
+											  <select class="form-control">
+												  <option>All Times</option>
+												  <option>2</option>
+												  <option>3</option>
+												  <option>4</option>
+												  <option>5</option>
+												</select>
+											</div>
+											<div class="clear"></div>
+										</div>
+									</div>
+										<div class="form-group">
+											<label for="input" class="col-md-3 control-label">Days</label>
+											<div class="col-md-9" style="padding:0;">
+											  <div class="col-md-2">Sunday: <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></div>
+											  <div class="col-md-2">Monday: <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></div>
+											  <div class="col-md-2">Tuesday: <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></div>
+											  <div class="col-md-2">Wednesday: <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></div>
+											  <div class="col-md-2">Thursday: <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></div>
+											  <div class="col-md-2">Friday: <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></div>
+											  <div class="col-md-2">Saturday: <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"></div>
+											<div class="clear"></div>
+											<P>(Leave blank for all days)</P>
+											</div>
+											
+											<div class="clear"></div>
+										</div>
+										<div class="col-md-6 col-sm-6 col-xs-12" style="padding:0;">
+											<div class="form-group">
+												<label for="input" class="col-md-5 control-label">Types</label>
+												<div class="col-md-7">
+												  <select class="form-control">
+													  <option>Appoiments</option>
+													  <option>Class & event reservation</option>
+													  <option>Room reservation</option>
+													  <option>All</option>
+													
+													</select>
+												</div>
+												<div class="clear"></div>
+											</div>
+											<div class="form-group">
+												<label for="input" class="col-md-5 control-label">Staff</label>
+												<div class="col-md-7">
+												  <select class="form-control">
+													  <option>All Staff</option>
+													  <option>Abrami clara</option>
+													  <option>Abramiana Aveta</option>
+													  <option>Admin LA</option>
+													  <option>Advisor Beauty</option>
+													  <option>Akter Parvin</option>
+													</select>
+												</div>
+												<div class="clear"></div>
+											</div>
+										</div>
+										<div>
+										<div class="col-md-6 col-sm-6 col-xs-12" style="padding:0;">
+											<div class="form-group">
+												<label for="input" class="col-md-4 control-label">Location</label>
+												<div class="col-md-8">
+												  <select class="form-control">
+													<option>Any Location</option>
+													<option>SBB - Culver City</option>
+													<option>SBB - Culver City Kiosk</option>
+													<option>SBB - Century Mall</option>
+													<option>SBB - Panorama Mall</option>
+													<option>SBB - Northridge (kiosk)</option>
+													<option>SBB - Northeidge (Inline)</option>
+													<option>SBB - Burbank Mail</option>
+													</select>
+												</div>
+												<div class="clear"></div>
+											</div>
+										</div>
+										
+										<div class="col-md-6 col-sm-6 col-xs-12" style="padding:0;">
+											<div class="form-group">
+												<label for="input" class="col-md-5 control-label">Clients</label>
+												<div class="col-md-7">
+												<div class="form-check" style="text-align:left;">
+													  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+													  <label class="form-check-label" for="exampleRadios1">
+														All
+													  </label>
+												</div>
+												<div class="form-check" style="text-align:left;">
+													  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+													  <label class="form-check-label" for="exampleRadios1">
+														elected
+													  </label>
+												</div>
+											
+												</div>
+												<div class="clear"></div>
+											</div>
+										</div>
+										<div class="clear"></div>
+										</div>
+										<div class="col-md-12 col-sm-12 col-xs-12" style="padding:0;">
+											<div class="form-group">
+												<label for="input" class="col-md-5 control-label">Cancellation Method</label>
+												<div class="col-md-7">
+												<div class="form-check" style="text-align:left;">
+													  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+													  <label class="form-check-label" for="exampleRadios1">
+														Early Cancel (not charged)
+													  </label>
+												</div>
+												<div class="form-check" style="text-align:left;">
+													  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+													  <label class="form-check-label" for="exampleRadios1">
+														Late Cancel (charged)
+													  </label>
+												</div>
+											
+												</div>
+												<div class="clear"></div>
+											</div>
+										</div>
+											<div class="form-group">
+												<label for="input" class="col-md-3 control-label">Reason for cancellation</label>
+												<div class="col-md-9">
+												<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+												</div>
+												<div class="clear"></div>
+											</div>
+											<div class="col-md-12" style=" text-align: right;">
+											<button type="button" class="btn btn-secondary btn-sm">Preview Cancellation</button>
+											<button type="button" class="btn btn-secondary btn-sm">Execute  Cancellation</button>
+											</div>
+										
+										
+
+									
+								<div class="clear"></div>	
+								</div>
+								
+							</div>
+							<div class="cancelation-tan hide page" id="cancelation-tan" data-page="cancelation">
+								<div class="clint-tiltle">
+									<div class="col-md-8 col-xs-12 col-sm-8">
+										
+										<h4><a href="#" style="color:#fff;">Reports</a> >> Cancellations</h4>
+									</div>
+									<div class="col-md-4 col-xs-12 col-sm-4">
+										<div class="dropdown"  style="text-align: center;">
+										  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											Tools
+											<span class="caret"></span>
+										  </button>
+										  <ul class="dropdown-menu menu-tools" id="menu-tools"  aria-labelledby="dropdownMenu1">
+											<li><a data-page="tools" href="#">Tools </a></li>
+											<li><a data-page="cancelation" href="#">cancelation</a></li> 
+										  </ul>
+										</div>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div>
+								&nbsp;
+								<br>
+								<div class="col-md-4 col-sm-4 col-xs-12" style="padding-left:0;">
+										<div class="form-group">
+										<label for="input" class="col-md-5 control-label">Start Date</label>
+										<div class="col-md-7">
+											<div class="input-group">
+												<input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
+												<span class="input-group-btn"><button type="button" class="btn btn-primary" data-toggle="datepicker"><i class="fa fa-calendar"></i></button></span>
+											</div>
+										</div>
+										<div class="clear"></div>
+										</div>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-12" style="padding-left:0;">
+										<div class="form-group">
+										<label for="input" class="col-md-5 control-label">End Date</label>
+										<div class="col-md-7">
+											<div class="input-group">
+												<input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
+												<span class="input-group-btn"><button type="button" class="btn btn-primary" data-toggle="datepicker"><i class="fa fa-calendar"></i></button></span>
+											</div>
+										</div>
+										<div class="clear"></div>
+										</div>
+								</div>
+								<div class="col-md-2 col-sm-2 col-xs-12" style="padding:0;">
+											<div class="form-group">
+												<div class="col-md-12">
+												  <select class="form-control">
+													<option>Any Location</option>
+													<option>SBB - Culver City</option>
+													<option>SBB - Culver City Kiosk</option>
+													<option>SBB - Century Mall</option>
+													<option>SBB - Panorama Mall</option>
+													<option>SBB - Northridge (kiosk)</option>
+													<option>SBB - Northeidge (Inline)</option>
+													<option>SBB - Burbank Mail</option>
+													</select>
+												</div>
+												<div class="clear"></div>
+											</div>
+								</div>
+								<div class="col-md-2 col-sm-2 col-xs-12" style="padding:0;">
+											<div class="form-group">
+												<div class="col-md-12">
+												  <select class="form-control">
+													<option>All Teachers</option>
+													  <option>Abrami clara</option>
+													  <option>Abramiana Aveta</option>
+													  <option>Admin LA</option>
+													  <option>Advisor Beauty</option>
+													  <option>Akter Parvin</option>
+													</select>
+												</div>
+												<div class="clear"></div>
+											</div>
+								</div>
+								<div class="clear"></div>
+								</div>
+								<div>
+								
+								<div class="col-md-4 col-sm-4 col-xs-12" style="padding:0;">
+											<div class="form-group">
+												<div class="col-md-12">
+												  <select class="form-control">
+													<option>All </option>
+													<option>Early Cancels Only</option>
+													<option>Late cancels only</option>
+													
+													</select>
+												</div>
+												<div class="clear"></div>
+											</div>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-12" style="padding:0;">
+											<div class="form-group">
+												<div class="col-md-12">
+												  <select class="form-control">
+													<option>Individual records</option>
+													<option>Individual records</option>
+													<option>Group Cancellation</option>
+													
+													</select>
+												</div>
+												<div class="clear"></div>
+											</div>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-12" style="padding:0;">
+											<div class="form-group">
+												<div class="col-md-8">
+												  <select class="form-control">
+													<option>View All </option>
+													<option>Consumer Mode Only</option>
+													<option>Business Mode Only</option>
+													</select>
+												</div>
+												<button type="button" class="col-md-4 btn btn-primary">Restore</button>
+												<div class="clear"></div>
+											</div>
+									
+								</div>
+								<div class="clear"></div>
+								</div>
+								<div>
+								<div class="col-md-4 col-sm-4 col-xs-12" style="padding:0;">
+											<div class="form-group">
+											<label for="input" class="col-md-5 control-label">Clients</label>
+												<div class="col-md-7">
+												<div class="form-check" style="text-align:left;">
+													  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+													  <label class="form-check-label" for="exampleRadios1">
+														All
+													  </label>
+												</div>
+												<div class="form-check" style="text-align:left;">
+													  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
+													  <label class="form-check-label" for="exampleRadios1">
+														Seleted
+													  </label>
+												</div>
+											
+												</div>
+												<div class="clear"></div>
+											</div>
+								</div>
+								
+								<div class="col-md-4 col-sm-4 col-xs-12" style="padding:0;">
+											<div class="form-group">
+											<label for="input" class="col-md-5 control-label">Sort By</label>
+												<div class="col-md-7">
+												  <select class="form-control">
+													<option>Cancel Date</option>
+													<option>Cancel Date</option>
+													<option>Original visit date</option>
+
+													</select>
+												</div>
+												<div class="clear"></div>
+											</div>
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-12" style="padding:0;">
+								<div class="generate-cs" style="padding:0;">
+									<span class="generate-cs-button">Generate</span>
+									<span title="Export to PDF"><i class="fas fa-file-pdf"></i></span>
+									<span title="Tag Add"><i class="fas fa-tag"></i></span>
+									<span class="tag-new-icon" title="Tag New"><i class="fas fa-tag"></i></span>
+									<span title="Export to Excel"><i class="far fa-file-excel"></i></span>
+									<span title="Print this Report"><i class="fas fa-print"></i></span>
+								</div>
+								</div>
+								<div class="clear"></div>
+								</div>
+								<div class="cancellation-table">
+									<table width="100%">
+										<tr>
+											<th>Cancel Date/Time</th>
+											<th>Canceled By</th>
+											<th>Appointment Date</th>
+											<th>Time</th>
+											<th>Type</th>
+											<th>Location</th>
+											<th>Techers</th>
+											<th>Client</th>
+											<th>Method</th>
+											<th>Add-on</th>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</table>
+								</div>
+								
+								
+								
+							</div><!--cancelation-tan--->
+						
+						
+						</div><!--#page-->
+						  
+						  </div>
+						   <!--------------Clients end--------------> 
+						   
+						  <div class="tab-pane fade" id="Memberships" role="tabpanel" aria-labelledby="Memberships">
+							<div class="membership-setup1">
+								<div class="ms-set-1-1">
+									<div class="col-md-6 col-sm-6 ms-set-1-left"><h3>Membership Setup</h3></div>
+									<div class="col-md-6 col-sm-6 ms-set-1-left" style="text-align:right;"><button type="button" class="btn btn-outline-dark"><h4 style="margin:0;">+ Add New</h4></button></div>
+									<div class="clear"></div>
+								</div>
+								<div >
+									<div class="col-md-6" style="padding:0;">
+									<div class="form-group">
+											<label for="input" class="col-md-6 control-label">Select Membership Tier:</label>
+											<div class="col-md-6">
+												 <select class="form-control">
+													<option value="" selected="">Brow + Lip Threading Package</option>
+													<option value="">2</option>
+													<option value="">3</option>
+													<option value="">4</option>
+													<option value="">5</option>
+												</select>
+											</div>
+											<div class="clear"></div>
+									</div>
+									</div>
+									<div class="col-md-6">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="inlineFormCheck">
+										<label class="form-check-label" for="inlineFormCheck">
+										 Show  Inactive
+										</label>
+									  </div>
+									</div>
+									<div class="clear"></div>
+								</div>
+								
+								<div class="ms-set-3">
+								<div class="mi-button">Membership Information</div>
+									<div>
+									<div class="col-md-6 col-sm-6">
+										<div class="form-group">
+											<label for="input" class="col-md-4 control-label">Type of item</label>
+											<div class="col-md-8">
+												 <input type="text" class="form-control" id="inputEmail3" placeholder="Brow + Lip Threading Package">
+											</div>
+											<div class="clear"></div>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-3">
+										<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="inlineFormCheck">
+										<label class="form-check-label" for="inlineFormCheck">
+										  Active
+										</label>
+									  </div>
+									</div>
+									<div class="col-md-3 col-sm-3">
+										<a href="#">Pricing options & Membership</a>
+									</div>
+									<div class="clear"></div>
+									</div>
+									
+									<div class="col-md-6 col-sm-6">
+										<div class="form-group">
+											<label for="input" class="col-md-4 control-label">Sort Order / Priority</label>
+											<div class="col-md-8">
+												 <input type="text" class="form-control" id="inputEmail3" placeholder="">
+											</div>
+											<div class="clear"></div>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6"></div>
+									<div class="clear"></div>
+									<div class="ms-set-4">
+									<div class="form-group">
+											<label for="input" class="col-md-2 control-label">Membership Icon</label>
+											<div class="col-md-10 ms-set-5">
+											<ul>
+												<li><span>M</span></li>
+												<li><span>M</span></li>
+												<li><span>M</span></li>
+												<li><span>M</span></li>
+												<li><span>M</span></li>
+												<li><span>M</span></li>
+											</ul>
+											<ul>
+												<li><span>M</span></li>
+												<li><span>M</span></li>
+												<li><span>M</span></li>
+												<li><span>M</span></li>
+												<li><span>M</span></li>
+												<li><span>M</span></li>
+											</ul>
+											</div>
+											<div class="clear"></div>
+										</div>
+								
+								<div class="clear"></div>
+								</div>
+								</div>
+								
+								
+								<div class="ms-set-6">
+								<div class="mi-button">Members Only discount</div>
+								<div class="col-md-12">
+									<div class="form-group">
+											<label for="input" class="col-md-2 control-label">Members discount for retail</label>
+											<div class="col-md-10">
+												 <input type="text" class="form-control" id="inputEmail3" placeholder="0.00%">
+											</div>
+											<div class="clear"></div>
+									</div>
+									<div class="form-group">
+											<label for="input" class="col-md-2 control-label">Members discount for services</label>
+											<div class="col-md-10">
+												 <input type="text" class="form-control" id="inputEmail3" placeholder="0.00%">
+											</div>
+											<div class="clear"></div>
+									</div>
+								</div>
+								<div class="clear"></div>
+								</div>
+								<div class="ms-set-6">
+								<div class="mi-button">Members Scheduling</div>
+								<div class="col-md-12">
+									<div class="form-group">
+											<label for="input" class="col-md-2 control-label">Online booking restricted to our members only</label>
+											<div class="col-md-10">
+												<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+											</div>
+											<div class="clear"></div>
+									</div>
+									<div class="form-group">
+											<label for="input" class="col-md-2 control-label">Day of month scheduling opens for next month</label>
+											<div class="col-md-10">
+												 <select class="form-control">
+													<option value="" selected>Unrestricted </option>
+													<option value="">2</option>
+													<option value="">3</option>
+													<option value="">4</option>
+													<option value="">5</option>
+												</select>
+											</div>
+											<div class="clear"></div>
+									</div>
+								</div>
+								<div class="clear"></div>
+								</div>
+								<div class="ms-set-6">
+								<div class="mi-button">Other members only settings</div>
+								<div class="col-md-12">
+									<div class="form-check">
+									 <label class="form-check-label" for="defaultCheck1">
+										Restrict self sign into members only
+									  </label>
+									  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+									</div>
+									<div class="form-check">
+									 <label class="form-check-label" for="defaultCheck1">
+										Allow  members to book appointment without paying
+									  </label>
+									  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+									</div>
+									<div class="form-check">
+									 <label class="form-check-label" for="defaultCheck1">
+										Allow  members to purchase non-members services
+									  </label>
+									  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+									</div>
+									<div class="form-check">
+									 <label class="form-check-label" for="defaultCheck1">
+										Allow  members to purchase non-members products
+									  </label>
+									  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+									</div>
+									
+								</div>
+								<div class="clear"></div>
+								</div>
+								
+								<div class="ms-set-7">
+									<button type="button" class="btn btn-secondary">Save</button>
+									<button type="button" class="btn btn-secondary">Cancel</button>
+								<div class="clear"></div>
+								</div>
+								
+								<div class="clear"></div>
+							</div>
+						  <!---footer-->
+						<div class="height" style="height:30px;"></div>
+						
+						  </div>
+						   <!--------------Memberships end--------------> 
+						 <div class="tab-pane fade" id="Packages" role="tabpanel" aria-labelledby="Packages">Packages</div>
+						   <!--------------Packages end--------------> 
+						  
+						  
+						  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+						</div>
+
+						</div>
+
+					
+					<div class="clear"></div>
+				</div><!------->
+
+		</div><!--maintab--->
   
-  <div class="modal fade" id="add-membership">
-      <div class="modal-dialog">
-        <div class="customer-info">
-          <h2>Add Membership </h2>
-          <div class="customer-info-form">
-            <form style="margin: 16px;">
-              <div class="form-group row">
-                <label for="example-text-input" class="col-md-3 col-form-label">Membership Name</label>
-                <div class="col-md-8">
-                  <input class="form-control" type="text" name="memName" [(ngModel)]="addMembership.membership_name" value="" id="example-text-input">
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="example-text-input" class="col-md-3 col-form-label">Category Name</label>
-                <div class="col-md-4">
-                    <select name="catagroy" class="form-control" (ngModelChange)="setSub_catagroy($event)" [(ngModel)]="addMembership.cat_id" >
-                        <option *ngFor="let data1 of this.catagroyData" [ngValue]="data1.cat_id">{{data1.category_name}}</option>
-                      </select>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="example-text-input" class="col-md-3 col-form-label">Sub Category:</label>
-                <div class="col-md-4">
-                    <select name="catagroy" class="form-control" (ngModelChange)="setTitleTypeClient($event)" [(ngModel)]="addMembership.sub_cat_id" >
-                        <option *ngFor="let data2 of this.sub_catagroyData" [ngValue]="data2.sub_cat_id">{{data2.sub_category_name}}</option>
-                      </select>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="example-tel-input" class="col-md-3 col-form-label">Membership Price:</label>
-                <div class="col-md-4">
-                  <input class="form-control" type="text" name="memPrice" [(ngModel)]="addMembership.membership_price" >
-                </div>
-              </div>
-              <div class="form-group row">
-                  <label for="example-tel-input" class="col-md-3 col-form-label">Membership Code:</label>
-                  <div class="col-md-4">
-                    <input class="form-control" type="text" name="memCode" [(ngModel)]="addMembership.membership_code" >
-                  </div>
-                </div>
-                <div class="form-group row">
-                    <label for="example-tel-input" class="col-md-3 col-form-label">Membership Discount:</label>
-                    <div class="col-md-4">
-                      <input class="form-control" type="text" name="memCode" [(ngModel)]="addMembership.membership_discount">
-                    </div>
-                  </div>
-              <div class="form-group row">
-                <label for="example-email-input" class="col-md-3 col-form-label">validityin Days</label>
-                <div class="col-md-4">
-                  <input class="form-control" type="text" name="memValidityDate" [(ngModel)]="addMembership.membership_validity_in_days" >
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary" (click)="addMembershipClick()">Submit</button>
-            </form>
-            <div class="clear"></div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-
-
-  <div class="wrap">
-    <div class="floatright">
-      <div style="margin: 36px;">
-        <button style="width: 105px;" (click)="membershipClick()" type="button" class="btn">Memberships</button>
-      </div>
-      <div style="margin: 36px;">
-        <button style="width: 105px;" (click)="packageClick()" type="button" class="btn">Packages</button>
-      </div>
-      <div style="margin: 36px;">
-        <button style="width: 105px;" (click)="productsClick()" type="button" class="btn">Products</button>
-      </div>
-      <div style="margin: 36px;">
-        <button style="width: 105px;" (click)="staffClick()" type="button" class="btn">staff</button>
-      </div>
-    </div>
-    <div class="floatleft ">
-      <div *ngIf="isShowMembership">
-        <div style="margin: 36px;">
-          <button style="width: 200px;" data-toggle="modal" data-target="#add-membership" type="button" class="btn">Add Memberships</button>
-        </div>
-        <div style="margin: 36px;">
-          <button style="width: 200px;" (click)="showActiveMembershipClick()" type="button" class="btn">Show Active Membership</button>
-        </div>
-        <div style="margin: 36px;">
-          <button style="width: 200px;" (click)="showInactiveMembershipClick()" type="button" class="btn">Show Inactive Membership</button>
-        </div>
-      </div>
-      <div *ngIf="isShowPackage"> second div</div>
-    </div>
-  </div>
-  <div style="clear: both;">
-  </div>
   <div class="clear"></div>
-  
+  </div> 
 </body>
 <app-footer></app-footer>
