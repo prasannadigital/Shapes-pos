@@ -35,27 +35,28 @@ export class ScheduleComponent implements OnInit {
     this.service.getEmployee().subscribe(response => {
       this.empData = response.json();
     }); 
+    
   }
   showSuccess() {
     this.messageService.add({key: 'tl',severity:'success', summary: 'Success Message', detail:'Order submitted'});
 }
-gggg1(){
-  let day1 = this.date1.getDate();
-  let month1 = this.date1.getMonth()+1;
-  let year1 =this.date1.getFullYear();
-  let newDate1 = moment(this.date1).format('YYYY-MM-DD').toString();
+getStartDate(){
   
-  console.log(newDate1);
-  this.shedule.startdate=newDate1
+  let day = this.date1.getDate();
+  let month = this.date1.getMonth()+1;
+  let year =this.date1.getFullYear();
+  let newDate = moment(this.date1).format('YYYY-MM-DD').toString();
+  console.log(newDate);
+  this.shedule.startdate  = newDate;
 
 }
-gggg2(){
-  let day2 = this.date2.getDate();
-  let month2 = this.date2.getMonth()+1;
-  let year2 =this.date2.getFullYear();
-  let newDate2 = moment(this.date2).format('YYYY-MM-DD').toString();
-  console.log(newDate2);
-  this.shedule.enddate=newDate2;
+getEndDate(){
+  let day1 = this.date2.getDate();
+  let month1 = this.date2.getMonth()+1;
+  let year1 =this.date2.getFullYear();
+  let newDate1 = moment(this.date2).format('YYYY-MM-DD').toString();
+  console.log(newDate1);
+  this.shedule.enddate=newDate1;
 
 }
 getShedule(){

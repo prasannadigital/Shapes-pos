@@ -9,8 +9,9 @@
     <label for="input" class="col-md-5 control-label">Start Date</label>
       <div class="col-md-7">
         <div class="input-group">
-          <p-calendar name="shedule.startdate" [ngModel]="date1" [showIcon]="true" dateFormat="yy-mm-dd" (ngModelChange)="gggg1($event)"></p-calendar>
+            <p-calendar [(ngModel)]="date1" [(ngModel)]="shedule.startdate" name="shedule.startdate" [showIcon]="true" (ngModelChange)="getStartDate($event)"dateFormat="yy-mm-dd"></p-calendar>
         </div>
+      
       </div>
       <div class="clear"></div>
      </div>
@@ -20,7 +21,7 @@
     <label for="input" class="col-md-5 control-label">End Date</label>
       <div class="col-md-7">
         <div class="input-group">
-          <p-calendar  name="shedule.enddate" [ngModel]="date2"[showIcon]="true" dateFormat="yy-mm-dd" (ngModelChange)="gggg2($event)"></p-calendar>
+            <p-calendar [(ngModel)]="date2" [(ngModel)]="shedule.enddate" name="shedule.enddate" [showIcon]="true" (ngModelChange)="getEndDate($event)"dateFormat="yy-mm-dd"></p-calendar>
         </div>
       </div>
       <div class="clear"></div>
