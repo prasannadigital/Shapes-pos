@@ -16,6 +16,7 @@ export class TimeClocksComponent implements OnInit {
   disable_break_out=true;
   disable_break_in=true;
   disable_time_out=true;
+  titleStyle="hidden";
   
 
   constructor(private service:TimeClokServiceService,private http: HttpClient, private router: Router, private globals: Globals) { }
@@ -124,15 +125,20 @@ export class TimeClocksComponent implements OnInit {
       timeout: 1000
     }];
   }
+  this.titleStyle="visible";
 }
 // time_in=new Date(this.data.check_in_time);
 // first_break_out=new Date(this.data.break_out1)
 // milisecondsDiff = (this.first_break_out - this.time_in);
 // diff=Math.floor(this.milisecondsDiff/(1000*60*60)).toLocaleString(undefined, {minimumIntegerDigits: 2}) + ":" + (Math.floor(this.milisecondsDiff/(1000*60))%60).toLocaleString(undefined, {minimumIntegerDigits: 2})  + ":" + (Math.floor(this.milisecondsDiff/1000)%60).toLocaleString(undefined, {minimumIntegerDigits: 2}) 
+time_in=this.data.check_in_time;
+first_break_out=this.data.break_out1
+
 clockInTime(){
   this.data.check_in_time = Date.now();
  console.log(this.data.check_in_time);
- //console.log(this.time_in);
+ 
+ 
  this.service.saveInandOutTime(this.data).subscribe(response => {
    console.log(response);
    
