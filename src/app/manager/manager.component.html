@@ -17,7 +17,7 @@
 						  
 						   <a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#Packages" role="tab" aria-controls="Packages" aria-selected="false">Packages</a>
 						   
-						   <a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Promotions</a>
+						   <a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#Promotions" role="tab" aria-controls="Promotions" aria-selected="false">Promotions</a>
 						   
 							<a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Gift Cards</a>
 							
@@ -498,200 +498,42 @@
 						   <!--------------Clients end--------------> 
 						   
 						  <div class="tab-pane fade" id="Memberships" role="tabpanel" aria-labelledby="Memberships">
-							<div class="membership-setup1">
-								<div class="ms-set-1-1">
-									<div class="col-md-6 col-sm-6 ms-set-1-left"><h3>Membership Setup</h3></div>
-									<div class="col-md-6 col-sm-6 ms-set-1-left" style="text-align:right;"><button type="button" class="btn btn-outline-dark"><h4 style="margin:0;">+ Add New</h4></button></div>
-									<div class="clear"></div>
-								</div>
-								<div >
-									<div class="col-md-6" style="padding:0;">
-									<div class="form-group">
-											<label for="input" class="col-md-6 control-label">Select Membership Tier:</label>
-											<div class="col-md-6">
-												 <select class="form-control">
-													<option value="" selected="">Brow + Lip Threading Package</option>
-													<option value="">2</option>
-													<option value="">3</option>
-													<option value="">4</option>
-													<option value="">5</option>
-												</select>
-											</div>
-											<div class="clear"></div>
-									</div>
-									</div>
-									<div class="col-md-6">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" id="inlineFormCheck">
-										<label class="form-check-label" for="inlineFormCheck">
-										 Show  Inactive
-										</label>
-									  </div>
-									</div>
-									<div class="clear"></div>
-								</div>
-								
-								<div class="ms-set-3">
-								<div class="mi-button">Membership Information</div>
-									<div>
-									<div class="col-md-6 col-sm-6">
-										<div class="form-group">
-											<label for="input" class="col-md-4 control-label">Type of item</label>
-											<div class="col-md-8">
-												 <input type="text" class="form-control" id="inputEmail3" placeholder="Brow + Lip Threading Package">
-											</div>
-											<div class="clear"></div>
-										</div>
-									</div>
-									<div class="col-md-3 col-sm-3">
-										<div class="form-check">
-										<input class="form-check-input" type="checkbox" id="inlineFormCheck">
-										<label class="form-check-label" for="inlineFormCheck">
-										  Active
-										</label>
-									  </div>
-									</div>
-									<div class="col-md-3 col-sm-3">
-										<a href="#">Pricing options & Membership</a>
-									</div>
-									<div class="clear"></div>
-									</div>
 									
-									<div class="col-md-6 col-sm-6">
-										<div class="form-group">
-											<label for="input" class="col-md-4 control-label">Sort Order / Priority</label>
-											<div class="col-md-8">
-												 <input type="text" class="form-control" id="inputEmail3" placeholder="">
-											</div>
-											<div class="clear"></div>
+								<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+											<h3 ><a href="#"data-toggle="modal" data-target="#add-membership" ><img src="">&nbsp;&nbsp;ADD MEMBERSHIP</a></h3>
 										</div>
-									</div>
-									<div class="col-md-6 col-sm-6"></div>
-									<div class="clear"></div>
-									<div class="ms-set-4">
-									<div class="form-group">
-											<label for="input" class="col-md-2 control-label">Membership Icon</label>
-											<div class="col-md-10 ms-set-5">
-											<ul>
-												<li><span>M</span></li>
-												<li><span>M</span></li>
-												<li><span>M</span></li>
-												<li><span>M</span></li>
-												<li><span>M</span></li>
-												<li><span>M</span></li>
-											</ul>
-											<ul>
-												<li><span>M</span></li>
-												<li><span>M</span></li>
-												<li><span>M</span></li>
-												<li><span>M</span></li>
-												<li><span>M</span></li>
-												<li><span>M</span></li>
-											</ul>
-											</div>
-											<div class="clear"></div>
+										<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+											<h3 ><a [routerLink]="" (click)="showActiveMembershipClick()"><img src="">&nbsp;&nbsp;SHOW ACTIVE MEMBERSHIP</a></h3>
 										</div>
-								
-								<div class="clear"></div>
-								</div>
-								</div>
-								
-								
-								<div class="ms-set-6">
-								<div class="mi-button">Members Only discount</div>
-								<div class="col-md-12">
-									<div class="form-group">
-											<label for="input" class="col-md-2 control-label">Members discount for retail</label>
-											<div class="col-md-10">
-												 <input type="text" class="form-control" id="inputEmail3" placeholder="0.00%">
+										<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+												<h3><a [routerLink]="" (click)="showInactiveMembershipClick()"><img src="">&nbsp;&nbsp;SHOW IN  ACTIVE MEMBERSHIP</a></h3>
 											</div>
-											<div class="clear"></div>
-									</div>
-									<div class="form-group">
-											<label for="input" class="col-md-2 control-label">Members discount for services</label>
-											<div class="col-md-10">
-												 <input type="text" class="form-control" id="inputEmail3" placeholder="0.00%">
-											</div>
-											<div class="clear"></div>
-									</div>
-								</div>
-								<div class="clear"></div>
-								</div>
-								<div class="ms-set-6">
-								<div class="mi-button">Members Scheduling</div>
-								<div class="col-md-12">
-									<div class="form-group">
-											<label for="input" class="col-md-2 control-label">Online booking restricted to our members only</label>
-											<div class="col-md-10">
-												<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-											</div>
-											<div class="clear"></div>
-									</div>
-									<div class="form-group">
-											<label for="input" class="col-md-2 control-label">Day of month scheduling opens for next month</label>
-											<div class="col-md-10">
-												 <select class="form-control">
-													<option value="" selected>Unrestricted </option>
-													<option value="">2</option>
-													<option value="">3</option>
-													<option value="">4</option>
-													<option value="">5</option>
-												</select>
-											</div>
-											<div class="clear"></div>
-									</div>
-								</div>
-								<div class="clear"></div>
-								</div>
-								<div class="ms-set-6">
-								<div class="mi-button">Other members only settings</div>
-								<div class="col-md-12">
-									<div class="form-check">
-									 <label class="form-check-label" for="defaultCheck1">
-										Restrict self sign into members only
-									  </label>
-									  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-									</div>
-									<div class="form-check">
-									 <label class="form-check-label" for="defaultCheck1">
-										Allow  members to book appointment without paying
-									  </label>
-									  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-									</div>
-									<div class="form-check">
-									 <label class="form-check-label" for="defaultCheck1">
-										Allow  members to purchase non-members services
-									  </label>
-									  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-									</div>
-									<div class="form-check">
-									 <label class="form-check-label" for="defaultCheck1">
-										Allow  members to purchase non-members products
-									  </label>
-									  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-									</div>
-									
-								</div>
-								<div class="clear"></div>
-								</div>
-								
-								<div class="ms-set-7">
-									<button type="button" class="btn btn-secondary">Save</button>
-									<button type="button" class="btn btn-secondary">Cancel</button>
-								<div class="clear"></div>
-								</div>
-								
-								<div class="clear"></div>
-							</div>
-						  <!---footer-->
-						<div class="height" style="height:30px;"></div>
-						
 						  </div>
 						   <!--------------Memberships end--------------> 
-						 <div class="tab-pane fade" id="Packages" role="tabpanel" aria-labelledby="Packages">Packages</div>
-						   <!--------------Packages end--------------> 
+						 <div class="tab-pane fade" id="Packages" role="tabpanel" aria-labelledby="Packages">
+							 <div class="packages">
+									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+											<h3><a href="#"><img src="">&nbsp;&nbsp;ADD PACKAGE</a></h3>
+										</div>
+										<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+											<h3><a href="#"><img src="">&nbsp;&nbsp;EDIT PACKAGE</a></h3>
+										</div>
+									</div>
+                 </div>
+							 
+						 <!--------------Packages end--------------> 
+						 <div class="tab-pane fade" id="Promotions" role="tabpanel" aria-labelledby="Promotions">
+								<div class="packages">
+									 <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+											 <h3><a href="#"><img src="">&nbsp;&nbsp;ADD PROMOTIONS</a></h3>
+										 </div>
+										 <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+											 <h3><a href="#"><img src="">&nbsp;&nbsp;EDIT PROMOTIONS</a></h3>
+										 </div>
+									 </div>
+									</div>
 						  
-						  
+						   <!--------------Promotions end--------------> 
 						  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
 						</div>
 
@@ -699,7 +541,69 @@
 
 					
 					<div class="clear"></div>
-				</div><!------->
+					
+				</div>
+				<div class="modal fade" id="add-membership">
+						<div class="modal-dialog">
+							<div class="customer-info">
+								<h2>Add Membership </h2>
+								<div class="customer-info-form">
+									<form style="margin: 16px;">
+										<div class="form-group row">
+											<label for="example-text-input" class="col-md-3 col-form-label">Membership Name</label>
+											<div class="col-md-8">
+												<input class="form-control" type="text" name="memName" [(ngModel)]="addMembership.membership_name" value="" id="example-text-input">
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="example-text-input" class="col-md-3 col-form-label">Category Name</label>
+											<div class="col-md-4">
+													<select name="catagroy" class="form-control" (ngModelChange)="setSub_catagroy($event)" [(ngModel)]="addMembership.cat_id" >
+															<option *ngFor="let data1 of this.catagroyData" [ngValue]="data1.cat_id">{{data1.category_name}}</option>
+														</select>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="example-text-input" class="col-md-3 col-form-label">Sub Category:</label>
+											<div class="col-md-4">
+													<select name="catagroy" class="form-control" (ngModelChange)="setTitleTypeClient($event)" [(ngModel)]="addMembership.sub_cat_id" >
+															<option *ngFor="let data2 of this.sub_catagroyData" [ngValue]="data2.sub_cat_id">{{data2.sub_category_name}}</option>
+														</select>
+											</div>
+										</div>
+										<div class="form-group row">
+											<label for="example-tel-input" class="col-md-3 col-form-label">Membership Price:</label>
+											<div class="col-md-4">
+												<input class="form-control" type="text" name="memPrice" [(ngModel)]="addMembership.membership_price" >
+											</div>
+										</div>
+										<div class="form-group row">
+												<label for="example-tel-input" class="col-md-3 col-form-label">Membership Code:</label>
+												<div class="col-md-4">
+													<input class="form-control" type="text" name="memCode" [(ngModel)]="addMembership.membership_code" >
+												</div>
+											</div>
+											<div class="form-group row">
+													<label for="example-tel-input" class="col-md-3 col-form-label">Membership Discount:</label>
+													<div class="col-md-4">
+														<input class="form-control" type="text" name="memCode" [(ngModel)]="addMembership.membership_discount">
+													</div>
+												</div>
+										<div class="form-group row">
+											<label for="example-email-input" class="col-md-3 col-form-label">validityin Days</label>
+											<div class="col-md-4">
+												<input class="form-control" type="text" name="memValidityDate" [(ngModel)]="addMembership.membership_validity_in_days" >
+											</div>
+										</div>
+										<button type="submit" class="btn btn-primary" (click)="addMembershipClick()">Submit</button>
+									</form>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!------->
+				
 
 		</div><!--maintab--->
   
