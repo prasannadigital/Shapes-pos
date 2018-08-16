@@ -192,6 +192,36 @@ export class ManagerComponent implements OnInit {
     this.router.navigate(['inactive-membership'])
 
   }
+  staffClockInandOut(){
+    this.router.navigate(['staff-clock-in/out'])
+  }
+  VieworEditTimeClock(){
+    this.router.navigate(['staff-view/edit-timeclock'])
+  }
+  StaffPermissions(){
+    this.router.navigate(['staff-permissions'])
+  }
+  ScheduleView(){
+    this.router.navigate(['staff-schedule-view'])
+  }
+  StaffMembers(){
+    this.router.navigate(['staff-members'])
+  }
+  ScheduleAddorEdit(){
+    this.router.navigate(['staff-schedule-add/edit'])
+  }
+  AddPackagesClick(){
+    this.router.navigate(['add-packages'])
+  }
+  EditPackagesClick(){
+    this.router.navigate(['edit-packages'])
+  }
+  AddPromotionsClick(){
+    this.router.navigate(['add-promotions'])
+  }
+  EditPromotionsClick(){
+    this.router.navigate(['add-promotions'])
+  }
   setSub_catagroy(cat_id: any): void {
     this.addMembership.cat_id= cat_id;
     this.service.getSub_CategoryList(this.addMembership.cat_id).subscribe(response => {

@@ -41,22 +41,22 @@
 								<div class="staff-section">
 									
 									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-										<h3><a href="#"><img src="assets/images/clockinandout.jpg">&nbsp;&nbsp; CLOCK IN/OUT</a></h3>
+										<h3><a href="#" [routerLink]=""(click)="staffClockInandOut()"><img src="assets/images/clockinandout.jpg">&nbsp;&nbsp; CLOCK IN/OUT</a></h3>
 									</div>
 									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-										<h3><a href="#"><img src="assets/images/viewedit.jpg">&nbsp;&nbsp; View / Edit Time Clock</a></h3>
+										<h3><a href="#" [routerLink]=""(click)="VieworEditTimeClock()"><img src="assets/images/viewedit.jpg">&nbsp;&nbsp; View / Edit Time Clock</a></h3>
 									</div>
 									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-										<h3><a href="#"><img src="assets/images/permissions.jpg">&nbsp;&nbsp; Staff Permissions</a></h3>
+										<h3><a href="#" [routerLink]=""(click)="StaffPermissions()"><img src="assets/images/permissions.jpg">&nbsp;&nbsp; Staff Permissions</a></h3>
 									</div>
 									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-										<h3><a href="#"><img src="assets/images/schuled.jpg">&nbsp;&nbsp; Schedule View</a></h3>
+										<h3><a href="#" [routerLink]=""(click)="ScheduleView()"><img src="assets/images/schuled.jpg">&nbsp;&nbsp; Schedule View</a></h3>
 									</div>
 									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-										<h3><a href="#"><img src="assets/images/staff.jpg">&nbsp;&nbsp; Staff Members</a></h3>
+										<h3><a href="#" [routerLink]=""(click)="StaffMembers()"><img src="assets/images/staff.jpg">&nbsp;&nbsp; Staff Members</a></h3>
 									</div>
 									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-										<h3><a href="#"><img src="assets/images/schuled.jpg">&nbsp;&nbsp; schedule  Add / Edit</a></h3>
+										<h3><a href="#" [routerLink]=""(click)="ScheduleAddorEdit()"><img src="assets/images/schuled.jpg">&nbsp;&nbsp; schedule  Add / Edit</a></h3>
 									</div>
 									<div class="clear"> </div>
 								</div>
@@ -513,10 +513,10 @@
 						 <div class="tab-pane fade" id="Packages" role="tabpanel" aria-labelledby="Packages">
 							 <div class="packages">
 									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-											<h3><a href="#"><img src="">&nbsp;&nbsp;ADD PACKAGE</a></h3>
+											<h3><a href="#" [routerLink]="" (click)="AddPackagesClick()"><img src="">&nbsp;&nbsp;ADD PACKAGE</a></h3>
 										</div>
 										<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-											<h3><a href="#"><img src="">&nbsp;&nbsp;EDIT PACKAGE</a></h3>
+											<h3><a href="#" [routerLink]="" (click)="EditPackagesClick()"><img src="">&nbsp;&nbsp;EDIT PACKAGE</a></h3>
 										</div>
 									</div>
                  </div>
@@ -525,10 +525,10 @@
 						 <div class="tab-pane fade" id="Promotions" role="tabpanel" aria-labelledby="Promotions">
 								<div class="packages">
 									 <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-											 <h3><a href="#"><img src="">&nbsp;&nbsp;ADD PROMOTIONS</a></h3>
+											 <h3><a href="#" [routerLink]=""(click)="AddPromotionsClick()"><img src="">&nbsp;&nbsp;ADD PROMOTIONS</a></h3>
 										 </div>
 										 <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-											 <h3><a href="#"><img src="">&nbsp;&nbsp;EDIT PROMOTIONS</a></h3>
+											 <h3><a href="#" [routerLink]=""(click)="EditPromotionsClick()"><img src="">&nbsp;&nbsp;EDIT PROMOTIONS</a></h3>
 										 </div>
 									 </div>
 									</div>

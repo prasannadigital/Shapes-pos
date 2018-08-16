@@ -40,6 +40,16 @@ import { SetupComponent } from './setup/setup.component';
 import { InactiveMembershipComponent } from './manager-tool/inactive-membership/inactive-membership.component';
 import {CalendarModule} from 'primeng/calendar';
 import * as moment from 'moment/moment';
+import { StaffClockInOutComponent } from './manager-tool/staff-clock-in-out/staff-clock-in-out.component';
+import { StaffVieworeditTimeclockComponent } from './manager-tool/staff-vieworedit-timeclock/staff-vieworedit-timeclock.component';
+import { StaffPermissionsComponent } from './manager-tool/staff-permissions/staff-permissions.component';
+import { StaffScheduleViewComponent } from './manager-tool/staff-schedule-view/staff-schedule-view.component';
+import { StaffMembersComponent } from './manager-tool/staff-members/staff-members.component';
+import { StaffScheduleAddComponent } from './manager-tool/staff-schedule-add/staff-schedule-add.component';
+import { AddPackagesComponent } from './manager-tool/add-packages/add-packages.component';
+import { EditPackagesComponent } from './manager-tool/edit-packages/edit-packages.component';
+import { AddPromotionsComponent } from './manager-tool/add-promotions/add-promotions.component';
+import { EditPromotionsComponent } from './manager-tool/edit-promotions/edit-promotions.component';
 
 
 const routes: Routes = [
@@ -53,6 +63,18 @@ const routes: Routes = [
   { path: 'management', component: ManagerComponent, canActivate: [AuthGuard] },
   { path: 'inactive-membership', component: InactiveMembershipComponent, canActivate: [AuthGuard] },
   { path: 'management-membership', component: MembershipComponent, canActivate: [AuthGuard] },
+  { path: 'staff-clock-in/out', component: StaffClockInOutComponent, canActivate: [AuthGuard] },
+  { path: 'staff-view/edit-timeclock', component: StaffVieworeditTimeclockComponent, canActivate: [AuthGuard] },
+  { path: 'staff-permissions', component: StaffPermissionsComponent, canActivate: [AuthGuard] },
+  { path: 'staff-schedule-view', component: StaffScheduleViewComponent, canActivate: [AuthGuard] },
+  { path: 'staff-members', component: StaffMembersComponent, canActivate: [AuthGuard] },
+  { path: 'staff-schedule-add/edit', component: StaffScheduleAddComponent , canActivate: [AuthGuard] },
+  { path: 'add-packages', component: AddPackagesComponent, canActivate: [AuthGuard] },
+  { path: 'edit-packages', component: EditPackagesComponent , canActivate: [AuthGuard] },
+  { path: 'add-promotions', component: AddPromotionsComponent , canActivate: [AuthGuard] },
+  { path: 'edit-promotions', component: EditPromotionsComponent , canActivate: [AuthGuard] },
+
+
   { path:'schedule',component:ScheduleComponent, canActivate: [AuthGuard] },
   { path:'appointments',component:AppointmentsComponent,canActivate: [AuthGuard]},
   { path:'time-clocks',component:TimeClocksComponent,canActivate: [AuthGuard]},
@@ -80,7 +102,27 @@ const routes: Routes = [
     ReportsComponent,
     InventoryComponent,
     SetupComponent,
-    InactiveMembershipComponent    
+    InactiveMembershipComponent,
+  
+    StaffClockInOutComponent,
+  
+    StaffVieworeditTimeclockComponent,
+  
+    StaffPermissionsComponent,
+  
+    StaffScheduleViewComponent,
+  
+    StaffMembersComponent,
+  
+    StaffScheduleAddComponent,
+  
+    AddPackagesComponent,
+  
+    EditPackagesComponent,
+  
+    AddPromotionsComponent,
+  
+    EditPromotionsComponent    
   ],
   imports: [
     BrowserModule,
