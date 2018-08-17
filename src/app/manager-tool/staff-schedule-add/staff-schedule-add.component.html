@@ -1,14 +1,128 @@
 <div class="tabs-services">
     <app-header></app-header>
-  </div>
-<p>
-  staff-schedule-add works!
-</p>
+	
+  <div class="staff-edit padding-20">
+
 <div class="row">
-    <div class="col-sm-4"></div>
     <div class="col-sm-6"></div>
-    <div class="col-sm-2"><button type="button" class="btn backBtn" (click)="backToMembership();">Back</button></div>
+    <div class="col-sm-6"><button type="button" class="btn backBtn pull-right" (click)="backToMembership();">Back</button></div>
   </div>
 
+		<div class="col-md-6"><h3 class="margin0" style="font-weight:600;">Edit Schedule </h3></div>
+		<div class="col-md-6"><button type="button" class="btn btn-outline-success pull-right"><h4 class="margin0"><i class="fas fa-plus-circle"></i> &nbsp; Add New schedule</h4></button></div>
+		<div class="clear"></div>
+		
+		<div class="staff-table">
+			<h4 class="margin0">Vimal Patel</h4>
+			
+			<table width="100%">
+				<tr>
+					<th width="10%">Day of Week</th>
+					<th width="10%">Location</th>
+					<th width="10%">Appointment Start Time</th>
+					<th width="10%">Appointment End Time</th>
+					<th width="10%">Service Categories</th>
+					<th width="10%">Date Range</th>
+				</tr>
+				<tr>
+					<td>Sunday</td>
+					<td class="edit-schedule-d"><div class="col-md-3" style="position: relative;
+    top: 6px;"><i class="fas fa-trash"></i> &nbsp;</div>
+					<select class="form-contro col-md-9" id="exampleFormControlSelect2">
+									<option selected> SBB - Culver City </option>
+									<option> SBB - Culver City Kiosk </option>
+									<option> SBB - Century Mail </option>
+									<option> SBB - Panoprama Mail </option>
+									<option> SBBCA - Northridge (Kiosk) </option>
+									<option> SBBCA - Northridge (inline) </option>
+									<option> SBBCA - BUrbank Mall </option>
+									<option> SBBCA - Fashion Square (inline) </option>
+									<option> SBBCA - Fashion Square (Kiosk)</option>
+								</select></td>
+					<td class="edit-schedule-d"><select class="form-control" id="exampleFormControlSelect2">
+									<option selected="">12 PM</option>
+									<option >1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+								</select></td>
+					<td class="edit-schedule-d"><select class="form-control" id="exampleFormControlSelect2">
+									<option selected="">06 PM</option>
+									<option >1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+								</select></td>
+					<td class="edit-schedule-d">
+					<select  class="form-control" id="exampleFormControlSelect2">
+					<option selected> Free Makeup Service </option>
+					<option>Free Mini Make Over </option>
+					<option> Learn TO Glam Session </option>
+					<option> Makeup Services </option>
+					</select>
+					</td>
+					<td class="edit-schedule-d">
+					<input type="date" name="" value="" class="col-md-6 form-contro"> <input type="date" name="" value="" class="col-md-6 form-contro">
+					</td>
+				</tr>
+				<tr>
+					<td>Monday</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Tuesday</td>
+					<td>SBBCA - F...</td>
+					<td>4 PM</td>
+					<td>9:15 PM </td>
+					<td>1 Service</td>
+					<td>07/10/2017 to 07/15/2018</td>
+				</tr>
+				<tr>
+					<td>Wednesday</td>
+					<td>SBBCA - F...</td>
+					<td>12 PM</td>
+					<td>8 PM </td>
+					<td>1 Service</td>
+					<td>06/19/2017 to 07/15/2018</td>
+				</tr>
+				<tr>
+					<td>Thursday</td>
+					<td>SBBCA - F...</td>
+					<td>12 PM</td>
+					<td>8 PM </td>
+					<td>1 Service</td>
+					<td>07/10/2017 to 07/15/2018</td>
+				</tr>
+				<tr>
+					<td>Friday</td>
+					<td>SBBCA - F...</td>
+					<td>12 PM</td>
+					<td>8 PM </td>
+					<td>1 Service</td>
+					<td>07/10/2017 to 07/15/2018</td>
+				</tr>
+				<tr>
+					<td>Monday</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<br>
+			<button type="button" class="btn btn-dark pull-right"><h3 class="margin0">Done</h3></button>
+		<div class="clear"></div>
+		</div>
+	</div>
+	
+	
+	  </div><!--main div-->
+  
+  
 <app-footer></app-footer>
 
