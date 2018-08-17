@@ -68,7 +68,7 @@ export class TimeClocksComponent implements OnInit {
             setInterval(() => {
                 this.getTimeAndDate(); 
                 }, 1000);
-              
+                   
   }
  getTimeAndDate(){
   this.today = Date.now();
@@ -137,10 +137,11 @@ first_break_out=this.data.break_out1
 clockInTime(){
   this.data.check_in_time = Date.now();
  console.log(this.data.check_in_time);
- 
- 
+
  this.service.saveInandOutTime(this.data).subscribe(response => {
    console.log(response);
+   this.data.time_clock_id=response.json().time_clock_id;
+  
    
  });
  this.disable_time_in=true;
