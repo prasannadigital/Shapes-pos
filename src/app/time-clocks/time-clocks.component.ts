@@ -5,7 +5,7 @@ import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
 import { Globals } from '../global/global-urls';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 declare var $: any;
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 
 
@@ -30,7 +30,7 @@ export class TimeClocksComponent implements OnInit {
   finalHours;
 
 
-  constructor(private service: TimeClokServiceService,private _location: Location, private http: HttpClient, private router: Router, private globals: Globals) { }
+  constructor(private service: TimeClokServiceService, private _location: Location, private http: HttpClient, private router: Router, private globals: Globals) { }
   emp_id = '';
   check_in_time = null;
   check_out_time = null;
@@ -90,7 +90,7 @@ export class TimeClocksComponent implements OnInit {
 
 
   }
-  backLocation(){
+  backLocation() {
     this._location.back();
 
   }
@@ -158,7 +158,7 @@ export class TimeClocksComponent implements OnInit {
     });
     this.disable_time_in = true;
     this.disable_break_out = false;
-    this.disable_time_out=false;
+    this.disable_time_out = false;
     this.buttonColorTimeIn = '#345465';
     this.buttonColorTimeOut = '#e4e9ef';
     this.buttonColorBreakIn = '#345465';
@@ -173,81 +173,70 @@ export class TimeClocksComponent implements OnInit {
     });
     this.disable_break_out = true;
     this.disable_break_in = true;
-    
+
     this.buttonColorTimeIn = '#345465';
     this.buttonColorTimeOut = '#345465';
     this.buttonColorBreakIn = '#345465';
     this.buttonColorBreakOut = '#345465';
 
+
+    let BreakOut1 = this.getFormattedDate(this.data.break_out1);
+    let BreakIn1 = this.getFormattedDate(this.data.break_in1);
+    var dt1 = new Date(BreakOut1);
+    var dt2 = new Date(BreakIn1);
+    let difference1 = dt2.getTime() - dt1.getTime();
+    let resultInMinutes1 = Math.round(difference1 / 60000);
     
-      let BreakOut1 = this.getFormattedDate(this.data.break_out1);
-      let BreakIn1 = this.getFormattedDate(this.data.break_in1);
-      var dt1 = new Date(BreakOut1);
-      var dt2 = new Date(BreakIn1);
-      let difference1 = dt2.getTime() - dt1.getTime();
-      let resultInMinutes1 = Math.round(difference1 / 60000);
-     console.log(resultInMinutes1)
 
-     let BreakOut2=this.getFormattedDate(this.data.break_out2);
-     let BreakIn2=this.getFormattedDate(this.data.break_in2);
-     var dt3=new Date(BreakOut2);
-     var dt4=new Date(BreakIn2);
-     let difference2 = dt4.getTime() - dt3.getTime();
-     let resultInMinutes2 = Math.round(difference2 / 60000);
-     console.log(resultInMinutes2)
-
-     let BreakOut3=this.getFormattedDate(this.data.break_out3);
-     let BreakIn3=this.getFormattedDate(this.data.break_in3);
-     var dt5=new Date(BreakOut3);
-     var dt6=new Date(BreakIn3);
-     let difference3 = dt6.getTime() - dt5.getTime();
-     let resultInMinutes3 = Math.round(difference3 / 60000);
-     console.log(resultInMinutes3)
-
-     let BreakOut4=this.getFormattedDate(this.data.break_out4);
-     let BreakIn4=this.getFormattedDate(this.data.break_in4);
-     var dt7=new Date(BreakOut4);
-     var dt8=new Date(BreakIn4);
-     let difference4 = dt8.getTime() - dt7.getTime();
-     let resultInMinutes4 = Math.round(difference4 / 60000);
-     console.log(resultInMinutes4)
-     
-     var timeDiffTotal = resultInMinutes1 + resultInMinutes2 + resultInMinutes3 + resultInMinutes4;
-     console.log(timeDiffTotal)
-
-     let TimeIn=this.getFormattedDate(this.data.check_in_time);
-     let TimeOut=this.getFormattedDate(this.data.check_out_time);
-     var dt0=new Date(TimeIn);
-     var dt9=new Date(TimeOut);
-     let totaldiff = dt9.getTime() - dt0.getTime();
-     let resultInMinutes = Math.round(totaldiff / 60000);
-     console.log(resultInMinutes)
-
-     var finaltotal=resultInMinutes-timeDiffTotal;
-     console.log(finaltotal);
+    let BreakOut2 = this.getFormattedDate(this.data.break_out2);
+    let BreakIn2 = this.getFormattedDate(this.data.break_in2);
+    var dt3 = new Date(BreakOut2);
+    var dt4 = new Date(BreakIn2);
+    let difference2 = dt4.getTime() - dt3.getTime();
+    let resultInMinutes2 = Math.round(difference2 / 60000);
     
-     this.totalHours=Math.round(finaltotal/60);
-     this.totalMin=(60*this.totalHours)-finaltotal
-    console.log(this.totalHours)
-     console.log(this.totalMin);
 
-     this.finalHours=this.totalHours +":"+this.totalMin;
-     
+    let BreakOut3 = this.getFormattedDate(this.data.break_out3);
+    let BreakIn3 = this.getFormattedDate(this.data.break_in3);
+    var dt5 = new Date(BreakOut3);
+    var dt6 = new Date(BreakIn3);
+    let difference3 = dt6.getTime() - dt5.getTime();
+    let resultInMinutes3 = Math.round(difference3 / 60000);
+   
 
-
-    
+    let BreakOut4 = this.getFormattedDate(this.data.break_out4);
+    let BreakIn4 = this.getFormattedDate(this.data.break_in4);
+    var dt7 = new Date(BreakOut4);
+    var dt8 = new Date(BreakIn4);
+    let difference4 = dt8.getTime() - dt7.getTime();
+    let resultInMinutes4 = Math.round(difference4 / 60000);
+    var timeDiffTotal = resultInMinutes1 + resultInMinutes2 + resultInMinutes3 + resultInMinutes4;
+     let TimeIn = this.getFormattedDate(this.data.check_in_time);
+    let TimeOut = this.getFormattedDate(this.data.check_out_time);
+    var dt0 = new Date(TimeIn);
+    var dt9 = new Date(TimeOut);
+    let totaldiff = dt9.getTime() - dt0.getTime();
+    let resultInMinutes = Math.round(totaldiff / 60000);
+    var finaltotal = resultInMinutes - timeDiffTotal;
+    console.log(finaltotal);
+    this.totalHours = Math.round(finaltotal / 60);
+    console.log(this.totalHours == 0)
+    if (this.totalHours == 0) {
+      this.totalMin = finaltotal - (60 * this.totalHours);
+    } else {
+      this.totalMin = (60 * this.totalHours) - finaltotal;
+    }
+    this.finalHours = this.totalHours + ":" + this.totalMin;
   }
 
-   getFormattedDate(_date) {
+  getFormattedDate(_date) {
     var date = new Date(_date);
     var str = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-    
+
     return str;
-    }
+  }
 
   breakOutTime() {
-
-  
 
     if (this.data.break_out1 === null) {
       this.data.break_out1 = Date.now();
@@ -261,10 +250,10 @@ export class TimeClocksComponent implements OnInit {
       this.disable_break_in = false;
       this.buttonColorBreakIn = '#e4e9ef';
       this.buttonColorBreakOut = '#345465';
-          return true;
+      return true;
 
       //alert("hfjhdsjfh");
- }
+    }
     if (this.data.break_out2 === null) {
       this.data.break_out2 = Date.now();
       this.service.saveInandOutTime(this.data).subscribe(response => {
@@ -301,7 +290,7 @@ export class TimeClocksComponent implements OnInit {
       return true;
       //alert("hfjhdsjfh");
     }
-   
+
   }
   breakInTime() {
     console.log(this.break_out1);
