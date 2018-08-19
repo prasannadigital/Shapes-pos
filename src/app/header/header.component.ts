@@ -35,7 +35,27 @@ export class HeaderComponent implements OnInit {
   redirectToDashbaord(){
     this.router.navigate(['dashboard']);
   }
-  
+  redirectToAppointment(){
+    this.router.navigate(['appointments'])
+  }
+  redirectToTimeClocks(){
+    this.router.navigate(['time-clocks'])
+  }
+  redirectToSchedule(){
+    this.router.navigate(['schedule'])
+  }
+  redirectToReport(){
+    this.router.navigate(['reports'])
+  }
+  redirectToManager(){
+    this.router.navigate(['management'])
+  }
+  redirectToInventory(){
+    this.router.navigate(['inventory'])
+  }
+  redirectToSetup(){
+    this.router.navigate(['setup'])
+  }
   
   
   newTicket(){
