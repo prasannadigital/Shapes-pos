@@ -94,6 +94,9 @@ export class TimeClocksComponent implements OnInit {
     this._location.back();
 
   }
+  RedirectToHome(){
+    this.router.navigate(['dashboard']);
+  }
   loginSubmite() {
     var data = {
       password: this.password,

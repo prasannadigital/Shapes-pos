@@ -11,6 +11,9 @@ export class MembershipServiceService {
   getMembership(){
     return this.http.get(environment.host+'memberships');
   }
+  editMembership(data:any){
+    return this.http.post(environment.host+'memberships',data);
+  }
   getCategoryList(){
     return this.http.get(environment.host+'categorys');
   }
