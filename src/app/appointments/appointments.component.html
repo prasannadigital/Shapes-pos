@@ -2,8 +2,21 @@
   <app-header></app-header>
 </div>
 
+<pre [ngClass]="{'highlight' : this.tempClass[0]}" (click)="setColor(0)">1:15PM---------------------------------------------------------------------</pre>
 
-<p>
-  appointments works!
-</p>
+<pre [ngClass]="{'highlight' : this.tempClass[1]}" (click)="setColor(1)">1:30PM  ====================================================================</pre>
+
+<pre [ngClass]="{'highlight' : this.tempClass[2]}" (click)="setColor(2)">1:45PM ---------------------------------------------------------------------</pre>
+
+<pre [ngClass]="{'highlight' : this.tempClass[3]}" (click)="setColor(3)">2:00PM ====================================================================</pre>
+
+<pre [ngClass]="{'highlight' : this.tempClass[4]}" (click)="setColor(4)">2:15PM ---------------------------------------------------------------------</pre>
+
+<pre [ngClass]="{'highlight' : this.tempClass[5]}" (click)="setColor(5)">2:30PM ====================================================================</pre>
+
+<pre [ngClass]="{'highlight' : this.tempClass[6]}" (click)="setColor(6)">2:45PM ---------------------------------------------------------------------</pre>
+
+<pre [ngClass]="{'highlight' : this.tempClass[7]}" (click)="setColor(7)">3:00PM ====================================================================</pre>
+
+
 <app-footer></app-footer>
