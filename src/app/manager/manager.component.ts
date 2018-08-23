@@ -222,7 +222,32 @@ export class ManagerComponent implements OnInit {
   EditPromotionsClick(){
     this.router.navigate(['add-promotions'])
   }
-  setSub_catagroy(cat_id: any): void {
+  newsAndEventsClick()
+{
+  this.router.navigate(['news-and-events'])
+}  
+autoEmailClick(){
+  this.router.navigate(['auto-emails'])
+}
+membershipSetupClick(){
+  this.router.navigate(['membership-setup'])
+}
+cancelClick(){
+  this.router.navigate(['cancel-group-lesson'])
+}
+newGiftClick(){
+  this.router.navigate(['add-new-gift-card'])
+}
+editGiftClick(){
+  this.router.navigate(['edit-gift-card'])
+}
+viewGiftClick(){
+  this.router.navigate(['view-active-gift-card'])
+}
+onlineGiftClick(){
+  this.router.navigate(['online-gift-card'])
+}
+setSub_catagroy(cat_id: any): void {
     this.addMembership.cat_id= cat_id;
     this.service.getSub_CategoryList(this.addMembership.cat_id).subscribe(response => {
       this.sub_catagroyData = response.json();

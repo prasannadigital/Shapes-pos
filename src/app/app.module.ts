@@ -50,6 +50,14 @@ import { AddPackagesComponent } from './manager-tool/add-packages/add-packages.c
 import { EditPackagesComponent } from './manager-tool/edit-packages/edit-packages.component';
 import { AddPromotionsComponent } from './manager-tool/add-promotions/add-promotions.component';
 import { EditPromotionsComponent } from './manager-tool/edit-promotions/edit-promotions.component';
+import { NewsEventsComponent } from './manager-tool/news-events/news-events.component';
+import { AutoEmailsComponent } from './manager-tool/auto-emails/auto-emails.component';
+import { MembershipSetupComponent } from './manager-tool/membership-setup/membership-setup.component';
+import { CancelGroupLessonComponent } from './manager-tool/cancel-group-lesson/cancel-group-lesson.component';
+import { AddGiftCardComponent } from './manager-tool/add-gift-card/add-gift-card.component';
+import { EditGiftCardComponent } from './manager-tool/edit-gift-card/edit-gift-card.component';
+import { ViewActiveGiftCardComponent } from './manager-tool/view-active-gift-card/view-active-gift-card.component';
+import { OnlineGiftCardsComponent } from './manager-tool/online-gift-cards/online-gift-cards.component';
 
 
 const routes: Routes = [
@@ -73,8 +81,15 @@ const routes: Routes = [
   { path: 'edit-packages', component: EditPackagesComponent , canActivate: [AuthGuard] },
   { path: 'add-promotions', component: AddPromotionsComponent , canActivate: [AuthGuard] },
   { path: 'edit-promotions', component: EditPromotionsComponent , canActivate: [AuthGuard] },
-
-
+  { path: 'news-and-events', component: NewsEventsComponent , canActivate: [AuthGuard] },
+  { path: 'auto-emails', component: AutoEmailsComponent , canActivate: [AuthGuard] },
+  { path: 'membership-setup', component: MembershipSetupComponent , canActivate: [AuthGuard] },
+  { path: 'cancel-group-lesson', component: CancelGroupLessonComponent , canActivate: [AuthGuard] },
+  { path: 'add-new-gift-card', component: AddGiftCardComponent , canActivate: [AuthGuard] },
+  { path:'edit-gift-card',component:EditGiftCardComponent, canActivate: [AuthGuard] },
+  { path:'view-active-gift-card',component:ViewActiveGiftCardComponent, canActivate: [AuthGuard] },
+  { path:'online-gift-card',component:OnlineGiftCardsComponent, canActivate: [AuthGuard] },
+  
   { path:'schedule',component:ScheduleComponent, canActivate: [AuthGuard] },
   { path:'appointments',component:AppointmentsComponent,canActivate: [AuthGuard]},
   { path:'time-clocks',component:TimeClocksComponent,canActivate: [AuthGuard]},
@@ -122,7 +137,23 @@ const routes: Routes = [
   
     AddPromotionsComponent,
   
-    EditPromotionsComponent    
+    EditPromotionsComponent,
+  
+    NewsEventsComponent,
+  
+    AutoEmailsComponent,
+  
+    MembershipSetupComponent,
+  
+    CancelGroupLessonComponent,
+  
+    AddGiftCardComponent,
+  
+    EditGiftCardComponent,
+  
+    ViewActiveGiftCardComponent,
+  
+    OnlineGiftCardsComponent    
   ],
   imports: [
     BrowserModule,
