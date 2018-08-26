@@ -34,9 +34,7 @@
     font-size: 20px;
     text-transform: uppercase;
 }
-.packages{
-  margin-top: 50px;
-}
+
 .promation-1 .btn-outline-success {
     color: #28a745;
     background-color: transparent;
@@ -57,3 +55,321 @@
     text-decoration: none;
     display: block;
 }
+.staff-edit {
+    padding: 10px;
+}
+.staff-table {
+    border: 1px solid #ccc;
+    padding: 10px;
+	margin-top:20px;
+}
+.staff-table h4 {
+    background: #ccc;
+    padding: 7px 13px;
+    margin: -10px -10px 15px -10px;
+}
+.edit-schedule-d {
+    background: #ccc;
+}
+.edit-schedule-d i {
+    color: #000;
+}
+.form-contro {
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.edit-clock {
+    padding: 10px;
+}
+.edit-clock .btn-primary {
+	 padding: 9px 12px;
+} 
+.btn-outline-dark1 {
+    font-size: 18px;
+    padding: 6px 20px;
+    border: 1px solid #ccc;
+    background: #f1f1f1;
+}  
+.margin-bottom {
+    margin-bottom: 30px;
+}
+.staff-a-h {
+    background: #f1f1f1;
+    border: 2px solid #ccc;
+    padding: 10px 5px;
+}
+.staff-add {
+    padding: 10px;
+    margin-bottom: 10px;
+	float:right;
+}
+.active-staff {
+    padding: 20px;
+}
+.inactive-staff a {
+    font-weight: 600px;
+    font-size: 20px;
+}
+.inactive-staff {
+	padding:20px;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #01a100;
+}
+.modal-header h3 {
+    color: #fff;
+}
+.modal-body {
+    position: relative;
+    padding: 20px;
+}
+.staff-pl-1 {
+    text-align: center;
+}
+.staff-pl-1 img {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    width: 150px;
+}
+.input-group {
+    position: relative;
+    display: block !important;
+    border-collapse: separate;
+}
+.input-group-text i {
+    font-size: 24px;
+}
+.input-group.mb-2.mr-sm-2 {
+    margin-bottom: 12px;
+}
+.staff-profle-r {
+    border-left: 1px solid #ccc;
+}
+.staff-profle {
+    padding: 30px;
+}
+.profile-heading {
+    padding-bottom: 20px;
+}
+.staff-profle .input-group-text {
+    right: 1px !important;
+}
+span.input-group-btn {
+    position: absolute;
+    right: 35px;
+}
+.view_edit-1 .btn {
+    display: inline-block;
+    padding: 9px 12px;
+}
+.view_edit-1 h3 {
+    margin-top: 0;
+    font-weight: 600;
+}
+.view_edit-2 {
+    padding: 20px 0;
+}
+.view_edit {
+    padding: 20px;
+}
+.staff-members-4 {
+    background: #ccc;
+    padding-top: 13px;
+}
+.staff-members-4 {
+    margin-bottom: 30px;
+}
+.staff-members-3 {
+    border: 1px solid #ccc;
+}
+.staff-members-3 {
+    padding: 0 0 40px 0px;
+}
+
+/******************autopaly*************/
+.contract-autopay-1 {
+    border-bottom: 2px solid #f89462;
+    padding: 5px 20px;
+}
+.contract-autopay-2 {
+    padding: 15px 0 15px;
+}
+.ca-r-1 h4 {
+    background: #f1f1f1;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+}
+.ca-r-1 {
+    border: 1px solid #f1f1f1;
+}
+.btn-light {
+    margin-left: 6px;
+}
+.ca-r-1 {
+    border: 1px solid #f1f1f1;
+    padding-bottom: 8px;
+}
+.ca-r-1 p {
+    padding: 10px;
+}
+.ca-r-1 {
+    border: 1px solid #f1f1f1;
+    padding-bottom: 8px;
+    box-shadow: 0 0 1px #bdbdbd;
+}
+#accordion-style-1 h1,
+#accordion-style-1 a{
+    color:#007b5e;
+}
+#accordion-style-1 .btn-link {
+    font-weight: 400;
+    color: #000;
+    background-color: transparent;
+    text-decoration: none !important;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+}
+
+#accordion-style-1 .card-body {
+    border-top: 2px solid #007b5e;
+}
+
+#accordion-style-1 .card-header .btn.collapsed .fa.main{
+	display:none;
+}
+
+#accordion-style-1 .card-header .btn .fa.main{
+	background: #007b5e;
+    padding: 13px 11px;
+    color: #ffffff;
+    width: 35px;
+    height: 41px;
+    position: absolute;
+    left: -1px;
+    top: 10px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+	display:block;
+}
+.card-header {
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.contract-autopay-3 .btn{
+	text-align:left !important
+}
+h5.mb-0 {
+    margin: 0;
+}
+.card-body {
+    padding: 20px;
+}
+.contract-autopay-3 .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+    outline: none;
+    outline-offset: -2px;
+}
+.js-show-help {
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.t-button {
+    border: 1px solid #ccc;
+    display: block;
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 16px;
+    background: #e4e9ef;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+	cursor: pointer;
+}
+.contract-autopay-3 .modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #5e9eca;
+}
+.contract-autopay-3 .input-group-text {
+    right: 0;
+}
+
+#boom1, #boom2{cursor:pointer;}
+#booming1, #booming2{display:none;}
+.popup-search {
+    padding-bottom: 5px;
+    /* border-bottom: 1px solid #ccc; */
+    margin-bottom: 13px;
+}
+#add-new-item .form-check {
+    text-align: left;
+}
+.Contract-Options .form-check {
+    text-align: left;
+}
+.fa-info-circle {
+    color: #f65d01;
+}
+.modal-content {
+    border: none;
+    background: #fff;
+}
+.input-group-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: inline-block;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 4px 16px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    position: absolute;
+    top: -1px;
+    z-index: 9;
+}
+.contract-autopay-3 .input-group-text {
+    right: 0;
+}
+.popu-content-1 table {
+    margin-bottom: 20px;
+}
+.dropdown-menu li {
+    padding: 5px;
+}
+.form-check {
+    text-align: left;
+}
+.promation-2 .form-group {
+    margin-bottom: 15px;
+}
+

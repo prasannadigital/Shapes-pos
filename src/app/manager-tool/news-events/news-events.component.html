@@ -1,13 +1,82 @@
 <div class="tabs-services">
   <app-header></app-header>
-</div>
-<p>
-  news-events works!
-</p>
+
+<div class="news-updates">
 <div class="row">
-  <div class="col-sm-4"></div>
-  <div class="col-sm-6"></div>
-  <div class="col-sm-2"><button type="button" class="btn backBtn" (click)="backToMembership();">Back</button></div>
+  <div class="col-sm-6"><h3 class="margin-10" style="font-weight:600;">News & Eents</h3></div>
+  <div class="col-sm-6"><button type="button" class="btn backBtn pull-right" (click)="backToMembership();">Back</button></div>
 </div>
+
+<div class="news-updates1">
+<h3>Update News and Events</h3>
+<div class="form-group">
+	<label for="input" class="col-md-4 control-label">Top Message</label>
+		<div class="col-md-8">
+			<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<button type="button" class="btn btn-light pull-right"><b>Update</b></button>
+	<div class="clear"></div>
+</div>
+
+<div class="news-updates1">
+<h3>Add New News Or Event</h3>
+<div class="form-group">
+	<label for="input" class="col-md-4 control-label">News / Event Name 1:</label>
+		<div class="col-md-8">
+			<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="form-group">
+	<label for="input" class="col-md-4 control-label">Description 1</label>
+		<div class="col-md-8">
+			<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="form-group">
+	<label for="input" class="col-md-4 control-label">Link</label>
+		<div class="col-md-8">
+			<input type="url" class="form-control" id="exampleFormControlInput1" placeholder="">
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="form-group">
+	<label for="input" class="col-md-4 control-label">Active Between</label>
+		<div class="col-md-8">
+			<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="form-group">
+						<label for="input" class="col-md-5 control-label">Start Date</label>
+							<div class="col-md-7">
+								<div class="input-group">
+									<input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
+									<span class="input-group-btn"><button type="button" class="btn btn-primary" data-toggle="datepicker"><i class="fa fa-calendar"></i></button></span>
+								</div>
+							</div>
+							<div class="clear"></div>
+					   </div>
+				</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="form-group">
+						<label for="input" class="col-md-5 control-label">End Date</label>
+							<div class="col-md-7">
+								<div class="input-group">
+									<input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
+									<span class="input-group-btn"><button type="button" class="btn btn-primary" data-toggle="datepicker"><i class="fa fa-calendar"></i></button></span>
+								</div>
+							</div>
+							<div class="clear"></div>
+					   </div>
+				</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<button type="button" class="btn btn-light pull-right"><b>Add Event / News</b></button>
+	<div class="clear"></div>
+</div>
+</div>
+</div><!--main div-->
 
 <app-footer></app-footer>
