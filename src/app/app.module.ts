@@ -39,7 +39,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { SetupComponent } from './setup/setup.component';
 import { InactiveMembershipComponent } from './manager-tool/inactive-membership/inactive-membership.component';
 import {CalendarModule} from 'primeng/calendar';
-import * as moment from 'moment/moment';
+import * as moment from 'moment';
 import { StaffClockInOutComponent } from './manager-tool/staff-clock-in-out/staff-clock-in-out.component';
 import { StaffVieworeditTimeclockComponent } from './manager-tool/staff-vieworedit-timeclock/staff-vieworedit-timeclock.component';
 import { StaffPermissionsComponent } from './manager-tool/staff-permissions/staff-permissions.component';
