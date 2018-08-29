@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Globals } from '../global/global-urls';
 import { Angular5Csv } from 'angular5-csv/Angular5-csv';
-import { MembershipServiceService} from '../services/membership-service.service';
+import { MembershipServiceService } from '../services/membership-service.service';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
+import { SheduleServiceService } from '../services/shedule-service.service';
+import { GiftCardServiceService } from '../services/gift-card-service.service';
+import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 // import * as jsPDF from 'jspdf';
 // import { autoTable } from 'jspdf-autotable';
 // import 'jspdf-autotable';
@@ -27,10 +30,20 @@ export class ManagerComponent implements OnInit {
     'membership_price': '',
     'membership_validity_in_days': ''
   };
+
+  soldAt = '';
+  cardValue = '';
+  discountPrice = '';
+  cardName = '';
+  sellOnline = '';
+  setPrice = '';
+  everyonePurchase = '';
+
   catagroyData = new Array();
   sub_catagroyData = new Array();
   categoryArray: any[];
   temp: any[] = [];
+  temp3: any[] = [];
   subCategoryArray: any[];
   temp1: any[] = [];
   temp2: any[] = [];
@@ -46,9 +59,9 @@ export class ManagerComponent implements OnInit {
   memberships: any;
   private isShowMembership = false;
   private isShowPackage = false;
-  
 
-  constructor(private service: MembershipServiceService,private http: HttpClient, private globals: Globals, private router: Router) {
+
+  constructor(private service: MembershipServiceService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
     this.http.get(this.globals.api + 'categorys').subscribe(data => {
       this.temp.push([
         {
@@ -78,6 +91,25 @@ export class ManagerComponent implements OnInit {
     this.selectedCategoryObject = JSON.parse(event);
     console.log(this.selectedCategoryObject)
   }
+  selectedValue: string;
+  selectedOption: any;
+  states: any[] = [];
+
+
+
+  customerSearch(val) {
+    this.giftcard.searchPlace(val).subscribe(data => {
+      this.temp3.push(data.json());
+      this.states = this.temp3.pop();  
+      console.log(this.states);
+    });
+
+  }
+
+  onSelect(event: TypeaheadMatch): void {
+    console.log(event);
+    this.selectedOption = event.item;
+  }
 
   changeSubCategory(event: string): void {
     this.selectedSubCategoryObject = JSON.parse(event);
@@ -86,8 +118,10 @@ export class ManagerComponent implements OnInit {
   ngOnInit() {
     this.service.getCategoryList().subscribe(response => {
       this.catagroyData = response.json();
-    }); 
+    });
+
   }
+
 
   downloadExcel() {
     console.log("Come here")
@@ -147,13 +181,13 @@ export class ManagerComponent implements OnInit {
       console.log(response);
     })
     $("#add-membership").modal('hide');
-    this.addMembership.cat_id="";
-    this.addMembership.sub_cat_id="";
-    this.addMembership.membership_name="";
-    this.addMembership.membership_code="";
-    this.addMembership.membership_discount="";
-    this.addMembership.membership_price="";
-    this.addMembership.membership_validity_in_days="";
+    this.addMembership.cat_id = "";
+    this.addMembership.sub_cat_id = "";
+    this.addMembership.membership_name = "";
+    this.addMembership.membership_code = "";
+    this.addMembership.membership_discount = "";
+    this.addMembership.membership_price = "";
+    this.addMembership.membership_validity_in_days = "";
   }
   id = 10;
 
@@ -184,6 +218,7 @@ export class ManagerComponent implements OnInit {
 
   }
 
+
   showActiveMembershipClick() {
     this.router.navigate(['management-membership']);
   }
@@ -192,70 +227,112 @@ export class ManagerComponent implements OnInit {
     this.router.navigate(['inactive-membership'])
 
   }
-  staffClockInandOut(){
+  staffClockInandOut() {
     this.router.navigate(['staff-clock-in/out'])
   }
-  VieworEditTimeClock(){
+  VieworEditTimeClock() {
     this.router.navigate(['staff-view/edit-timeclock'])
   }
-  StaffPermissions(){
+  StaffPermissions() {
     this.router.navigate(['staff-permissions'])
   }
-  ScheduleView(){
+  ScheduleView() {
     this.router.navigate(['staff-schedule-view'])
   }
-  StaffMembers(){
+  StaffMembers() {
     this.router.navigate(['staff-members'])
   }
-  ScheduleAddorEdit(){
+  ScheduleAddorEdit() {
     this.router.navigate(['staff-schedule-add/edit'])
   }
-  AddPackagesClick(){
+  AddPackagesClick() {
     this.router.navigate(['add-packages'])
   }
-  EditPackagesClick(){
+  EditPackagesClick() {
     this.router.navigate(['edit-packages'])
   }
-  AddPromotionsClick(){
+  AddPromotionsClick() {
     this.router.navigate(['add-promotions'])
   }
-  EditPromotionsClick(){
+  EditPromotionsClick() {
     this.router.navigate(['add-promotions'])
   }
-  newsAndEventsClick()
-{
-  this.router.navigate(['news-and-events'])
-}  
-autoEmailClick(){
-  this.router.navigate(['auto-emails'])
-}
-membershipSetupClick(){
-  this.router.navigate(['membership-setup'])
-}
-cancelClick(){
-  this.router.navigate(['cancel-group-lesson'])
-}
-newGiftClick(){
-  this.router.navigate(['add-new-gift-card'])
-}
-editGiftClick(){
-  this.router.navigate(['edit-gift-card'])
-}
-viewGiftClick(){
-  this.router.navigate(['view-active-gift-card'])
-}
-onlineGiftClick(){
-  this.router.navigate(['online-gift-card'])
-}
-setSub_catagroy(cat_id: any): void {
-    this.addMembership.cat_id= cat_id;
+  newsAndEventsClick() {
+    this.router.navigate(['news-and-events'])
+  }
+  autoEmailClick() {
+    this.router.navigate(['auto-emails'])
+  }
+  membershipSetupClick() {
+    this.router.navigate(['membership-setup'])
+  }
+  cancelClick() {
+    this.router.navigate(['cancel-group-lesson'])
+  }
+  newGiftClick() {
+    this.router.navigate(['add-new-gift-card'])
+  }
+  editGiftClick() {
+    this.router.navigate(['edit-gift-card'])
+  }
+  viewGiftClick() {
+    this.router.navigate(['view-active-gift-card'])
+  }
+  redirectToViewGiftClick() {
+    this.router.navigate(['view-active-gift-card'])
+  }
+
+  onlineGiftClick() {
+    this.router.navigate(['online-gift-card'])
+  }
+
+  setSub_catagroy(cat_id: any): void {
+    this.addMembership.cat_id = cat_id;
     this.service.getSub_CategoryList(this.addMembership.cat_id).subscribe(response => {
       this.sub_catagroyData = response.json();
-      console.log( this.sub_catagroyData);
-    }); 
-   
-}
-setTitleTypeClient(sub_cat_id: any): void {
-  this.addMembership.sub_cat_id= sub_cat_id;
-}
+      console.log(this.sub_catagroyData);
+    });
+
+  }
+  setTitleTypeClient(sub_cat_id: any): void {
+    this.addMembership.sub_cat_id = sub_cat_id;
+  }
+
+  saveGiftCard() {
+    let sellOnlineCheckBox;
+    let discountCheckbox;
+    console.log(this.sellOnline)
+    if (this.sellOnline.toString() == 'true') {
+      sellOnlineCheckBox = 'y'
+    } else {
+      sellOnlineCheckBox = 'n'
+    }
+    console.log(this.discountPrice);
+    if (this.discountPrice.toString() == 'true') {
+      discountCheckbox = 'y'
+    } else {
+      discountCheckbox = 'n'
+    }
+
+    var data: any = {
+      giftcard_sold_at: this.soldAt,
+      giftcard_value: this.cardValue,
+      giftcard_discount_price: discountCheckbox,
+      giftcard_name: this.cardName,
+      giftcard_sell_online: sellOnlineCheckBox,
+      giftcard_allow_staff_set_price: this.setPrice,
+      giftcard_everyone_purchase: this.everyonePurchase
+    }
+    console.log(data);
+    console.log(this.cardValue);
+    console.log(sellOnlineCheckBox);
+    console.log(discountCheckbox);
+    console.log('*******')
+    console.log(this.setPrice);
+    this.giftcard.saveGiftCard(data).subscribe(data => {
+      console.log(data);
+    });
+
+  }
+
 }

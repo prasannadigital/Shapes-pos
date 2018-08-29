@@ -9,15 +9,12 @@ declare var $: any;
   styleUrls: ['./staff-members.component.css']
 })
 export class StaffMembersComponent implements OnInit {
-
-  
-    employee_id='';
-    employee_firstname='';
-    employee_lastname='';
+    firstname='';
+  lastname='';
     phone='';
-    email_id='';
-    employee_branch='';
-    employee_address='';
+    email='';
+    branch='';
+    address='';
     staffData:any=[];
   
 
@@ -32,12 +29,12 @@ export class StaffMembersComponent implements OnInit {
 
   saveStaffMember(){
     var data:any={
-      firstname:this.employee_firstname,
-      lastname:this.employee_lastname,
-      email:this.email_id,
+      employee_firstname :this.firstname,
+      employee_lastname:this.lastname,
+      email_id:this.email,
       phone:this.phone,
-      branch:this.employee_branch,
-      address:this.employee_address
+      employee_branch:this.branch,
+      employee_address:this.address
     }
     
     console.log(data)
@@ -45,10 +42,10 @@ export class StaffMembersComponent implements OnInit {
       console.log(response);
     })
     $("#exampleModal").modal('hide');
-    this.employee_firstname="",
-    this.employee_lastname="",
+    this.firstname="",
+    this.lastname="",
     this.phone="",
-    this.email_id=""
+    this.email=""
   }
 
   getStaffData(){

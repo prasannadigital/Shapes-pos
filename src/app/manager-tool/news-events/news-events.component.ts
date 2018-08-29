@@ -9,11 +9,9 @@ import * as moment from 'moment';
   styleUrls: ['./news-events.component.css']
 })
 export class NewsEventsComponent implements OnInit {
-
   eventTopMessage = "";
   eventName = "";
   eventDescription = "";
-  //eventUpdate="";
   eventLink = "";
   eventStartDate = "";
   eventEndDate = "";
@@ -23,15 +21,7 @@ export class NewsEventsComponent implements OnInit {
 
   locationData = new Array();
 
-  eventDetails: any = {
-    'eventTopMessage': '',
-    'eventName': '',
-    'eventDescription': '',
-    // 'eventUpdate':'',
-    'eventLink': '',
-    'eventStartDate': '',
-    'eventEndDate': ''
-  }
+  
 
   constructor(private router: Router, private service: NewsEventsServiceService) { }
 
@@ -40,13 +30,7 @@ export class NewsEventsComponent implements OnInit {
   }
 
   addEventNews() {
-    // console.log(this.eventTopMessage);
-    // console.log(this.eventName);
-    // console.log(this.eventDescription);
-    // console.log(this.eventUpdate);
-    // console.log(this.eventLink);
-    // console.log(this.eventStartDate);
-    // console.log(this.eventEndDate);
+    
     var data = {
       event_topname: this.eventTopMessage,
       event_name: this.eventName,
@@ -59,6 +43,11 @@ export class NewsEventsComponent implements OnInit {
     this.service.newsEventPost(data).subscribe(response => {
       this.locationData = response.json();
       this.eventTopMessage = '';
+      this.eventName='';
+      this.eventDescription='';
+      this.eventLink='';
+      this.eventStartDate='';
+      this.eventEndDate='';
       console.log(this.locationData)
       
     });

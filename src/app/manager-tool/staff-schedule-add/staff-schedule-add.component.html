@@ -9,7 +9,7 @@
   </div>
 
 		<div class="col-md-6"><h3 class="margin0" style="font-weight:600;">Edit Schedule </h3></div>
-		<div class="col-md-6"><button type="button" class="btn btn-outline-success pull-right"><h4 class="margin0"><i class="fas fa-plus-circle"></i> &nbsp; Add New schedule</h4></button></div>
+		<div class="col-md-6"><button type="button" class="btn btn-outline-success pull-right" data-toggle="modal" data-target="#add-newschedule"><h4 class="margin0"><i class="fas fa-plus-circle"></i> &nbsp; Add New schedule</h4></button></div>
 		<div class="clear"></div>
 		
 		<div class="staff-table">
@@ -123,6 +123,56 @@
 	
 	  </div><!--main div-->
   
-  
+	  <div class="modal fade" id="add-newschedule">
+		<div class="modal-dialog">
+				<div class="visit">
+						<div class="customer-info">
+						  <h2>Add schedule</h2>
+						</div>
+						<div class="col-sm-12" style="border:1px solid gray;">
+							<h3>Vimal patel</h3>
+						</div>
+						<div class="row">
+						<div class="col-sm-6" style="padding-left:50px;">* Required field</div>
+						<div class="col-sm-6"></div>
+					</div>
+						<div class="row">
+							<div class="col-sm-3" style="padding-left:50px;">
+								What
+							</div>
+							<div class="col-sm-9">
+								<div class="row">
+									<div class="col-sm-4">
+										Show Staff as
+									</div>
+									<div class="col-sm-8" style="padding-right:100px;">
+											<div class="form-check">
+													<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+													<label class="form-check-label" for="exampleRadios1">
+													  Available
+													</label>
+												  </div>
+												  <div class="form-check">
+													<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+													<label class="form-check-label" for="exampleRadios2">
+													  Unavilable
+													</label>
+												  </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<button type="submit"  style="float:right;" data-dismiss="modal"
+						  class="btn btn-primary">Cancle</button>
+						  <button type="submit" style="float:right;" data-dismiss="modal"
+						  class="btn btn-success">Add</button>
+						  <button type="submit" style="float:right;" data-dismiss="modal"
+						  class="btn btn-success">Save and Add Next</button>
+						<div class="clear"></div>
+					  </div>
+
+			</div>
+			</div>
 <app-footer></app-footer>
 

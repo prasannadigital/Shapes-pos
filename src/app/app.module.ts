@@ -58,6 +58,7 @@ import { AddGiftCardComponent } from './manager-tool/add-gift-card/add-gift-card
 import { EditGiftCardComponent } from './manager-tool/edit-gift-card/edit-gift-card.component';
 import { ViewActiveGiftCardComponent } from './manager-tool/view-active-gift-card/view-active-gift-card.component';
 import { OnlineGiftCardsComponent } from './manager-tool/online-gift-cards/online-gift-cards.component';
+import {AutoCompleteModule} from 'primeng/autocomplete'
 
 
 const routes: Routes = [
@@ -153,7 +154,8 @@ const routes: Routes = [
   
     ViewActiveGiftCardComponent,
   
-    OnlineGiftCardsComponent    
+    OnlineGiftCardsComponent
+     
   ],
   imports: [
     BrowserModule,
@@ -172,7 +174,8 @@ const routes: Routes = [
     PaginatorModule,
     CalendarModule,
     DialogModule,
-    ToastModule
+    ToastModule,
+    AutoCompleteModule
   ],
   providers: [Globals, AuthGuard, Services,MessageService],
   bootstrap: [AppComponent]
