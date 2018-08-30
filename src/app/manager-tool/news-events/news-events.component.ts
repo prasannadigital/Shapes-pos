@@ -20,12 +20,21 @@ export class NewsEventsComponent implements OnInit {
   public date2: any;
 
   locationData = new Array();
+  messageData:any=[];
+  
 
   constructor(private router: Router, private service: NewsEventsServiceService) { }
 
 
   ngOnInit() {
+    this.service.getTopMessage().subscribe(response=>{
+      this.messageData=response.json();
+      
+     
+    })
+    
   }
+  
 
   addEventNews() {
   
@@ -67,5 +76,18 @@ export class NewsEventsComponent implements OnInit {
   backToMembership() {
     this.router.navigate(['management']);
   }
+ updateMessage(val){
+  console.log(val);
+  var data={
+    top_msg_id:val.top_msg_id,
+    top_msg:val.top_msg    
+  }
+  console.log('****');
+  console.log(data);
+  this.service.editTopMessage(data).subscribe(response=>{
+    console.log(response)
+  })
+ }
+
 
 }

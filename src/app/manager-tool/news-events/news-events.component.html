@@ -16,11 +16,11 @@
 			<div class="form-group">
 				<label for="input" class="col-md-4 control-label">Top Message</label>
 				<div class="col-md-8">
-					<textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="eventTopMessage" rows="3"></textarea>
+					<textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="messageData.top_msg" rows="3"></textarea>
 				</div>
 				<div class="clear"></div>
 			</div>
-			<button type="button" class="btn btn-light pull-right">
+			<button type="button" class="btn btn-light pull-right" (click)="updateMessage(messageData)">
 				<b>Update</b>
 			</button>
 			<div class="clear"></div>
