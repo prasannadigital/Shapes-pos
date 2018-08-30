@@ -21,8 +21,6 @@ export class NewsEventsComponent implements OnInit {
 
   locationData = new Array();
 
-  
-
   constructor(private router: Router, private service: NewsEventsServiceService) { }
 
 
@@ -30,7 +28,7 @@ export class NewsEventsComponent implements OnInit {
   }
 
   addEventNews() {
-    
+  
     var data = {
       event_topname: this.eventTopMessage,
       event_name: this.eventName,
@@ -48,6 +46,7 @@ export class NewsEventsComponent implements OnInit {
       this.eventLink='';
       this.eventStartDate='';
       this.eventEndDate='';
+      
       console.log(this.locationData)
       
     });
