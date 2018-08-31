@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead/typeahead-match.class';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { setTheme } from 'ngx-bootstrap/utils';
-import {environment} from '../../environments/environment';
+import { environment } from '../../environments/environment';
 // import { map } from 'rxjs/operators';
 
 @Component({
@@ -21,18 +21,17 @@ export class NewTicketComponent implements OnInit {
   MailId = '';
   name = '';
   custFirstName = '';
-  custLastName = ''; 
-  custGender  = ''; 
+  custLastName = '';
+  custGender = '';
   custNo = '';
   custEmail = '';
   custStatus = '';
-  visits ;
-  services ;
-  products ;
+  visits;
+  services;
+  products;
   alls;
   public userDetails: FormGroup;
   submitted = false;
-  
   constructor(private http: HttpClient, private router: Router) {
     setTheme('bs3');
     this.userDetails = new FormGroup({
@@ -41,16 +40,10 @@ export class NewTicketComponent implements OnInit {
       name: new FormControl(this.name, [Validators.required, Validators.minLength(6), Validators.maxLength(9)])
     })
   }
-
   ngOnInit() {
   }
-
-  addNewCustomer() {
-
-  }
- 
   saveCustomer() {
-    this.submitted=true;
+    this.submitted = true;
     console.log("save")
     var data = {
       firstname: this.firstName,
@@ -61,17 +54,15 @@ export class NewTicketComponent implements OnInit {
       dob: this.DOB
     }
     console.log(data);
-    this.http.post(environment.host+'users', data).subscribe(data => {
+    this.http.post(environment.host + 'users', data).subscribe(data => {
       console.log("sucess")
       console.log(data);
     });
   }
-
-  backToDashboard(){
+  backToDashboard() {
     this.router.navigate(['dashboard']);
   }
-
-  nextClick(){
+  nextClick() {
     console.log("came herer ")
     this.router.navigate(['new-ticket-next-button']);
   }
@@ -81,65 +72,74 @@ export class NewTicketComponent implements OnInit {
   states: any[] = new Array();
   temp: any[] = new Array();
 
-  onSelect(event: TypeaheadMatch): void {
-    this.selectedOption = event.item;
-    this.custFirstName =  this.selectedOption.firstname;
+  // onSelect(event: TypeaheadMatch): void {
+  //   this.selectedOption = event.item;
+  //   this.custFirstName =  this.selectedOption.firstname;
+  //   this.custLastName = this.selectedOption.lastname;
+  //   this.custGender = this.selectedOption.gender;
+  //   this.custNo = this.selectedOption.mobile;
+  //   this.custEmail = this.selectedOption.email_id;
+  //   this.custStatus = this.selectedOption.rec_status;    
+  // }
+
+  onSelect(item) {
+    this.selectedOption = item;
+    this.custFirstName = this.selectedOption.firstname;
     this.custLastName = this.selectedOption.lastname;
     this.custGender = this.selectedOption.gender;
     this.custNo = this.selectedOption.mobile;
     this.custEmail = this.selectedOption.email_id;
-    this.custStatus = this.selectedOption.rec_status;    
+    this.custStatus = this.selectedOption.rec_status;
   }
-
-  membershipInfo(){
-    console.log("HIIII")
-    console.log(this.selectedOption.user_id)
-    this.http.get(environment.host+'sales/visit/'+this.selectedOption.user_id).subscribe(data => {
-      console.log(data);
-    });
+  membershipInfo() {
+    if (this.selectedOption) {
+      console.log(this.selectedOption.user_id)
+      this.http.get(environment.host + 'sales/visit/' + this.selectedOption.user_id).subscribe(data => {
+        console.log(data);
+      });
+    }
   }
-
-  visitInfo(){
-    this.http.get(environment.host+'sales/visit/'+this.selectedOption.user_id).subscribe(data => {
-      console.log(data);
-      this.visits = data;
-      console.log(this.visits)
-    });
+  visitInfo() {
+    if (this.selectedOption) {
+      this.http.get(environment.host + 'sales/visit/' + this.selectedOption.user_id).subscribe(data => {
+        console.log(data);
+        this.visits = data;
+        console.log(this.visits)
+      });
+    }
   }
-
-  allInfo(){
-    console.log("HIIII")
-    // console.log(this.selectedOption.user_id)
-    this.http.get(environment.host+'sales/all-history/'+this.selectedOption.user_id).subscribe(data => {
-      this.alls = data;
-      console.log(data);
-    });
+  allInfo() {
+    if (this.selectedOption) {
+      this.http.get(environment.host + 'sales/all-history/' + this.selectedOption.user_id).subscribe(data => {
+        this.alls = data;
+        console.log(data);
+      });
+    }
   }
-
-  productInfo(){
-    console.log("HIIII")
-    console.log(this.selectedOption.user_id)
-    this.http.get(environment.host+'sales/product-history/'+this.selectedOption.user_id).subscribe(data => {
-      console.log(data);
-      this.products = data;
-    });
+  productInfo() {
+    if (this.selectedOption) {
+      console.log(this.selectedOption.user_id)
+      this.http.get(environment.host + 'sales/product-history/' + this.selectedOption.user_id).subscribe(data => {
+        console.log(data);
+        this.products = data;
+      });
+    }
   }
-
-  serviceInfo(){
-    console.log("HIIII")
-    // console.log(this.selectedOption.user_id)
-    this.http.get(environment.host+'sales/service-history/'+this.selectedOption.user_id).subscribe(data => {
-      console.log(data);
-      this.services = data;
-    });
+  serviceInfo() {
+    if (this.selectedOption) {
+      // console.log(this.selectedOption.user_id)
+      this.http.get(environment.host + 'sales/service-history/' + this.selectedOption.user_id).subscribe(data => {
+        console.log(data);
+        this.services = data;
+      });
+    }
   }
-
   customerSearch(val) {
-    
-    if (val.length >= 3) {     
-      this.http.get(environment.host+'users/search/' + val).subscribe(data => {
+
+    if (val.length >= 3) {
+      this.http.get(environment.host + 'users/search/' + val).subscribe(data => {
         this.temp.push(data);
-        this.states = this.temp.pop();  
+        this.states = this.temp.pop();
         console.log(this.states);
       });
     }

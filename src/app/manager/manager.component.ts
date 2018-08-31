@@ -255,7 +255,7 @@ export class ManagerComponent implements OnInit {
     this.router.navigate(['add-promotions'])
   }
   EditPromotionsClick() {
-    this.router.navigate(['add-promotions'])
+    this.router.navigate(['edit-promotions'])
   }
   newsAndEventsClick() {
     this.router.navigate(['news-and-events'])
@@ -313,7 +313,7 @@ export class ManagerComponent implements OnInit {
     } else {
       discountCheckbox = 'n'
     }
-
+          console.log(this.soldAt);
     var data: any = {
       giftcard_sold_at: this.soldAt,
       giftcard_value: this.cardValue,

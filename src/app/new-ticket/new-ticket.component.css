@@ -1,0 +1,10 @@
+.search-list{
+    display:inline-block;
+    background-color:antiquewhite;
+    width:100px;
+    height:70px;
+    margin:10px;
+}
+.search-list:hover{
+    cursor: pointer;
+}

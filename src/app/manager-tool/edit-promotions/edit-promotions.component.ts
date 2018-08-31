@@ -6,13 +6,13 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
   styleUrls: ['./edit-promotions.component.css']
 })
 export class EditPromotionsComponent implements OnInit {
-
+  
   constructor(private router: Router) { }
 
   ngOnInit() {
+    
   }
   backToMembership(){
     this.router.navigate(['management']);
   }
-
 }

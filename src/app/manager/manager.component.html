@@ -342,9 +342,9 @@
 										<div class="form-group">
 											<label for="input" class="col-md-5 control-label">Gift card is sold at</label>
 											<div class="col-md-7">
-												<input [(ngModel)]="selectedValue" (ngModelChange)='customerSearch($event)' [typeahead]="states" typeaheadOptionField="name" (typeaheadOnSelect)="onSelect($event)"
-												 class="form-control" [(ngModel)]="soldAt">
-												<!-- <input type="text" class="form-control" id="inputEmail3" placeholder="All Location" [(ngModel)]="soldAt"> -->
+												<input [(ngModel)]="selectedValue" (ngModelChange)='customerSearch($event)' [typeahead]="states" typeaheadOptionField="name"
+												 (typeaheadOnSelect)="onSelect($event)" class="form-control" [(ngModel)]="soldAt">
+												
 											</div>
 											<div class="clear"></div>
 										</div>
@@ -371,7 +371,7 @@
 										<div class="form-group">
 											<label for="input" class="col-md-5 control-label">Gift card name</label>
 											<div class="col-md-7">
-												<input type="text" class="form-control" [(ngModel)]="cardName" id="inputEmail3" placeholder="All Location">
+												<input type="text" class="form-control" [(ngModel)]="cardName" id="inputEmail" placeholder="All Location">
 											</div>
 											<div class="clear"></div>
 										</div>
@@ -396,8 +396,7 @@
 											<div class="card card-body">
 												<div class="form-group">
 													<label for="input" class="col-md-5 control-label">Allow staff to set price and value independently
-														<span class="btn1" data-toggle="tooltip" data-placement="auto"
-														 title="Tooltip on top">
+														<span class="btn1" data-toggle="tooltip" data-placement="auto" title="Tooltip on top">
 															<i class="fas fa-info-circle"></i>
 														</span>
 													</label>
@@ -492,7 +491,7 @@
 											<label for="input" class="col-md-5 control-label">Start Date</label>
 											<div class="col-md-7">
 												<div class="input-group">
-													<input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
+													<input type="text" class="form-control" name="date" id="startdate" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
 													<span class="input-group-btn">
 														<button type="button" class="btn btn-primary" data-toggle="datepicker">
 															<i class="fa fa-calendar"></i>
@@ -508,7 +507,7 @@
 											<label for="input" class="col-md-5 control-label">End Date</label>
 											<div class="col-md-7">
 												<div class="input-group">
-													<input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
+													<input type="text" class="form-control" name="date" id="enddate" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
 													<span class="input-group-btn">
 														<button type="button" class="btn btn-primary" data-toggle="datepicker">
 															<i class="fa fa-calendar"></i>
@@ -647,7 +646,7 @@
 															<div class="card-body">
 																<div class="form-group">
 																	<div class="col-md-8">
-																		<input type="text" class="form-control" id="inputEmail3" placeholder="What would you like to call this contract?">
+																		<input type="text" class="form-control" id="inputEmai2" placeholder="What would you like to call this contract?">
 																	</div>
 																	<div class="clear"></div>
 																</div>
@@ -771,12 +770,12 @@
 																	<div class="active">
 																		<div class="popup-search">
 																			<div class="col-md-8" style="padding:0;">
-																				<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+																				<label class="sr-only" for="inlineFormInputGroupUsername3">Username</label>
 																				<div class="input-group mb-2 mr-sm-2">
 																					<div class="input-group-prepend">
 																						<div class="input-group-text">Search / Check - In</div>
 																					</div>
-																					<input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
+																					<input type="text" class="form-control" id="inlineFormInputGroupUsername3" placeholder="Username">
 																				</div>
 																			</div>
 																			<div class="col-md-4 ">
@@ -865,12 +864,12 @@
 																	<div class="active">
 																		<div class="popup-search">
 																			<div class="col-md-8" style="padding:0;">
-																				<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+																				<label class="sr-only" for="inlineFormInputGroupUsername4">Username</label>
 																				<div class="input-group mb-2 mr-sm-2">
 																					<div class="input-group-prepend">
 																						<div class="input-group-text">Search / Check - In</div>
 																					</div>
-																					<input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
+																					<input type="text" class="form-control" id="inlineFormInputGroupUsername4" placeholder="Username">
 																				</div>
 																			</div>
 																			<div class="col-md-4 ">
@@ -1075,7 +1074,7 @@
 																				<div class="input-group-prepend">
 																					<div class="input-group-text">$</div>
 																				</div>
-																				<input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Price">
+																				<input type="text" class="form-control" id="inlineFormInputGroupUsername5" placeholder="Price">
 																			</div>
 																		</div>
 																		<div class="clear"></div>
@@ -1232,7 +1231,7 @@
 																	<div class="form-group">
 																		<label for="input" class="col-md-5 control-label">Number of autopays</label>
 																		<div class="col-md-7">
-																			<input type="text" class="form-control" id="inputEmail3" placeholder="12">
+																			<input type="text" class="form-control" id="inputEmail4" placeholder="12">
 																			<small>Total duration of contract 12 months</small>
 																		</div>
 																		<div class="clear"></div>
@@ -1304,7 +1303,7 @@
 																						<div class="input-group-prepend">
 																							<div class="input-group-text">$</div>
 																						</div>
-																						<input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Price">
+																						<input type="text" class="form-control" id="inlineFormInputGroupUsername6" placeholder="Price">
 																					</div>
 																				</div>
 																				<div class="clear"></div>
@@ -1487,7 +1486,7 @@
 																			<div class="form-group">
 																				<label for="input" class="col-md-5 control-label">Barcode Id</label>
 																				<div class="col-md-7">
-																					<input type="text" class="form-control" id="inputEmail3" placeholder="">
+																					<input type="text" class="form-control" id="inputEmail5" placeholder="">
 																				</div>
 																				<div class="clear"></div>
 																			</div>
