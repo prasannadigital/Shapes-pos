@@ -41,7 +41,7 @@ export class EditGiftCardComponent implements OnInit {
     this.cardSoldAt=this.editData.giftcard_sold_at;
     this.cardValue=this.editData.giftcard_value;
     this.discountPrice=this.editData.giftcard_discount_price;
-    this.sellOnline=this.editData.giftcard_sell_online;
+    this.sellOnline=this.editData.giftgitcard_sell_online;
     this.setPrice=this.editData.giftcard_allow_staff_set_price;
     this.everyonePurchase=this.editData.giftcard_everyone_purchase;
 
