@@ -47,7 +47,7 @@
 				<div class="form-group">
 					<label for="input" class="col-md-5 control-label">Gift card is sold at</label>
 					<div class="col-md-7">
-						<input type="text" class="form-control" id="inputEmail3" placeholder="All Location"[(ngModel)]="editData.giftcard_sold_at">
+						<input type="text" class="form-control" id="inputEmail3" placeholder="All Location" [(ngModel)]="cardSoldAt">
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -55,7 +55,7 @@
 				<div class="form-group">
 					<label for="input" class="col-md-5 control-label">Card Value</label>
 					<div class="col-md-7">
-						<select class="form-control" required="" [(ngModel)]="editData.giftcard_value">
+						<select class="form-control" required="" [(ngModel)]="cardValue">
 							<option value="1" disabled selected>Select Card Value</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -63,7 +63,7 @@
 							<option value="5">5</option>
 						</select>
 						<div class="form-check pull-left">
-							<input class="form-check-input" type="checkbox" value="" id="defaultCheck2" [(ngModel)]="editData.giftcard_discount_price">
+							<input class="form-check-input" type="checkbox" value="" id="defaultCheck2" [(ngModel)]="discountPrice">
 							<label class="form-check-label" for="defaultCheck2">
 								Discount the price of this gift card
 							</label>
@@ -74,7 +74,7 @@
 				<div class="form-group">
 					<label for="input" class="col-md-5 control-label">Gift card name</label>
 					<div class="col-md-7">
-						<input type="text" class="form-control" id="inputEmail3" placeholder="All Location" [(ngModel)]="editData.giftcard_name">
+						<input type="text" class="form-control" id="inputEmail3" placeholder="All Location" [(ngModel)]="cardName">
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -82,7 +82,7 @@
 					<label for="input" class="col-md-5 control-label">Sell online</label>
 					<div class="col-md-7">
 						<div class="form-check pull-left">
-							<input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]="editData.giftcard_sell_online">
+							<input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]="sellOnline">
 							<label class="form-check-label" for="defaultCheck1">
 								Allow customers to purchase this gift card online
 							</label>
@@ -105,13 +105,13 @@
 							</label>
 							<div class="col-md-7">
 								<div class="form-check ">
-									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="y" checked="" [(ngModel)]="editData.giftcard_allow_staff_set_price">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="y" checked="" [(ngModel)]="setPrice">
 									<label class="form-check-label" for="exampleRadios1">
 										Yes, staff can set the prce independently of the value at point of sale
 									</label>
 								</div>
 								<div class="form-check ">
-									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="n" checked="" [(ngModel)]="editData.giftcard_allow_staff_set_price">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="n" checked="" [(ngModel)]="setPrice">
 									<label class="form-check-label" for="exampleRadios1">
 										No, the price should always match the value
 									</label>
@@ -123,13 +123,13 @@
 							<label for="input" class="col-md-5 control-label">Can everyone purchase this gift card</label>
 							<div class="col-md-7">
 								<div class="form-check ">
-									<input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="y" checked="" [(ngModel)]="editData.giftcard_everyone_purchase">
+									<input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="y" checked="" [(ngModel)]="everyonePurchase">
 									<label class="form-check-label" for="exampleRadios1">
 										Yes
 									</label>
 								</div>
 								<div class="form-check ">
-									<input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="n" checked="" [(ngModel)]="editData.giftcard_everyone_purchase">
+									<input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="n" checked="" [(ngModel)]="everyonePurchase">
 									<label class="form-check-label" for="exampleRadios1">
 										No, only certain members can purchase it
 									</label>
@@ -142,7 +142,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" (click)="cancelGiftCard(editData)" >Cancel</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal" (click)="cancelGiftCard(editData)">Cancel</button>
 				<button type="button" class="btn btn-primary" (click)="updateGiftCard(editData)">Update</button>
 			</div>
 		</div>
