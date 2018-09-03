@@ -62,9 +62,6 @@ export class ManagerComponent implements OnInit {
 
 
   constructor(private service: MembershipServiceService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
-    $('a[href="#Staff"]').click(function(){
-      alert('Sign new href executed.'); 
-    }); 
     this.http.get(this.globals.api + 'categorys').subscribe(data => {
       this.temp.push([
         {
@@ -103,7 +100,7 @@ export class ManagerComponent implements OnInit {
   customerSearch(val) {
     this.giftcard.searchPlace(val).subscribe(data => {
       this.temp3.push(data.json());
-      this.states = this.temp3.pop();
+      this.states = this.temp3.pop();  
       console.log(this.states);
     });
 
@@ -316,7 +313,7 @@ export class ManagerComponent implements OnInit {
     } else {
       discountCheckbox = 'n'
     }
-    console.log(this.soldAt);
+          console.log(this.soldAt);
     var data: any = {
       giftcard_sold_at: this.soldAt,
       giftcard_value: this.cardValue,
@@ -326,12 +323,7 @@ export class ManagerComponent implements OnInit {
       giftcard_allow_staff_set_price: this.setPrice,
       giftcard_everyone_purchase: this.everyonePurchase
     }
-    console.log(data);
-    console.log(this.cardValue);
-    console.log(sellOnlineCheckBox);
-    console.log(discountCheckbox);
-    console.log('*******')
-    console.log(this.setPrice);
+
     this.giftcard.saveGiftCard(data).subscribe(data => {
       console.log(data);
     });
