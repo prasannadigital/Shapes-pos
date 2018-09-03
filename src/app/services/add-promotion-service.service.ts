@@ -12,5 +12,9 @@ export class AddPromotionServiceService {
   public addPromotionPost(data:any){
     return  this.http.post(environment.host+ 'promotions', data)
   }
+
+  public editPromotionGet(){
+    return this.http.get(environment.host+'promotions');
+  }
   
 }
