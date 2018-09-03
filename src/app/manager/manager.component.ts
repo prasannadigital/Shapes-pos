@@ -62,6 +62,8 @@ export class ManagerComponent implements OnInit {
 
 
   constructor(private service: MembershipServiceService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
+
+
     this.http.get(this.globals.api + 'categorys').subscribe(data => {
       this.temp.push([
         {
@@ -87,6 +89,97 @@ export class ManagerComponent implements OnInit {
     });
   }
 
+  commMarkClickInfo() {
+    sessionStorage.setItem('manager-routing', JSON.stringify("com&mar"));
+    $(".com-mark-info").trigger("click");
+    this.removeClass();
+    $(".com-mark-info").addClass("active");
+  }
+
+  staffClickInfo() {
+    sessionStorage.setItem('manager-routing', JSON.stringify("staff"));
+    $(".staff-info").trigger("click");
+    this.removeClass();
+    $(".staff-info").addClass("active");
+  }
+
+  clientClickInfo() {
+    sessionStorage.setItem('manager-routing', JSON.stringify("client"));
+    $(".client-info").trigger("click");
+    this.removeClass();
+    $(".client-info").addClass("active");
+  }
+
+  membershipClickInfo() {
+    sessionStorage.setItem('manager-routing', JSON.stringify("memberhip"));
+    $(".mem-info").trigger("click");
+    this.removeClass();
+    $(".mem-info").addClass("active");
+  }
+
+  packageClickInfo() {
+    sessionStorage.setItem('manager-routing', JSON.stringify("package"));
+    $(".package-info").trigger("click");
+    this.removeClass();
+    $(".package-info").addClass("active");
+  }
+
+  promitionClickInfo() {
+    sessionStorage.setItem('manager-routing', JSON.stringify("promotion"));
+    $(".promotion-info").trigger("click");
+    this.removeClass();
+    $(".promotion-info").addClass("active");
+  }
+
+  giftcardClickInfo() {
+    sessionStorage.setItem('manager-routing', JSON.stringify("giftcard"));
+    $(".gift-card-info").trigger("click");
+    this.removeClass();
+    $(".gift-card-info").addClass("active");
+  }
+
+  productClickInfo() {
+    sessionStorage.setItem('manager-routing', JSON.stringify("product"));
+    $(".product-info").trigger("click");
+    this.removeClass();
+    $(".product-info").addClass("active");
+  }
+
+  inventoryClickInfo() {
+    sessionStorage.setItem('manager-routing', JSON.stringify("inventory"));
+    $(".inventory-info").trigger("click");
+    this.removeClass();
+    $(".inventory-info").addClass("active");
+  }
+
+  pricingClickInfo() {
+    sessionStorage.setItem('manager-routing', JSON.stringify("pricing"));
+    $(".pricing-info").trigger("click");
+    this.removeClass();
+    $(".pricing-info").addClass("active");
+  }
+
+  discountClickInfo() {
+    sessionStorage.setItem('manager-routing', JSON.stringify("discount"));
+    $(".discount-info").trigger("click");
+    this.removeClass();
+    $(".discount-info").addClass("active");
+  }
+
+  removeClass() {
+    $(".com-mark-info").removeClass("active");
+    $(".staff-info").removeClass("active");
+    $(".client-info").removeClass("active");
+    $(".mem-info").removeClass("active");
+    $(".package-info").removeClass("active");
+    $(".promotion-info").removeClass("active");
+    $(".gift-card-info").removeClass("active");
+    $(".product-info").removeClass("active");
+    $(".inventory-info").removeClass("active");
+    $(".pricing-info").removeClass("active");
+    $(".discount-info").removeClass("active");
+  }
+
   changeCategory(event: string): void {
     this.selectedCategoryObject = JSON.parse(event);
     console.log(this.selectedCategoryObject)
@@ -95,12 +188,10 @@ export class ManagerComponent implements OnInit {
   selectedOption: any;
   states: any[] = [];
 
-
-
   customerSearch(val) {
     this.giftcard.searchPlace(val).subscribe(data => {
       this.temp3.push(data.json());
-      this.states = this.temp3.pop();  
+      this.states = this.temp3.pop();
       console.log(this.states);
     });
 
@@ -119,7 +210,38 @@ export class ManagerComponent implements OnInit {
     this.service.getCategoryList().subscribe(response => {
       this.catagroyData = response.json();
     });
-
+    console.log("session check")
+    console.log(sessionStorage.getItem('manager-routing'))
+    console.log(sessionStorage.getItem('manager-routing') == '"com&mar"');
+    console.log(JSON.stringify(sessionStorage.getItem('manager-routing')) == '"com&mar"');
+    if (sessionStorage.getItem('manager-routing') == '"com&mar"') {
+      console.log("comm check");
+      this.commMarkClickInfo();
+    } else if (sessionStorage.getItem('manager-routing') == '"staff"') {
+      console.log("staff check");
+      this.staffClickInfo();
+    } else if (sessionStorage.getItem('manager-routing') == '"client"') {
+      console.log("client check");
+      this.clientClickInfo();
+    } else if (sessionStorage.getItem('manager-routing') == '"memberhip"') {
+      console.log("member check");
+      this.membershipClickInfo();
+    } else if (sessionStorage.getItem('manager-routing') == '"package"') {
+      console.log("pack check");
+      this.packageClickInfo();
+    } else if (sessionStorage.getItem('manager-routing') == '"promotion"') {
+      this.promitionClickInfo();
+    } else if (sessionStorage.getItem('manager-routing') == '"giftcard"') {
+      this.giftcardClickInfo();
+    } else if (sessionStorage.getItem('manager-routing') == '"product"') {
+      this.productClickInfo();
+    } else if (sessionStorage.getItem('manager-routing') == '"inventory"') {
+      this.inventoryClickInfo();
+    } else if (sessionStorage.getItem('manager-routing') == '"pricing"') {
+      this.pricingClickInfo();
+    } else if (sessionStorage.getItem('manager-routing') == '"discount"') {
+      this.discountClickInfo();
+    }
   }
 
 
@@ -313,7 +435,7 @@ export class ManagerComponent implements OnInit {
     } else {
       discountCheckbox = 'n'
     }
-          console.log(this.soldAt);
+    console.log(this.soldAt);
     var data: any = {
       giftcard_sold_at: this.soldAt,
       giftcard_value: this.cardValue,
