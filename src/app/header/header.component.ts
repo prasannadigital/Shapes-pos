@@ -22,17 +22,15 @@ export class HeaderComponent implements OnInit {
   }
 
   constructor(private http: HttpClient, private router: Router, private globals: Globals) {
-    console.log(this.router.url);
+    
     if (this.router.url == '/appointments') {
       $(document).ready(function () {
-        console.log("appt");
         $("#__appt").addClass("active");
       });
     }
 
     if (this.router.url == '/dashboard') {
       $(document).ready(function () {
-        console.log("sale")
         $("#__sale").addClass("active");
       });
     }

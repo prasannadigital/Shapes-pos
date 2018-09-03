@@ -18,10 +18,10 @@ export class ScheduleComponent implements OnInit {
    'enddate':'',
    'branch_id':'',
    'employee_id':'',
-   'employee_name':''
+   'employee_firstname':''
   }
   selectedEmpData:any={
-    'employee_name':''
+    'employee_firstname':''
    }
   locationData = new Array();
   empData = new Array();
@@ -65,13 +65,13 @@ getShedule(){
   console.log(this.appointmentsData);
 }); 
 }
-setStaff(employee_id: any,employee_name:any): void {
+setStaff(employee_id: any,employee_firstname:any): void {
   this.shedule.employee_id= employee_id;
   this.service.getSelectedEmployee(this.shedule.employee_id).subscribe(response => {
     this.selectedEmpData = response.json();
     var data =this.selectedEmpData.pop();
-    this.selectedEmpName=data.employee_name;
-   console.log(data.employee_name);
+    this.selectedEmpName=data.employee_firstname;
+   console.log(data.employee_firstname);
    console.log(this.selectedEmpName);
 });
 }

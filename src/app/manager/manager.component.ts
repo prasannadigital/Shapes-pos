@@ -242,7 +242,6 @@ export class ManagerComponent implements OnInit {
     }
   }
 
-
   downloadExcel() {
     console.log("Come here")
     var options = {
