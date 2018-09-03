@@ -43,7 +43,9 @@
 				<div class="form-group">
 					<label for="input" class="col-md-5 control-label">Gift card is sold at</label>
 					<div class="col-md-7">
-						<input type="text" class="form-control" id="inputEmail3" [(ngModel)]="editData.giftcard_sold_at"placeholder="All Location">
+						<input  (ngModelChange)='customerSearch($event)' [typeahead]="states" typeaheadOptionField="name"
+						 (typeaheadOnSelect)="onSelect($event)" class="form-control" [(ngModel)]="editData.giftcard_sold_at">
+						
 					</div>
 					<div class="clear"></div>
 				</div>

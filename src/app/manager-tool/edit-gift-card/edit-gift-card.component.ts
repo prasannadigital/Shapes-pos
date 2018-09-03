@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 declare var $: any;
+import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 import { GiftCardServiceService } from '../../services/gift-card-service.service';
 @Component({
   selector: 'app-edit-gift-card',
@@ -12,7 +13,10 @@ export class EditGiftCardComponent implements OnInit {
   giftCardData: any = [];
   editData: any = [];
   getData:any=[];
- 
+  selectedValue: string;
+  selectedOption: any;
+  states: any[] = [];
+  temp3: any[] = [];
 
   constructor(private router: Router, private service: GiftCardServiceService) { }
 
@@ -27,6 +31,18 @@ export class EditGiftCardComponent implements OnInit {
       this.giftCardData = giftCardData.json();
       console.log(giftCardData)
     })
+  }
+  onSelect(event: TypeaheadMatch): void {
+    console.log(event);
+    this.selectedOption = event.item;
+  }
+  customerSearch(val) {
+    this.service.searchPlace(val).subscribe(data => {
+      this.temp3.push(data.json());
+      this.states = this.temp3.pop();  
+      console.log(this.states);
+    });
+
   }
   EditGiftCard(data) {
     console.log(data);
