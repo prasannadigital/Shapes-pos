@@ -323,12 +323,7 @@ export class ManagerComponent implements OnInit {
       giftcard_allow_staff_set_price: this.setPrice,
       giftcard_everyone_purchase: this.everyonePurchase
     }
-    console.log(data);
-    console.log(this.cardValue);
-    console.log(sellOnlineCheckBox);
-    console.log(discountCheckbox);
-    console.log('*******')
-    console.log(this.setPrice);
+
     this.giftcard.saveGiftCard(data).subscribe(data => {
       console.log(data);
     });
