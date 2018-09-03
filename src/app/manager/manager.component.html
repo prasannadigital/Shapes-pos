@@ -6,41 +6,44 @@
 			<div class="manager-tap">
 				<div class="col-md-3 col-sm-3 col-xs-12 manager-tap-left">
 					<div class="nav flex-column nav-pills rs-1-left-button" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-						<a class="nav-link active " id="v-pills-home-tab" data-toggle="pill" href="#Communications" role="tab" aria-controls="Communications"
-						 aria-selected="true">Communications and Marketing</a>
+						<a class="nav-link com-mark-info" id="v-pills-home-tab" (click)="commMarkClickInfo()" data-toggle="pill" href="#Communications"
+						 role="tab" aria-controls="Communications" aria-selected="true">Communications and Marketing</a>
 
-						<a class="nav-link " id="v-pills-profile-tab" data-toggle="pill" href="#Staff" role="tab" aria-controls="Staff" aria-selected="false">Staff</a>
+						<a class="nav-link staff-info" id="v-pills-profile-tab" (click)="staffClickInfo()" data-toggle="pill" href="#Staff" role="tab"
+						 aria-controls="Staff" aria-selected="false">Staff</a>
 
-						<a class="nav-link " id="v-pills-messages-tab" data-toggle="pill" href="#Clients" role="tab" aria-controls="Clients" aria-selected="false">Clients</a>
+						<a class="nav-link client-info" id="v-pills-messages-tab" (click)="clientClickInfo()" data-toggle="pill" href="#Clients"
+						 role="tab" aria-controls="Clients" aria-selected="false">Clients</a>
 
-						<a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#Memberships" role="tab" aria-controls="Memberships"
-						 aria-selected="false">Memberships</a>
+						<a class="nav-link mem-info" id="v-pills-settings-tab" (click)="membershipClickInfo()" data-toggle="pill" href="#Memberships"
+						 role="tab" aria-controls="Memberships" aria-selected="false">Memberships</a>
 
-						<a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#Packages" role="tab" aria-controls="Packages" aria-selected="false">Packages</a>
+						<a class="nav-link package-info" id="v-pills-settings-tab" (click)="packageClickInfo()" data-toggle="pill" href="#Packages"
+						 role="tab" aria-controls="Packages" aria-selected="false">Packages</a>
 
-						<a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#Promotions" role="tab" aria-controls="Promotions"
-						 aria-selected="false">Promotions</a>
+						<a class="nav-link promotion-info" id="v-pills-settings-tab" (click)="promitionClickInfo()" data-toggle="pill" href="#Promotions"
+						 role="tab" aria-controls="Promotions" aria-selected="false">Promotions</a>
 
-						<a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#gift-cards" role="tab" aria-controls="v-pills-settings"
-						 aria-selected="false">Gift Cards</a>
+						<a class="nav-link gift-card-info" id="v-pills-settings-tab" (click)="giftcardClickInfo()" data-toggle="pill" href="#gift-cards"
+						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Gift Cards</a>
 
-						<a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#Products" role="tab" aria-controls="v-pills-settings"
-						 aria-selected="false">Products</a>
+						<a class="nav-link product-info" id="v-pills-settings-tab" (click)="productClickInfo()" data-toggle="pill" href="#Products"
+						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Products</a>
 
-						<a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#Inventory" role="tab" aria-controls="v-pills-settings"
-						 aria-selected="false">Inventory</a>
+						<a class="nav-link inventory-info" id="v-pills-settings-tab" (click)="inventoryClickInfo()" data-toggle="pill" href="#Inventory"
+						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Inventory</a>
 
-						<a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#Pricing" role="tab" aria-controls="v-pills-settings"
-						 aria-selected="false">Pricing</a>
+						<a class="nav-link pricing-info" id="v-pills-settings-tab" (click)="pricingClickInfo()" data-toggle="pill" href="#Pricing"
+						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Pricing</a>
 
-						<a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#discounts" role="tab" aria-controls="v-pills-settings"
-						 aria-selected="false">Discounts</a>
+						<a class="nav-link discount-info" id="v-pills-settings-tab" (click)="discountClickInfo()" data-toggle="pill" href="#discounts"
+						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Discounts</a>
 					</div>
 				</div>
 				<div class="col-md-9 col-sm-9 col-xs-12 manager-tap-right">
 
 					<div class="tab-content" id="v-pills-tabContent">
-						<div class="tab-pane active" id="Communications" role="tabpanel" aria-labelledby="Communications">
+						<div class="tab-pane" id="Communications" role="tabpanel" aria-labelledby="Communications">
 							<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
 								<h3>
 									<a href="#" [routerLink]="" (click)="newsAndEventsClick()">
@@ -761,7 +764,8 @@
 														<div class="modal-dialog" role="document">
 															<div class="modal-content">
 																<div class="modal-header">
-																	<h3 class="modal-title col-md-8 margi0" id="exampleModalLabel" stryle="color:#fff;">Assign Gift Cards to Contract</h3>
+																	<h3 class="modal-title col-md-8 margi0" id="exampleModalLabel" stryle="color:#fff;">Assign Gift Cards to
+																		Contract</h3>
 																	<button type="button" class="close col-md-4" data-dismiss="modal" aria-label="Close">
 																		<span class="pull-right" aria-hidden="true">&times;</span>
 																	</button>
@@ -820,7 +824,8 @@
 																				</tr>
 																				<tr>
 																					<td>
-																						<input type="checkbox" class="form-check-input" id="exampleCheck1">&nbsp;35$ Gift Card (1time extra service Free)</td>
+																						<input type="checkbox" class="form-check-input" id="exampleCheck1">&nbsp;35$ Gift Card (1time extra
+																						service Free)</td>
 																					<td>$0.00</td>
 																					<td>$0.00</td>
 																					<td>$0.00</td>
@@ -855,7 +860,8 @@
 														<div class="modal-dialog" role="document">
 															<div class="modal-content">
 																<div class="modal-header">
-																	<h3 class="modal-title col-md-8 margi0" id="exampleModalLabel" stryle="color:#fff;">Assign Gift Cards to Contract</h3>
+																	<h3 class="modal-title col-md-8 margi0" id="exampleModalLabel" stryle="color:#fff;">Assign Gift Cards to
+																		Contract</h3>
 																	<button type="button" class="close col-md-4" data-dismiss="modal" aria-label="Close">
 																		<span class="pull-right" aria-hidden="true">&times;</span>
 																	</button>
@@ -914,7 +920,8 @@
 																				</tr>
 																				<tr>
 																					<td>
-																						<input type="checkbox" class="form-check-input" id="exampleCheck1">&nbsp;35$ Gift Card (1time extra service Free)</td>
+																						<input type="checkbox" class="form-check-input" id="exampleCheck1">&nbsp;35$ Gift Card (1time extra
+																						service Free)</td>
 																					<td>$0.00</td>
 																					<td>$0.00</td>
 																					<td>$0.00</td>
@@ -1049,7 +1056,8 @@
 																		<div class="clear"></div>
 																	</div>
 																	<div class="form-group">
-																		<label for="input" class="col-md-5 control-label">Does a client become a member when they purchase this pricing option?</label>
+																		<label for="input" class="col-md-5 control-label">Does a client become a member when they purchase this
+																			pricing option?</label>
 																		<div class="col-md-7">
 																			<div class="form-check">
 																				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
@@ -1084,10 +1092,12 @@
 																		<label for="input" class="col-md-5 control-label">Frequency</label>
 																		<div class="col-md-7">
 																			<div class="form-check">
-																				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>&nbsp;Recurring item: Client receives this with every contract payment
+																				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>&nbsp;Recurring
+																				item: Client receives this with every contract payment
 																			</div>
 																			<div class="form-check">
-																				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">&nbsp;One-time item: Client receives this once when the cotract is first purchased
+																				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">&nbsp;One-time
+																				item: Client receives this once when the cotract is first purchased
 
 																			</div>
 																		</div>
@@ -1332,8 +1342,8 @@
 																							<h4 class="modal-title" id="myModalLabel">Assign Contract Deposit</h4>
 																						</div>
 																						<div class="modal-body">
-																							<h4 style="font-weight:600;">Set up a contract deposit that you can collect when you sell the contract. You have the ability to
-																								return this to the client as either a credit to their account or a refund</h4>
+																							<h4 style="font-weight:600;">Set up a contract deposit that you can collect when you sell the contract.
+																								You have the ability to return this to the client as either a credit to their account or a refund</h4>
 																							<div class="form-group">
 																								<label for="input" class="col-md-5 control-label">Deposit amount</label>
 																								<div class="col-md-7">
@@ -1348,7 +1358,8 @@
 																							</div>
 
 																							<div class="form-group">
-																								<label for="input" class="col-md-5 control-label">Allow deposit amount to be editable at point of sale</label>
+																								<label for="input" class="col-md-5 control-label">Allow deposit amount to be editable at point of
+																									sale</label>
 																								<div class="col-md-7">
 																									<div class="form-check pull-left">
 																										<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -1376,8 +1387,8 @@
 																							<h4 class="modal-title" id="myModalLabel">Assign Contract Deposit</h4>
 																						</div>
 																						<div class="modal-body">
-																							<h4 style="font-weight:600;">Set up a contract deposit that you can collect when you sell the contract. You have the ability to
-																								return this to the client as either a credit to their account or a refund</h4>
+																							<h4 style="font-weight:600;">Set up a contract deposit that you can collect when you sell the contract.
+																								You have the ability to return this to the client as either a credit to their account or a refund</h4>
 																							<div class="form-group">
 																								<label for="input" class="col-md-5 control-label">Deposit amount</label>
 																								<div class="col-md-7">
@@ -1392,7 +1403,8 @@
 																							</div>
 
 																							<div class="form-group">
-																								<label for="input" class="col-md-5 control-label">Allow deposit amount to be editable at point of sale</label>
+																								<label for="input" class="col-md-5 control-label">Allow deposit amount to be editable at point of
+																									sale</label>
 																								<div class="col-md-7">
 																									<div class="form-check pull-left">
 																										<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -1620,7 +1632,8 @@
 
 																<div class="col-md-12">
 																	<label>
-																		<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;&nbsp;Electronic confirmation of contract
+																		<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;&nbsp;Electronic confirmation
+																		of contract
 																	</label>
 
 
