@@ -20,24 +20,17 @@ export class NewsEventsComponent implements OnInit {
   public date2: any;
 
   locationData = new Array();
-  messageData:any=[];
-  
+  messageData: any = [];
 
   constructor(private router: Router, private service: NewsEventsServiceService) { }
 
-
   ngOnInit() {
-    this.service.getTopMessage().subscribe(response=>{
-      this.messageData=response.json();
-      
-     
+    this.service.getTopMessage().subscribe(response => {
+      this.messageData = response.json();
     })
-    
   }
-  
 
   addEventNews() {
-  
     var data = {
       event_topname: this.eventTopMessage,
       event_name: this.eventName,
@@ -45,19 +38,15 @@ export class NewsEventsComponent implements OnInit {
       event_link: this.eventLink,
       event_startdate: this.eventStartDate,
       event_enddate: this.eventEndDate
-      
     }
     this.service.newsEventPost(data).subscribe(response => {
       this.locationData = response.json();
       this.eventTopMessage = '';
-      this.eventName='';
-      this.eventDescription='';
-      this.eventLink='';
-      this.eventStartDate='';
-      this.eventEndDate='';
-      
-      console.log(this.locationData)
-      
+      this.eventName = '';
+      this.eventDescription = '';
+      this.eventLink = '';
+      this.eventStartDate = '';
+      this.eventEndDate = '';
     });
   }
 
@@ -76,18 +65,15 @@ export class NewsEventsComponent implements OnInit {
   backToMembership() {
     this.router.navigate(['management']);
   }
- updateMessage(val){
-  console.log(val);
-  var data={
-    top_msg_id:val.top_msg_id,
-    top_msg:val.top_msg    
+  updateMessage(val) {
+    var data = {
+      top_msg_id: val.top_msg_id,
+      top_msg: val.top_msg
+    }
+    this.service.editTopMessage(data).subscribe(response => {
+   
+    })
   }
-  console.log('****');
-  console.log(data);
-  this.service.editTopMessage(data).subscribe(response=>{
-    console.log(response)
-  })
- }
 
 
 }

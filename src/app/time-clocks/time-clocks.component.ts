@@ -87,14 +87,11 @@ export class TimeClocksComponent implements OnInit {
   loginPopUp() {
 
     $('#myModal').modal('show');
-
-
   }
   backLocation() {
     this._location.back();
-
   }
-  RedirectToHome(){
+  RedirectToHome() {
     this.router.navigate(['dashboard']);
   }
   loginSubmite() {
@@ -189,7 +186,7 @@ export class TimeClocksComponent implements OnInit {
     var dt2 = new Date(BreakIn1);
     let difference1 = dt2.getTime() - dt1.getTime();
     let resultInMinutes1 = Math.round(difference1 / 60000);
-    
+
 
     let BreakOut2 = this.getFormattedDate(this.data.break_out2);
     let BreakIn2 = this.getFormattedDate(this.data.break_in2);
@@ -197,7 +194,7 @@ export class TimeClocksComponent implements OnInit {
     var dt4 = new Date(BreakIn2);
     let difference2 = dt4.getTime() - dt3.getTime();
     let resultInMinutes2 = Math.round(difference2 / 60000);
-    
+
 
     let BreakOut3 = this.getFormattedDate(this.data.break_out3);
     let BreakIn3 = this.getFormattedDate(this.data.break_in3);
@@ -205,7 +202,7 @@ export class TimeClocksComponent implements OnInit {
     var dt6 = new Date(BreakIn3);
     let difference3 = dt6.getTime() - dt5.getTime();
     let resultInMinutes3 = Math.round(difference3 / 60000);
-   
+
 
     let BreakOut4 = this.getFormattedDate(this.data.break_out4);
     let BreakIn4 = this.getFormattedDate(this.data.break_in4);
@@ -214,7 +211,7 @@ export class TimeClocksComponent implements OnInit {
     let difference4 = dt8.getTime() - dt7.getTime();
     let resultInMinutes4 = Math.round(difference4 / 60000);
     var timeDiffTotal = resultInMinutes1 + resultInMinutes2 + resultInMinutes3 + resultInMinutes4;
-     let TimeIn = this.getFormattedDate(this.data.check_in_time);
+    let TimeIn = this.getFormattedDate(this.data.check_in_time);
     let TimeOut = this.getFormattedDate(this.data.check_out_time);
     var dt0 = new Date(TimeIn);
     var dt9 = new Date(TimeOut);

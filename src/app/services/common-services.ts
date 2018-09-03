@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class Services {
     api: string = 'http://localhost:3001/';
     _num: any[];
-    constructor(){
+    constructor() {
         console.log("***************")
     }
     setcategoryValue(val) {

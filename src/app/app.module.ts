@@ -1,6 +1,6 @@
 
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,20 +25,20 @@ import { NewTicketNextButtonInvoiceComponent } from './new-ticket-next-button-in
 import { NewTicketInvoicePaymentComponent } from './new-ticket-invoice-payment/new-ticket-invoice-payment.component';
 import { MembershipComponent } from './manager-tool/membership/membership.component'; // <-- import the module
 // import { ApiFrontendURLSComponent } from './api-frontend-urls/api-frontend-urls.component';
-import {TableModule} from 'primeng/table';
+import { TableModule } from 'primeng/table';
 import { HttpModule } from '@angular/http';
-import {PaginatorModule} from 'primeng/paginator';
+import { PaginatorModule } from 'primeng/paginator';
 import { ScheduleComponent } from './schedule/schedule.component';
-import {DialogModule} from 'primeng/dialog';
-import {ToastModule} from 'primeng/toast';
-import {MessageService} from 'primeng/api';
+import { DialogModule } from 'primeng/dialog';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { TimeClocksComponent } from './time-clocks/time-clocks.component';
 import { ReportsComponent } from './reports/reports.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { SetupComponent } from './setup/setup.component';
 import { InactiveMembershipComponent } from './manager-tool/inactive-membership/inactive-membership.component';
-import {CalendarModule} from 'primeng/calendar';
+import { CalendarModule } from 'primeng/calendar';
 import * as moment from 'moment';
 import { StaffClockInOutComponent } from './manager-tool/staff-clock-in-out/staff-clock-in-out.component';
 import { StaffVieworeditTimeclockComponent } from './manager-tool/staff-vieworedit-timeclock/staff-vieworedit-timeclock.component';
@@ -58,7 +58,7 @@ import { AddGiftCardComponent } from './manager-tool/add-gift-card/add-gift-card
 import { EditGiftCardComponent } from './manager-tool/edit-gift-card/edit-gift-card.component';
 import { ViewActiveGiftCardComponent } from './manager-tool/view-active-gift-card/view-active-gift-card.component';
 import { OnlineGiftCardsComponent } from './manager-tool/online-gift-cards/online-gift-cards.component';
-import {AutoCompleteModule} from 'primeng/autocomplete'
+import { AutoCompleteModule } from 'primeng/autocomplete'
 
 
 const routes: Routes = [
@@ -77,26 +77,26 @@ const routes: Routes = [
   { path: 'staff-permissions', component: StaffPermissionsComponent, canActivate: [AuthGuard] },
   { path: 'staff-schedule-view', component: StaffScheduleViewComponent, canActivate: [AuthGuard] },
   { path: 'staff-members', component: StaffMembersComponent, canActivate: [AuthGuard] },
-  { path: 'staff-schedule-add/edit', component: StaffScheduleAddComponent , canActivate: [AuthGuard] },
+  { path: 'staff-schedule-add/edit', component: StaffScheduleAddComponent, canActivate: [AuthGuard] },
   { path: 'add-packages', component: AddPackagesComponent, canActivate: [AuthGuard] },
-  { path: 'edit-packages', component: EditPackagesComponent , canActivate: [AuthGuard] },
-  { path: 'add-promotions', component: AddPromotionsComponent , canActivate: [AuthGuard] },
-  { path: 'edit-promotions', component: EditPromotionsComponent , canActivate: [AuthGuard] },
-  { path: 'news-and-events', component: NewsEventsComponent , canActivate: [AuthGuard] },
-  { path: 'auto-emails', component: AutoEmailsComponent , canActivate: [AuthGuard] },
-  { path: 'membership-setup', component: MembershipSetupComponent , canActivate: [AuthGuard] },
-  { path: 'cancel-group-lesson', component: CancelGroupLessonComponent , canActivate: [AuthGuard] },
-  { path: 'add-new-gift-card', component: AddGiftCardComponent , canActivate: [AuthGuard] },
-  { path:'edit-gift-card',component:EditGiftCardComponent, canActivate: [AuthGuard] },
-  { path:'view-active-gift-card',component:ViewActiveGiftCardComponent, canActivate: [AuthGuard] },
-  { path:'online-gift-card',component:OnlineGiftCardsComponent, canActivate: [AuthGuard] },
-  
-  { path:'schedule',component:ScheduleComponent, canActivate: [AuthGuard] },
-  { path:'appointments',component:AppointmentsComponent,canActivate: [AuthGuard]},
-  { path:'time-clocks',component:TimeClocksComponent,canActivate: [AuthGuard]},
-  { path:'reports',component:ReportsComponent,canActivate: [AuthGuard]},
-  { path:'inventory',component:InventoryComponent,canActivate: [AuthGuard]},
-  { path:'setup',component:SetupComponent,canActivate: [AuthGuard]}
+  { path: 'edit-packages', component: EditPackagesComponent, canActivate: [AuthGuard] },
+  { path: 'add-promotions', component: AddPromotionsComponent, canActivate: [AuthGuard] },
+  { path: 'edit-promotions', component: EditPromotionsComponent, canActivate: [AuthGuard] },
+  { path: 'news-and-events', component: NewsEventsComponent, canActivate: [AuthGuard] },
+  { path: 'auto-emails', component: AutoEmailsComponent, canActivate: [AuthGuard] },
+  { path: 'membership-setup', component: MembershipSetupComponent, canActivate: [AuthGuard] },
+  { path: 'cancel-group-lesson', component: CancelGroupLessonComponent, canActivate: [AuthGuard] },
+  { path: 'add-new-gift-card', component: AddGiftCardComponent, canActivate: [AuthGuard] },
+  { path: 'edit-gift-card', component: EditGiftCardComponent, canActivate: [AuthGuard] },
+  { path: 'view-active-gift-card', component: ViewActiveGiftCardComponent, canActivate: [AuthGuard] },
+  { path: 'online-gift-card', component: OnlineGiftCardsComponent, canActivate: [AuthGuard] },
+
+  { path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuard] },
+  { path: 'appointments', component: AppointmentsComponent, canActivate: [AuthGuard] },
+  { path: 'time-clocks', component: TimeClocksComponent, canActivate: [AuthGuard] },
+  { path: 'reports', component: ReportsComponent, canActivate: [AuthGuard] },
+  { path: 'inventory', component: InventoryComponent, canActivate: [AuthGuard] },
+  { path: 'setup', component: SetupComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
@@ -119,43 +119,43 @@ const routes: Routes = [
     InventoryComponent,
     SetupComponent,
     InactiveMembershipComponent,
-  
+
     StaffClockInOutComponent,
-  
+
     StaffVieworeditTimeclockComponent,
-  
+
     StaffPermissionsComponent,
-  
+
     StaffScheduleViewComponent,
-  
+
     StaffMembersComponent,
-  
+
     StaffScheduleAddComponent,
-  
+
     AddPackagesComponent,
-  
+
     EditPackagesComponent,
-  
+
     AddPromotionsComponent,
-  
+
     EditPromotionsComponent,
-  
+
     NewsEventsComponent,
-  
+
     AutoEmailsComponent,
-  
+
     MembershipSetupComponent,
-  
+
     CancelGroupLessonComponent,
-  
+
     AddGiftCardComponent,
-  
+
     EditGiftCardComponent,
-  
+
     ViewActiveGiftCardComponent,
-  
+
     OnlineGiftCardsComponent
-     
+
   ],
   imports: [
     BrowserModule,
@@ -177,7 +177,7 @@ const routes: Routes = [
     ToastModule,
     AutoCompleteModule
   ],
-  providers: [Globals, AuthGuard, Services,MessageService],
+  providers: [Globals, AuthGuard, Services, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

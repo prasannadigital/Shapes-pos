@@ -41,15 +41,14 @@ export class ScheduleComponent implements OnInit {
     this.messageService.add({key: 'tl',severity:'success', summary: 'Success Message', detail:'Order submitted'});
 }
 getStartDate(){
-  
   let day = this.date1.getDate();
   let month = this.date1.getMonth()+1;
   let year =this.date1.getFullYear();
   let newDate = moment(this.date1).format('YYYY-MM-DD').toString();
   console.log(newDate);
   this.shedule.startdate  = newDate;
-
 }
+
 getEndDate(){
   let day1 = this.date2.getDate();
   let month1 = this.date2.getMonth()+1;
@@ -57,13 +56,11 @@ getEndDate(){
   let newDate1 = moment(this.date2).format('YYYY-MM-DD').toString();
   console.log(newDate1);
   this.shedule.enddate=newDate1;
-
 }
 getShedule(){
   console.log(this.shedule);
   this.service.getEmpAppointments(this.shedule.startdate,this.shedule.enddate,this.shedule.employee_id,this.shedule.branch_id).subscribe(response => {
   this.appointmentsData = response.json();
- 
    this.titleStyle="visible";
   console.log(this.appointmentsData);
 }); 

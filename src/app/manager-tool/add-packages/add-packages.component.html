@@ -1,43 +1,38 @@
 <div class="tabs-services">
-    <app-header></app-header>
+	<app-header></app-header>
 
-
-<div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-6"></div>
-    <div class="col-sm-2"><button type="button" class="btn backBtn pull-right" (click)="backToMembership();">Back</button></div>
-  </div>
-	
-		<div class="package-3">
-			<h4>Add a New Package</h4>
-			<div class="col-md-12 col-sm-12 package-3-left">
-			<div class="form-group">
-					
-					<div class="col-md-12">
-						<div class="form-group">
-							<label for="input" class="col-md-5 control-label">Package name</label>
-								<div class="col-md-7">
-									<input type="text" class="form-control" id="inputEmail3" placeholder="" required="">
-								</div>
-							<div class="clear"></div>
-						</div>
-					</div>
-					
-					<div class="clear"></div>
-				</div>
-				<!-- <div class="form-check"> -->
-					<!-- <label class="form-check-label" for="inlineFormCheck">Discontinued</label> -->
-					<!-- <input class="form-check-input" type="checkbox" id="inlineFormCheck"> -->
-			  <!-- </div> -->
-			</div>
-			<div class="clear"></div>
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-6"></div>
+		<div class="col-sm-2">
+			<button type="button" class="btn backBtn pull-right" (click)="backToMembership();">Back</button>
 		</div>
-		<div class="package-3">
-			<h4>Add item to package</h4>
-			<div class="col-md-12 col-sm-12 package-3-left">
-				<div class="form-group">
-					<label for="input" class="col-md-2 control-label">Type of item</label>
-					<div class="col-md-10">
+	</div>
+	<div class="package-3">
+		<h4>Add a New Package</h4>
+		<div class="col-md-12 col-sm-12 package-3-left">
+			<div class="form-group">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="input" class="col-md-5 control-label">Package name</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="inputEmail3" placeholder="" required="">
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="package-3">
+		<h4>Add item to package</h4>
+		<div class="col-md-12 col-sm-12 package-3-left">
+			<div class="form-group">
+				<label for="input" class="col-md-2 control-label">Type of item</label>
+				<div class="col-md-10">
 					<select class="form-control">
 						<option>Select Type of item</option>
 						<option>2</option>
@@ -45,72 +40,74 @@
 						<option>4</option>
 						<option>5</option>
 					</select>
-					</div>
-					<div class="clear"></div>
 				</div>
-				<table width="100%">
-					<tr>
-						<th>Remove</th>
-						<th>Package Item</th>
-						<th>Price</th>
-						<th>Discount</th>
-						<th>Total</th>
-					</tr>
-					<tr>
-						<td><i class="fas fa-trash"></i></td>
-						<td>Brow Shaping + Lashes</td>
-						<td>$19.95</td>
-						<td>$9.98</td>
-						<td>$9.98</td>
-					</tr>
-					<tr>
-						<td><i class="fas fa-trash"></i></td>
-						<td>Brow Shaping + Tinting</td>
-						<td>$19.95</td>
-						<td>$9.98</td>
-						<td>$9.98</td>
-					</tr>
-				</table>
-				
+				<div class="clear"></div>
 			</div>
-			<div class="clear"></div>
+			<table width="100%">
+				<tr>
+					<th>Remove</th>
+					<th>Package Item</th>
+					<th>Price</th>
+					<th>Discount</th>
+					<th>Total</th>
+				</tr>
+				<tr>
+					<td>
+						<i class="fas fa-trash"></i>
+					</td>
+					<td>Brow Shaping + Lashes</td>
+					<td>$19.95</td>
+					<td>$9.98</td>
+					<td>$9.98</td>
+				</tr>
+				<tr>
+					<td>
+						<i class="fas fa-trash"></i>
+					</td>
+					<td>Brow Shaping + Tinting</td>
+					<td>$19.95</td>
+					<td>$9.98</td>
+					<td>$9.98</td>
+				</tr>
+			</table>
+
 		</div>
-		<div class="package-3">
-			<h4>Set Options</h4>
-			<div class="col-md-12 col-sm-12 package-4-left">
-				<div class="form-group">
-					<label for="input" class="col-md-2 control-label">Discount %</label>
-					<div class="col-md-10">
+		<div class="clear"></div>
+	</div>
+	<div class="package-3">
+		<h4>Set Options</h4>
+		<div class="col-md-12 col-sm-12 package-4-left">
+			<div class="form-group">
+				<label for="input" class="col-md-2 control-label">Discount %</label>
+				<div class="col-md-10">
 					<input type="text" class="form-control" id="exampleInputtype" placeholder="Discount %">
-					</div>
-					<div class="clear"></div>
 				</div>
-				<div class="form-check">
-					<label class="form-check-label" for="inlineFormCheck">Sell Online</label>
-					<input class="form-check-input" type="checkbox" id="inlineFormCheck">
-				 </div>
-			  <div class="form-check">
+				<div class="clear"></div>
+			</div>
+			<div class="form-check">
+				<label class="form-check-label" for="inlineFormCheck">Sell Online</label>
+				<input class="form-check-input" type="checkbox" id="inlineFormCheck">
+			</div>
+			<div class="form-check">
 				<label class="form-check-label" for="inlineFormCheck">Advanced options</label>
 				<input class="form-check-input" type="checkbox" id="inlineFormCheck">
-			  </div>
-			  
 			</div>
-			<div class="clear"></div>
 		</div>
-		<div>
+		<div class="clear"></div>
+	</div>
+	<div>
 		<small class="pull-right" style="color:red;">Please add an item to this package</small>
 		<div class="clear"></div>
-		</div>
-		<div class="package-5">
-			<div class="col-md-12 col-sm-12 package-5-left">
-				<input class="btn btn-pl-51" type="reset" value="Cancel">
-				<input class="btn btn-pl-5" type="submit" value="Save">
-			</div>
-			<div class="clear"></div>
+	</div>
+	<div class="package-5">
+		<div class="col-md-12 col-sm-12 package-5-left">
+			<input class="btn btn-pl-51" type="reset" value="Cancel">
+			<input class="btn btn-pl-5" type="submit" value="Save">
 		</div>
 		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>
 
-	
-  </div><!--main div-->
 
 <app-footer></app-footer>

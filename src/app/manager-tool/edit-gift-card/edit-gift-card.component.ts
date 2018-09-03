@@ -12,7 +12,7 @@ export class EditGiftCardComponent implements OnInit {
 
   giftCardData: any = [];
   editData: any = [];
-  getData:any=[];
+  getData: any = [];
   selectedValue: string;
   selectedOption: any;
   states: any[] = [];
@@ -23,74 +23,62 @@ export class EditGiftCardComponent implements OnInit {
   ngOnInit() {
     this.getGiftCardData();
   }
+
   backToMembership() {
     this.router.navigate(['management']);
   }
+
   getGiftCardData() {
     this.service.getGiftCard().subscribe(giftCardData => {
       this.giftCardData = giftCardData.json();
       console.log(giftCardData)
     })
   }
+
   onSelect(event: TypeaheadMatch): void {
     console.log(event);
     this.selectedOption = event.item;
   }
+
   customerSearch(val) {
     this.service.searchPlace(val).subscribe(data => {
       this.temp3.push(data.json());
-      this.states = this.temp3.pop();  
+      this.states = this.temp3.pop();
       console.log(this.states);
     });
-
   }
+
   EditGiftCard(data) {
-    console.log(data);
     this.editData = data;
-   
-    console.log(this.editData.giftcard_discount_price)
     if (this.editData.giftcard_discount_price.toString() == 'n') {
       this.editData.giftcard_discount_price = '';
     }
     if (this.editData.giftcard_sell_online.toString() == 'n') {
       this.editData.giftcard_sell_online = '';
     }
-   
   }
 
-  // cancelGiftCard(data){
-  //   console.log(data);
-  //   this.getData=data;
-  //   console.log(this.getData);
-  //   this.editData.giftcard_sold_at=this.getData.giftcard_sold_at;
-  //  this.editData.giftcard_value=this.getData.giftcard_value;
-  // this.editData.giftcard_discount_price=this.getData.giftcard_discount_price;
-  // this.editData.giftcard_name=this.getData.editData.giftcard_name;
-  // this.editData.giftcard_sell_online=this.getData.giftcard_sell_online;
-
-  // }
   updateGiftCard(val) {
     let sellOnlineCheckBox;
     let discountCheckbox;
     if (val.giftcard_sell_online.toString() == 'true') {
       sellOnlineCheckBox = 'y'
-      this.editData.giftcard_sell_online='y'
+      this.editData.giftcard_sell_online = 'y'
     }
-    if(val.giftcard_sell_online.toString() == 'false'){
+    if (val.giftcard_sell_online.toString() == 'false') {
       sellOnlineCheckBox = 'n'
-      this.editData.giftcard_sell_online='n'
+      this.editData.giftcard_sell_online = 'n'
     }
     console.log(val.giftcard_discount_price)
     if (val.giftcard_discount_price.toString() == 'true') {
       discountCheckbox = 'y'
-      this.editData.giftcard_discount_price='y'
+      this.editData.giftcard_discount_price = 'y'
     }
-    if(val.giftcard_discount_price.toString() == 'false'){
+    if (val.giftcard_discount_price.toString() == 'false') {
       discountCheckbox = 'n'
-      this.editData.giftcard_discount_price='n'
+      this.editData.giftcard_discount_price = 'n'
     }
-    
-    console.log(val);
+
     var data = {
       giftcard_id: val.giftcard_id,
       giftcard_name: val.giftcard_name,
@@ -101,15 +89,9 @@ export class EditGiftCardComponent implements OnInit {
       giftcard_allow_staff_set_price: val.giftcard_allow_staff_set_price,
       giftcard_everyone_purchase: val.giftcard_everyone_purchase,
     }
-    console.log('sell online');
-    console.log(val.giftcard_sell_online);
-    console.log(sellOnlineCheckBox);
-
-    console.log('***********');
-    console.log(data)
+  
     this.service.saveGiftCard(data).subscribe(response => {
       console.log(response.json().giftcard_sell_online);
-      // this.editData.giftcard_sell_online=response.json().giftcard_sell_online;
     })
     $("#add-new-giftcard").modal('hide');
   }

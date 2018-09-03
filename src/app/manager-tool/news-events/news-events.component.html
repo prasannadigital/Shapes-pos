@@ -10,7 +10,6 @@
 				<button type="button" class="btn backBtn pull-right" (click)="backToMembership();">Back</button>
 			</div>
 		</div>
-
 		<div class="news-updates1">
 			<h3>Update News and Events</h3>
 			<div class="form-group">
@@ -25,7 +24,6 @@
 			</button>
 			<div class="clear"></div>
 		</div>
-
 		<div class="news-updates1">
 			<h3>Add New News Or Event</h3>
 			<div class="form-group">
@@ -57,15 +55,8 @@
 							<label for="input" class="col-md-5 control-label">Start Date</label>
 							<div class="col-md-7">
 								<div class="input-group">
-									<!-- <input type="text" class="form-control" name="date" id="date" data-select="datepicker" [(ngModel)]="eventStartDate" data-locked="25/12/2014;1/1/2015">
-									<span class="input-group-btn">
-										<button type="button" class="btn btn-primary" data-toggle="datepicker">
-											<i class="fa fa-calendar"></i>
-										</button>
-									</span> -->
-									<!-- <p-calendar [(ngModel)]="eventStartDate" name="eventStartdate" [showIcon]="true" (ngModelChange)="getEventStartDate($event)"
-									 dateFormat="yy-mm-dd"></p-calendar> -->
-									 <p-calendar [(ngModel)]="eventStartDate"  name="eventStartdate" [showIcon]="true" (ngModelChange)="getEventStartDate($event)" dateFormat="yy-mm-dd"></p-calendar>
+									<p-calendar [(ngModel)]="eventStartDate" name="eventStartdate" [showIcon]="true" (ngModelChange)="getEventStartDate($event)"
+									 dateFormat="yy-mm-dd"></p-calendar>
 								</div>
 							</div>
 							<div class="clear"></div>
@@ -92,6 +83,5 @@
 		</div>
 	</div>
 </div>
-<!--main div-->
 
 <app-footer></app-footer>

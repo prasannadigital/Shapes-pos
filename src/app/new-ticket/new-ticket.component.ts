@@ -40,8 +40,10 @@ export class NewTicketComponent implements OnInit {
       name: new FormControl(this.name, [Validators.required, Validators.minLength(6), Validators.maxLength(9)])
     })
   }
+
   ngOnInit() {
   }
+
   saveCustomer() {
     this.submitted = true;
     console.log("save")
@@ -127,7 +129,6 @@ export class NewTicketComponent implements OnInit {
   }
   serviceInfo() {
     if (this.selectedOption) {
-      // console.log(this.selectedOption.user_id)
       this.http.get(environment.host + 'sales/service-history/' + this.selectedOption.user_id).subscribe(data => {
         console.log(data);
         this.services = data;
@@ -135,7 +136,6 @@ export class NewTicketComponent implements OnInit {
     }
   }
   customerSearch(val) {
-
     if (val.length >= 3) {
       this.http.get(environment.host + 'users/search/' + val).subscribe(data => {
         this.temp.push(data);
@@ -144,4 +144,5 @@ export class NewTicketComponent implements OnInit {
       });
     }
   }
+  
 }

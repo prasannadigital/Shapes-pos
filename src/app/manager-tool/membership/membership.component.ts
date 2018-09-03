@@ -15,14 +15,11 @@ export class MembershipComponent implements OnInit {
 
   memberships: any = []
   editRowId: any;
-
   catagroyData = new Array();
 
   constructor(private router: Router, private http: Http, private service: MembershipServiceService) { }
 
   ngOnInit() {
-
-
     this.service.getMembership().subscribe(memberships => {
       this.memberships = memberships.json();
 
@@ -33,7 +30,6 @@ export class MembershipComponent implements OnInit {
   UpdateMembership(val) {
     console.log(val);
     var data = {
-
       "membership_name": val.membership_name,
       "membership_code": val.membership_code,
       "membership_discount": val.membership_discount,
@@ -41,17 +37,13 @@ export class MembershipComponent implements OnInit {
       "membership_validity_in_days": val.membership_validity_in_days,
       "membership_id": val.membership_id,
       "cat_id": val.cat_id
-
     }
-    console.log(data)
     this.service.editMembership(data).subscribe(response => {
-      console.log(response);
       this.editRowId = '';
     })
   }
   set_catagroy(data) {
-    console.log("*************")
-    console.log(data)
+  
   }
 
   backToMembership() {
@@ -60,24 +52,20 @@ export class MembershipComponent implements OnInit {
 
   edit(val) {
     this.editRowId = val;
-    console.log(val);
-
   }
+
   getCategory() {
     this.service.getCategoryList().subscribe(response => {
       this.catagroyData = response.json();
     })
   }
+
   changeCategory(val, userId, index) {
-    console.log(val)
-    console.log(userId)
-    console.log(index)
+    
   }
 
   getSubCategory() {
 
   }
-
-
 
 }

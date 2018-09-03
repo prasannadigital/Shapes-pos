@@ -7,7 +7,6 @@ import * as _ from 'lodash';
   styleUrls: ['./new-ticket-invoice-payment.component.css']
 })
 export class NewTicketInvoicePaymentComponent implements OnInit {
-
   operand = '';
   constructor() {
 
@@ -73,17 +72,15 @@ export class NewTicketInvoicePaymentComponent implements OnInit {
     }
   }
 
-  onClickClear(){
+  onClickClear() {
     this.operand = '';
   }
 
-  removeLast(){
-    this.operand = this.operand.substr(0,this.operand.length-1);
+  removeLast() {
+    this.operand = this.operand.substr(0, this.operand.length - 1);
   }
 
-  calculate(operator: any) {  
-    console.log("*******")
-    console.log(operator)
+  calculate(operator: any) {
     if (_.includes(this.operand, '+')) {
       let x = this.operand.split("+");
       if (x.length == 2) {

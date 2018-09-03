@@ -16,6 +16,7 @@ export class AppointmentsComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   setColor(val) {
     console.log(val)
     this.count = this.count + 1;

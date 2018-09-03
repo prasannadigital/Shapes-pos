@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import {environment} from '../../environments/environment';
+import { environment } from '../../environments/environment';
 import { Services } from '../services/common-services';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead/typeahead-match.class';
 declare var $: any;
@@ -20,15 +20,13 @@ export class NewTicketNextButtonComponent implements OnInit {
   commonValues;
   temp: any[] = new Array();
   categories;
-  // display='none';
   memberships;
   packages;
   _service = false;
   _membership = false;
   _package = false;
 
-
-  constructor(private http: HttpClient,  private router: Router, private services: Services) {
+  constructor(private http: HttpClient, private router: Router, private services: Services) {
     this.http.get(environment.host + 'categorys').subscribe(data => {
       this.categories = data;
     });
@@ -39,7 +37,9 @@ export class NewTicketNextButtonComponent implements OnInit {
     this.http.get(environment.host + 'packages').subscribe(data => {
       this.packages = data;
     });
-    // this.services.setcategoryValue(3);
+  }
+  
+  ngOnInit() {
   }
 
   onSelectStylish(event: TypeaheadMatch): void {
@@ -165,9 +165,6 @@ export class NewTicketNextButtonComponent implements OnInit {
         this.stylishResult = this.temp[0];
       });
     }
-  }
-
-  ngOnInit() {
   }
 
 }

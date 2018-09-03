@@ -23,4 +23,5 @@ export class DashboardComponent implements OnInit {
     console.log("new ticket");
     this.router.navigate(['new-ticket']);
   }
+  
 }

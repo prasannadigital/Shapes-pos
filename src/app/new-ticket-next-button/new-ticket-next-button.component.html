@@ -152,15 +152,6 @@
           data-toggle="modal" href="#selectedCategory">
           <a>{{membership.membership_name}}</a>
         </div>
-        <!-- <div class="sm-button">
-          <a>Unlimited Brow Membership</a>
-        </div>
-        <div class="sm-button">
-          <a>Unlimited Brow + Lip Membership</a>
-        </div>
-        <div class="sm-button">
-          <a>Unlimited Full Face Membership</a>
-        </div> -->
         <div class="clear"></div>
       </div>
 
@@ -194,7 +185,6 @@
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="packageCategory">
   <div class="modal-dialog">
     <div class="select-membership">
@@ -243,8 +233,6 @@
     <div class="select-stylist-search">
       <h4>Search</h4>
       <div class="input-group">
-        <!-- <input type="text" class="form-control" placeholder="Search here..."> -->
-        <!-- type a head here -->
         <input [(ngModel)]="selectedValue" typeaheadWaitMs="1000" [typeahead]="catProdMemResult" (ngModelChange)='catProdMemSearch($event)'
           [typeaheadMinLength]="2" typeaheadOptionField="name" (typeaheadOnSelect)="onSelect($event)" class="form-control">
         <span class="input-group-btn">
@@ -253,18 +241,14 @@
           </button>
         </span>
       </div>
-      <!-- /input-group -->
+      
     </div>
     <div class="sss-select">
       <div class="">
-        <!-- <select class="form-control" data-toggle="modal" data-target="#serviceCategory" id="exampleFormControlSelect1">
-         
-        </select> -->
         <div class="sur-info">
           <h3 data-toggle="modal" data-target="#serviceCategory" style="padding-top: 16px;margin-left: 42px;margin-right: 51px;height: 53px;">Select Service Category</h3>
         </div>
       </div>
-
       <div class="form-group">
         <div class="sur-info">
           <h3 data-toggle="modal" data-target="#membershipCategory" style="padding-top: 16px;margin-left: -11px;margin-right: 1px;height: 53px;">Select Membership</h3>
@@ -278,8 +262,6 @@
       </div>
     </div>
   </div>
-  <!---select-stylist-left-->
-
   <div class="col-md-6 col-sm-6 col-xs-12 select-stylist-right">
     <div class="select-stylist-search1">
       <h4>Select a Stylist</h4>
@@ -299,8 +281,6 @@
       <a>Next Available</a>
       <div class="clear"></div>
     </div>
-
-
     <div class="ssr-table">
       <table width="100%">
         <tr>
@@ -348,8 +328,6 @@
       </table>
       <div class="clear"></div>
     </div>
-
-
     <div class="select-stylist-footer-right">
       <ul>
         <li>
@@ -375,10 +353,8 @@
       </ul>
       <div class="clear"></div>
     </div>
-
-
   </div>
   <div class="clear"></div>
- 
+
 </div>
 <app-footer></app-footer>

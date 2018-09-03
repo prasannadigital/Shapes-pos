@@ -8,9 +8,6 @@ import { environment } from '../../environments/environment';
 import { SheduleServiceService } from '../services/shedule-service.service';
 import { GiftCardServiceService } from '../services/gift-card-service.service';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
-// import * as jsPDF from 'jspdf';
-// import { autoTable } from 'jspdf-autotable';
-// import 'jspdf-autotable';
 declare var jsPDF: any;
 declare var $: any;
 
@@ -60,6 +57,9 @@ export class ManagerComponent implements OnInit {
   private isShowMembership = false;
   private isShowPackage = false;
 
+  selectedValue: string;
+  selectedOption: any;
+  states: any[] = [];
 
   constructor(private service: MembershipServiceService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
     this.http.get(this.globals.api + 'categorys').subscribe(data => {
@@ -87,20 +87,22 @@ export class ManagerComponent implements OnInit {
     });
   }
 
+  ngOnInit() {
+    this.service.getCategoryList().subscribe(response => {
+      this.catagroyData = response.json();
+    });
+
+  }
+
   changeCategory(event: string): void {
     this.selectedCategoryObject = JSON.parse(event);
     console.log(this.selectedCategoryObject)
   }
-  selectedValue: string;
-  selectedOption: any;
-  states: any[] = [];
-
-
-
+  
   customerSearch(val) {
     this.giftcard.searchPlace(val).subscribe(data => {
       this.temp3.push(data.json());
-      this.states = this.temp3.pop();  
+      this.states = this.temp3.pop();
       console.log(this.states);
     });
 
@@ -115,14 +117,7 @@ export class ManagerComponent implements OnInit {
     this.selectedSubCategoryObject = JSON.parse(event);
     console.log(this.selectedSubCategoryObject)
   }
-  ngOnInit() {
-    this.service.getCategoryList().subscribe(response => {
-      this.catagroyData = response.json();
-    });
-
-  }
-
-
+  
   downloadExcel() {
     console.log("Come here")
     var options = {
@@ -161,9 +156,9 @@ export class ManagerComponent implements OnInit {
         doc.text("Memebership Info", 40, 30);
       }
     });
-    // doc.text(JSON.stringify(this.memberships),10,10);
     doc.save('membership.pdf')
   }
+
   onEdit(val) {
     console.log(val)
     this.memName = val.membership_name;
@@ -190,7 +185,6 @@ export class ManagerComponent implements OnInit {
     this.addMembership.membership_validity_in_days = "";
   }
   id = 10;
-
   key: string = 'name';
   reverse: boolean = false;
   sort(key) {
@@ -198,7 +192,6 @@ export class ManagerComponent implements OnInit {
     this.reverse = !this.reverse;
   }
   p: number = 1;
-
 
   membershipClick() {
     this.isShowMembership = true;
@@ -218,7 +211,6 @@ export class ManagerComponent implements OnInit {
 
   }
 
-
   showActiveMembershipClick() {
     this.router.navigate(['management-membership']);
   }
@@ -227,57 +219,74 @@ export class ManagerComponent implements OnInit {
     this.router.navigate(['inactive-membership'])
 
   }
+
   staffClockInandOut() {
     this.router.navigate(['staff-clock-in/out'])
   }
+
   VieworEditTimeClock() {
     this.router.navigate(['staff-view/edit-timeclock'])
   }
+
   StaffPermissions() {
     this.router.navigate(['staff-permissions'])
   }
+
   ScheduleView() {
     this.router.navigate(['staff-schedule-view'])
   }
+
   StaffMembers() {
     this.router.navigate(['staff-members'])
   }
+
   ScheduleAddorEdit() {
     this.router.navigate(['staff-schedule-add/edit'])
   }
+
   AddPackagesClick() {
     this.router.navigate(['add-packages'])
   }
+
   EditPackagesClick() {
     this.router.navigate(['edit-packages'])
   }
+
   AddPromotionsClick() {
     this.router.navigate(['add-promotions'])
   }
+
   EditPromotionsClick() {
     this.router.navigate(['edit-promotions'])
   }
+
   newsAndEventsClick() {
     this.router.navigate(['news-and-events'])
   }
+
   autoEmailClick() {
     this.router.navigate(['auto-emails'])
   }
   membershipSetupClick() {
     this.router.navigate(['membership-setup'])
   }
+
   cancelClick() {
     this.router.navigate(['cancel-group-lesson'])
   }
+
   newGiftClick() {
     this.router.navigate(['add-new-gift-card'])
   }
+
   editGiftClick() {
     this.router.navigate(['edit-gift-card'])
   }
+
   viewGiftClick() {
     this.router.navigate(['view-active-gift-card'])
   }
+  
   redirectToViewGiftClick() {
     this.router.navigate(['view-active-gift-card'])
   }
@@ -313,7 +322,7 @@ export class ManagerComponent implements OnInit {
     } else {
       discountCheckbox = 'n'
     }
-          console.log(this.soldAt);
+    console.log(this.soldAt);
     var data: any = {
       giftcard_sold_at: this.soldAt,
       giftcard_value: this.cardValue,

@@ -11,7 +11,8 @@ export class AddPackagesComponent implements OnInit {
 
   ngOnInit() {
   }
-  backToMembership(){
+  
+  backToMembership() {
     this.router.navigate(['management']);
   }
 

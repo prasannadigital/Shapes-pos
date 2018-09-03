@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Services } from '../services/common-services';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import {environment} from '../../environments/environment';
+import { environment } from '../../environments/environment';
 import * as _ from 'lodash';
 
 @Component({
@@ -19,7 +19,8 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   selectResult;
   commonValues;
   _subTypeOfService;
-  constructor(private services: Services, private http: HttpClient,) {
+  
+  constructor(private services: Services, private http: HttpClient, ) {
     this.selectResult = JSON.parse(sessionStorage.getItem('selectedServices'));
     this.titleName = 'Service';
     this.http.get(environment.host + 'categorys').subscribe(data => {
@@ -37,7 +38,7 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
     } else if (val.membership_name) {
       this.commonValues = Array.of(val);
     } else if (_.size(val) && val.category_name) {
-      this.http.get(environment.host+ 'services/category/' + val.cat_id).subscribe(data => {
+      this.http.get(environment.host + 'services/category/' + val.cat_id).subscribe(data => {
         console.log(data)
         this.commonValues = Array.of(data);
       });
@@ -75,7 +76,7 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   productClick() {
     this.titleName = 'Product';
     this.edited = true;
-    this.http.get(environment.host+ 'products').subscribe(data => {
+    this.http.get(environment.host + 'products').subscribe(data => {
       this.common = data;
     });
   }

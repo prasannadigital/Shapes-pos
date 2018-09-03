@@ -50,9 +50,7 @@
     </div>
   </div>
 </div>
-
 <div class="modal fade" id="visitInfo">
-
   <div class="modal-dialog">
     <div class="visit">
       <div class="customer-info">
@@ -79,9 +77,7 @@
       <div class="clear"></div>
     </div>
   </div>
-
 </div>
-
 <div class="modal fade" id="addCustomerModelPopup">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -99,10 +95,9 @@
             </div>
             <div class=" col-md-6 col-sm-6 col-xs-12 client-form-left container" novalidate>
               <form>
-                <!-- Firstname-->
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text"  name="fname" class="form-control" [(ngModel)]="firstName" ngModel required #fname="ngModel" placeholder="First Name">
+                  <input type="text" name="fname" class="form-control" [(ngModel)]="firstName" ngModel required #fname="ngModel" placeholder="First Name">
                   <div *ngIf="fname.errors?.required && submitted" style="color:red">First Name is required </div>
                 </div>
                 <div class="form-group">
@@ -110,7 +105,6 @@
                   <input type="text" class="form-control" name="lname" [(ngModel)]="lastName" ngModel required #lname="ngModel" placeholder="Last Name">
                   <div *ngIf="lname.errors?.required && submitted" style="color:red">Last Name is required </div>
                 </div>
-
                 <div class="form-group">
                   <label>Birthday</label>
                   <input type="date" class="form-control" name="DOB" [(ngModel)]="DOB" required placeholder="Birthday">
@@ -122,16 +116,17 @@
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                   </select>
-                  
                 </div>
                 <div class="form-group">
                   <label>Phone</label>
-                  <input type="text" class="form-control" [(ngModel)]="mobileNo" name="mobile" placeholder="Home or Mobile" ngModel required #mobile="ngModel">
+                  <input type="text" class="form-control" [(ngModel)]="mobileNo" name="mobile" placeholder="Home or Mobile" ngModel required
+                    #mobile="ngModel">
                   <div *ngIf="mobile.errors?.required && submitted" style="color:red">Phone Number is required </div>
                 </div>
                 <div class="form-group">
                   <label>Email</label>
-                  <input type="email" [(ngModel)]="MailId" name="Mail" class="form-control" placeholder="name@example.com" ngmodel required #Mail="ngModel">
+                  <input type="email" [(ngModel)]="MailId" name="Mail" class="form-control" placeholder="name@example.com" ngmodel required
+                    #Mail="ngModel">
                   <div *ngIf="Mail.errors?.required && submitted" style="color:red">Email is required </div>
                 </div>
                 <div class="form-group">
@@ -140,7 +135,6 @@
                 </div>
               </form>
             </div>
-
             <!----------------Form left side end---------------------------->
             <div class="col-md-6 col-sm-6 col-xs-12 client-form-right">
               <form>
@@ -454,34 +448,22 @@
 
 <body>
   <div class="select-customer">
-
-    <!-- <h1 class="select-customer-title">Select a Customer</h1> -->
     <h1 class="select-customer-title"></h1>
-    <!-- <pre class="card card-block card-header mb-3">Model: {{selectedValue | json}}</pre>
-    <pre class="card card-block card-header mb-3">Selected option: {{selectedOption | json}}</pre> -->
+
 
     <div class="col-md-6 col-sm-6 col-xs-12 select-customer-left" style="margin-top: -29px">
       <div class="scl-search">
         <span>Customer Search:</span>
-        <!-- <input [(ngModel)]="selectedValue" [typeahead]="this.states" (ngModelChange)='customerSearch($event)' [typeaheadMinLength]="2"
-          typeaheadOptionField="name" (typeaheadOnSelect)="onSelect($event)" class="form-control"> -->
-     <input [(ngModel)]="selectedValue"  (ngModelChange)='customerSearch($event)' typeaheadOptionField="name" class="form-control"  >
-
+        <input [(ngModel)]="selectedValue" (ngModelChange)='customerSearch($event)' typeaheadOptionField="name" class="form-control">
       </div>
       <div class="sul-show-result">
-          <br>
-            <br>
-
-            <div class="search-list" *ngFor="let item of states " (click)="onSelect(item)">
-                <span ><a href="#" ></a>{{item.name}}</span>
-            </div>
-        
-        
-
-
-
+        <br>
+        <br>
+        <div class="search-list" *ngFor="let item of states " (click)="onSelect(item)">
+          <span>
+            <a href="#"></a>{{item.name}}</span>
+        </div>
       </div>
-      <!--Show result end-->
       <div class="sur-footer-left">
         <ul>
           <li data-toggle="modal" data-target="#addCustomerModelPopup">
@@ -508,27 +490,18 @@
         </ul>
         <div class="clear"></div>
       </div>
-
-
     </div>
     <div class="col-md-6 col-sm-6 col-xs-12 select-customer-right">
       <div class="sur-info" data-toggle="modal" data-target="#costomerInfo">
         <h3>Customer Info</h3>
-       
+
       </div>
       <div class="sur-membership" data-toggle="modal" (click)="membershipInfo()" data-target="#membershipInfo">
         <h3>Membership / Package</h3>
-        <!-- <div style="height: 95px;overflow-y: scroll">
-            <div ng-repeat="membershipPackage in membershipPackages" ><span ng-click="MembershipDetailPopup(membershipPackage.id)"><b>Membership:</b>{{membershipPackage.categoryname}}</span></div>
-          </div> -->
       </div>
-      <!--Membership end-->
-
       <div class="sur-visits " data-toggle="modal" (click)="visitInfo()" data-target="#visitInfo">
         <h3>Visits</h3>
       </div>
-      <!--Visits end-->
-
       <div class="sur-history">
         <h3>Transactions History</h3>
         <div class="col-md-4">
@@ -567,11 +540,9 @@
       </div>
     </div>
     <br/>
-   
-  </div>
- 
-  
 
+  </div>
   <router-outlet></router-outlet>
 </body>
+
 <app-footer></app-footer>

@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
-
 import { environment } from '../../environments/environment';
-
 
 @Component({
   selector: 'app-login',
@@ -14,17 +12,14 @@ import { environment } from '../../environments/environment';
 export class LoginComponent implements OnInit {
   password = "";
   mailId = "";
-  constructor(private http: HttpClient, private router: Router,) {
-
-  }
-
   alerts: any[] = [];
+  constructor(private http: HttpClient, private router: Router, ) {}
+
+  ngOnInit() {
+  }
 
   onClosed(dismissedAlert: AlertComponent): void {
     this.alerts = this.alerts.filter(alert => alert !== dismissedAlert);
-  }
-
-  ngOnInit() {
   }
 
   loginSubmite() {
@@ -48,5 +43,5 @@ export class LoginComponent implements OnInit {
     }
 
   }
-
+  
 }
