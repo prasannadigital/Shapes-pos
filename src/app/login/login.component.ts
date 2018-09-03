@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
-
-import { environment } from '../../environments/environment';
-
+import { LoginServiceService } from '../services/login-service.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +12,7 @@ import { environment } from '../../environments/environment';
 export class LoginComponent implements OnInit {
   password = "";
   mailId = "";
-  constructor(private http: HttpClient, private router: Router,) {
+  constructor(private http: HttpClient, private router: Router, private service: LoginServiceService) {
 
   }
 
@@ -33,8 +31,8 @@ export class LoginComponent implements OnInit {
       email_id: this.mailId
     }
     if (this.mailId && this.password) {
-      this.http.post(environment.host + 'auth/login', data).subscribe(loginData => {
-        if (Object.keys(loginData).length) {
+      this.service.saveLoginDetails(data).subscribe(loginData => {
+        if (loginData.json().status == 200) {
           sessionStorage.setItem('userSession', JSON.stringify(loginData));
           this.router.navigate(['dashboard']);
         }
@@ -46,7 +44,6 @@ export class LoginComponent implements OnInit {
         timeout: 1000
       }];
     }
-
   }
 
 }
