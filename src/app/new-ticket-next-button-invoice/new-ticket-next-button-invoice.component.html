@@ -10,7 +10,7 @@
           <a (click)="serviceClick()">Services</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 service-buttons1">
-          <a>Gift Cards</a>
+          <a (click)="giftcardClick()">Gift Cards</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 service-buttons">
           <a (click)="productClick()">Products</a>
@@ -22,7 +22,7 @@
           <a (click)="packagesClick()">Packages</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 service-buttons1">
-          <a>Promotions</a>
+          <a (click)="promotionsClick()">Promotions</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 service-buttons service-buttons-last-child">
           <a (click)="membershipClick()">Membership</a>
@@ -117,25 +117,12 @@
           </div>
           <div class="clear"></div>
         </div>
-        <div class="service-cat-5-box">
-          <div class="service-cat-5-box-left">
-            <h4>2.EyeBrow Therading</h4>
-            <h5>Commission: STYLIST</h5>
-          </div>
-          <div class="service-cat-5-box-right">
-            <span class="glyphicon glyphicon-remove-circle"></span>
-          </div>
-          <div class="service-cat-5-box-right">
-            <h4>$ 11.00</h4>
-          </div>
-          <div class="clear"></div>
-        </div>
 
         <div class="service-cat-5-box-total">
           <table>
             <tr>
               <td class="service-cat-5-box-total-left">Subtotal</td>
-              <td class="service-cat-5-box-total-right">$22.00</td>
+              <td class="service-cat-5-box-total-right">${{display}}</td>
             </tr>
             <tr>
               <td class="service-cat-5-box-total-left">Tax</td>
