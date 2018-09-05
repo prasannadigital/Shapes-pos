@@ -32,14 +32,10 @@
 		<div class="col-md-12 col-sm-12 package-3-left">
 			<div class="form-group">
 				<label for="input" class="col-md-2 control-label">Type of item</label>
-				<div class="col-md-10">
-					<select class="form-control">
-						<option>Select Type of item</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-					</select>
+				<div class="col-md-10">	
+					<p-multiSelect [options]="packs" [(ngModel)]="selectedPack" [panelStyle]="{minWidth:'12em'}"></p-multiSelect>
+                    <p><b>Selected Packs: {{selectedPack}}</b></p>
+
 				</div>
 				<div class="clear"></div>
 			</div>

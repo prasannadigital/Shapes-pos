@@ -24,10 +24,10 @@
       <td>{{item.promotion_discount_type}}</td>
       <td>{{item.promotion_start_date | date: 'dd/MM/yyyy'}}</td>
         <td>{{item.promotion_end_date | date: 'dd/MM/yyyy'}}</td>
-        <td>{{item.promotion_max_users}}</td>
-        <td>{{item.promotion_allow_online_sale}}</td>
-        <td>{{item.promotion_valid_days}}</td>
-        <td>{{item.promotion_item_types}}</td>
+        <td>{{item.promotion_max_users }}</td>
+        <td>{{item.promotion_allow_online_sale | yesorno }}</td>
+        <td>{{item.promotion_valid_days | weekdays}}</td>
+        <td>{{item.promotion_item_types }}</td>
         <td href="#" data-toggle="modal" data-target="#add-promotion" (click)="editPromotion(item)" >Edit</td>
       </tr>
     </tbody>

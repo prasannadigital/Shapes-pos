@@ -4,6 +4,7 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import * as moment from 'moment';
 
 import { AddPromotionServiceService } from '../../services/add-promotion-service.service'
+import { WeekdaysPipe } from '../../pipe/weekdays.pipe'
 @Component({
   selector: 'app-edit-promotions',
   templateUrl: './edit-promotions.component.html',
@@ -13,17 +14,6 @@ export class EditPromotionsComponent implements OnInit {
 
   localData: any = [];
   editData: any = []
-  // promotionsName='';
-  // promotionCode='';
-  // promotionDiscountDays='';
-  // discountAmount='';
-  // promotionActivationDate='';
-  // promotionExpirationDate='';
-  // promotionMaxUsers=''
-  // allowOnlineSales='';
-  // promotionItemTypes='';
-  // promotion_id=''
-  // promotion_valid_days='';
 
   sunday: boolean;
   monday: boolean;
@@ -32,7 +22,6 @@ export class EditPromotionsComponent implements OnInit {
   thursday: boolean;
   friday: boolean;
   saturday: boolean;
-
   newDate: any;
   newDate2: any;
   locationData = new Array();
@@ -65,56 +54,45 @@ export class EditPromotionsComponent implements OnInit {
     console.log(data);
     this.editData = data
 
-    // this.promotionsName=this.editData.promotion_name;
-    // this.promotionCode=this.editData.promotion_code;
-    // this.promotionDiscountDays=this.editData.promotion_discount_type;
-    // this.discountAmount=this.editData.promotion_price;
-    // this.promotionActivationDate=this.editData.promotion_start_date;
-    // this.promotionExpirationDate=this.editData.promotion_end_date;
-    // this.promotionMaxUsers=this.editData.promotion_max_users;
-    // this.allowOnlineSales=this.editData.promotion_allow_online_sale;
-    // this.promotionItemTypes=this.editData.promotion_item_types;
-    console.log(this.editData.promotion_valid_days)
-    // console.log(this.editData.promotion_valid_days.includes("mon"))
 
-    if (this.editData.promotion_valid_days.includes('sun')) {
+    if (this.editData.promotion_valid_days.includes('0')) {
       this.sunday = true;
     }
     else {
       this.sunday = false
     }
 
-    if (this.editData.promotion_valid_days.includes('mon')) {
+    if (this.editData.promotion_valid_days.includes('1')) {
       this.monday = true
     }
     else {
       this.monday = false
     }
-    if (this.editData.promotion_valid_days.includes('tue')) {
+    if (this.editData.promotion_valid_days.includes('2')) {
       this.tuesday = true
     }
     else {
       this.tuesday = false
     }
-    if (this.editData.promotion_valid_days.includes('wed')) {
+    if (this.editData.promotion_valid_days.includes('3')) {
       this.wednesday = true
     }
     else {
       this.wednesday = false
     }
-    if (this.editData.promotion_valid_days.includes('thu')) {
+    if (this.editData.promotion_valid_days.includes('4')) {
       this.thursday = true
     }
     else {
       this.thursday = false
     }
-    if (this.editData.promotion_valid_days.includes('fri')) {
+    if (this.editData.promotion_valid_days.includes('5')) {
       this.friday = true
     }
     else {
       this.friday = false
     }
-    if (this.editData.promotion_valid_days.includes('sat')) {
+    if (this.editData.promotion_valid_days.includes('6')) {
       this.saturday = true
     }
     else {
@@ -130,70 +108,27 @@ export class EditPromotionsComponent implements OnInit {
     console.log(val)
     let allowonlinecheckbox = '';
     if (this.editData.promotion_allow_online_sale.toString() == 'false') {
-      allowonlinecheckbox = 'n'
+      allowonlinecheckbox = '0'
     }
     else {
-      allowonlinecheckbox = 'y'
+      allowonlinecheckbox = '1'
     }
-    console.log(allowonlinecheckbox)
+    
 
 
     let totaldays = '';
 
-    if (this.sunday.toString() == 'true') { totaldays = totaldays + ' sun ,' }
-    if (this.monday.toString() == 'true') { totaldays = totaldays + ' mon ,' }
-    if (this.tuesday.toString() == 'true') { totaldays = totaldays + ' tue ,' }
-    if (this.wednesday.toString() == 'true') { totaldays = totaldays + ' wed ,' }
-    if (this.thursday.toString() == 'true') { totaldays = totaldays + ' thu ,' }
-    if (this.friday.toString() == 'true') { totaldays = totaldays + ' fri ,' }
-    if (this.saturday.toString() == 'true') { totaldays = totaldays + ' sat ,' }
+    if (this.sunday.toString() == 'true') { totaldays = totaldays + ' 0 ,' }
+    if (this.monday.toString() == 'true') { totaldays = totaldays + ' 1 ,' }
+    if (this.tuesday.toString() == 'true') { totaldays = totaldays + ' 2 ,' }
+    if (this.wednesday.toString() == 'true') { totaldays = totaldays + ' 3 ,' }
+    if (this.thursday.toString() == 'true') { totaldays = totaldays + ' 4 ,' }
+    if (this.friday.toString() == 'true') { totaldays = totaldays + ' 5 ,' }
+    if (this.saturday.toString() == 'true') { totaldays = totaldays + ' 6 ,' }
     totaldays = totaldays.substring(0, totaldays.length - 1);
 
-    console.log(totaldays)
-    if (this.editData.promotion_valid_days.includes('sun')) {
-      this.sunday = true;
-    }
-    else {
-      this.sunday = false
-    }
-
-    if (this.editData.promotion_valid_days.includes('mon')) {
-      this.monday = true
-    }
-    else {
-      this.monday = false
-    }
-    if (this.editData.promotion_valid_days.includes('tue')) {
-      this.tuesday = true
-    }
-    else {
-      this.tuesday = false
-    }
-    if (this.editData.promotion_valid_days.includes('wed')) {
-      this.wednesday = true
-    }
-    else {
-      this.wednesday = false
-    }
-    if (this.editData.promotion_valid_days.includes('thu')) {
-      this.thursday = true
-    }
-    else {
-      this.thursday = false
-    }
-    if (this.editData.promotion_valid_days.includes('fri')) {
-      this.friday = true
-    }
-    else {
-      this.friday = false
-    }
-    if (this.editData.promotion_valid_days.includes('sat')) {
-      this.saturday = true
-    }
-    else {
-      this.saturday = false
-    }
-
+   
+    
 
     var data = {
       promotion_id: val.promotion_id,
@@ -213,9 +148,6 @@ export class EditPromotionsComponent implements OnInit {
     console.log(data)
     this.service.addPromotionPost(data).subscribe(response => {
       val.promotion_valid_days = response.json().promotion_valid_days;
-      console.log("**********")
-      console.log(response.json());
-      console.log(val)
     })
   }
   getActivationDate() {

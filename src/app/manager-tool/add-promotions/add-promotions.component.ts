@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AddPromotionServiceService } from '../../services/add-promotion-service.service'
 import * as moment from 'moment';
+import { WeekdaysPipe } from '../../pipe/weekdays.pipe'
 
 @Component({
   selector: 'app-add-promotions',
@@ -35,6 +36,8 @@ export class AddPromotionsComponent implements OnInit {
   public date1: any;
   public date2: any;
   locationData = new Array();
+  
+  console
 
   constructor(private router: Router, private service: AddPromotionServiceService) { }
 
@@ -44,19 +47,20 @@ export class AddPromotionsComponent implements OnInit {
   addPromotion() {
     let allowonlinecheckbox = '';
     let totaldays = '';
-    if (this.sunday.toString() == 'true') { totaldays = totaldays + ' sun ,' }
-    if (this.monday.toString() == 'true') { totaldays = totaldays + ' mon ,' }
-    if (this.tuesday.toString() == 'true') { totaldays = totaldays + ' tue ,' }
-    if (this.wednesday.toString() == 'true') { totaldays = totaldays + ' wed ,' }
-    if (this.thursday.toString() == 'true') { totaldays = totaldays + ' thu ,' }
-    if (this.friday.toString() == 'true') { totaldays = totaldays + ' fri ,' }
-    if (this.saturday.toString() == 'true') { totaldays = totaldays + ' sat ,' }
+    if (this.sunday.toString() == 'true') { totaldays = totaldays + ' 0 ,' }
+    if (this.monday.toString() == 'true') { totaldays = totaldays + ' 1 ,' }
+    if (this.tuesday.toString() == 'true') { totaldays = totaldays + ' 2 ,' }
+    if (this.wednesday.toString() == 'true') { totaldays = totaldays + ' 3 ,' }
+    if (this.thursday.toString() == 'true') { totaldays = totaldays + ' 4 ,' }
+    if (this.friday.toString() == 'true') { totaldays = totaldays + ' 5 ,' }
+    if (this.saturday.toString() == 'true') { totaldays = totaldays + ' 6 ,' }
     totaldays = totaldays.substring(0, totaldays.length - 1);
+    console.log(totaldays)
 
     if (this.allowOnlineSales.toString() == 'true') {
-      allowonlinecheckbox = 'y'
+      allowonlinecheckbox = '1'
     } else {
-      allowonlinecheckbox = 'n'
+      allowonlinecheckbox = '0'
     }
     var data = {
       promotion_name: this.promotionName,
@@ -74,6 +78,7 @@ export class AddPromotionsComponent implements OnInit {
     }
     this.service.addPromotionPost(data).subscribe(response => {
       this.locationData = response.json();
+      console.log(response.json())
     });
   }
 
