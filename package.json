@@ -23,6 +23,7 @@
     "angular5-csv": "^0.2.10",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
+    "devextreme-angular": "^18.1.5",
     "jspdf": "^1.4.1",
     "jspdf-autotable": "^2.3.4",
     "latest": "^0.2.0",

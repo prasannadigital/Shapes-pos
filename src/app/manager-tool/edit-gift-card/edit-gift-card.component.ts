@@ -31,7 +31,7 @@ export class EditGiftCardComponent implements OnInit {
   getGiftCardData() {
     this.service.getGiftCard().subscribe(giftCardData => {
       this.giftCardData = giftCardData.json();
-      console.log(giftCardData)
+      console.log(giftCardData);
     })
   }
 

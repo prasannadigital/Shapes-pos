@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
 import * as _ from 'lodash';
-import { ECONNABORTED } from 'constants';
+
 
 @Component({
   selector: 'app-new-ticket-next-button-invoice',
@@ -22,6 +22,7 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   commonValues;
   _subTypeOfService;
 
+ 
   constructor(private services: Services, private http: HttpClient, ) {
     this.selectResult = JSON.parse(sessionStorage.getItem('selectedServices'));
     this.titleName = 'Service';
@@ -76,7 +77,7 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
     this.subTotal();
 
   }
-
+ 
   serviceClick() {
     this.titleName = 'Service';
     this.edited = true;
@@ -149,5 +150,8 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
     _sessionVal.splice(index, 1);
     sessionStorage.setItem('selectedServices', JSON.stringify(_sessionVal));
     this.selectResult = _sessionVal;
+
+    this.subTotal();
+   
   }
 }
