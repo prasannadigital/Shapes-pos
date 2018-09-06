@@ -13,14 +13,14 @@
 		<th>Action</th>
 	</thead>
 	<tbody>
-		<tr *ngFor="let item of giftCardData">
+		<tr *ngFor="let item of giftCardData; let i=index">
 			<td>{{item.giftcard_sold_at}}</td>
 			<td>{{item.giftcard_value}}</td>
 			<td>{{item.giftcard_name}}</td>
-			<td>{{item.online}}</td>
-			<td>{{item.giftcard_discount_price}}</td>
-			<td>{{item.giftcard_allow_staff_set_price}}</td>
-			<td>{{item.giftcard_everyone_purchase}}</td>
+			<td>{{item.giftcard_sell_online | yesorno}}</td>
+			<td>{{item.giftcard_discount_price | yesorno}}</td>
+			<td>{{item.giftcard_allow_staff_set_price | yesorno}}</td>
+			<td>{{item.giftcard_everyone_purchase | yesorno}}</td>
 			<td href="#" data-toggle="modal" data-target="#add-new-giftcard" (click)="EditGiftCard(item)">Edit</td>
 		</tr>
 	</tbody>
@@ -84,7 +84,7 @@
 					<label for="input" class="col-md-5 control-label">Sell online</label>
 					<div class="col-md-7">
 						<div class="form-check pull-left">
-							<input class="form-check-input" type="checkbox" value="" id="defaultCheck2" [(ngModel)]="editData.giftcard_sell_online">
+							<input class="form-check-input" type="checkbox" value="y" id="defaultCheck2" [(ngModel)]="editData.giftcard_sell_online">
 							<label class="form-check-label" for="defaultCheck2">
 								Allow customers to purchase this gift card online
 							</label>
@@ -107,14 +107,14 @@
 							</label>
 							<div class="col-md-7">
 								<div class="form-check ">
-									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="y" checked="" [(ngModel)]="editData.giftcard_allow_staff_set_price">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1" checked="" [(ngModel)]="editData.giftcard_allow_staff_set_price">
 									<label class="form-check-label" for="exampleRadios1">
 										Yes, staff can set the prce independently of the value at point of sale
 									</label>
 								</div>
 								<div class="form-check ">
-									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="n" checked="" [(ngModel)]="editData.giftcard_allow_staff_set_price">
-									<label class="form-check-label" for="exampleRadios1">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="0" checked="" [(ngModel)]="editData.giftcard_allow_staff_set_price">
+									<label class="form-check-label" for="exampleRadios2">
 										No, the price should always match the value
 									</label>
 								</div>
@@ -125,14 +125,14 @@
 							<label for="input" class="col-md-5 control-label">Can everyone purchase this gift card</label>
 							<div class="col-md-7">
 								<div class="form-check ">
-									<input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="y" checked="" [(ngModel)]="editData.giftcard_everyone_purchase">
-									<label class="form-check-label" for="exampleRadios1">
+									<input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios3" value="1" checked="" [(ngModel)]="editData.giftcard_everyone_purchase">
+									<label class="form-check-label" for="exampleRadios3">
 										Yes
 									</label>
 								</div>
 								<div class="form-check ">
-									<input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="n" checked="" [(ngModel)]="editData.giftcard_everyone_purchase">
-									<label class="form-check-label" for="exampleRadios1">
+									<input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios4" value="0" checked="" [(ngModel)]="editData.giftcard_everyone_purchase">
+									<label class="form-check-label" for="exampleRadios4">
 										No, only certain members can purchase it
 									</label>
 								</div>
@@ -144,7 +144,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal" (click)="cancelGiftCard(editData,editData.giftcard_discount_price)">Cancel</button>
 				<button type="button" class="btn btn-primary" (click)="updateGiftCard(editData)">Update</button>
 			</div>
 		</div>

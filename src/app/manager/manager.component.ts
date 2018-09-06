@@ -434,31 +434,48 @@ export class ManagerComponent implements OnInit {
   saveGiftCard() {
     let sellOnlineCheckBox;
     let discountCheckbox;
+    let setPriceRadio;
+    let everyoneRadio;
     console.log(this.sellOnline)
     if (this.sellOnline.toString() == 'true') {
-      sellOnlineCheckBox = 'y'
+      sellOnlineCheckBox = '1'
     } else {
-      sellOnlineCheckBox = 'n'
+      sellOnlineCheckBox = '0'
     }
     console.log(this.discountPrice);
     if (this.discountPrice.toString() == 'true') {
-      discountCheckbox = 'y'
+      discountCheckbox = '1'
     } else {
-      discountCheckbox = 'n'
+      discountCheckbox = '0'
     }
+
+    // if(this.setPrice.toString()=='y')
+    // {
+    //  setPriceRadio='1'
+
+    // } else{
+    //   setPriceRadio='0'
+    // }
+    // if(this.everyonePurchase.toString()=='y'){
+    //   everyoneRadio='1'
+    // } else{
+    //   everyoneRadio='0'
+    // }
     console.log(this.soldAt);
+    console.log(this.setPrice);
+    console.log(this.everyonePurchase);
     var data: any = {
       giftcard_sold_at: this.soldAt,
       giftcard_value: this.cardValue,
       giftcard_discount_price: discountCheckbox,
       giftcard_name: this.cardName,
       giftcard_sell_online: sellOnlineCheckBox,
-      giftcard_allow_staff_set_price: this.setPrice,
+      giftcard_allow_staff_set_price:this.setPrice,
       giftcard_everyone_purchase: this.everyonePurchase
     }
 
     this.giftcard.saveGiftCard(data).subscribe(data => {
-      console.log(data);
+      console.log(data.json());
     });
 
   }

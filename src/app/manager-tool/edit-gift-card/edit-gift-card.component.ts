@@ -3,6 +3,7 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 declare var $: any;
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 import { GiftCardServiceService } from '../../services/gift-card-service.service';
+import {GiftcardSetandgetService} from '../../services/giftcard-setandget.service';
 @Component({
   selector: 'app-edit-gift-card',
   templateUrl: './edit-gift-card.component.html',
@@ -18,7 +19,7 @@ export class EditGiftCardComponent implements OnInit {
   states: any[] = [];
   temp3: any[] = [];
 
-  constructor(private router: Router, private service: GiftCardServiceService) { }
+  constructor(private router: Router, private service: GiftCardServiceService,private giftcardService:GiftcardSetandgetService) { }
 
   ngOnInit() {
     this.getGiftCardData();
@@ -50,33 +51,43 @@ export class EditGiftCardComponent implements OnInit {
 
   EditGiftCard(data) {
     this.editData = data;
-    if (this.editData.giftcard_discount_price.toString() == 'n') {
+     this.giftcardService.setGifrCard(this.editData);
+    console.log(this.editData);
+    if (this.editData.giftcard_discount_price == '0') {
       this.editData.giftcard_discount_price = '';
     }
-    if (this.editData.giftcard_sell_online.toString() == 'n') {
+    if (this.editData.giftcard_sell_online == '0') {
       this.editData.giftcard_sell_online = '';
-    }
+    } else {
+      this.editData.giftcard_sell_online = 'y';
+    }  
+  }
+
+  cancelGiftCard(val, giftcard_discount_price){
+   this.giftcardService.getGiftCard();
+   console.log(this.giftcardService.getGiftCard());
+    this.editData = val;
   }
 
   updateGiftCard(val) {
     let sellOnlineCheckBox;
     let discountCheckbox;
     if (val.giftcard_sell_online.toString() == 'true') {
-      sellOnlineCheckBox = 'y'
-      this.editData.giftcard_sell_online = 'y'
+      sellOnlineCheckBox = '1'
+      this.editData.giftcard_sell_online = '1'
     }
     if (val.giftcard_sell_online.toString() == 'false') {
-      sellOnlineCheckBox = 'n'
-      this.editData.giftcard_sell_online = 'n'
+      sellOnlineCheckBox = '0'
+      this.editData.giftcard_sell_online = '0'
     }
     console.log(val.giftcard_discount_price)
     if (val.giftcard_discount_price.toString() == 'true') {
-      discountCheckbox = 'y'
-      this.editData.giftcard_discount_price = 'y'
+      discountCheckbox = '1'
+      this.editData.giftcard_discount_price = '1'
     }
     if (val.giftcard_discount_price.toString() == 'false') {
-      discountCheckbox = 'n'
-      this.editData.giftcard_discount_price = 'n'
+      discountCheckbox = '0'
+      this.editData.giftcard_discount_price = '0'
     }
 
     var data = {

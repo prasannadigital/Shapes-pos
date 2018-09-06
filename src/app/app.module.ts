@@ -59,7 +59,10 @@ import { EditGiftCardComponent } from './manager-tool/edit-gift-card/edit-gift-c
 import { ViewActiveGiftCardComponent } from './manager-tool/view-active-gift-card/view-active-gift-card.component';
 import { OnlineGiftCardsComponent } from './manager-tool/online-gift-cards/online-gift-cards.component';
 import { AutoCompleteModule } from 'primeng/autocomplete'
+
 import {MultiSelectModule} from 'primeng/multiselect';
+import { WeekdaysPipe } from './pipe/weekdays.pipe';
+import { YesornoPipe } from './pipe/yesorno.pipe';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -154,7 +157,10 @@ const routes: Routes = [
 
     ViewActiveGiftCardComponent,
 
-    OnlineGiftCardsComponent
+    OnlineGiftCardsComponent,
+    WeekdaysPipe,
+
+    YesornoPipe
 
   ],
   imports: [
@@ -175,7 +181,8 @@ const routes: Routes = [
     CalendarModule,
     DialogModule,
     ToastModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    MultiSelectModule
   ],
   providers: [Globals, AuthGuard, Services, MessageService],
   bootstrap: [AppComponent]
