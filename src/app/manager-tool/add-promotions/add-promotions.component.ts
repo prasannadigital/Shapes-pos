@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AddPromotionServiceService } from '../../services/add-promotion-service.service'
 import * as moment from 'moment';
+import { WeekdaysPipe } from '../../pipe/weekdays.pipe'
+import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-add-promotions',
@@ -9,7 +12,7 @@ import * as moment from 'moment';
   styleUrls: ['./add-promotions.component.css']
 })
 export class AddPromotionsComponent implements OnInit {
-
+  msgs: Message[] = [];
   promotionName = "";
   promotionCode = "";
   discountAmount = "";
@@ -35,13 +38,19 @@ export class AddPromotionsComponent implements OnInit {
   public date1: any;
   public date2: any;
   locationData = new Array();
+  
+  submitted = false;
 
-  constructor(private router: Router, private service: AddPromotionServiceService) { }
+  constructor(private router: Router,private messageService: MessageService, private service: AddPromotionServiceService) { }
 
   ngOnInit() {
   }
-
+  showSuccess() {
+    this.msgs = [];
+    this.msgs.push({severity:'success', summary:'Promotions added Successfully'});
+}
   addPromotion() {
+    this.submitted=true;
     let allowonlinecheckbox = '';
     let totaldays = '';
     if (this.sunday.toString() == 'true') { totaldays = totaldays + ' 0 ,' }

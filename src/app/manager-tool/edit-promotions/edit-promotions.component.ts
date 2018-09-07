@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import * as moment from 'moment';
 import { AddPromotionServiceService } from '../../services/add-promotion-service.service'
+import { WeekdaysPipe } from '../../pipe/weekdays.pipe'
+
+import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-edit-promotions',
@@ -9,7 +13,7 @@ import { AddPromotionServiceService } from '../../services/add-promotion-service
   styleUrls: ['./edit-promotions.component.css']
 })
 export class EditPromotionsComponent implements OnInit {
-
+  msgs: Message[] = [];
   localData: any = [];
   editData: any = []
   sunday: boolean;
@@ -23,7 +27,9 @@ export class EditPromotionsComponent implements OnInit {
   newDate2: any;
   locationData = new Array();
 
-  constructor(private router: Router, private service: AddPromotionServiceService) { }
+  submitted = false;
+
+  constructor(private router: Router,private messageService: MessageService, private service: AddPromotionServiceService) { }
 
   ngOnInit() {
     this.editPromotionGet();
@@ -32,6 +38,11 @@ export class EditPromotionsComponent implements OnInit {
   backToPromotion() {
     this.router.navigate(['management']);
   }
+
+  showSuccess() {
+    this.msgs = [];
+    this.msgs.push({severity:'success', summary:'Promotions updated Successfully'});
+}
 
   editPromotionGet() {
     this.service.editPromotionGet().subscribe(localData => {
@@ -83,9 +94,12 @@ export class EditPromotionsComponent implements OnInit {
     else {
       this.saturday = false
     }
+
   }
 
   updatePromotion(val) {
+    this.submitted=true;
+    console.log(val)
     let allowonlinecheckbox = '';
     if (this.editData.promotion_allow_online_sale.toString() == 'false') {
       allowonlinecheckbox = '0'
@@ -93,7 +107,7 @@ export class EditPromotionsComponent implements OnInit {
     else {
       allowonlinecheckbox = '1'
     }
-
+    
     let totaldays = '';
     if (this.sunday.toString() == 'true') { totaldays = totaldays + ' 0 ,' }
     if (this.monday.toString() == 'true') { totaldays = totaldays + ' 1 ,' }

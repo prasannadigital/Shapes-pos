@@ -18,10 +18,10 @@ export class InactiveMembershipComponent implements OnInit {
     this.service.getInactiveMembership().subscribe(inactivemembership => {
       this.inactivemembership = inactivemembership.json();
       this.cols = [
-        { field: 'membership_name', header: 'membership_name' },
-        { field: 'membership_code', header: 'membership_code' },
-        { field: 'membership_price', header: 'membership_price' },
-        { field: 'rec_status', header: 'rec_status' }
+        { field: 'membership_name', header: 'Membership Name' },
+        { field: 'membership_code', header: 'Membership Code' },
+        { field: 'membership_price', header: 'Membership Price' },
+        { field: 'rec_status', header: ' Status' }
       ];
     })
     

@@ -3,13 +3,17 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 declare var $: any;
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 import { GiftCardServiceService } from '../../services/gift-card-service.service';
+import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/components/common/messageservice';
+
+
 @Component({
   selector: 'app-edit-gift-card',
   templateUrl: './edit-gift-card.component.html',
   styleUrls: ['./edit-gift-card.component.css']
 })
 export class EditGiftCardComponent implements OnInit {
-
+  msgs: Message[] = [];
   giftCardData: any = [];
   editData: any = [];
   getData: any = [];
@@ -18,7 +22,7 @@ export class EditGiftCardComponent implements OnInit {
   states: any[] = [];
   temp3: any[] = [];
 
-  constructor(private router: Router, private service: GiftCardServiceService) { }
+  constructor(private router: Router,private messageService: MessageService, private service: GiftCardServiceService) { }
 
   ngOnInit() {
     this.getGiftCardData();
@@ -34,6 +38,10 @@ export class EditGiftCardComponent implements OnInit {
     })
   }
 
+  showSuccess() {
+    this.msgs = [];
+    this.msgs.push({severity:'success', summary:'GiftCard Updated Successfully'});
+}
   onSelect(event: TypeaheadMatch): void {
     this.selectedOption = event.item;
   }
@@ -47,6 +55,8 @@ export class EditGiftCardComponent implements OnInit {
 
   EditGiftCard(data) {
     this.editData = data;
+    
+    console.log(this.editData);
     if (this.editData.giftcard_discount_price == '0') {
       this.editData.giftcard_discount_price = '';
     }
@@ -58,6 +68,7 @@ export class EditGiftCardComponent implements OnInit {
   }
 
   cancelGiftCard(val, giftcard_discount_price){
+   
     this.editData = val;
   }
 

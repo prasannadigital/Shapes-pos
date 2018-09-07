@@ -1,6 +1,6 @@
 <div class="tabs-services">
 	<app-header></app-header>
-
+	<p-growl [(value)]="msgs"></p-growl>
 	<div class="staff-members padding-20">
 		<div class="row">
 			<div class="col-sm-6">
@@ -11,8 +11,6 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-
-
 
 		<div class="staff-members-1">
 			<div class="col-md-6 col-sm-6"></div>
@@ -61,7 +59,8 @@
 								<div class="form-group row">
 									<label for="inputEmail3" class="col-md-3 col-form-label">First Name</label>
 									<div class="col-md-9">
-										<input type="text" class="form-control" id="staffInputEmail1" name="firstName" [(ngModel)]="firstname" placeholder="Firest Name">
+										<input type="text" class="form-control" id="inputEmail3" name="fname" [(ngModel)]="firstname" (ngModelChange)="addExtraDisable($event)" placeholder="Firest Name" ngModel required #fname="ngModel">
+										<div *ngIf="fname.errors?.required && submitted" style="color:red">First Name is required </div>
 									</div>
 								</div>
 								<div class="form-group row">
@@ -71,9 +70,11 @@
 									</div>
 								</div>
 								<div class="form-group row">
-									<label for="inputEmail3" class="col-md-3 col-form-label">Email</label>
+									<label for="inputEmail3" class="col-md-3 col-form-label" >Email</label>
 									<div class="col-md-9">
-										<input type="email" class="form-control" id="staffInputEmail3" name="email" placeholder="Maid Id" [(ngModel)]="email">
+										<input type="text" class="form-control" id="inputEmail3" name="mail" [(ngModel)]="email" (ngModelChange)="addExtraDisable($event)" placeholder="Email" ngModel required #mail="ngModel">
+										<div *ngIf="mail.errors?.required && submitted" style="color:red">Email is required </div>
+										<!-- <input type="email" class="form-control" id="inputEmail3" name="email" placeholder="Maid Id" [(ngModel)]="email"> -->
 									</div>
 								</div>
 								<div class="form-group row">
@@ -109,7 +110,7 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-primary" (click)="saveStaffMember()">Add</button>
+							<button type="button" class="btn btn-primary" [disabled]="extraDisable" (click)="saveStaffMember(); showSuccess()">Add</button>
 						</div>
 					</div>
 				</div>
