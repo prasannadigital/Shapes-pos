@@ -18,6 +18,7 @@ export class NewTicketNextButtonComponent implements OnInit {
   catProdMemResult: any[] = new Array();
   stylishResult: any[] = new Array();
   commonValues;
+  
   temp: any[] = new Array();
   categories;
   memberships;
@@ -52,8 +53,10 @@ export class NewTicketNextButtonComponent implements OnInit {
       this._service = true;
       this._membership = false;
       this._package = false;
-      this.http.get(environment.host + 'services/category/' + event.item.cat_id).subscribe(data => {
-        this.commonValues = data;
+      this.http.get(environment.host + 'services/category/' + event.item.cat_id).subscribe(data=> {
+        this.commonValues =data;
+        
+        
       });
     } else {
       var arrayConvert = []
@@ -86,7 +89,12 @@ export class NewTicketNextButtonComponent implements OnInit {
       this._package = false;
       url = 'services/category/' + val.cat_id;
       this.http.get(environment.host + 'services/category/' + val.cat_id).subscribe(data => {
-        this.commonValues = data;
+        this.commonValues =data;
+        console.log(this.commonValues);
+        if(this.commonValues.status == 404){
+          this.commonValues = Array.of(val);
+        }
+        
       });
     } else {
       if (type == 'm') {

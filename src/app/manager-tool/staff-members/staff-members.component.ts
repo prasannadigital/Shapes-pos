@@ -3,8 +3,8 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { environment } from '../../../environments/environment';
 import { StaffServiceService } from '../../services/staff-service.service';
 declare var $: any;
-import {Message} from 'primeng/components/common/api';
-import {MessageService} from 'primeng/components/common/messageservice';
+import { Message } from 'primeng/components/common/api';
+import { MessageService } from 'primeng/components/common/messageservice';
 @Component({
   selector: 'app-staff-members',
   templateUrl: './staff-members.component.html',
@@ -20,8 +20,8 @@ export class StaffMembersComponent implements OnInit {
   address = '';
   staffData: any = [];
 
-  submitted=false;
-  extraDisable= true;
+  submitted = false;
+  extraDisable = true;
   constructor(private router: Router, private service: StaffServiceService) { }
 
   ngOnInit() {
@@ -32,18 +32,15 @@ export class StaffMembersComponent implements OnInit {
     this.router.navigate(['management']);
   }
   addExtraDisable() {
-    
-      this.extraDisable = false;
-    
-    
+    this.extraDisable = false;
   }
   showSuccess() {
     this.msgs = [];
-    this.msgs.push({severity:'success', summary:'StaffMember Added Successfully'});
-}
-  
+    this.msgs.push({ severity: 'success', summary: 'StaffMember Added Successfully' });
+  }
+
   saveStaffMember() {
-    this.submitted=true;
+    this.submitted = true;
     var data: any = {
       employee_firstname: this.firstname,
       employee_lastname: this.lastname,

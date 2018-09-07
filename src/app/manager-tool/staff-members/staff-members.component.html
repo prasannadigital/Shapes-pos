@@ -57,22 +57,24 @@
 						<div class="modal-body">
 							<form>
 								<div class="form-group row">
-									<label for="inputEmail3" class="col-md-3 col-form-label">First Name</label>
+									<label for="inputEmail" class="col-md-3 col-form-label">First Name</label>
 									<div class="col-md-9">
-										<input type="text" class="form-control" id="inputEmail3" name="fname" [(ngModel)]="firstname" (ngModelChange)="addExtraDisable($event)" placeholder="Firest Name" ngModel required #fname="ngModel">
+										<input type="text" class="form-control" id="inputEmail" name="fname" [(ngModel)]="firstname" (ngModelChange)="addExtraDisable($event)"
+										 placeholder="Firest Name" ngModel required #fname="ngModel">
 										<div *ngIf="fname.errors?.required && submitted" style="color:red">First Name is required </div>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label for="inputEmail3" class="col-md-3 col-form-label">Last Name</label>
+									<label for="inputEmail2" class="col-md-3 col-form-label">Last Name</label>
 									<div class="col-md-9">
 										<input type="text" class="form-control" id="staffInputEmail2" name="lastName" placeholder="Last Name" [(ngModel)]="lastname">
 									</div>
 								</div>
 								<div class="form-group row">
-									<label for="inputEmail3" class="col-md-3 col-form-label" >Email</label>
+									<label for="inputEmail3" class="col-md-3 col-form-label">Email</label>
 									<div class="col-md-9">
-										<input type="text" class="form-control" id="inputEmail3" name="mail" [(ngModel)]="email" (ngModelChange)="addExtraDisable($event)" placeholder="Email" ngModel required #mail="ngModel">
+										<input type="text" class="form-control" id="inputEmail3" name="mail" [(ngModel)]="email" (ngModelChange)="addExtraDisable($event)"
+										 placeholder="Email" ngModel required #mail="ngModel">
 										<div *ngIf="mail.errors?.required && submitted" style="color:red">Email is required </div>
 										<!-- <input type="email" class="form-control" id="inputEmail3" name="email" placeholder="Maid Id" [(ngModel)]="email"> -->
 									</div>
