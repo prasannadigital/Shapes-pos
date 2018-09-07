@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { NewsEventsServiceService } from '../../services/news-events-service.service'
 import * as moment from 'moment';
+import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-news-events',
@@ -9,6 +11,8 @@ import * as moment from 'moment';
   styleUrls: ['./news-events.component.css']
 })
 export class NewsEventsComponent implements OnInit {
+  msgs: Message[] = [];
+
   eventTopMessage = "";
   eventName = "";
   eventDescription = "";
@@ -22,15 +26,25 @@ export class NewsEventsComponent implements OnInit {
   locationData = new Array();
   messageData: any = [];
 
-  constructor(private router: Router, private service: NewsEventsServiceService) { }
+  submitted = false;
+
+  constructor(private router: Router, private service: NewsEventsServiceService,private messageService: MessageService) { }
 
   ngOnInit() {
     this.service.getTopMessage().subscribe(response => {
       this.messageData = response.json();
     })
   }
-
+ showSuccess() {
+  this.msgs = [];
+    this.msgs.push({severity:'success', summary:'Events Added Successfully'});
+}
+updateSuccess(){
+  this.msgs = [];
+  this.msgs.push({severity:'success', summary:'Top Message Added Successfully'});
+}
   addEventNews() {
+    this.submitted=true;
     var data = {
       event_topname: this.eventTopMessage,
       event_name: this.eventName,
@@ -39,6 +53,7 @@ export class NewsEventsComponent implements OnInit {
       event_startdate: this.eventStartDate,
       event_enddate: this.eventEndDate
     }
+    
     this.service.newsEventPost(data).subscribe(response => {
       this.locationData = response.json();
       this.eventTopMessage = '';

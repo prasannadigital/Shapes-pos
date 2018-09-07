@@ -59,6 +59,7 @@ import { EditGiftCardComponent } from './manager-tool/edit-gift-card/edit-gift-c
 import { ViewActiveGiftCardComponent } from './manager-tool/view-active-gift-card/view-active-gift-card.component';
 import { OnlineGiftCardsComponent } from './manager-tool/online-gift-cards/online-gift-cards.component';
 import { AutoCompleteModule } from 'primeng/autocomplete'
+import {GrowlModule} from 'primeng/growl';
 
 import {MultiSelectModule} from 'primeng/multiselect';
 import { WeekdaysPipe } from './pipe/weekdays.pipe';
@@ -182,7 +183,8 @@ const routes: Routes = [
     DialogModule,
     ToastModule,
     AutoCompleteModule,
-    MultiSelectModule
+    MultiSelectModule,
+    GrowlModule
   ],
   providers: [Globals, AuthGuard, Services, MessageService],
   bootstrap: [AppComponent]

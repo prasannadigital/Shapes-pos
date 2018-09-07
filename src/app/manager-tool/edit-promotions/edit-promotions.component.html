@@ -42,7 +42,7 @@
     <div class="col-sm-2"><button type="button" class="btn backBtn" (click)="backToPromotion();">Back</button></div>
   </div>
 
-
+  <p-growl [(value)]="msgs"></p-growl>
   <div class="modal fade" id="add-promotion" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -208,7 +208,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" (click)="updatePromotion(editData)">Update</button>
+                    <button type="button" class="btn btn-primary" (click)="updatePromotion(editData);showSuccess()">Update</button>
                     </div>
                   </div>
                   </div>

@@ -82,15 +82,16 @@
   </div>
   <div class="clear"></div>
 </div>
-<div id="myModal" class="modal fade">
+<div id="myModal" class="modal fade" data-backdrop="static" >
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="price-info">
-
         <h2>Price Check</h2>
       </div>
       <div class="search">
-        <input type="text" name="search" style="padding:5px;">
+        <input type="text" name="search" style="padding:5px;" [(ngModel)]="selectedValue" (ngModelChange)='customerSearch($event)'
+          [typeahead]="product" typeaheadOptionField="name" class="form-control">
+
         <div class="btn-search">
 
           <i class="fas fa-search">
@@ -165,7 +166,7 @@
     </div>
   </div>
 </div>
-<div class="modal fade" id="service-next">
+<div class="modal fade" id="service-next" data-backdrop="static" >
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="customer-info">

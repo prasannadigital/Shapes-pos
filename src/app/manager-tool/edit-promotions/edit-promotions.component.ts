@@ -5,13 +5,17 @@ import * as moment from 'moment';
 
 import { AddPromotionServiceService } from '../../services/add-promotion-service.service'
 import { WeekdaysPipe } from '../../pipe/weekdays.pipe'
+
+import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/components/common/messageservice';
+
 @Component({
   selector: 'app-edit-promotions',
   templateUrl: './edit-promotions.component.html',
   styleUrls: ['./edit-promotions.component.css']
 })
 export class EditPromotionsComponent implements OnInit {
-
+  msgs: Message[] = [];
   localData: any = [];
   editData: any = []
 
@@ -30,7 +34,7 @@ export class EditPromotionsComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private service: AddPromotionServiceService) { }
+  constructor(private router: Router,private messageService: MessageService, private service: AddPromotionServiceService) { }
 
   ngOnInit() {
     this.editPromotionGet();
@@ -39,6 +43,11 @@ export class EditPromotionsComponent implements OnInit {
   backToPromotion() {
     this.router.navigate(['management']);
   }
+
+  showSuccess() {
+    this.msgs = [];
+    this.msgs.push({severity:'success', summary:'Promotions updated Successfully'});
+}
 
   editPromotionGet() {
     this.service.editPromotionGet().subscribe(localData => {

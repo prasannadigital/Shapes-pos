@@ -1,7 +1,7 @@
 <body>
 	<div class="tabs-services">
 		<app-header></app-header>
-
+		<p-growl [(value)]="msgs"></p-growl>
 		<div class="tab-pane " id="manager" role="tabpanel" aria-labelledby="manager-tab">
 			<div class="manager-tap">
 				<div class="col-md-3 col-sm-3 col-xs-12 manager-tap-left">
@@ -332,6 +332,7 @@
 							</div>
 							<div class="clear"></div>
 						</div>
+
 						<div class="modal fade" id="add-new-giftcard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
@@ -423,15 +424,13 @@
 													<label for="input" class="col-md-5 control-label">Can everyone purchase this gift card</label>
 													<div class="col-md-7">
 														<div class="form-check ">
-															<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="1" [(ngModel)]="everyonePurchase"
-															 >
+															<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="1" [(ngModel)]="everyonePurchase">
 															<label class="form-check-label" for="exampleRadios3">
 																Yes
 															</label>
 														</div>
 														<div class="form-check ">
-															<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="0" [(ngModel)]="everyonePurchase"
-															 >
+															<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="0" [(ngModel)]="everyonePurchase">
 															<label class="form-check-label" for="exampleRadios4">
 																No, only certain members can purchase it
 															</label>
@@ -449,7 +448,7 @@
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-										<button type="button" class="btn btn-primary" data-dismiss="modal" (click)="saveGiftCard()">Add</button>
+										<button type="button" class="btn btn-primary" data-dismiss="modal" (click)="saveGiftCard();showSuccess()">Add</button>
 									</div>
 								</div>
 							</div>
@@ -764,8 +763,8 @@
 														<div class="modal-dialog" role="document">
 															<div class="modal-content">
 																<div class="modal-header">
-																	<h3 class="modal-title col-md-8 margi0" id="exampleModalLabel" stryle="color:#fff;">Assign Gift Cards to
-																		Contract</h3>
+																	<h3 class="modal-title col-md-8 margi0" id="exampleModalLabel" stryle="color:#fff;">Assign Gift Cards to Contract
+																	</h3>
 																	<button type="button" class="close col-md-4" data-dismiss="modal" aria-label="Close">
 																		<span class="pull-right" aria-hidden="true">&times;</span>
 																	</button>
@@ -824,8 +823,7 @@
 																				</tr>
 																				<tr>
 																					<td>
-																						<input type="checkbox" class="form-check-input" id="exampleCheck1">&nbsp;35$ Gift Card (1time extra
-																						service Free)</td>
+																						<input type="checkbox" class="form-check-input" id="exampleCheck1">&nbsp;35$ Gift Card (1time extra service Free)</td>
 																					<td>$0.00</td>
 																					<td>$0.00</td>
 																					<td>$0.00</td>
@@ -860,8 +858,8 @@
 														<div class="modal-dialog" role="document">
 															<div class="modal-content">
 																<div class="modal-header">
-																	<h3 class="modal-title col-md-8 margi0" id="exampleModalLabel" stryle="color:#fff;">Assign Gift Cards to
-																		Contract</h3>
+																	<h3 class="modal-title col-md-8 margi0" id="exampleModalLabel" stryle="color:#fff;">Assign Gift Cards to Contract
+																	</h3>
 																	<button type="button" class="close col-md-4" data-dismiss="modal" aria-label="Close">
 																		<span class="pull-right" aria-hidden="true">&times;</span>
 																	</button>
@@ -920,8 +918,7 @@
 																				</tr>
 																				<tr>
 																					<td>
-																						<input type="checkbox" class="form-check-input" id="exampleCheck1">&nbsp;35$ Gift Card (1time extra
-																						service Free)</td>
+																						<input type="checkbox" class="form-check-input" id="exampleCheck1">&nbsp;35$ Gift Card (1time extra service Free)</td>
 																					<td>$0.00</td>
 																					<td>$0.00</td>
 																					<td>$0.00</td>
@@ -1056,8 +1053,7 @@
 																		<div class="clear"></div>
 																	</div>
 																	<div class="form-group">
-																		<label for="input" class="col-md-5 control-label">Does a client become a member when they purchase this
-																			pricing option?</label>
+																		<label for="input" class="col-md-5 control-label">Does a client become a member when they purchase this pricing option?</label>
 																		<div class="col-md-7">
 																			<div class="form-check">
 																				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
@@ -1092,12 +1088,10 @@
 																		<label for="input" class="col-md-5 control-label">Frequency</label>
 																		<div class="col-md-7">
 																			<div class="form-check">
-																				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>&nbsp;Recurring
-																				item: Client receives this with every contract payment
+																				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>&nbsp;Recurring item: Client receives this with every contract payment
 																			</div>
 																			<div class="form-check">
-																				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">&nbsp;One-time
-																				item: Client receives this once when the cotract is first purchased
+																				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">&nbsp;One-time item: Client receives this once when the cotract is first purchased
 
 																			</div>
 																		</div>
@@ -1342,8 +1336,8 @@
 																							<h4 class="modal-title" id="myModalLabel">Assign Contract Deposit</h4>
 																						</div>
 																						<div class="modal-body">
-																							<h4 style="font-weight:600;">Set up a contract deposit that you can collect when you sell the contract.
-																								You have the ability to return this to the client as either a credit to their account or a refund</h4>
+																							<h4 style="font-weight:600;">Set up a contract deposit that you can collect when you sell the contract. You have the ability to
+																								return this to the client as either a credit to their account or a refund</h4>
 																							<div class="form-group">
 																								<label for="input" class="col-md-5 control-label">Deposit amount</label>
 																								<div class="col-md-7">
@@ -1358,8 +1352,8 @@
 																							</div>
 
 																							<div class="form-group">
-																								<label for="input" class="col-md-5 control-label">Allow deposit amount to be editable at point of
-																									sale</label>
+																								<label for="input" class="col-md-5 control-label">Allow deposit amount to be editable at point of sale
+																								</label>
 																								<div class="col-md-7">
 																									<div class="form-check pull-left">
 																										<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -1387,8 +1381,8 @@
 																							<h4 class="modal-title" id="myModalLabel">Assign Contract Deposit</h4>
 																						</div>
 																						<div class="modal-body">
-																							<h4 style="font-weight:600;">Set up a contract deposit that you can collect when you sell the contract.
-																								You have the ability to return this to the client as either a credit to their account or a refund</h4>
+																							<h4 style="font-weight:600;">Set up a contract deposit that you can collect when you sell the contract. You have the ability to
+																								return this to the client as either a credit to their account or a refund</h4>
 																							<div class="form-group">
 																								<label for="input" class="col-md-5 control-label">Deposit amount</label>
 																								<div class="col-md-7">
@@ -1403,8 +1397,8 @@
 																							</div>
 
 																							<div class="form-group">
-																								<label for="input" class="col-md-5 control-label">Allow deposit amount to be editable at point of
-																									sale</label>
+																								<label for="input" class="col-md-5 control-label">Allow deposit amount to be editable at point of sale
+																								</label>
 																								<div class="col-md-7">
 																									<div class="form-check pull-left">
 																										<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -1632,8 +1626,7 @@
 
 																<div class="col-md-12">
 																	<label>
-																		<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;&nbsp;Electronic confirmation
-																		of contract
+																		<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">&nbsp;&nbsp;Electronic confirmation of contract
 																	</label>
 
 
