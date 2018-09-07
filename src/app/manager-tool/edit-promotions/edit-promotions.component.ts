@@ -30,9 +30,7 @@ export class EditPromotionsComponent implements OnInit {
   newDate2: any;
   locationData = new Array();
 
-
-
-
+  submitted = false;
 
   constructor(private router: Router,private messageService: MessageService, private service: AddPromotionServiceService) { }
 
@@ -55,9 +53,6 @@ export class EditPromotionsComponent implements OnInit {
       console.log(localData)
     })
   }
-
-
-
 
   editPromotion(data) {
     console.log(data);
@@ -108,12 +103,10 @@ export class EditPromotionsComponent implements OnInit {
       this.saturday = false
     }
 
-
-
-
   }
 
   updatePromotion(val) {
+    this.submitted=true;
     console.log(val)
     let allowonlinecheckbox = '';
     if (this.editData.promotion_allow_online_sale.toString() == 'false') {
@@ -123,8 +116,6 @@ export class EditPromotionsComponent implements OnInit {
       allowonlinecheckbox = '1'
     }
     
-
-
     let totaldays = '';
 
     if (this.sunday.toString() == 'true') { totaldays = totaldays + ' 0 ,' }

@@ -39,7 +39,7 @@ export class AddPromotionsComponent implements OnInit {
   public date2: any;
   locationData = new Array();
   
-  console
+  submitted = false;
 
   constructor(private router: Router,private messageService: MessageService, private service: AddPromotionServiceService) { }
 
@@ -50,6 +50,7 @@ export class AddPromotionsComponent implements OnInit {
     this.msgs.push({severity:'success', summary:'Promotions added Successfully'});
 }
   addPromotion() {
+    this.submitted=true;
     let allowonlinecheckbox = '';
     let totaldays = '';
     if (this.sunday.toString() == 'true') { totaldays = totaldays + ' 0 ,' }

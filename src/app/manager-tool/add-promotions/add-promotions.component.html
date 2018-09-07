@@ -14,7 +14,8 @@
 			<div class="form-group">
 				<label for="input" class="col-md-3 control-label">Promotion Name</label>
 				<div class="col-md-9">
-					<input type="text" class="form-control" id="inputEmail3" placeholder="" [(ngModel)]="promotionName">
+					<input type="text" class="form-control" id="inputEmail3" placeholder="" [(ngModel)]="promotionName" name="promotion"ngModel required #promotion="ngModel">
+					<div *ngIf="promotion.errors?.required && submitted" style="color:red">Promotions Name is required </div>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -33,10 +34,11 @@
 			<div class="form-group">
 				<label for="input" class="col-md-3 control-label">Discount Type</label>
 				<div class="col-md-9">
-					<select class="form-control" [(ngModel)]="promotionDiscountDays">
+					<select class="form-control" [(ngModel)]="promotionDiscountDays" name="discount" ngModel required #discount="ngModel">
 						<option value="persentage" selected="persentage">persentage</option>
 						<option value="cash">cash</option>
 					</select>
+					<div *ngIf="discount.errors?.required && submitted" style="color:red">Promotions Name is required </div> 
 				</div>
 				<div class="clear"></div>
 			</div>

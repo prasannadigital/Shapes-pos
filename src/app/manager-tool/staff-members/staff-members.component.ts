@@ -32,8 +32,10 @@ export class StaffMembersComponent implements OnInit {
     this.router.navigate(['management']);
   }
   addExtraDisable() {
-
-    this.extraDisable = false;
+    
+      this.extraDisable = false;
+    
+    
   }
   showSuccess() {
     this.msgs = [];
