@@ -14,7 +14,6 @@ export class FooterComponent implements OnInit {
   }
 
   newTicket() {
-    console.log("new ticket");
     this.router.navigate(['new-ticket']);
   }
   

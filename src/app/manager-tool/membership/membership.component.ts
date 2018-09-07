@@ -28,7 +28,6 @@ export class MembershipComponent implements OnInit {
   }
 
   UpdateMembership(val) {
-    console.log(val);
     var data = {
       "membership_name": val.membership_name,
       "membership_code": val.membership_code,
@@ -43,7 +42,7 @@ export class MembershipComponent implements OnInit {
     })
   }
   set_catagroy(data) {
-  
+
   }
 
   backToMembership() {
@@ -61,11 +60,10 @@ export class MembershipComponent implements OnInit {
   }
 
   changeCategory(val, userId, index) {
-    
-  }
 
+  }
+  
   getSubCategory() {
 
   }
-
 }

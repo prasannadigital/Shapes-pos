@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class YesornoPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    console.log(value)
     let yesornoValue
     if (value == '0') {
       yesornoValue = 'n'
@@ -14,8 +13,6 @@ export class YesornoPipe implements PipeTransform {
     if (value == '1') {
       yesornoValue = 'y'
     }
- 
     return yesornoValue;
   }
-
 }

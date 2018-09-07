@@ -7,9 +7,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 declare var $: any;
 import { Location } from '@angular/common';
 
-
-
-
 @Component({
   selector: 'time-clocks',
   templateUrl: './time-clocks.component.html',
@@ -29,8 +26,8 @@ export class TimeClocksComponent implements OnInit {
   totalMin;
   finalHours;
 
-
   constructor(private service: TimeClokServiceService, private _location: Location, private http: HttpClient, private router: Router, private globals: Globals) { }
+
   emp_id = '';
   check_in_time = null;
   check_out_time = null;
@@ -49,7 +46,6 @@ export class TimeClocksComponent implements OnInit {
   today: number;
   password = "";
   mailId = "";
-
   alerts: any[] = [];
   loginData: any[];
   test: 'text';
@@ -71,40 +67,40 @@ export class TimeClocksComponent implements OnInit {
     'total_hours': ''
   };
 
-
   ngOnInit() {
-
     this.loginPopUp();
     this.getTimeAndDate();
     setInterval(() => {
       this.getTimeAndDate();
     }, 1000);
-
   }
+
   getTimeAndDate() {
     this.today = Date.now();
   }
+
   loginPopUp() {
 
     $('#myModal').modal('show');
   }
+
   backLocation() {
     this._location.back();
   }
+
   RedirectToHome() {
     this.router.navigate(['dashboard']);
   }
+
   loginSubmite() {
     var data = {
       password: this.password,
       email_id: this.mailId
     }
+
     if (this.mailId && this.password) {
       this.http.post(this.globals.api + 'time-clocks/login', data).subscribe(response => {
         this.test1 = response;
-        //console.log(this.test1);
-        //console.log(this.test1.emp_id);
-        //this.data.id=this.test1.id;
         this.data.time_clock_id = this.test1.time_clock_id;
         this.data.emp_id = this.test1.emp_id;
         this.data.check_in_time = this.test1.check_in_time;
@@ -121,7 +117,6 @@ export class TimeClocksComponent implements OnInit {
         this.data.modified_by = this.test1.modified_by;
         this.data.remarks = this.test1.remarks;
         this.data.total_hours = this.test1.total_hours;
-        //console.log(loginData);
         if (this.data.check_in_time) {
           this.disable_time_in = true;
           this.disable_break_out = false;
@@ -129,9 +124,7 @@ export class TimeClocksComponent implements OnInit {
         }
         if (!this.data.check_out_time) {
           this.disable_time_out = false;
-
         }
-
       });
     } else {
       this.alerts = [{
@@ -142,19 +135,13 @@ export class TimeClocksComponent implements OnInit {
     }
     this.titleStyle = "visible";
   }
-
   time_in = this.data.check_in_time;
   first_break_out = this.data.break_out1
 
   clockInTime() {
     this.data.check_in_time = Date.now();
-    console.log(this.data.check_in_time);
-
     this.service.saveInandOutTime(this.data).subscribe(response => {
-      console.log(response);
       this.data.time_clock_id = response.json().time_clock_id;
-
-
     });
     this.disable_time_in = true;
     this.disable_break_out = false;
@@ -163,13 +150,11 @@ export class TimeClocksComponent implements OnInit {
     this.buttonColorTimeOut = '#e4e9ef';
     this.buttonColorBreakIn = '#345465';
     this.buttonColorBreakOut = '#e4e9ef';
-
-    //alert("hfjhdsjfh");
   }
+
   clockOutTime() {
     this.data.check_out_time = Date.now();
     this.service.saveInandOutTime(this.data).subscribe(response => {
-      console.log(response);
     });
     this.disable_break_out = true;
     this.disable_break_in = true;
@@ -179,14 +164,12 @@ export class TimeClocksComponent implements OnInit {
     this.buttonColorBreakIn = '#345465';
     this.buttonColorBreakOut = '#345465';
 
-
     let BreakOut1 = this.getFormattedDate(this.data.break_out1);
     let BreakIn1 = this.getFormattedDate(this.data.break_in1);
     var dt1 = new Date(BreakOut1);
     var dt2 = new Date(BreakIn1);
     let difference1 = dt2.getTime() - dt1.getTime();
     let resultInMinutes1 = Math.round(difference1 / 60000);
-
 
     let BreakOut2 = this.getFormattedDate(this.data.break_out2);
     let BreakIn2 = this.getFormattedDate(this.data.break_in2);
@@ -195,14 +178,12 @@ export class TimeClocksComponent implements OnInit {
     let difference2 = dt4.getTime() - dt3.getTime();
     let resultInMinutes2 = Math.round(difference2 / 60000);
 
-
     let BreakOut3 = this.getFormattedDate(this.data.break_out3);
     let BreakIn3 = this.getFormattedDate(this.data.break_in3);
     var dt5 = new Date(BreakOut3);
     var dt6 = new Date(BreakIn3);
     let difference3 = dt6.getTime() - dt5.getTime();
     let resultInMinutes3 = Math.round(difference3 / 60000);
-
 
     let BreakOut4 = this.getFormattedDate(this.data.break_out4);
     let BreakIn4 = this.getFormattedDate(this.data.break_in4);
@@ -218,9 +199,7 @@ export class TimeClocksComponent implements OnInit {
     let totaldiff = dt9.getTime() - dt0.getTime();
     let resultInMinutes = Math.round(totaldiff / 60000);
     var finaltotal = resultInMinutes - timeDiffTotal;
-    console.log(finaltotal);
     this.totalHours = Math.round(finaltotal / 60);
-    console.log(this.totalHours == 0)
     if (this.totalHours == 0) {
       this.totalMin = finaltotal - (60 * this.totalHours);
     } else {
@@ -237,79 +216,67 @@ export class TimeClocksComponent implements OnInit {
   }
 
   breakOutTime() {
-
     if (this.data.break_out1 === null) {
       this.data.break_out1 = Date.now();
-      console.log(this.data);
-
       this.service.saveInandOutTime(this.data).subscribe(response => {
-        console.log(response);
       });
-      //console.log(this.diff)
       this.disable_break_out = true;
       this.disable_break_in = false;
+
       this.buttonColorBreakIn = '#e4e9ef';
       this.buttonColorBreakOut = '#345465';
       return true;
-
-      //alert("hfjhdsjfh");
     }
     if (this.data.break_out2 === null) {
       this.data.break_out2 = Date.now();
       this.service.saveInandOutTime(this.data).subscribe(response => {
-        console.log(response);
       });
       this.disable_break_out = true;
       this.disable_break_in = false;
+
       this.buttonColorBreakIn = '#e4e9ef';
       this.buttonColorBreakOut = '#345465';
       return true;
-      //alert("hfjhdsjfh");
     }
     if (this.data.break_out3 === null) {
       this.data.break_out3 = Date.now();
       this.service.saveInandOutTime(this.data).subscribe(response => {
-        console.log(response);
       });
       this.disable_break_out = true;
       this.disable_break_in = false;
+
       this.buttonColorBreakIn = '#e4e9ef';
       this.buttonColorBreakOut = '#345465';
       return true;
-      //alert("hfjhdsjfh");
     }
     if (this.data.break_out4 === null) {
       this.data.break_out4 = Date.now();
       this.service.saveInandOutTime(this.data).subscribe(response => {
-        console.log(response);
       });
       this.disable_break_out = true;
       this.disable_break_in = false;
+
       this.buttonColorBreakIn = '#e4e9ef';
       this.buttonColorBreakOut = '#345465';
       return true;
-      //alert("hfjhdsjfh");
     }
-
   }
+
   breakInTime() {
-    console.log(this.break_out1);
     if (this.data.break_in1 === null) {
       this.data.break_in1 = Date.now();
       this.service.saveInandOutTime(this.data).subscribe(response => {
-        console.log(response);
       });
       this.disable_break_out = false;
       this.disable_break_in = true;
+
       this.buttonColorBreakIn = '#345465';
       this.buttonColorBreakOut = '#e4e9ef';
       return true;
-      //alert("hfjhdsjfh");
     }
     if (this.data.break_in2 === null) {
       this.data.break_in2 = Date.now();
       this.service.saveInandOutTime(this.data).subscribe(response => {
-        console.log(response);
       });
       this.disable_break_out = false;
       this.disable_break_in = true;
@@ -317,12 +284,10 @@ export class TimeClocksComponent implements OnInit {
       this.buttonColorBreakIn = '#345465';
       this.buttonColorBreakOut = '#e4e9ef';
       return true;
-      //alert("hfjhdsjfh");
     }
     if (this.data.break_in3 === null) {
       this.data.break_in3 = Date.now();
       this.service.saveInandOutTime(this.data).subscribe(response => {
-        console.log(response);
       });
       this.disable_break_out = false;
       this.disable_break_in = true;
@@ -330,12 +295,10 @@ export class TimeClocksComponent implements OnInit {
       this.buttonColorBreakIn = '#345465';
       this.buttonColorBreakOut = '#e4e9ef';
       return true;
-      //alert("hfjhdsjfh");
     }
     if (this.data.break_in4 === null) {
       this.data.break_in4 = Date.now();
       this.service.saveInandOutTime(this.data).subscribe(response => {
-        console.log(response);
       });
       this.disable_break_out = false;
       this.disable_break_in = true;
@@ -343,7 +306,6 @@ export class TimeClocksComponent implements OnInit {
       this.buttonColorBreakIn = '#345465';
       this.buttonColorBreakOut = '#e4e9ef';
       return true;
-      //alert("hfjhdsjfh");
     }
   }
 }

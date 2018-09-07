@@ -63,7 +63,6 @@ export class ManagerComponent implements OnInit {
 
   constructor(private service: MembershipServiceService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
 
-
     this.http.get(this.globals.api + 'categorys').subscribe(data => {
       this.temp.push([
         {
@@ -82,10 +81,8 @@ export class ManagerComponent implements OnInit {
       this.subCategoryArray = this.temp1[0];
     });
     this.http.get(environment.host + 'memberships').subscribe(memberShipData => {
-      console.log(memberShipData)
       this.temp2.push(memberShipData);
       this.memberships = this.temp2[0];
-      console.log(this.memberships)
     });
   }
 
@@ -182,50 +179,37 @@ export class ManagerComponent implements OnInit {
 
   changeCategory(event: string): void {
     this.selectedCategoryObject = JSON.parse(event);
-    console.log(this.selectedCategoryObject)
   }
-  
+
   customerSearch(val) {
     this.giftcard.searchPlace(val).subscribe(data => {
       this.temp3.push(data.json());
       this.states = this.temp3.pop();
-      console.log(this.states);
     });
 
   }
 
   onSelect(event: TypeaheadMatch): void {
-    console.log(event);
     this.selectedOption = event.item;
   }
 
   changeSubCategory(event: string): void {
     this.selectedSubCategoryObject = JSON.parse(event);
-    console.log(this.selectedSubCategoryObject)
   }
-  
+
   ngOnInit() {
     this.service.getCategoryList().subscribe(response => {
       this.catagroyData = response.json();
     });
-    console.log("session check")
-    console.log(sessionStorage.getItem('manager-routing'))
-    console.log(sessionStorage.getItem('manager-routing') == '"com&mar"');
-    console.log(JSON.stringify(sessionStorage.getItem('manager-routing')) == '"com&mar"');
     if (sessionStorage.getItem('manager-routing') == '"com&mar"') {
-      console.log("comm check");
       this.commMarkClickInfo();
     } else if (sessionStorage.getItem('manager-routing') == '"staff"') {
-      console.log("staff check");
       this.staffClickInfo();
     } else if (sessionStorage.getItem('manager-routing') == '"client"') {
-      console.log("client check");
       this.clientClickInfo();
     } else if (sessionStorage.getItem('manager-routing') == '"memberhip"') {
-      console.log("member check");
       this.membershipClickInfo();
     } else if (sessionStorage.getItem('manager-routing') == '"package"') {
-      console.log("pack check");
       this.packageClickInfo();
     } else if (sessionStorage.getItem('manager-routing') == '"promotion"') {
       this.promitionClickInfo();
@@ -243,7 +227,6 @@ export class ManagerComponent implements OnInit {
   }
 
   downloadExcel() {
-    console.log("Come here")
     var options = {
       fieldSeparator: ',',
       quoteStrings: '"',
@@ -258,7 +241,6 @@ export class ManagerComponent implements OnInit {
 
   downloadPdf() {
     const doc = new jsPDF('p', 'pt');
-    console.log(this.memberships)
     var rows = this.memberships;
     var columns = [
       { title: "Name", dataKey: "membership_name" },
@@ -284,20 +266,16 @@ export class ManagerComponent implements OnInit {
   }
 
   onEdit(val) {
-    console.log(val)
     this.memName = val.membership_name;
     this.memDesc = val.membership_description;
     this.selectedCategoryObject = {
       "cat_id": 11,
       "category_name": "Make Up"
     };
-    console.log(this.selectedCategoryObject)
   }
 
   addMembershipClick() {
-    console.log(this.addMembership)
     this.service.saveMembershipDetails(this.addMembership).subscribe(response => {
-      console.log(response);
     })
     $("#add-membership").modal('hide');
     this.addMembership.cat_id = "";
@@ -410,7 +388,7 @@ export class ManagerComponent implements OnInit {
   viewGiftClick() {
     this.router.navigate(['view-active-gift-card'])
   }
-  
+
   redirectToViewGiftClick() {
     this.router.navigate(['view-active-gift-card'])
   }
@@ -423,7 +401,6 @@ export class ManagerComponent implements OnInit {
     this.addMembership.cat_id = cat_id;
     this.service.getSub_CategoryList(this.addMembership.cat_id).subscribe(response => {
       this.sub_catagroyData = response.json();
-      console.log(this.sub_catagroyData);
     });
 
   }
@@ -436,46 +413,28 @@ export class ManagerComponent implements OnInit {
     let discountCheckbox;
     let setPriceRadio;
     let everyoneRadio;
-    console.log(this.sellOnline)
     if (this.sellOnline.toString() == 'true') {
       sellOnlineCheckBox = '1'
     } else {
       sellOnlineCheckBox = '0'
     }
-    console.log(this.discountPrice);
     if (this.discountPrice.toString() == 'true') {
       discountCheckbox = '1'
     } else {
       discountCheckbox = '0'
     }
 
-    // if(this.setPrice.toString()=='y')
-    // {
-    //  setPriceRadio='1'
-
-    // } else{
-    //   setPriceRadio='0'
-    // }
-    // if(this.everyonePurchase.toString()=='y'){
-    //   everyoneRadio='1'
-    // } else{
-    //   everyoneRadio='0'
-    // }
-    console.log(this.soldAt);
-    console.log(this.setPrice);
-    console.log(this.everyonePurchase);
     var data: any = {
       giftcard_sold_at: this.soldAt,
       giftcard_value: this.cardValue,
       giftcard_discount_price: discountCheckbox,
       giftcard_name: this.cardName,
       giftcard_sell_online: sellOnlineCheckBox,
-      giftcard_allow_staff_set_price:this.setPrice,
+      giftcard_allow_staff_set_price: this.setPrice,
       giftcard_everyone_purchase: this.everyonePurchase
     }
 
     this.giftcard.saveGiftCard(data).subscribe(data => {
-      console.log(data.json());
     });
 
   }

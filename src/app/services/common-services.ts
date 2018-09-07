@@ -5,7 +5,6 @@ export class Services {
     api: string = 'http://localhost:3001/';
     _num: any[];
     constructor() {
-        console.log("***************")
     }
     setcategoryValue(val) {
         this._num = val;

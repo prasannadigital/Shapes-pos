@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AddPromotionServiceService } from '../../services/add-promotion-service.service'
 import * as moment from 'moment';
-import { WeekdaysPipe } from '../../pipe/weekdays.pipe'
 
 @Component({
   selector: 'app-add-promotions',
@@ -36,8 +35,6 @@ export class AddPromotionsComponent implements OnInit {
   public date1: any;
   public date2: any;
   locationData = new Array();
-  
-  console
 
   constructor(private router: Router, private service: AddPromotionServiceService) { }
 
@@ -55,7 +52,6 @@ export class AddPromotionsComponent implements OnInit {
     if (this.friday.toString() == 'true') { totaldays = totaldays + ' 5 ,' }
     if (this.saturday.toString() == 'true') { totaldays = totaldays + ' 6 ,' }
     totaldays = totaldays.substring(0, totaldays.length - 1);
-    console.log(totaldays)
 
     if (this.allowOnlineSales.toString() == 'true') {
       allowonlinecheckbox = '1'
@@ -78,19 +74,16 @@ export class AddPromotionsComponent implements OnInit {
     }
     this.service.addPromotionPost(data).subscribe(response => {
       this.locationData = response.json();
-      console.log(response.json())
     });
   }
 
   getActivationDate() {
     let newDate = moment(this.promotionActivationDate).format('YYYY-MM-DD').toString();
-    console.log(newDate);
     this.promotionActivationDate = newDate;
   }
 
   getExpirationDate() {
     let newDate1 = moment(this.promotionExpirationDate).format('YYYY-MM-DD').toString();
-    console.log(newDate1);
     this.promotionExpirationDate = newDate1;
   }
 

@@ -10,7 +10,6 @@ export class StaffServiceService {
   constructor(private http: Http) { }
 
   saveStaff(staff: any) {
-    console.log(staff);
     return this.http.post(environment.host + 'employees', staff);
   }
 

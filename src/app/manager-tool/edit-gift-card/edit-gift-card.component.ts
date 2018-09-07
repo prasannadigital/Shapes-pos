@@ -3,7 +3,6 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 declare var $: any;
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 import { GiftCardServiceService } from '../../services/gift-card-service.service';
-import {GiftcardSetandgetService} from '../../services/giftcard-setandget.service';
 @Component({
   selector: 'app-edit-gift-card',
   templateUrl: './edit-gift-card.component.html',
@@ -19,7 +18,7 @@ export class EditGiftCardComponent implements OnInit {
   states: any[] = [];
   temp3: any[] = [];
 
-  constructor(private router: Router, private service: GiftCardServiceService,private giftcardService:GiftcardSetandgetService) { }
+  constructor(private router: Router, private service: GiftCardServiceService) { }
 
   ngOnInit() {
     this.getGiftCardData();
@@ -32,12 +31,10 @@ export class EditGiftCardComponent implements OnInit {
   getGiftCardData() {
     this.service.getGiftCard().subscribe(giftCardData => {
       this.giftCardData = giftCardData.json();
-      console.log(giftCardData);
     })
   }
 
   onSelect(event: TypeaheadMatch): void {
-    console.log(event);
     this.selectedOption = event.item;
   }
 
@@ -45,14 +42,11 @@ export class EditGiftCardComponent implements OnInit {
     this.service.searchPlace(val).subscribe(data => {
       this.temp3.push(data.json());
       this.states = this.temp3.pop();
-      console.log(this.states);
     });
   }
 
   EditGiftCard(data) {
     this.editData = data;
-     this.giftcardService.setGifrCard(this.editData);
-    console.log(this.editData);
     if (this.editData.giftcard_discount_price == '0') {
       this.editData.giftcard_discount_price = '';
     }
@@ -64,8 +58,6 @@ export class EditGiftCardComponent implements OnInit {
   }
 
   cancelGiftCard(val, giftcard_discount_price){
-   this.giftcardService.getGiftCard();
-   console.log(this.giftcardService.getGiftCard());
     this.editData = val;
   }
 
@@ -80,7 +72,6 @@ export class EditGiftCardComponent implements OnInit {
       sellOnlineCheckBox = '0'
       this.editData.giftcard_sell_online = '0'
     }
-    console.log(val.giftcard_discount_price)
     if (val.giftcard_discount_price.toString() == 'true') {
       discountCheckbox = '1'
       this.editData.giftcard_discount_price = '1'
@@ -101,9 +92,7 @@ export class EditGiftCardComponent implements OnInit {
       giftcard_everyone_purchase: val.giftcard_everyone_purchase,
     }
   
-    this.service.saveGiftCard(data).subscribe(response => {
-      console.log(response.json().giftcard_sell_online);
-    })
+    this.service.saveGiftCard(data).subscribe(response => {})
     $("#add-new-giftcard").modal('hide');
   }
 

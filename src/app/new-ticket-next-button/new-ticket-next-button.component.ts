@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 import { environment } from '../../environments/environment';
 import { Services } from '../services/common-services';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead/typeahead-match.class';
@@ -12,6 +11,7 @@ declare var $: any;
   templateUrl: './new-ticket-next-button.component.html',
   styleUrls: ['./new-ticket-next-button.component.css']
 })
+
 export class NewTicketNextButtonComponent implements OnInit {
   selectedValue: string;
   selectedOption: any;
@@ -38,13 +38,11 @@ export class NewTicketNextButtonComponent implements OnInit {
       this.packages = data;
     });
   }
-  
+
   ngOnInit() {
   }
 
   onSelectStylish(event: TypeaheadMatch): void {
-    console.log("*********")
-    console.log(event)
   }
 
   onSelect(event: TypeaheadMatch): void {

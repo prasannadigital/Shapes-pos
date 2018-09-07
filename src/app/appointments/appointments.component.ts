@@ -16,9 +16,8 @@ export class AppointmentsComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   setColor(val) {
-    console.log(val)
     this.count = this.count + 1;
     if (this.count == 1) {
       this.temp[0] = val;
@@ -27,12 +26,10 @@ export class AppointmentsComponent implements OnInit {
     if (this.count == 2) {
       this.temp[1] = val;
       if (this.temp[1] > this.temp[0]) {
-        console.log("true")
         for (let i = this.temp[0]; i <= this.temp[1]; i++) {
           this.tempClass[i] = true;
         }
       } else {
-        console.log("false")
         for (let i = this.temp[1]; i <= this.temp[0]; i++) {
           this.tempClass[i] = true;
         }

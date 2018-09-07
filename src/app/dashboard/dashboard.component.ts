@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -20,8 +19,7 @@ export class DashboardComponent implements OnInit {
   }
 
   newTicket() {
-    console.log("new ticket");
     this.router.navigate(['new-ticket']);
   }
-  
+
 }

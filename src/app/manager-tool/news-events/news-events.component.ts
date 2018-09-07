@@ -15,10 +15,8 @@ export class NewsEventsComponent implements OnInit {
   eventLink = "";
   eventStartDate = "";
   eventEndDate = "";
-
   public date1: any;
   public date2: any;
-
   locationData = new Array();
   messageData: any = [];
 
@@ -52,28 +50,24 @@ export class NewsEventsComponent implements OnInit {
 
   getEventStartDate() {
     let newDate = moment(this.eventStartDate).format('YYYY-MM-DD').toString();
-    console.log(newDate);
     this.eventStartDate = newDate;
   }
 
   getEventEndDate() {
     let newDate1 = moment(this.eventEndDate).format('YYYY-MM-DD').toString();
-    console.log(newDate1);
     this.eventEndDate = newDate1;
   }
 
   backToMembership() {
     this.router.navigate(['management']);
   }
+
   updateMessage(val) {
     var data = {
       top_msg_id: val.top_msg_id,
       top_msg: val.top_msg
     }
     this.service.editTopMessage(data).subscribe(response => {
-   
     })
   }
-
-
 }
