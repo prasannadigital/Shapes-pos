@@ -22,7 +22,7 @@
 			<td>{{item.giftcard_discount_price | yesorno}}</td>
 			<td>{{item.giftcard_allow_staff_set_price | yesorno}}</td>
 			<td>{{item.giftcard_everyone_purchase | yesorno}}</td>
-			<td href="#" data-toggle="modal" data-target="#add-new-giftcard" (click)="EditGiftCard(item)">Edit</td>
+			<td href="#" data-toggle="modal" data-target="#add-new-giftcard" (click)="EditGiftCard(item, i)">Edit</td>
 		</tr>
 	</tbody>
 
@@ -145,7 +145,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" (click)="cancelGiftCard(editData,editData.giftcard_discount_price)">Cancel</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal" (click)="cancelGiftCard(editData)">Cancel</button>
 				<button type="button" class="btn btn-primary" (click)="updateGiftCard(editData);showSuccess()">Update</button>
 			</div>
 		</div>

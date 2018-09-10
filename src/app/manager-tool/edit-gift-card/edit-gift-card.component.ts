@@ -3,8 +3,8 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 declare var $: any;
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 import { GiftCardServiceService } from '../../services/gift-card-service.service';
-import {Message} from 'primeng/components/common/api';
-import {MessageService} from 'primeng/components/common/messageservice';
+import { Message } from 'primeng/components/common/api';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 
 @Component({
@@ -22,7 +22,7 @@ export class EditGiftCardComponent implements OnInit {
   states: any[] = [];
   temp3: any[] = [];
 
-  constructor(private router: Router,private messageService: MessageService, private service: GiftCardServiceService) { }
+  constructor(private router: Router, private messageService: MessageService, private service: GiftCardServiceService) { }
 
   ngOnInit() {
     this.getGiftCardData();
@@ -40,8 +40,8 @@ export class EditGiftCardComponent implements OnInit {
 
   showSuccess() {
     this.msgs = [];
-    this.msgs.push({severity:'success', summary:'GiftCard Updated Successfully'});
-}
+    this.msgs.push({ severity: 'success', summary: 'GiftCard Updated Successfully' });
+  }
   onSelect(event: TypeaheadMatch): void {
     this.selectedOption = event.item;
   }
@@ -53,23 +53,24 @@ export class EditGiftCardComponent implements OnInit {
     });
   }
 
-  EditGiftCard(data) {
+  EditGiftCard(data, index) {
+    data.index = index;
     this.editData = data;
-    
+    sessionStorage.setItem('commonData', JSON.stringify(this.editData));
+
     console.log(this.editData);
     if (this.editData.giftcard_discount_price == '0') {
       this.editData.giftcard_discount_price = '';
     }
     if (this.editData.giftcard_sell_online == '0') {
       this.editData.giftcard_sell_online = '';
-    } else {
-      this.editData.giftcard_sell_online = 'y';
-    }  
+    }
   }
 
-  cancelGiftCard(val, giftcard_discount_price){
-   
-    this.editData = val;
+  cancelGiftCard(val) {
+    let tableRowData = JSON.parse(sessionStorage.getItem('commonData'));
+    this.giftCardData[tableRowData.index] = tableRowData;
+    window.sessionStorage.removeItem('commonData');
   }
 
   updateGiftCard(val) {
@@ -102,8 +103,8 @@ export class EditGiftCardComponent implements OnInit {
       giftcard_allow_staff_set_price: val.giftcard_allow_staff_set_price,
       giftcard_everyone_purchase: val.giftcard_everyone_purchase,
     }
-  
-    this.service.saveGiftCard(data).subscribe(response => {})
+
+    this.service.saveGiftCard(data).subscribe(response => { })
     $("#add-new-giftcard").modal('hide');
   }
 

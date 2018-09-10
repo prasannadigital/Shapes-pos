@@ -3,9 +3,9 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import * as moment from 'moment';
 import { AddPromotionServiceService } from '../../services/add-promotion-service.service'
 import { WeekdaysPipe } from '../../pipe/weekdays.pipe'
-
-import {Message} from 'primeng/components/common/api';
-import {MessageService} from 'primeng/components/common/messageservice';
+declare var $: any;
+import { Message } from 'primeng/components/common/api';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-edit-promotions',
@@ -29,7 +29,7 @@ export class EditPromotionsComponent implements OnInit {
 
   submitted = false;
 
-  constructor(private router: Router,private messageService: MessageService, private service: AddPromotionServiceService) { }
+  constructor(private router: Router, private messageService: MessageService, private service: AddPromotionServiceService) { }
 
   ngOnInit() {
     this.editPromotionGet();
@@ -41,17 +41,31 @@ export class EditPromotionsComponent implements OnInit {
 
   showSuccess() {
     this.msgs = [];
-    this.msgs.push({severity:'success', summary:'Promotions updated Successfully'});
-}
+    this.msgs.push({ severity: 'success', summary: 'Promotions updated Successfully' });
+  }
 
   editPromotionGet() {
     this.service.editPromotionGet().subscribe(localData => {
       this.localData = localData.json();
+
     })
   }
 
-  editPromotion(data) {
-    this.editData = data
+  editPromotion(data, index) {
+    data.index = index;
+    this.editData = data;
+
+    let newDate = moment(this.editData.promotion_start_date).format('YYYY-MM-DD').toString();
+    this.editData.promotion_start_date = newDate;
+
+    let newDate1 = moment(this.editData.promotion_end_date).format('YYYY-MM-DD').toString();
+    this.editData.promotion_end_date = newDate1;
+
+    console.log(this.editData.promotion_allow_online_sale);
+    if (this.editData.promotion_allow_online_sale == '0') {
+      this.editData.promotion_allow_online_sale = '';
+    }
+
     if (this.editData.promotion_valid_days.includes('0')) {
       this.sunday = true;
     }
@@ -94,11 +108,16 @@ export class EditPromotionsComponent implements OnInit {
     else {
       this.saturday = false
     }
+    sessionStorage.setItem('commonData', JSON.stringify(this.editData));
 
   }
-
+  cancelPromotions(val) {
+    let tableRowData = JSON.parse(sessionStorage.getItem('commonData'));
+    this.localData[tableRowData.index] = tableRowData;
+    window.sessionStorage.removeItem('commonData');
+  }
   updatePromotion(val) {
-    this.submitted=true;
+    this.submitted = true;
     console.log(val)
     let allowonlinecheckbox = '';
     if (this.editData.promotion_allow_online_sale.toString() == 'false') {
@@ -107,7 +126,7 @@ export class EditPromotionsComponent implements OnInit {
     else {
       allowonlinecheckbox = '1'
     }
-    
+
     let totaldays = '';
     if (this.sunday.toString() == 'true') { totaldays = totaldays + ' 0 ,' }
     if (this.monday.toString() == 'true') { totaldays = totaldays + ' 1 ,' }
@@ -134,6 +153,7 @@ export class EditPromotionsComponent implements OnInit {
     this.service.addPromotionPost(data).subscribe(response => {
       val.promotion_valid_days = response.json().promotion_valid_days;
     })
+    $("#add-promotion").modal('hide');
   }
   getActivationDate() {
     let newDate = moment(this.editData.promotion_start_date).format('YYYY-MM-DD').toString();

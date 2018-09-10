@@ -13,6 +13,7 @@ import {MessageService} from 'primeng/components/common/messageservice';
 })
 export class AddPromotionsComponent implements OnInit {
   msgs: Message[] = [];
+
   promotionName = "";
   promotionCode = "";
   discountAmount = "";
@@ -53,6 +54,13 @@ export class AddPromotionsComponent implements OnInit {
     this.submitted=true;
     let allowonlinecheckbox = '';
     let totaldays = '';
+    console.log(this.allowOnlineSales);
+    if (this.allowOnlineSales.toString() == 'true') {
+      allowonlinecheckbox = '1'
+    } else {
+      allowonlinecheckbox = '0'
+    }
+    console.log(allowonlinecheckbox);
     if (this.sunday.toString() == 'true') { totaldays = totaldays + ' 0 ,' }
     if (this.monday.toString() == 'true') { totaldays = totaldays + ' 1 ,' }
     if (this.tuesday.toString() == 'true') { totaldays = totaldays + ' 2 ,' }
@@ -62,11 +70,7 @@ export class AddPromotionsComponent implements OnInit {
     if (this.saturday.toString() == 'true') { totaldays = totaldays + ' 6 ,' }
     totaldays = totaldays.substring(0, totaldays.length - 1);
 
-    if (this.allowOnlineSales.toString() == 'true') {
-      allowonlinecheckbox = '1'
-    } else {
-      allowonlinecheckbox = '0'
-    }
+   
     var data = {
       promotion_name: this.promotionName,
       promotion_code: this.promotionCode,
@@ -82,18 +86,21 @@ export class AddPromotionsComponent implements OnInit {
       promotion_end_date: this.promotionExpirationDate,
     }
     this.service.addPromotionPost(data).subscribe(response => {
-      this.locationData = response.json();
+     console.log(response.json());
+
     });
   }
 
   getActivationDate() {
     let newDate = moment(this.promotionActivationDate).format('YYYY-MM-DD').toString();
     this.promotionActivationDate = newDate;
+    console.log(this.promotionActivationDate);
   }
 
   getExpirationDate() {
     let newDate1 = moment(this.promotionExpirationDate).format('YYYY-MM-DD').toString();
     this.promotionExpirationDate = newDate1;
+    console.log(this.promotionExpirationDate);
   }
 
   backToMembership() {
