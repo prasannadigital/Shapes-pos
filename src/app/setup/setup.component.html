@@ -1,6 +1,79 @@
 <div class="tabs-services">
   <app-header></app-header>
 </div>
+<div class="tab-pane " id="manager" role="tabpanel" aria-labelledby="manager-tab">
+  <div class="manager-tap">
+    <div class="col-md-3 col-sm-3 col-xs-12 manager-tap-left">
+      <div class="nav flex-column nav-pills rs-1-left-button" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link com-mark-info" id="v-pills-home-tab"  data-toggle="pill" href="#business"
+         role="tab" aria-controls="business" aria-selected="true">Business Settings</a>
 
+        <a class="nav-link staff-info" id="v-pills-profile-tab"  data-toggle="pill" href="#general" role="tab"
+         aria-controls="general" aria-selected="false">General Settings</a>
+
+        <a class="nav-link client-info" id="v-pills-messages-tab"  data-toggle="pill" href="#retail"
+         role="tab" aria-controls="retail" aria-selected="false">Retail Settings</a>
+
+        <a class="nav-link mem-info" id="v-pills-settings-tab"  data-toggle="pill" href="#inventory"
+         role="tab" aria-controls="inventory" aria-selected="false">Inventory Settings</a>
+
+        <a class="nav-link package-info" id="v-pills-settings-tab" data-toggle="pill" href="#client"
+         role="tab" aria-controls="client" aria-selected="false">Client Settings</a>
+
+        <a class="nav-link promotion-info" id="v-pills-settings-tab" (click)="promitionClickInfo()" data-toggle="pill" href="#cardswipe"
+         role="tab" aria-controls="cardswipe" aria-selected="false">Card Swipe Settings</a>
+
+        <a class="nav-link gift-card-info" id="v-pills-settings-tab"  data-toggle="pill" href="#payment"
+         role="tab" aria-controls="v-pills-settings" aria-selected="false">Payment Method</a>
+
+        <a class="nav-link product-info" id="v-pills-settings-tab"  data-toggle="pill" href="#cash"
+         role="tab" aria-controls="v-pills-settings" aria-selected="false">Cash Drawer Setup</a>
+
+        <a class="nav-link inventory-info" id="v-pills-settings-tab"  data-toggle="pill" href="#receipt"
+         role="tab" aria-controls="v-pills-settings" aria-selected="false">Receipt Printer</a>
+
+        <a class="nav-link pricing-info" id="v-pills-settings-tab" data-toggle="pill" href="#software"
+         role="tab" aria-controls="v-pills-settings" aria-selected="false">Software Settings</a>
+
+        
+      </div>
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-12 manager-tap-right">
+      <div class="tab-content" id="v-pills-tabContent">
+        <!--------------Business settings start-------------->
+						<div class="tab-pane fade" id="business" role="tabpanel" aria-labelledby="v-pills-settings-tab">Business Settings
+            </div>
+            <!--------------General settings start-------------->
+						<div class="tab-pane fade" id="general" role="tabpanel" aria-labelledby="v-pills-settings-tab">General Settings
+            </div>
+             <!--------------Retail settings start-------------->
+						<div class="tab-pane fade" id="retail" role="tabpanel" aria-labelledby="v-pills-settings-tab">Retail settings
+            </div>
+            <!--------------inventory settings start-------------->
+						<div class="tab-pane fade" id="inventory" role="tabpanel" aria-labelledby="v-pills-settings-tab">Inventory settings
+            </div>
+            <!--------------client settings start-------------->
+						<div class="tab-pane fade" id="client" role="tabpanel" aria-labelledby="v-pills-settings-tab">Client settings
+            </div>
+            <!--------------cardswipe start-------------->
+						<div class="tab-pane fade" id="cardswipe" role="tabpanel" aria-labelledby="v-pills-settings-tab">Card Swipe Settings
+            </div>
+            <!--------------payment start-------------->
+						<div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="v-pills-settings-tab">Payment Settings
+            </div>
+            <!--------------Cash Drawer Setup start-------------->
+						<div class="tab-pane fade" id="cash" role="tabpanel" aria-labelledby="v-pills-settings-tab">Cash Drawer Setup
+            </div>
+            <!--------------Receipt Printer start-------------->
+						<div class="tab-pane fade" id="receipt" role="tabpanel" aria-labelledby="v-pills-settings-tab">Receipt Printer
+            </div>
+             <!--------------Software Settings start-------------->
+						<div class="tab-pane fade" id="software" role="tabpanel" aria-labelledby="v-pills-settings-tab">Software Settings
+						</div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
 <app-footer></app-footer>
 
