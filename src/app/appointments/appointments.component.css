@@ -1,4 +1,8 @@
-.highlight {
-    background-color: #ddd !important;
-    color: #ffffff;
-  }
+@import '~dhtmlx-scheduler/codebase/dhtmlxscheduler.css';
+
+:host{
+  display: block;
+  height: 30%;
+  position: relative;
+  width: 30%;
+}

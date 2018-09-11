@@ -1,41 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { ElementRef, ViewChild, ViewEncapsulation } from "@angular/core";
+import "dhtmlx-scheduler";
+import { } from "@types/dhtmlxscheduler";
+import { AppointmentsServiceService } from '../services/appointments-service.service';
 
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'appointments',
   templateUrl: './appointments.component.html',
   styleUrls: ['./appointments.component.css']
 })
 export class AppointmentsComponent implements OnInit {
-  count: number = 0;
-  temp: any = [];
-  _style: Object;
-  tempClass: any = [];
-  public background_color = "124px";
+  @ViewChild("scheduler_here") schedulerContainer: ElementRef;
 
-  constructor() { }
+
+  constructor(private service: AppointmentsServiceService) { }
 
   ngOnInit() {
+    scheduler.config.xml_date = "%Y-%m-%d %H:%i";
+    scheduler.init(this.schedulerContainer.nativeElement);
+    this.service.get()
+      .then((data) => {
+        scheduler.parse(data, "json");
+        console.log(data);
+      });
+      
   }
 
-  setColor(val) {
-    this.count = this.count + 1;
-    if (this.count == 1) {
-      this.temp[0] = val;
-    }
-
-    if (this.count == 2) {
-      this.temp[1] = val;
-      if (this.temp[1] > this.temp[0]) {
-        for (let i = this.temp[0]; i <= this.temp[1]; i++) {
-          this.tempClass[i] = true;
-        }
-      } else {
-        for (let i = this.temp[1]; i <= this.temp[0]; i++) {
-          this.tempClass[i] = true;
-        }
-      }
-    }
-
-  }
 
 }
