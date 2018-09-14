@@ -1,10 +1,38 @@
 <div class="tabs-services">
   <app-header></app-header>
 </div>
-
-
-<p>
-  inventory works!
-</p>
+<div class="col-md-2 col-sm-2 col-xs-12 manager-tap-left">
+ <div class="nav flex-column nav-pills rs-1-left-button" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <a class="nav-link com-mark-info" id="v-pills-home-tab" (click)="purchaseOrderClick()" data-toggle="pill" href="#purchase"
+    role="tab" aria-controls="purchase" aria-selected="true">Purchase Order</a>
+    <br><br>
+    <a class="nav-link com-mark-info" id="v-pills-home-tab" (click)="supplierClick()" data-toggle="pill" href="#suppliers"
+    role="tab" aria-controls="suppliers" aria-selected="true">Suppliers</a>
+    <br><br>
+    <a class="nav-link com-mark-info" id="v-pills-home-tab" (click)="inventoryTicketClick()" data-toggle="pill" href="#inventory"
+    role="tab" aria-controls="inventory" aria-selected="true">Inventory Tickets</a>
+    <br><br>
+    <a class="nav-link com-mark-info" id="v-pills-home-tab" (click)="updateInventory()"  data-toggle="pill" href="#update"
+    role="tab" aria-controls="update" aria-selected="true">Update Physical Inventory</a>
+    <br><br>
+    <a class="nav-link com-mark-info" id="v-pills-home-tab" (click)="reportsClick()" data-toggle="pill" href="#reports"
+    role="tab" aria-controls="reports" aria-selected="true">Inventory Reports</a>
+  </div>
+</div>
+<div class="col-md-9 col-sm-9 col-xs-12 manager-tap-right">
+    <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade" id="purchase" role="tabpanel" aria-labelledby="v-pills-settings-tab">Purchase Order
+          </div>
+          <div class="tab-pane fade" id="suppliers" role="tabpanel" aria-labelledby="v-pills-settings-tab">Suppliers
+            </div>
+            <div class="tab-pane fade" id="inventory" role="tabpanel" aria-labelledby="v-pills-settings-tab">Inventory Ticket
+              </div>
+              <div class="tab-pane fade" id="update" role="tabpanel" aria-labelledby="v-pills-settings-tab">Update Physical Inventory
+                </div>
+                <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="v-pills-settings-tab">Update Physical Inventory
+                  </div>
+      </div>
+</div>
+<div class="clear"></div>
 <app-footer></app-footer>
 

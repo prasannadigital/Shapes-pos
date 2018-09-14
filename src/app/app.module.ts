@@ -64,6 +64,11 @@ import {GrowlModule} from 'primeng/growl';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { WeekdaysPipe } from './pipe/weekdays.pipe';
 import { YesornoPipe } from './pipe/yesorno.pipe';
+import { PurchaseOrderComponent } from './inventory/purchase-order/purchase-order.component';
+import { SuppliersComponent } from './inventory/suppliers/suppliers.component';
+import { InventoryTicketsComponent } from './inventory/inventory-tickets/inventory-tickets.component';
+import { UpdatePhysicalInventoryComponent } from './inventory/update-physical-inventory/update-physical-inventory.component';
+import { InventoryReportsComponent } from './inventory/inventory-reports/inventory-reports.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -100,6 +105,11 @@ const routes: Routes = [
   { path: 'time-clocks', component: TimeClocksComponent, canActivate: [AuthGuard] },
   { path: 'reports', component: ReportsComponent, canActivate: [AuthGuard] },
   { path: 'inventory', component: InventoryComponent, canActivate: [AuthGuard] },
+  { path: 'inventory/purchase-order', component: PurchaseOrderComponent, canActivate: [AuthGuard] },
+  { path: 'inventory/suppliers', component: SuppliersComponent, canActivate: [AuthGuard] },
+  { path: 'inventory/inventory-tickets', component: InventoryTicketsComponent, canActivate: [AuthGuard] },
+  { path: 'inventory/physical-inventory', component: UpdatePhysicalInventoryComponent, canActivate: [AuthGuard] },
+  { path: 'inventory/reports', component: InventoryReportsComponent, canActivate: [AuthGuard] },
   { path: 'setup', component: SetupComponent, canActivate: [AuthGuard] }
 ];
 
@@ -161,7 +171,17 @@ const routes: Routes = [
     OnlineGiftCardsComponent,
     WeekdaysPipe,
 
-    YesornoPipe
+    YesornoPipe,
+
+    PurchaseOrderComponent,
+
+    SuppliersComponent,
+
+    InventoryTicketsComponent,
+
+    UpdatePhysicalInventoryComponent,
+
+    InventoryReportsComponent
 
   ],
   imports: [
