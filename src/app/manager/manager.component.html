@@ -30,8 +30,8 @@
 						<a class="nav-link product-info" id="v-pills-settings-tab" (click)="productClickInfo()" data-toggle="pill" href="#Products"
 						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Products</a>
 
-						<a class="nav-link inventory-info" id="v-pills-settings-tab" (click)="inventoryClickInfo()" data-toggle="pill" href="#Inventory"
-						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Inventory</a>
+						<a class="nav-link dailycheckout-info" id="v-pills-settings-tab" data-toggle="pill" href="#dailycheckout"
+						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Daliy Checkout</a>
 
 						<a class="nav-link pricing-info" id="v-pills-settings-tab" (click)="pricingClickInfo()" data-toggle="pill" href="#Pricing"
 						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Pricing</a>
@@ -58,7 +58,8 @@
 							</div>
 						</div>
 						<!--------------Communications end-------------->
-
+					
+					  
 						<div class="tab-pane fade" id="Staff" role="tabpanel" aria-labelledby="Staff">
 							<div class="sales-staff">
 								<div class="staff-section">
@@ -498,157 +499,27 @@
 							</div>
 						</div>
 
-						<!--------------Inventory start-------------->
-						<div class="tab-pane fade" id="Inventory" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-							<div class="packages">
-								<div class="promation-1">
-
-									<div class="col-md-6 col-sm-6 col-xs-12">
-										<h3 style="font-weight:600;">Inventory Tickets - Summary</h3>
-									</div>
-									<div class="col-md-6 col-sm-6 col-xs-12 ">
-										<div class="dropdown pull-right">
-											<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1"
-											 type="button"> Tools
-												<span _ngcontent-c7="" class="caret"></span>
-											</button>
-											<ul aria-labelledby="dropdownMenu1" class="dropdown-menu menu-tools" id="menu-tools">
-												<li>
-													<a data-page="tools" href="#">Tools </a>
-												</li>
-												<li>
-													<a data-page="cancelation" href="#">cancelation</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<div class="clear"></div>
-								</div>
-								<div class="promation-2">
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="input" class="col-md-5 control-label">Start Date</label>
-											<div class="col-md-7">
-												<div class="input-group">
-													<input type="text" class="form-control" name="date" id="startdate" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
-													<span class="input-group-btn">
-														<button type="button" class="btn btn-primary" data-toggle="datepicker">
-															<i class="fa fa-calendar"></i>
-														</button>
-													</span>
-												</div>
-											</div>
-											<div class="clear"></div>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="input" class="col-md-5 control-label">End Date</label>
-											<div class="col-md-7">
-												<div class="input-group">
-													<input type="text" class="form-control" name="date" id="enddate" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
-													<span class="input-group-btn">
-														<button type="button" class="btn btn-primary" data-toggle="datepicker">
-															<i class="fa fa-calendar"></i>
-														</button>
-													</span>
-												</div>
-											</div>
-											<div class="clear"></div>
-										</div>
-									</div>
-
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="input" class="col-md-4 control-label">Source</label>
-											<div class="col-md-8">
-												<select class="form-control">
-													<option value="" selected="">Select</option>
-													<option value="">50% OFF Brow Perville</option>
-													<option value="">Brow shaping + Lash</option>
-													<option value="">Brow shaping mascara</option>
-													<option value="">Glam brow</option>
-													<option value="">Love Brow</option>
-													<option value="">Product Samples</option>
-													<option value="">Shapesglam 03</option>
-													<option value="">Special offer</option>
-
-												</select>
-											</div>
-											<div class="clear"></div>
-										</div>
-									</div>
-
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="input" class="col-md-5 control-label">Destination</label>
-											<div class="col-md-7">
-												<select class="form-control">
-													<option selected>All Locations </option>
-													<option>SBB - Culver City </option>
-													<option>SBB - Culver City Kiosk </option>
-													<option>SBB - Century Mall </option>
-													<option>SBB - Panorama Mall </option>
-													<option>SBB - Northridge (kiosk) </option>
-													<option>SBB - Northridge (online) </option>
-													<option>SBB - Burbank Mall </option>
-
-												</select>
-											</div>
-											<div class="clear"></div>
-										</div>
-									</div>
-
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="input" class="col-md-5 control-label">Type</label>
-											<div class="col-md-7">
-												<select class="form-control">
-													<option value="" selected="">Select</option>
-													<option value="">50% OFF Brow Perville</option>
-													<option value="">Brow shaping + Lash</option>
-													<option value="">Brow shaping mascara</option>
-													<option value="">Glam brow</option>
-													<option value="">Love Brow</option>
-													<option value="">Product Samples</option>
-													<option value="">Shapesglam 03</option>
-													<option value="">Special offer</option>
-
-												</select>
-											</div>
-											<div class="clear"></div>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<label for="input" class="col-md-5 control-label">Status</label>
-											<div class="col-md-7">
-												<select class="form-control">
-													<option value="" selected="">Select</option>
-													<option value="">50% OFF Brow Perville</option>
-													<option value="">Brow shaping + Lash</option>
-													<option value="">Brow shaping mascara</option>
-													<option value="">Glam brow</option>
-													<option value="">Love Brow</option>
-													<option value="">Product Samples</option>
-													<option value="">Shapesglam 03</option>
-													<option value="">Special offer</option>
-
-												</select>
-											</div>
-											<div class="clear"></div>
-										</div>
-									</div>
-
-									<div class="clear"></div>
-								</div>
-
-
-							</div>
+						<!--------------dailycheckout start-------------->
+						<div class="tab-pane fade" id="dailycheckout" role="tabpanel" aria-labelledby="v-pills-settings-tab">Daily Checkout
+							
 						</div>
-
-
-
+						<!--------------Discount start-------------->
+						<div class="tab-pane fade" id="discounts" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+								<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+										<h3>
+											<a href="#" [routerLink]="" >
+												&nbsp;&nbsp;ADD DISCOUNTS</a>
+										</h3>
+		
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+											<h3>
+												<a href="#" [routerLink]="" >
+												&nbsp;&nbsp;EDIT DISCOUNTS</a>
+											</h3>
+			
+										</div>
+							</div>
 						<!--------------Pricing start-------------->
 						<div class="tab-pane fade" id="Pricing" role="tabpanel" aria-labelledby="v-pills-settings-tab">
 							<div class="contract-autopay">
@@ -792,8 +663,7 @@
 															</div>
 														</div>
 													</div>
-
-
+                                                       
 													<!----------Gift cards-------->
 													<div class="modal class-new fade" id="pricing-giftcards" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 													 aria-hidden="true">

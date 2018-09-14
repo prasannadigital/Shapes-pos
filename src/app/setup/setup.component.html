@@ -5,7 +5,7 @@
   <div class="manager-tap">
     <div class="col-md-3 col-sm-3 col-xs-12 manager-tap-left">
       <div class="nav flex-column nav-pills rs-1-left-button" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link com-mark-info" id="v-pills-home-tab"  data-toggle="pill" href="#business"
+        <a class="nav-link com-mark-info" id="v-pills-home-tab" (click)="businessSettingsClick()" data-toggle="pill" href="#business"
          role="tab" aria-controls="business" aria-selected="true">Business Settings</a>
 
         <a class="nav-link staff-info" id="v-pills-profile-tab"  data-toggle="pill" href="#general" role="tab"
@@ -26,7 +26,7 @@
         <a class="nav-link gift-card-info" id="v-pills-settings-tab"  data-toggle="pill" href="#payment"
          role="tab" aria-controls="v-pills-settings" aria-selected="false">Payment Method</a>
 
-        <a class="nav-link product-info" id="v-pills-settings-tab"  data-toggle="pill" href="#cash"
+        <a class="nav-link product-info" id="v-pills-settings-tab" (click)="cashDrawerSetupClick()"  data-toggle="pill" href="#cash"
          role="tab" aria-controls="v-pills-settings" aria-selected="false">Cash Drawer Setup</a>
 
         <a class="nav-link inventory-info" id="v-pills-settings-tab"  data-toggle="pill" href="#receipt"
@@ -41,32 +41,295 @@
     <div class="col-md-9 col-sm-9 col-xs-12 manager-tap-right">
       <div class="tab-content" id="v-pills-tabContent">
         <!--------------Business settings start-------------->
-						<div class="tab-pane fade" id="business" role="tabpanel" aria-labelledby="v-pills-settings-tab">Business Settings
+						<div class="tab-pane fade" id="business" role="tabpanel" aria-labelledby="v-pills-settings-tab">
             
             </div>
             <!--------------General settings start-------------->
-						<div class="tab-pane fade" id="general" role="tabpanel" aria-labelledby="v-pills-settings-tab">General Settings
+						<div class="tab-pane fade" id="general" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+										<h3>
+											<a href="#" [routerLink]="" (click)="appointmentOptionsClick()">
+												&nbsp;&nbsp;Appointment Options</a>
+										</h3>
+		
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+											<h3>
+												<a href="#" [routerLink]="" (click)="groupSettingsClick()" >
+												&nbsp;&nbsp;Group Setting Options</a>
+											</h3>
+			
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 staff-box">
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                          <h3>
+                            <a href="#" [routerLink]="" (click)=" memberSetupClick()" >
+                            &nbsp;&nbsp;Membership Setup</a>
+                          </h3>
+          
+                        </div>
             </div>
              <!--------------Retail settings start-------------->
-						<div class="tab-pane fade" id="retail" role="tabpanel" aria-labelledby="v-pills-settings-tab">Retail settings
+						<div class="tab-pane fade" id="retail" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+										<h3>
+											<a href="#" [routerLink]="" (click)="closeOutDataClick()">
+												&nbsp;&nbsp;Close Out Data</a>
+										</h3>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                      <h3>
+                        <a href="#" [routerLink]="" (click)="paymentMethodsClick()">
+                          &nbsp;&nbsp;Payment Methods</a>
+                      </h3>
+                    </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                      <h3>
+                        <a href="#" [routerLink]="" (click)="productRevenueCategoriesClick()">
+                          &nbsp;&nbsp;Product Revenue Categories</a>
+                      </h3>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                        <h3>
+                          <a href="#" [routerLink]="" (click)="revenueCategoriesClick()">
+                            &nbsp;&nbsp;Revenue Categories</a>
+                        </h3>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-12 staff-box">
+                        </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                          <h3>
+                            <a href="#" [routerLink]="" (click)=" revenueSubCategoriesClick()" >
+                            &nbsp;&nbsp;Revenue Sub Categories</a>
+                          </h3>
+          
+                        </div>
             </div>
             <!--------------inventory settings start-------------->
-						<div class="tab-pane fade" id="inventory" role="tabpanel" aria-labelledby="v-pills-settings-tab">Inventory settings
+						<div class="tab-pane fade" id="inventory" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                    <h3>
+                      <a href="#" [routerLink]="" (click)="paymentTermsClick()">
+                        &nbsp;&nbsp;Payment Terms</a>
+                    </h3>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                      <h3>
+                        <a href="#" [routerLink]="" (click)="productColorsClick()">
+                          &nbsp;&nbsp;Product Colors</a>
+                      </h3>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                        <h3>
+                          <a href="#" [routerLink]="" (click)="productSizesClick()">
+                            &nbsp;&nbsp;Product Sizes</a>
+                        </h3>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                          <h3>
+                            <a href="#" [routerLink]="" (click)="suppliersClick()">
+                              &nbsp;&nbsp;Suppliers</a>
+                          </h3>
+                        </div>
             </div>
             <!--------------client settings start-------------->
-						<div class="tab-pane fade" id="client" role="tabpanel" aria-labelledby="v-pills-settings-tab">Client settings
+						<div class="tab-pane fade" id="client" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="clientAlertClick()">
+                    &nbsp;&nbsp;Client Alerts</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="newRelationshipClick()">
+                    &nbsp;&nbsp;Add a New Relationship</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="indexValueClick()">
+                    &nbsp;&nbsp;Client Index Value</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="clientTypesClick()">
+                    &nbsp;&nbsp;Client Types</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="customFieldsClick()">
+                    &nbsp;&nbsp;Client Profile Custom Fields</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="clientStatusClick()">
+                    &nbsp;&nbsp;Client Status</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="contactLogClick()">
+                    &nbsp;&nbsp;Contact log types</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="stagesClick()">
+                    &nbsp;&nbsp;Prospect Stages</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="referalClick()">
+                    &nbsp;&nbsp;Referal Types</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="requiredClick()">
+                    &nbsp;&nbsp;Required Field</a>
+                </h3>
+              </div>
             </div>
             <!--------------cardswipe start-------------->
-						<div class="tab-pane fade" id="cardswipe" role="tabpanel" aria-labelledby="v-pills-settings-tab">Card Swipe Settings
+						<div class="tab-pane fade" id="cardswipe" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="cardSwipeDeviceClick()">
+                    &nbsp;&nbsp;Card Swipe Device</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="cardSwipeSettingsClick()">
+                    &nbsp;&nbsp;Card Swipe Settings</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="comPortClick()">
+                    &nbsp;&nbsp;com Port</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="testCommunicationsClick()">
+                    &nbsp;&nbsp;Test Communications</a>
+                </h3>
+              </div>
             </div>
             <!--------------payment start-------------->
-						<div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="v-pills-settings-tab">Payment Settings
+						<div class="tab-pane fade" id="payment" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="generalClick()">
+                    &nbsp;&nbsp;General</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="ipChargeClick()">
+                    &nbsp;&nbsp;IP Charge</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="monetraClick()">
+                    &nbsp;&nbsp;Monetra</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="paidAccessCodeClick()">
+                    &nbsp;&nbsp;Paid In Out Access Code</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="pcChargeClick()">
+                    &nbsp;&nbsp;PC Charge</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="positionsClick()">
+                    &nbsp;&nbsp;Positions</a>
+                </h3>
+              </div>
+              <div class="col-md-3 col-sm-3 col-xs-12 staff-box">
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="sVsClick()">
+                    &nbsp;&nbsp;SVS</a>
+                </h3>
+              </div>
+
             </div>
             <!--------------Cash Drawer Setup start-------------->
-						<div class="tab-pane fade" id="cash" role="tabpanel" aria-labelledby="v-pills-settings-tab">Cash Drawer Setup
+						<div class="tab-pane fade" id="cash" role="tabpanel" aria-labelledby="v-pills-settings-tab">
             </div>
             <!--------------Receipt Printer start-------------->
-						<div class="tab-pane fade" id="receipt" role="tabpanel" aria-labelledby="v-pills-settings-tab">Receipt Printer
+						<div class="tab-pane fade" id="receipt" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="additionalFooterClick()">
+                    &nbsp;&nbsp;Additional Footer</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="membershipRecieptClick()">
+                    &nbsp;&nbsp;Membership</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="customHeaderClick()">
+                    &nbsp;&nbsp;Custom Header</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="newCustomFootClick()">
+                    &nbsp;&nbsp;New Custom Footer</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="defaultFooterClick()">
+                    &nbsp;&nbsp;Default Footer</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="options1Click()">
+                    &nbsp;&nbsp;Options-1</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="hardwareClick()">
+                    &nbsp;&nbsp;Hardware</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="options2Click()">
+                    &nbsp;&nbsp;Options-2</a>
+                </h3>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+                <h3>
+                  <a href="#" [routerLink]="" (click)="releaseClick()">
+                    &nbsp;&nbsp;Release</a>
+                </h3>
+              </div>
             </div>
              <!--------------Software Settings start-------------->
 						<div class="tab-pane fade" id="software" role="tabpanel" aria-labelledby="v-pills-settings-tab">Software Settings

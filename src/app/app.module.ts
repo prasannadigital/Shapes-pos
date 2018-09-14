@@ -69,6 +69,55 @@ import { SuppliersComponent } from './inventory/suppliers/suppliers.component';
 import { InventoryTicketsComponent } from './inventory/inventory-tickets/inventory-tickets.component';
 import { UpdatePhysicalInventoryComponent } from './inventory/update-physical-inventory/update-physical-inventory.component';
 import { InventoryReportsComponent } from './inventory/inventory-reports/inventory-reports.component';
+import { BusinessSettingsComponent } from './setup/business-settings/business-settings.component';
+import { AppointmentOptionsComponent } from './setup/appointment-options/appointment-options.component';
+import { GroupSettingsOptionsComponent } from './setup/group-settings-options/group-settings-options.component';
+import { SetupMembershipComponent } from './setup/setup-membership/setup-membership.component';
+import { PaymentTermsComponent } from './setup/payment-terms/payment-terms.component';
+import { ProductColorsComponent } from './setup/product-colors/product-colors.component';
+import { ProductSizesComponent } from './setup/product-sizes/product-sizes.component';
+import { SuppliersSetupComponent } from './setup/suppliers-setup/suppliers-setup.component';
+import { ClientAlertsComponent } from './setup/client-alerts/client-alerts.component';
+import { AddNewRelationshipComponent } from './setup/add-new-relationship/add-new-relationship.component';
+import { ClientIndexValueComponent } from './setup/client-index-value/client-index-value.component';
+import { ClientTypesComponent } from './setup/client-types/client-types.component';
+import { ClientProfileFieldsComponent } from './setup/client-profile-fields/client-profile-fields.component';
+import { ClientStatusComponent } from './setup/client-status/client-status.component';
+import { ContactLogTypesComponent } from './setup/contact-log-types/contact-log-types.component';
+import { ProspectStagesComponent } from './setup/prospect-stages/prospect-stages.component';
+import { ReferalTypesComponent } from './setup/referal-types/referal-types.component';
+import { RequiredFieldComponent } from './setup/required-field/required-field.component';
+import { CloseOutDataComponent } from './setup/close-out-data/close-out-data.component';
+import { PaymentMethodsComponent } from './setup/payment-methods/payment-methods.component';
+import { RevenueCategoriesComponent } from './setup/revenue-categories/revenue-categories.component';
+import { ProductRevenueCategoriesComponent } from './setup/product-revenue-categories/product-revenue-categories.component';
+import { RevenueSubCategoriesComponent } from './setup/revenue-sub-categories/revenue-sub-categories.component';
+import { CardSwipeDeviceComponent } from './setup/card-swipe-device/card-swipe-device.component';
+import { CardSwipeSettingsComponent } from './setup/card-swipe-settings/card-swipe-settings.component';
+import { ComPortComponent } from './setup/com-port/com-port.component';
+import { TestCommunicationsComponent } from './setup/test-communications/test-communications.component';
+import { GeneralPaymentComponent } from './setup/general-payment/general-payment.component';
+import { IpChargeComponent } from './setup/ip-charge/ip-charge.component';
+import { MonetraComponent } from './setup/monetra/monetra.component';
+import { PaidIoAccessComponent } from './setup/paid-io-access/paid-io-access.component';
+import { PcChargeComponent } from './setup/pc-charge/pc-charge.component';
+import { PositionsComponent } from './setup/positions/positions.component';
+import { SvsComponent } from './setup/svs/svs.component';
+import { CashDrawerSetupComponent } from './setup/cash-drawer-setup/cash-drawer-setup.component';
+import { AdditionalFooterComponent } from './setup/additional-footer/additional-footer.component';
+import { MembershipRecieptComponent } from './setup/membership-reciept/membership-reciept.component';
+import { CustomHeaderComponent } from './setup/custom-header/custom-header.component';
+import { NewCustomFooterComponent } from './setup/new-custom-footer/new-custom-footer.component';
+import { DefaultFooterComponent } from './setup/default-footer/default-footer.component';
+import { Options1Component } from './setup/options1/options1.component';
+import { HardwareComponent } from './setup/hardware/hardware.component';
+import { Options2Component } from './setup/options2/options2.component';
+import { ReleaseComponent } from './setup/release/release.component';
+import { AddNewProductComponent } from './manager-tool/add-new-product/add-new-product.component';
+import { EditProductComponent } from './manager-tool/edit-product/edit-product.component';
+import { ShowActiveProductComponent } from './manager-tool/show-active-product/show-active-product.component';
+import { ShowInactiveProductComponent } from './manager-tool/show-inactive-product/show-inactive-product.component';
+import { ManageProductsComponent } from './manager-tool/manage-products/manage-products.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -110,7 +159,51 @@ const routes: Routes = [
   { path: 'inventory/inventory-tickets', component: InventoryTicketsComponent, canActivate: [AuthGuard] },
   { path: 'inventory/physical-inventory', component: UpdatePhysicalInventoryComponent, canActivate: [AuthGuard] },
   { path: 'inventory/reports', component: InventoryReportsComponent, canActivate: [AuthGuard] },
-  { path: 'setup', component: SetupComponent, canActivate: [AuthGuard] }
+  { path: 'setup', component: SetupComponent, canActivate: [AuthGuard] },
+  { path: 'setup/business-settings', component: BusinessSettingsComponent, canActivate: [AuthGuard] },
+  { path: 'setup/appointment-options', component: AppointmentOptionsComponent, canActivate: [AuthGuard] },
+  { path: 'setup/group-setting-options', component: GroupSettingsOptionsComponent, canActivate: [AuthGuard] },
+  { path: 'setup/membership-setup', component: SetupMembershipComponent, canActivate: [AuthGuard] },
+  { path: 'setup/close-out-data', component: CloseOutDataComponent, canActivate: [AuthGuard] },
+  { path: 'setup/payment-methods ', component: PaymentMethodsComponent, canActivate: [AuthGuard] },
+  { path: 'setup/product-revenue-categories', component: ProductRevenueCategoriesComponent, canActivate: [AuthGuard] },
+  { path: 'setup/revenue-categories', component: RevenueCategoriesComponent, canActivate: [AuthGuard] },
+  { path: 'setup/revenue-sub-categories', component: RevenueSubCategoriesComponent, canActivate: [AuthGuard] }, 
+  { path: 'setup/payment-terms', component: PaymentTermsComponent, canActivate: [AuthGuard] },
+  { path: 'setup/product-colors', component: ProductColorsComponent, canActivate: [AuthGuard] },
+  { path: 'setup/product-sizes', component: ProductSizesComponent, canActivate: [AuthGuard] },
+  { path: 'setup/suppliers', component: SuppliersSetupComponent, canActivate: [AuthGuard] },
+  { path: 'setup/client-alerts', component: ClientAlertsComponent, canActivate: [AuthGuard] },
+  { path: 'setup/add-new-relationship', component: AddNewRelationshipComponent, canActivate: [AuthGuard] },
+  { path: 'setup/client-index-value', component: ClientIndexValueComponent, canActivate: [AuthGuard] },
+  { path: 'setup/client-types', component: ClientTypesComponent, canActivate: [AuthGuard] },
+  { path: 'setup/client-profile-custom-fields', component: ClientProfileFieldsComponent, canActivate: [AuthGuard] },
+  { path: 'setup/client-status', component: ClientStatusComponent, canActivate: [AuthGuard] },
+  { path: 'setup/contact-log-types', component: ContactLogTypesComponent, canActivate: [AuthGuard] },
+  { path: 'setup/prospect-stages', component: ProspectStagesComponent, canActivate: [AuthGuard] },
+  { path: 'setup/referal-types', component: ReferalTypesComponent, canActivate: [AuthGuard] },
+  { path: 'setup/required-field', component: RequiredFieldComponent, canActivate: [AuthGuard] },
+  { path: 'setup/card-swipe-device', component: CardSwipeDeviceComponent, canActivate: [AuthGuard] },
+  { path: 'setup/card-swipe-settings', component: CardSwipeSettingsComponent, canActivate: [AuthGuard] },
+  { path: 'setup/com-port', component: ComPortComponent, canActivate: [AuthGuard] },
+  { path: 'setup/test-communications', component: TestCommunicationsComponent, canActivate: [AuthGuard] },  
+  { path: 'setup/general', component: GeneralPaymentComponent, canActivate: [AuthGuard] },
+  { path: 'setup/ip-charge', component: IpChargeComponent, canActivate: [AuthGuard] },
+  { path: 'setup/monetra', component: MonetraComponent, canActivate: [AuthGuard] },
+  { path: 'setup/paid-io-access', component: PaidIoAccessComponent, canActivate: [AuthGuard] },
+  { path: 'setup/pc-charge', component: PcChargeComponent, canActivate: [AuthGuard] },
+  { path: 'setup/positions', component: PositionsComponent, canActivate: [AuthGuard] },
+  { path: 'setup/svs', component: SvsComponent, canActivate: [AuthGuard] },
+  { path: 'setup/cash-drawer-setup', component: CashDrawerSetupComponent, canActivate: [AuthGuard] },
+  { path: 'setup/additional-footer', component: AdditionalFooterComponent, canActivate: [AuthGuard] },
+  { path: 'setup/membership', component: MembershipRecieptComponent, canActivate: [AuthGuard] },
+  { path: 'setup/custom-header', component: CustomHeaderComponent, canActivate: [AuthGuard] },
+  { path: 'setup/new-custom-footer', component: NewCustomFooterComponent, canActivate: [AuthGuard] },
+  { path: 'setup/default-footer', component: DefaultFooterComponent, canActivate: [AuthGuard] },
+  { path: 'setup/option1', component: Options1Component, canActivate: [AuthGuard] },
+  { path: 'setup/hardware', component: HardwareComponent, canActivate: [AuthGuard] },
+  { path: 'setup/option2', component: Options2Component, canActivate: [AuthGuard] },
+  { path: 'setup/release', component: ReleaseComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
@@ -181,7 +274,105 @@ const routes: Routes = [
 
     UpdatePhysicalInventoryComponent,
 
-    InventoryReportsComponent
+    InventoryReportsComponent,
+
+    BusinessSettingsComponent,
+
+    AppointmentOptionsComponent,
+
+    GroupSettingsOptionsComponent,
+
+    SetupMembershipComponent,
+
+    PaymentTermsComponent,
+
+    ProductColorsComponent,
+
+    ProductSizesComponent,
+
+    SuppliersSetupComponent,
+
+    ClientAlertsComponent,
+
+    AddNewRelationshipComponent,
+
+    ClientIndexValueComponent,
+
+    ClientTypesComponent,
+
+    ClientProfileFieldsComponent,
+
+    ClientStatusComponent,
+
+    ContactLogTypesComponent,
+
+    ProspectStagesComponent,
+
+    ReferalTypesComponent,
+
+    RequiredFieldComponent,
+
+    CloseOutDataComponent,
+
+    PaymentMethodsComponent,
+
+    RevenueCategoriesComponent,
+
+    ProductRevenueCategoriesComponent,
+
+    RevenueSubCategoriesComponent,
+
+    CardSwipeDeviceComponent,
+
+    CardSwipeSettingsComponent,
+
+    ComPortComponent,
+
+    TestCommunicationsComponent,
+
+    GeneralPaymentComponent,
+
+    IpChargeComponent,
+
+    MonetraComponent,
+
+    PaidIoAccessComponent,
+
+    PcChargeComponent,
+
+    PositionsComponent,
+
+    SvsComponent,
+
+    CashDrawerSetupComponent,
+
+    AdditionalFooterComponent,
+
+    MembershipRecieptComponent,
+
+    CustomHeaderComponent,
+
+    NewCustomFooterComponent,
+
+    DefaultFooterComponent,
+
+    Options1Component,
+
+    HardwareComponent,
+
+    Options2Component,
+
+    ReleaseComponent,
+
+    AddNewProductComponent,
+
+    EditProductComponent,
+
+    ShowActiveProductComponent,
+
+    ShowInactiveProductComponent,
+
+    ManageProductsComponent
 
   ],
   imports: [
