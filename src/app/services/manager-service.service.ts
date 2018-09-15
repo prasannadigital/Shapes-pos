@@ -14,4 +14,7 @@ export class ManagerServiceService {
   getInactiveMembership() {
     return this.http.get(environment.host + 'memberships/active-or-inactive/0')
   }
+  getaddpackage(){
+    return this.http.get(environment.host + 'services');
+  }
 }
