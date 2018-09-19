@@ -3,6 +3,7 @@ import { ElementRef, ViewChild, ViewEncapsulation } from "@angular/core";
 import "dhtmlx-scheduler";
 import { } from "@types/dhtmlxscheduler";
 import { AppointmentsServiceService } from '../services/appointments-service.service';
+import { SheduleServiceService } from '../services/shedule-service.service';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -11,12 +12,27 @@ import { AppointmentsServiceService } from '../services/appointments-service.ser
   styleUrls: ['./appointments.component.css']
 })
 export class AppointmentsComponent implements OnInit {
+  locationData = new Array();
+  empData = new Array();
+  shedule: any = {
+    'startdate': '',
+    'enddate': '',
+    'branch_id': '',
+    'employee_id': '',
+    'employee_firstname': ''
+  }
   @ViewChild("scheduler_here") schedulerContainer: ElementRef;
 
 
-  constructor(private service: AppointmentsServiceService) { }
+  constructor(private serviceData: SheduleServiceService,private service: AppointmentsServiceService) { }
 
   ngOnInit() {
+    this.serviceData.getAllLocations().subscribe(response => {
+      this.locationData = response.json();
+    });
+    this.serviceData.getEmployee().subscribe(response => {
+      this.empData = response.json();
+    });
     scheduler.config.xml_date = "%Y-%m-%d %H:%i";
     scheduler.init(this.schedulerContainer.nativeElement);
     this.service.get()
