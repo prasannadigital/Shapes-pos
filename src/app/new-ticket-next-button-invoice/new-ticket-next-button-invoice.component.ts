@@ -19,6 +19,23 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   selectResult;
   commonValues;
   _subTypeOfService;
+  servicesColor='#e4e9ef';
+  servicetextColor='#000';
+  productsColor='#e4e9ef';
+  producttextColor='#000'
+  packagesColor='#e4e9ef';
+  packagetextColor='#000'
+  memberColor='#e4e9ef';
+  memtextColor='#000';
+  giftcardColor='#e4e9ef';
+  gifttextColor='#000';
+  discountsColor='#e4e9ef';
+  discounttextColor='#000';
+  promotionsColor='#e4e9ef';
+  promotionstextColor='#000';
+  refundColor='#e4e9ef';
+  refundtextColor='#000';
+
 
   constructor(private services: Services, private http: HttpClient, ) {
     this.selectResult = JSON.parse(sessionStorage.getItem('selectedServices'));
@@ -28,7 +45,26 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
     });
     this.subTotal();
   }
-
+colorEnable(){
+ this.servicesColor='#e4e9ef';
+  this.productsColor='#e4e9ef';
+  this.packagesColor='#e4e9ef';
+ this.memberColor='#e4e9ef';
+  this.giftcardColor='#e4e9ef';
+  this.discountsColor='#e4e9ef';
+  this.promotionsColor='#e4e9ef';
+ this.refundColor='#e4e9ef';
+}
+textColorEnable(){
+  this.servicetextColor='#000';
+  this.producttextColor='#000';
+  this.packagetextColor='#000';
+  this.memtextColor='#000';
+  this.gifttextColor='#000'
+  this.discounttextColor='#000'
+  this.promotionstextColor='#000'
+  this.refundtextColor='#000'
+}
   showTable(val) {
     this.edited = !this.edited;
     if (val.product_name) {
@@ -68,14 +104,23 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   }
 
   serviceClick() {
+    this.textColorEnable();
+    this.colorEnable();
+    this.servicesColor='#345465';
+    this.servicetextColor='#fff';
     this.titleName = 'Service';
     this.edited = true;
     this.http.get(environment.host + 'categorys').subscribe(data => {
       this.common = data;
     });
+    
   }
 
   productClick() {
+    this.textColorEnable();
+    this.colorEnable();
+    this.productsColor='#345465';
+    this.producttextColor='#fff';
     this.titleName = 'Product';
     this.edited = true;
     this.http.get(environment.host + 'products').subscribe(data => {
@@ -84,6 +129,10 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   }
 
   packagesClick() {
+    this.textColorEnable();
+    this.colorEnable();
+    this.packagesColor='#345465';
+    this.packagetextColor='#fff';
     this.titleName = 'Package';
     this.edited = true;
     this.http.get(environment.host + 'packages').subscribe(data => {
@@ -92,6 +141,10 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   }
 
   membershipClick() {
+    this.textColorEnable();
+    this.colorEnable();
+    this.memberColor='#345465';
+    this.memtextColor='#fff';
     this.titleName = 'Membership';
     this.edited = true;
     this.http.get(environment.host + 'memberships').subscribe(data => {
@@ -100,6 +153,10 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   }
 
   promotionsClick() {
+    this.textColorEnable();
+    this.colorEnable();
+    this.promotionsColor='#345465';
+    this.promotionstextColor='#fff';
     this.titleName = 'Promotions';
     this.edited = true;
     this.http.get(environment.host + 'promotions').subscribe(data => {
@@ -108,6 +165,11 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   }
 
   giftcardClick() {
+    this.textColorEnable();
+    this.colorEnable();
+    this.giftcardColor='#345465';
+   
+    this.gifttextColor='#fff';
     this.titleName = 'GiftCards';
     this.edited = true;
     this.http.get(environment.host + 'giftcards').subscribe(data => {

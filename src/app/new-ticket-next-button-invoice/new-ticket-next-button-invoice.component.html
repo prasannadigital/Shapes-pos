@@ -6,26 +6,26 @@
     <div class="col-md-4 col-sm-6 col-xs-12 service-cat-section-1">
       <h3>Tools</h3>
       <div class="service-cat-2">
-        <div class="col-md-6 col-sm-6 col-xs-12 service-buttons">
-          <a (click)="serviceClick()">Services</a>
+        <div class="col-md-6 col-sm-6 col-xs-12 service-buttons"  >
+          <a (click)="serviceClick()" [ngStyle]="{'background-color':servicesColor,'color':servicetextColor}">Services</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 service-buttons1">
-          <a (click)="giftcardClick()">Gift Cards</a>
+          <a (click)="giftcardClick()" [ngStyle]="{'background-color':giftcardColor,'color':gifttextColor}">Gift Cards</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 service-buttons">
-          <a (click)="productClick()">Products</a>
+          <a (click)="productClick()"  [ngStyle]="{'background-color':productsColor,'color':producttextColor}">Products</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 service-buttons1">
           <a>Discounts</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 service-buttons">
-          <a (click)="packagesClick()">Packages</a>
+          <a (click)="packagesClick()" [ngStyle]="{'background-color':packagesColor,'color':packagetextColor}">Packages</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 service-buttons1">
-          <a (click)="promotionsClick()">Promotions</a>
+          <a (click)="promotionsClick()" [ngStyle]="{'background-color':promotionsColor,'color':promotionstextColor}">Promotions</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 service-buttons service-buttons-last-child">
-          <a (click)="membershipClick()">Membership</a>
+          <a (click)="membershipClick()" [ngStyle]="{'background-color':memberColor,'color':memtextColor}">Membership</a>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 service-buttons1 service-buttons-last-child">
           <a>Refund</a>

@@ -6829,6 +6829,16 @@ html {
       font-weight: 600;
       border-radius: 5px;
   }
+  .service-buttons1:hover{
+    cursor: pointer;
+    
+}
+
+.service-buttons:hover{
+  cursor: pointer;
+  
+}
+
   .clear{
       clear:both;
   }
@@ -6953,7 +6963,7 @@ html {
       box-shadow: 0 0 0 2px #797067;
   }
   .service-cat-5-box-left {
-      width: 300px;
+      width: 150px;
       float: left;
   }
   .service-cat-5-box-left h5{
@@ -6977,7 +6987,7 @@ html {
       background: #cfd2d9;
   }
   .service-cat-5-box-total table{
-      width:100%;
+      width:70%;
   }
   .service-cat-5-box-total-right{
       text-align:right;
