@@ -36,9 +36,11 @@ export class AppointmentsComponent implements OnInit {
     scheduler.config.xml_date = "%Y-%m-%d %H:%i";
     scheduler.init(this.schedulerContainer.nativeElement);
     this.service.get()
-      .then((data) => {
-        scheduler.parse(data, "json");
-        console.log(data);
+      .subscribe((memberships) => {
+        this.locationData = memberships.json();
+        console.log(this.locationData);
+        scheduler.parse(this.locationData, "json");
+        console.log(this.locationData);
       });
       
   }

@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
 import {Event} from '../model/event.model';
-
+import {Http} from "@angular/http";
+import {ExtractData, HandleError} from "./service-helper.service";
+import { Observable } from 'rxjs';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators'
 @Injectable({
   providedIn: 'root'
 })
 export class AppointmentsServiceService {
 
-  constructor() { }
+  private eventUrl = "http://ec2-54-88-194-105.compute-1.amazonaws.com:3001/apptest2";
 
-  get(): Promise<Event[]>{
-    return Promise.resolve([
-        {id: "1", start_date: "2018-09-13 00:00", end_date: "2018-09-13 13:00", text: "Event 1"},
-        {id: "2", start_date: "2018-09-15 00:00", end_date: "2018-09-15 13:00", text: "Event 2"},
-    ]);
-}
-}
+    constructor(private http: Http) {}
+
+    get() {
+      return this.http.get("http://ec2-54-88-194-105.compute-1.amazonaws.com:3001/apptest2");
+    }
+  }
+
