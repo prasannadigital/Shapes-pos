@@ -1,13 +1,55 @@
 <div class="tabs-services">
-    <app-header></app-header>
-  </div>
+  <app-header></app-header>
+</div>
 
 <div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-6"></div>
-    <div class="col-sm-2">
-      <button type="button" class="btn backBtn pull-right" (click)="backToInventory();">Back</button>
-    </div>
-    <div class="clear"></div>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-2">
+    <button type="button" class="btn backBtn pull-right" (click)="backToInventory();">Back</button>
   </div>
+  <div class="clear"></div>
+</div>
+<div class="staff-members-2">
+  <div class="row">
+    <div class="col-md-8 col-sm-8">
+      <h4 style="font-weight:600;"></h4>
+    </div>
+    <div class="col-md-4 col-sm-4">
+      <button type="button" class="btn btn-outline-success pull-right" (click)="newSupplier()">
+        <h4 class="margin0">
+          <i class="fas fa-plus-circle"></i> &nbsp; Add New</h4>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="promation-2">
+  <div class="row">
+    <div class="col-md-12" style="background: #f1f1f1;">
+      <div class="form-group">
+        <label for="input" class="col-md-2 control-label">Suppliers:</label>
+        <div class="col-md-3">
+          <select class="form-control">
+            <option value="" selected="">Select</option>
+            <option value="">TrendzBeauty Group LLC</option>
+            <option value="">Trendz Beauty other products</option>
+            <option value="">Trendz Beauty Supply</option>
+          </select>
+        </div>
+        <div class="col-md-5">
+          <div class="form-check pull-right">
+            <input class="form-check-input" type="checkbox" id="inlineFormCheck1">
+            <label class="form-check-label" for="inlineFormCheck">
+              Show Inactive Suppliers &nbsp;&nbsp;
+            </label>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="clear"></div>
+
 <app-footer></app-footer>

@@ -103,7 +103,7 @@ textColorEnable(){
     this.subTotal();
   }
 
-  serviceClick() {
+  serviceClick(){
     this.textColorEnable();
     this.colorEnable();
     this.servicesColor='#345465';
@@ -113,9 +113,7 @@ textColorEnable(){
     this.http.get(environment.host + 'categorys').subscribe(data => {
       this.common = data;
     });
-    
   }
-
   productClick() {
     this.textColorEnable();
     this.colorEnable();

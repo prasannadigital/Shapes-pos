@@ -11,8 +11,8 @@ import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 declare var jsPDF: any;
 declare var $: any;
 
-import {Message} from 'primeng/components/common/api';
-import {MessageService} from 'primeng/components/common/messageservice';
+import { Message } from 'primeng/components/common/api';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-manager',
@@ -65,7 +65,7 @@ export class ManagerComponent implements OnInit {
   selectedOption: any;
   states: any[] = [];
 
-  constructor(private service: MembershipServiceService,private messageService: MessageService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
+  constructor(private service: MembershipServiceService, private messageService: MessageService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
 
     this.http.get(this.globals.api + 'categorys').subscribe(data => {
       this.temp.push([
@@ -92,8 +92,8 @@ export class ManagerComponent implements OnInit {
 
   showSuccess() {
     this.msgs = [];
-    this.msgs.push({severity:'success', summary:'GiftCard Added Successfully'});
-}
+    this.msgs.push({ severity: 'success', summary: 'GiftCard Added Successfully' });
+  }
 
   commMarkClickInfo() {
     sessionStorage.setItem('manager-routing', JSON.stringify("com&mar"));

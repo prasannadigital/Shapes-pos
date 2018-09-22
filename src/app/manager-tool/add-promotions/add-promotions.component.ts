@@ -3,8 +3,8 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { AddPromotionServiceService } from '../../services/add-promotion-service.service'
 import * as moment from 'moment';
 import { WeekdaysPipe } from '../../pipe/weekdays.pipe'
-import {Message} from 'primeng/components/common/api';
-import {MessageService} from 'primeng/components/common/messageservice';
+import { Message } from 'primeng/components/common/api';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-add-promotions',
@@ -39,19 +39,19 @@ export class AddPromotionsComponent implements OnInit {
   public date1: any;
   public date2: any;
   locationData = new Array();
-  
+
   submitted = false;
 
-  constructor(private router: Router,private messageService: MessageService, private service: AddPromotionServiceService) { }
+  constructor(private router: Router, private messageService: MessageService, private service: AddPromotionServiceService) { }
 
   ngOnInit() {
   }
   showSuccess() {
     this.msgs = [];
-    this.msgs.push({severity:'success', summary:'Promotions added Successfully'});
-}
+    this.msgs.push({ severity: 'success', summary: 'Promotions added Successfully' });
+  }
   addPromotion() {
-    this.submitted=true;
+    this.submitted = true;
     let allowonlinecheckbox = '';
     let totaldays = '';
     console.log(this.allowOnlineSales);
@@ -70,7 +70,7 @@ export class AddPromotionsComponent implements OnInit {
     if (this.saturday.toString() == 'true') { totaldays = totaldays + ' 6 ,' }
     totaldays = totaldays.substring(0, totaldays.length - 1);
 
-   
+
     var data = {
       promotion_name: this.promotionName,
       promotion_code: this.promotionCode,
@@ -86,7 +86,7 @@ export class AddPromotionsComponent implements OnInit {
       promotion_end_date: this.promotionExpirationDate,
     }
     this.service.addPromotionPost(data).subscribe(response => {
-     console.log(response.json());
+      console.log(response.json());
 
     });
   }
