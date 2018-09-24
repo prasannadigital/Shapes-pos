@@ -10,4 +10,122 @@
     </div>
     <div class="clear"></div>
   </div>
+  <div class="purchase-order">
+  <div class="col-md-8 col-sm-8">
+    <h4 style="font-weight:600;">Purchase Order</h4>
+  </div>
+  <div class="col-md-4 col-sm-4">
+    <button type="button" class="btn btn-outline-success pull-right" (click)="newPurchase()">
+      <h4 class="margin0">
+        <i class="fas fa-plus-circle"></i> &nbsp; New Purchase Order</h4>
+    </button>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="purchase">
+  <div class="col-md-3 col-sm-3 col-xs-12">
+    <div class="form-group">
+      <label for="input" class="col-md-3 control-label">Show</label>
+      <div class="col-md-7">
+        <select name="shedule.emp_id" class="form-control">
+          <option name="source" selected="">All Purchase Order</option>
+          <option>All Locations</option>
+          <option>option 1</option>
+          <option>option 2</option>
+        </select>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-3 col-xs-12">
+    <div class="form-group">
+      <label for="input" class="col-md-3 control-label">supplier</label>
+      <div class="col-md-7">
+        <select name="shedule.emp_id" class="form-control">
+          <option name="source" selected="">All Suppliers</option>
+          <option>All Locations</option>
+          <option>option 1</option>
+          <option>option 2</option>
+        </select>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-3 col-xs-12">
+    <div class="form-group">
+      <label for="input" class="col-md-4 control-label">Start Date</label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <p-calendar [(ngModel)]="date1" name="shedule.startdate" [showIcon]="true" (ngModelChange)="getStartDate($event)" dateFormat="yy-mm-dd"></p-calendar>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-3 col-xs-12">
+    <div class="form-group">
+      <label for="input" class="col-md-4 control-label">End Date</label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <p-calendar [(ngModel)]="date2" name="shedule.enddate" [showIcon]="true" (ngModelChange)="getEndDate($event)" dateFormat="yy-mm-dd"></p-calendar>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<table width="100%">
+  <thead>
+    <tr>
+    <th>
+        Po</th>
+    <th>
+      Suppliers </th>
+    <th>Location</th>
+    <th>date</th>
+    <th>#Items</th>
+    <th>Amount</th>
+    <th>Status</th>
+    <th>notes</th>
+    <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr >
+    <td>
+        <i class="fas fa-times" style="color:red"></i> &nbsp; 20052</td>
+    <td>Trendz Beauty Group LLC</td>
+    <td> SBB-Culver citry</td>
+    <td>7/02/2018</td>
+    <td>52</td>
+    <td>$ 555.0</td>
+    <td>pending</td>
+    <td></td>
+    <td>
+      <button>Print</button> &nbsp;&nbsp;
+      <button>Edit/receive</button>
+    </td>
+    </tr>
+    <tr >
+        <td>
+            <i class="fas fa-times" style="color:red"></i> &nbsp; 20052</td>
+        <td>Trendz Beauty Group LLC</td>
+        <td> SBB-Culver citry</td>
+        <td>7/02/2018</td>
+        <td>52</td>
+        <td>$ 555.0</td>
+        <td>pending</td>
+        <td></td>
+        <td>
+          <button>Print</button> &nbsp;&nbsp;
+          <button>Edit/receive</button>
+        </td>
+        </tr>
+  </tbody>
+
+  </table>
+
+
 <app-footer></app-footer>

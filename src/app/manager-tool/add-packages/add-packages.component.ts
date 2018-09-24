@@ -65,7 +65,7 @@ export class AddPackagesComponent implements OnInit {
   backToMembership() {
     this.router.navigate(['management']);
   }
-  
+
   onChange() {
     console.log(this.selectedPack);
     this.getServiceId(this.selectedPack);

@@ -15,4 +15,7 @@ export class PurchaseOrderComponent implements OnInit {
   backToInventory() {
     this.router.navigate(['inventory']);
   }
+  newPurchase(){
+    this.router.navigate(['inventory/new-purchase-order']);
+  }
 }

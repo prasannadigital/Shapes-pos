@@ -30,8 +30,8 @@
 						<a class="nav-link product-info" id="v-pills-settings-tab" (click)="productClickInfo()" data-toggle="pill" href="#Products"
 						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Products</a>
 
-						<a class="nav-link dailycheckout-info" id="v-pills-settings-tab" data-toggle="pill" href="#dailycheckout"
-						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Daliy Checkout</a>
+						<a class="nav-link dailycheckout-info" id="v-pills-settings-tab" data-toggle="pill" href="#dailycheckout" role="tab" aria-controls="v-pills-settings"
+						 aria-selected="false">Daliy Checkout</a>
 
 						<a class="nav-link pricing-info" id="v-pills-settings-tab" (click)="pricingClickInfo()" data-toggle="pill" href="#Pricing"
 						 role="tab" aria-controls="v-pills-settings" aria-selected="false">Pricing</a>
@@ -58,8 +58,8 @@
 							</div>
 						</div>
 						<!--------------Communications end-------------->
-					
-					  
+
+
 						<div class="tab-pane fade" id="Staff" role="tabpanel" aria-labelledby="Staff">
 							<div class="sales-staff">
 								<div class="staff-section">
@@ -463,22 +463,14 @@
 							<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
 								<!-- <h3><a href="#" [routerLink]=""(click)="newGiftClick()"><img src="">&nbsp;&nbsp;ADD NEW GIFTCARD</a></h3>-->
 								<h3>
-									<a href="#"  [routerLink]="">
+									<a href="#" [routerLink]="">
 										<i class="fas fa-plus-circle"></i>&nbsp;&nbsp;ADD NEW PRODUCT</a>
 								</h3>
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
 								<h3>
-									<a href="#" [routerLink]="" >
+									<a href="#" [routerLink]="">
 										<i class="fas fa-edit"></i>&nbsp;&nbsp;EDIT A PRODUCT</a>
-								</h3>
-
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-								<h3>
-									<a href="#" [routerLink]="" >
-										<img src="">
-										<i class="fas fa-eye"></i>&nbsp;&nbsp; SHOW ACTIVE  PRODUCTS</a>
 								</h3>
 
 							</div>
@@ -486,7 +478,15 @@
 								<h3>
 									<a href="#" [routerLink]="">
 										<img src="">
-										<i class="fas fa-eye"></i>&nbsp;&nbsp; SHOW INACTIVE  PRODUCTS</a>
+										<i class="fas fa-eye"></i>&nbsp;&nbsp; SHOW ACTIVE PRODUCTS</a>
+								</h3>
+
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+								<h3>
+									<a href="#" [routerLink]="">
+										<img src="">
+										<i class="fas fa-eye"></i>&nbsp;&nbsp; SHOW INACTIVE PRODUCTS</a>
 								</h3>
 
 							</div>
@@ -501,25 +501,25 @@
 
 						<!--------------dailycheckout start-------------->
 						<div class="tab-pane fade" id="dailycheckout" role="tabpanel" aria-labelledby="v-pills-settings-tab">Daily Checkout
-							
+
 						</div>
 						<!--------------Discount start-------------->
 						<div class="tab-pane fade" id="discounts" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-								<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-										<h3>
-											<a href="#" [routerLink]="" >
-												&nbsp;&nbsp;ADD DISCOUNTS</a>
-										</h3>
-		
-									</div>
-									<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
-											<h3>
-												<a href="#" [routerLink]="" >
-												&nbsp;&nbsp;EDIT DISCOUNTS</a>
-											</h3>
-			
-										</div>
+							<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+								<h3>
+									<a href="#" [routerLink]="">
+										&nbsp;&nbsp;ADD DISCOUNTS</a>
+								</h3>
+
 							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12 staff-box">
+								<h3>
+									<a href="#" [routerLink]="">
+										&nbsp;&nbsp;EDIT DISCOUNTS</a>
+								</h3>
+
+							</div>
+						</div>
 						<!--------------Pricing start-------------->
 						<div class="tab-pane fade" id="Pricing" role="tabpanel" aria-labelledby="v-pills-settings-tab">
 							<div class="contract-autopay">
@@ -663,7 +663,7 @@
 															</div>
 														</div>
 													</div>
-                                                       
+
 													<!----------Gift cards-------->
 													<div class="modal class-new fade" id="pricing-giftcards" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 													 aria-hidden="true">

@@ -118,6 +118,10 @@ import { EditProductComponent } from './manager-tool/edit-product/edit-product.c
 import { ShowActiveProductComponent } from './manager-tool/show-active-product/show-active-product.component';
 import { ShowInactiveProductComponent } from './manager-tool/show-inactive-product/show-inactive-product.component';
 import { ManageProductsComponent } from './manager-tool/manage-products/manage-products.component';
+import { AddNewSuppliersComponent } from './inventory/suppliers/add-new-suppliers/add-new-suppliers.component';
+import { NewInventoryTicketComponent } from './inventory/inventory-tickets/new-inventory-ticket/new-inventory-ticket.component';
+import { NewPurchaseOrderComponent } from './inventory/purchase-order/new-purchase-order/new-purchase-order.component';
+import { PurchaseOrderSupplierComponent } from './inventory/purchase-order/purchase-order-supplier/purchase-order-supplier.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -159,6 +163,11 @@ const routes: Routes = [
   { path: 'inventory/inventory-tickets', component: InventoryTicketsComponent, canActivate: [AuthGuard] },
   { path: 'inventory/physical-inventory', component: UpdatePhysicalInventoryComponent, canActivate: [AuthGuard] },
   { path: 'inventory/reports', component: InventoryReportsComponent, canActivate: [AuthGuard] },
+  { path: 'inventory/suppliers/new-suppliers', component: AddNewSuppliersComponent, canActivate: [AuthGuard] },
+  { path: 'inventory/new-inventory-ticket', component: NewInventoryTicketComponent, canActivate: [AuthGuard] },
+  { path: 'inventory/new-purchase-order', component: NewPurchaseOrderComponent, canActivate: [AuthGuard] },
+  { path: 'inventory/purchase-order-supplier', component: PurchaseOrderSupplierComponent, canActivate: [AuthGuard] },
+
   { path: 'setup', component: SetupComponent, canActivate: [AuthGuard] },
   { path: 'setup/business-settings', component: BusinessSettingsComponent, canActivate: [AuthGuard] },
   { path: 'setup/appointment-options', component: AppointmentOptionsComponent, canActivate: [AuthGuard] },
@@ -372,7 +381,15 @@ const routes: Routes = [
 
     ShowInactiveProductComponent,
 
-    ManageProductsComponent
+    ManageProductsComponent,
+
+    AddNewSuppliersComponent,
+
+    NewInventoryTicketComponent,
+
+    NewPurchaseOrderComponent,
+
+    PurchaseOrderSupplierComponent
 
   ],
   imports: [

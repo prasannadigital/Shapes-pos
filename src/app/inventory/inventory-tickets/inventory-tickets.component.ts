@@ -14,4 +14,7 @@ export class InventoryTicketsComponent implements OnInit {
   backToInventory() {
     this.router.navigate(['inventory']);
   }
+  newInventory(){
+    this.router.navigate(['inventory/new-inventory-ticket']);
+  }
 }

@@ -14,5 +14,7 @@ export class SuppliersComponent implements OnInit {
   backToInventory() {
     this.router.navigate(['inventory']);
   }
-
+  newSupplier(){
+    this.router.navigate(['inventory/suppliers/new-suppliers']);
+  }
 }
