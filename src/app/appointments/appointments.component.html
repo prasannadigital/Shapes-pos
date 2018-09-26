@@ -4,9 +4,6 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-            <div class="row">
-            <a> Create New Appointment </a>
-            </div>
       <div class="row">
         <h3>View Appointments</h3>
       </div>
@@ -15,7 +12,7 @@
           <label for="input" class="col-md-3 control-label">Locations</label>
           <div class="col-md-9">
             <select name="shedule.branchid" class="form-control" (ngModelChange)="setBranch($event)" [(ngModel)]="shedule.branch_id">
-              <option *ngFor="let data1 of this.locationData" [ngValue]="data1.branch_name">{{data1.branch_name}}</option>
+              <option *ngFor="let data1 of this.locationData" [ngValue]="data1.branch_id">{{data1.branch_name}}</option>
             </select>
           </div>
         </div>
@@ -24,9 +21,9 @@
           <div class="form-group">
             <label for="input" class="col-md-3 control-label">Categories</label>
             <div class="col-md-9">
-              <select name="shedule.branchid" class="form-control" (ngModelChange)="setBranch($event)" [(ngModel)]="shedule.branch_id">
-                <option *ngFor="let data1 of this.locationData" [ngValue]="data1.branch_name">{{data1.branch_name}}</option>
-              </select>
+              <!-- <select name="shedule.branchid" class="form-control" (ngModelChange)="setBranch($event)" [(ngModel)]="shedule.branch_idv">
+                <option *ngFor="let data1 of this.locationData" [ngValue]="data1.branch_id">{{data1.branch_name}}</option>
+              </select> -->
             </div>
           </div>
         </div>
@@ -42,11 +39,45 @@
         </div>
       </div>
       <div class="row">
-        <button class="btn-primary"> Go</button>
+        <button class="btn-primary">Create New Appointment</button>
       </div>
-      
+      <div class="row">
+        <div class="form-group">
+          <label for="input" class="col-md-5 control-label">Start Date</label>
+          <div class="col-md-7">
+            <div class="input-group">
+              <p-calendar [(ngModel)]="date1" name="shedule.startdate" [showTime]="true" [showIcon]="true" (ngModelChange)="getStartDate($event)"
+              dateFormat="yy-mm-dd" ></p-calendar>
+            </div>
+          </div>
+         
+        </div>
     </div>
-   
+    <div class="row">
+      <div class="form-group">
+        <label for="input" class="col-md-5 control-label">End Date</label>
+        <div class="col-md-7">
+          <div class="input-group">
+            <p-calendar [(ngModel)]="date2" name="shedule.startdate" [showTime]="true" [showIcon]="true" (ngModelChange)="getStartDate($event)"
+              dateFormat="yy-mm-dd"></p-calendar>
+          </div>
+        </div>
+       
+      </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label for="input" class="col-md-3 control-label">Description</label>
+      <div class="col-md-9">
+        <input type="text" />
+      </div>
+    
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn-primary">Create</button>
+  </div>
+</div>
     <div class="col-sm-8">
         <div #scheduler_here class="dhx_cal_container" style="width: 100%; height:100vh">
             <div class="dhx_cal_navline">
@@ -62,7 +93,7 @@
             <div class="dhx_cal_data"></div>
           </div>
       </div>
-  </div>
+ 
 
 </div>
 

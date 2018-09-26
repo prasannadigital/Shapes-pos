@@ -29,6 +29,7 @@ export class AppointmentsComponent implements OnInit {
   ngOnInit() {
     this.serviceData.getAllLocations().subscribe(response => {
       this.locationData = response.json();
+      console.log("ghdsgfhgsdhf"+this.locationData)
     });
     this.serviceData.getEmployee().subscribe(response => {
       this.empData = response.json();

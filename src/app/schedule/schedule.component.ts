@@ -32,6 +32,7 @@ export class ScheduleComponent implements OnInit {
   ngOnInit() {
     this.service.getAllLocations().subscribe(response => {
       this.locationData = response.json();
+      console.log("ghdsgfhdbfbdfbdfbdfbdfbdfbdfbgdfgsdhf"+this.locationData)
     });
     this.service.getEmployee().subscribe(response => {
       this.empData = response.json();
