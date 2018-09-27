@@ -122,6 +122,19 @@ import { AddNewSuppliersComponent } from './inventory/suppliers/add-new-supplier
 import { NewInventoryTicketComponent } from './inventory/inventory-tickets/new-inventory-ticket/new-inventory-ticket.component';
 import { NewPurchaseOrderComponent } from './inventory/purchase-order/new-purchase-order/new-purchase-order.component';
 import { PurchaseOrderSupplierComponent } from './inventory/purchase-order/purchase-order-supplier/purchase-order-supplier.component';
+import { CommissionComponent } from './reports/Staff/commission/commission.component';
+import { PayRollComponent } from './reports/Staff/pay-roll/pay-roll.component';
+import { ScheduleAtGlanceComponent } from './reports/Staff/schedule-at-glance/schedule-at-glance.component';
+import { ReportTimeClockComponent } from './reports/Staff/report-time-clock/report-time-clock.component';
+import { RatingsAndReviewsComponent } from './reports/Staff/ratings-and-reviews/ratings-and-reviews.component';
+import { TipsComponent } from './reports/Staff/tips/tips.component';
+import { CancellationsComponent } from './reports/Staff/cancellations/cancellations.component';
+import { StaffScheduleComponent } from './reports/Staff/staff-schedule/staff-schedule.component';
+import { PhoneBookComponent } from './reports/Staff/phone-book/phone-book.component';
+import { StaffPerformanceComponent } from './reports/Staff/staff-performance/staff-performance.component';
+import { ClientPerStylistComponent } from './reports/Staff/client-per-stylist/client-per-stylist.component';
+import { AppointmentMetricsComponent } from './reports/Staff/appointment-metrics/appointment-metrics.component';
+import { PayRatesComponent } from './reports/Staff/pay-rates/pay-rates.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -152,11 +165,25 @@ const routes: Routes = [
   { path: 'edit-gift-card', component: EditGiftCardComponent, canActivate: [AuthGuard] },
   { path: 'view-active-gift-card', component: ViewActiveGiftCardComponent, canActivate: [AuthGuard] },
   { path: 'online-gift-card', component: OnlineGiftCardsComponent, canActivate: [AuthGuard] },
-
   { path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuard] },
   { path: 'appointments', component: AppointmentsComponent, canActivate: [AuthGuard] },
   { path: 'time-clocks', component: TimeClocksComponent, canActivate: [AuthGuard] },
+  
   { path: 'reports', component: ReportsComponent, canActivate: [AuthGuard] },
+  { path: 'staff/commission', component: CommissionComponent, canActivate: [AuthGuard] },
+  { path: 'staff/pay-roll', component: PayRollComponent, canActivate: [AuthGuard] },
+  { path: 'staff/schedule-at-glance', component: ScheduleAtGlanceComponent, canActivate: [AuthGuard] },
+  { path: 'staff/time-clock', component: ReportTimeClockComponent, canActivate: [AuthGuard] },
+  { path: 'staff/ratings-and-reviews', component: RatingsAndReviewsComponent, canActivate: [AuthGuard] },
+  { path: 'staff/tips', component: TipsComponent, canActivate: [AuthGuard] },
+  { path: 'staff/cancellations', component: CancellationsComponent, canActivate: [AuthGuard] },
+  { path: 'staff/schedule', component: StaffScheduleComponent, canActivate: [AuthGuard] },
+  { path: 'staff/phone-book', component: PhoneBookComponent, canActivate: [AuthGuard] },
+  { path: 'staff/performance', component: StaffPerformanceComponent, canActivate: [AuthGuard] },
+  { path: 'staff/client-per-stylist', component: ClientPerStylistComponent, canActivate: [AuthGuard] },
+  { path: 'staff/appointment-metrics', component: AppointmentMetricsComponent, canActivate: [AuthGuard] },
+  { path: 'staff/pay-rates', component: PayRatesComponent, canActivate: [AuthGuard] },
+
   { path: 'inventory', component: InventoryComponent, canActivate: [AuthGuard] },
   { path: 'inventory/purchase-order', component: PurchaseOrderComponent, canActivate: [AuthGuard] },
   { path: 'inventory/suppliers', component: SuppliersComponent, canActivate: [AuthGuard] },
@@ -389,7 +416,33 @@ const routes: Routes = [
 
     NewPurchaseOrderComponent,
 
-    PurchaseOrderSupplierComponent
+    PurchaseOrderSupplierComponent,
+
+    CommissionComponent,
+
+    PayRollComponent,
+
+    ScheduleAtGlanceComponent,
+
+    ReportTimeClockComponent,
+
+    RatingsAndReviewsComponent,
+
+    TipsComponent,
+
+    CancellationsComponent,
+
+    StaffScheduleComponent,
+
+    PhoneBookComponent,
+
+    StaffPerformanceComponent,
+
+    ClientPerStylistComponent,
+
+    AppointmentMetricsComponent,
+
+    PayRatesComponent
 
   ],
   imports: [
