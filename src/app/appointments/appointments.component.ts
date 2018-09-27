@@ -4,6 +4,9 @@ import "dhtmlx-scheduler";
 import { } from "@types/dhtmlxscheduler";
 import { AppointmentsServiceService } from '../services/appointments-service.service';
 import { SheduleServiceService } from '../services/shedule-service.service';
+import * as moment from 'moment/moment';
+import {Message} from 'primeng/components/common/api';
+import {MessageService} from 'primeng/components/common/messageservice';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -12,6 +15,10 @@ import { SheduleServiceService } from '../services/shedule-service.service';
   styleUrls: ['./appointments.component.css']
 })
 export class AppointmentsComponent implements OnInit {
+  msgs: Message[] = [];
+  createNew=false;
+  public date1: any;
+  public date2: any;
   branchesData = new Array();
   locationData = new Array();
   empData = new Array();
@@ -20,13 +27,24 @@ export class AppointmentsComponent implements OnInit {
     'startdate': '',
     'enddate': '',
     'branch_id': '',
+    'branch_name':'',
     'employee_id': '',
     'employee_firstname': ''
   }
+  appointments: any ={
+    'start_date': '',
+    'end_date': '',
+    'branch_id': '',
+    'emp_id':'',
+    'text': '',
+    'user_id': '',
+    'rec_status': 1
+  }
+  branchData: any={};
   @ViewChild("scheduler_here") schedulerContainer: ElementRef;
 
 
-  constructor(private serviceData: SheduleServiceService,private service: AppointmentsServiceService) { }
+  constructor(private serviceData: SheduleServiceService,private service: AppointmentsServiceService,private messageService: MessageService) { }
 
   ngOnInit() {
     this.serviceData.getAllLocations().subscribe(response => {
@@ -47,8 +65,34 @@ export class AppointmentsComponent implements OnInit {
       });
       
   }
+  showSuccess() {
+    this.msgs = [];
+      this.msgs.push({severity:'info', summary:'You have sucessfully added availability of Beauty Advisor on '+this.appointments.start_date+' at your location '});
+  }
+  viewNewAppiontment(){
+    this.createNew=true;
+  }
+  getStartDate() {
+    let day = this.date1.getDate();
+    let month = this.date1.getMonth() + 1;
+    let year = this.date1.getFullYear();
+    let newDate = moment(this.date1).format('YYYY-MM-DD HH:mm').toString();
+    this.shedule.startdate = newDate;
+  }
+
+  getEndDate() {
+    let day1 = this.date2.getDate();
+    let month1 = this.date2.getMonth() + 1;
+    let year1 = this.date2.getFullYear();
+    let newDate1 = moment(this.date2).format('YYYY-MM-DD HH:mm').toString();
+    this.shedule.enddate = newDate1;
+  }
   setBranch(branch_id: any): void {
     this.shedule.branch_id = branch_id;
+    this.serviceData.getBranchDetail(this.shedule.branch_id).subscribe(response =>{
+      this.branchData = response.json();
+    })
+    //this.shedule.branch_name = branch_name;
     this.serviceData.getStaffByLocation(this.shedule.branch_id).subscribe(res => {
       this.empData = res.json().data;
       console.log("hai"+this.empData);
@@ -65,5 +109,15 @@ export class AppointmentsComponent implements OnInit {
     });
     
   }
-
+  createAppointment(){
+    this.appointments.start_date=this.shedule.startdate;
+    this.appointments.end_date=this.shedule.enddate;
+    this.appointments.rec_status=1;
+    this.appointments.branch_id=this.shedule.branch_id;
+    this.appointments.emp_id=this.shedule.employee_id;
+    console.log(this.appointments);
+    this.service.saveAppointment(this.appointments).subscribe(response => {
+    });
+    this.createNew=false;
+  }
 }

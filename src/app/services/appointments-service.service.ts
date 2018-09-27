@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 import {Event} from '../model/event.model';
 import {Http} from "@angular/http";
 import {ExtractData, HandleError} from "./service-helper.service";
@@ -17,5 +18,10 @@ export class AppointmentsServiceService {
     get() {
       return this.http.get("http://ec2-54-88-194-105.compute-1.amazonaws.com:3001/apptest2");
     }
-  }
+   
+    saveAppointment(data:any){
+        return this.http.post(environment.host + 'orders', data);
+      }
+    }
+  
 

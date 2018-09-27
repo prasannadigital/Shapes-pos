@@ -43,15 +43,27 @@
         
         </div>
       </div>
+    
       <div class="row">
-        <button class="btn-primary">Create New Appointment</button>
+        <button class="btn-primary" (click)="viewNewAppiontment()">Create New Appointment</button>
       </div>
+      <div *ngIf="createNew">
+         
+      <div class="row">
+          <div class="form-group">
+            <label for="input" class="col-md-3 control-label">User Id</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" [(ngModel)]="appointments.user_id" />
+            </div>
+          
+          </div>
+        </div>
       <div class="row">
         <div class="form-group">
           <label for="input" class="col-md-5 control-label">Start Date</label>
           <div class="col-md-7">
             <div class="input-group">
-              <p-calendar [(ngModel)]="date1" name="shedule.startdate" [showTime]="true" [showIcon]="true" (ngModelChange)="getStartDate($event)"
+              <p-calendar [(ngModel)]="date1" [(ngModel)]="shedule.startdate" name="shedule.startdate" [showTime]="true" [showIcon]="true" (ngModelChange)="getStartDate($event)"
               dateFormat="yy-mm-dd" ></p-calendar>
             </div>
           </div>
@@ -63,7 +75,7 @@
         <label for="input" class="col-md-5 control-label">End Date</label>
         <div class="col-md-7">
           <div class="input-group">
-            <p-calendar [(ngModel)]="date2" name="shedule.startdate" [showTime]="true" [showIcon]="true" (ngModelChange)="getStartDate($event)"
+            <p-calendar [(ngModel)]="date2" [(ngModel)]="shedule.enddate" name="shedule.enddate" [showTime]="true" [showIcon]="true" (ngModelChange)="getEndDate($event)"
               dateFormat="yy-mm-dd"></p-calendar>
           </div>
         </div>
@@ -74,16 +86,19 @@
     <div class="form-group">
       <label for="input" class="col-md-3 control-label">Description</label>
       <div class="col-md-9">
-        <input type="text" />
+        <input type="text" class="form-control" [(ngModel)]="appointments.text" />
       </div>
     
     </div>
   </div>
   <div class="row">
-    <button class="btn-primary">Create</button>
+    <button class="btn-primary" (click)="createAppointment();showSuccess()">Create</button>
+
+  </div>
   </div>
 </div>
     <div class="col-sm-8">
+        <p-growl [(value)]="msgs" styleClass="registerGrowl" ></p-growl>
         <div #scheduler_here class="dhx_cal_container" style="width: 100%; height:100vh">
             <div class="dhx_cal_navline">
               <div class="dhx_cal_prev_button">&nbsp;</div>

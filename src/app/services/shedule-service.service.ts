@@ -20,6 +20,9 @@ export class SheduleServiceService {
   getStaffByLocation(id: number) {
     return this.http.get(environment.host + 'branch-emp/'+ id );
   }
+  getBranchDetail(id: number) {
+    return this.http.get(environment.host + 'branches/'+ id );
+  }
   getStaffAppointments(id1: number,id2:number) {
     return this.http.get(environment.host + 'emp-branch-appt/'+ id1+'/'+id2);
   }
