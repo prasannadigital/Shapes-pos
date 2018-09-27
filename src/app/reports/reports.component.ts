@@ -6,8 +6,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./reports.component.css']
 })
 export class ReportsComponent implements OnInit {
-
-
   staffContent = false;
   salesContent = false;
   clientsContent = false;
