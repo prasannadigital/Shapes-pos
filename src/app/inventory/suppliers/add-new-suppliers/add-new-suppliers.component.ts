@@ -15,6 +15,8 @@ export class AddNewSuppliersComponent implements OnInit {
   supplierEmail:'';
   supplierPoints:'';
   supplierAddress:'';
+  supplierContact:'';
+  supplierTitle:'';
   supplierCity:'';
   supplierState:'';
   supplierZip:'';
@@ -39,6 +41,8 @@ export class AddNewSuppliersComponent implements OnInit {
       supplier_email:this.supplierEmail,
       supplier_rewardpoints:this.supplierPoints,
       supplier_address:this.supplierAddress,
+      supplier_contact_name:this.supplierContact,
+      supplier_title:this.supplierTitle,
       supplier_city:this.supplierCity,
       supplier_state:this.supplierState,
       supplier_zip:this.supplierZip,
@@ -53,7 +57,7 @@ export class AddNewSuppliersComponent implements OnInit {
   }
 
   cancleSupplier(){
-    this.supplierName='';
+  this.supplierName='';
   this.supplierPhone='';
   this.supplierFax='';
   this.supplierExt='';
