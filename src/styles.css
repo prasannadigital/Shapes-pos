@@ -10960,6 +10960,8 @@ margin-top: 5px;
   letter-spacing: 1px;
   font-size: 20px;
   text-transform: uppercase;
+  text-align: center;
+  border-radius: 5px;
 }
 /* reports styles Start */
 /* You can add global styles to this file, and also import other style files */
