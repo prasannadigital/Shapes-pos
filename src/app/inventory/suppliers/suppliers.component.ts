@@ -73,6 +73,8 @@ export class SuppliersComponent implements OnInit {
       this.supplier.supplier_notes = selectedData.supplier_notes;
       this.editStyle = "visible";
     })
+
+    
   }
 
   updateSupplier(val) {

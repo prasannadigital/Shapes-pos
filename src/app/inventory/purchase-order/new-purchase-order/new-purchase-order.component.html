@@ -17,11 +17,9 @@
       <div class="form-group">
         <label for="input" class="col-md-2 control-label">Suppliers:</label>
         <div class="col-md-3">
-          <select class="form-control">
-            <option value="" selected="">Select</option>
-            <option value="">TrendzBeauty Group LLC</option>
-            <option value="">Trendz Beauty other products</option>
-            <option value="">Trendz Beauty Supply</option>
+          <select class="form-control" name="supplier" (ngModelChange)="purchaseSuppliers($event)" [(ngModel)]="supplier.supplier_id">
+            <option>Select</option>
+            <option *ngFor="let data1 of this.supplierData" [ngValue]="data1.supplier_id">{{data1.supplier_name}}</option>
           </select>
         </div>
         <div class="col-md-2">

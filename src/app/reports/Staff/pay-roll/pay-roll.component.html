@@ -11,4 +11,111 @@
     <div class="clear"></div>
   </div>
   
+  <div  class="container">
+    <br>
+    <div class="row">
+      <div class="card cancellation-panel col-lg-12">
+        <div class="card-body">
+          <form class="" action="/action_page.php">
+            <div class="row form-inline justify-content-center">
+              <label for="stDate">View</label> <select class="form-control"
+                id="allLocations" name="allStaffDetail">
+                <option>All Staff Members-Details</option>
+                <option>All Staff Members-Details</option>
+                <option>All Staff Members-Details</option>
+                <option>All Staff Members-Details</option>
+              </select> <select class="form-control" id="allPayRates"
+                name="allPayRates">
+                <option>All Pay Rates</option>
+                <option>All Pay Rates</option>
+                <option>All Pay Rates</option>
+                <option>All Pay Rates</option>
+              </select> <select class="form-control" id="allServices"
+                name="allServices">
+                <option>All Products & Services</option>
+                <option>All Products & Services</option>
+                <option>All Products & Services</option>
+                <option>All Products & Services</option>
+              </select> <select class="form-control" id="services" multiple
+                name="services" style="height: 80px;">
+                <option>All Service Categories</option>
+                <option>Hair Styling Packages</option>
+                <option>Makeup Service Packages</option>
+                <option>Members and Package Checkout</option>
+              </select>
+
+            </div>
+            <div class="row form-inline  justify-content-center">
+              <label for="stDate">Start Date</label> <input type="text"
+                class="date-input form-control" id="stDate" placeholder=""
+                name="stDate"> <label for="endDate">End Date:</label>
+              <input type="text" class="date-input form-control" id="endDate"
+                placeholder="" name="endDate">
+            </div>
+            <div class="row inline-flex justify-content-center">
+              <div class="form-check">
+                <label class="form-check-label"> 
+                   <input type="checkbox" class="form-check-input"
+                  name="clients">Hide Client Payment Info
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label"> <input type="checkbox" class="form-check-input"
+                  name="iis"> Include Inactive Staff
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label"> 
+                  Staff <input type="checkbox" class="form-check-input"
+                  name="osmfp">One Staff Member For Page
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label"> 
+                  Staff <input type="checkbox" class="form-check-input"
+                  name="scd">Show Complete Data
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 justify-content-center">
+                <div class="form-inline pull-right">
+                  <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i></a>
+                  <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i></a>
+                  <a><i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i></a>
+                  <a><i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i></a>
+                </div><br/>
+                <div class="text-right">
+                  <label>Calendar Months</label>
+                </div>
+              </div>
+              <div class="col-lg-6 justify-content-center">
+                <div class="form-inline pull-left">
+                  <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i></a>
+                  <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i></a>
+                  <a><i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i></a>
+                  <a><i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i></a>
+
+                </div><br/>
+                
+                <div class="text-left">
+                  <label>To-Date</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-inline justify-content-center">
+
+              <button type="submit" class="btn btn-default">GENERATE</button>
+              <a href=""><img src="../img/download.png"
+                class="image-indicators" /></a> <a href=""><img
+                src="../img/download.png" class="image-indicators" /></a> <a
+                href=""><img src="../img/download.png"
+                class="image-indicators" /></a> <a href=""><img
+                src="../img/download.png" class="image-indicators" /></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <app-footer></app-footer>

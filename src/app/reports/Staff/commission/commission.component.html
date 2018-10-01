@@ -10,103 +10,99 @@
   </div>
   <div class="clear"></div>
 </div>
-<div>
-		
-    <div id="home">
-      <br>
-      <div class="">
-        <div class="">
-          <div class="">
-            <form class="">
-              <div class="row ">
-                <label for="stDate">View</label> <select class="form-control"
-                  id="allLocations" name="allLocations">
-                  <option>All Staff Members-summary</option>
-                  <option>All Staff Members-summary</option>
-                  <option>All Staff Members-summary</option>
-                  <option>All Staff Members-summary</option>
-                </select> 
-                <div class="form-check">
-                    <label class="form-check-label"> Include Inactive Staff
-                   <input type="checkbox"
-                    class="form-check-input" name="clients">
-                  </label>
-                  </div>
-                <div class="form-check">
-                    <label class="form-check-label"> Split Commission Detail
-                   <input type="checkbox"
-                    class="form-check-input" name="clients">
-                  </label>
-                  </div>
-                <select
-                  class="form-control" id="allTeachers" name="allTeachers">
-                  <option>All Products & Services</option>
-                  <option>All Products & Services</option>
-                  <option>All Products & Services</option>
-                  <option>All Products & Services</option>
-                </select>
+<div  class="container">
+  <br>
+  <div class="row">
+    <div class="card cancellation-panel col-lg-12">
+      <div class="card-body">
+        <form class="" action="/action_page.php">
+          <div class="row form-inline inline-flex justify-content-center">
+            <label for="stDate">View</label> <select class="form-control"
+              id="allLocations" name="allLocations">
+              <option>All Staff Members-summary</option>
+              <option>All Staff Members-summary</option>
+              <option>All Staff Members-summary</option>
+              <option>All Staff Members-summary</option>
+            </select> 
+            <div class="form-check">
+                <label class="form-check-label"> Include Inactive Staff
+               <input type="checkbox"
+                class="form-check-input" name="clients">
+              </label>
               </div>
-              <div class="row form-inline  justify-content-center">
-                <label>Location</label> <select class="form-control" id="all"
-                  name="all">
-                  <option>All Locations</option>
-                  <option>All Locations</option>
-                  <option>All Locations</option>
-                  <option>All Locations</option>
-                </select> <label for="stDate">Start Date</label> <input type="text"
-                  class="date-input form-control" id="stDate" placeholder=""
-                  name="stDate"> <label for="endDate">End Date:</label>
-                <input type="text" class="date-input form-control" id="endDate"
-                  placeholder="" name="endDate">
+            <div class="form-check">
+                <label class="form-check-label"> Split Commission Detail
+               <input type="checkbox"
+                class="form-check-input" name="clients">
+              </label>
               </div>
-              <div class="row justify-content-center">
-                <div class="form-check">
-                    <label class="form-check-label">
-                   <input type="checkbox"
-                    class="form-check-input" name="commission">Show $0 Commission:
-                  </label>
-                  </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6 justify-content-center">
-                  <div class="form-inline justify-content-center">
-                    <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i></a>
-                    <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i></a>
-                    <a><i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i></a>
-                  <a>	<i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i></a>
-                  </div>
-                  <div class="text-center">
-                    <label>Calendar Months</label>
-                  </div>
-                </div>
-                <div class="col-lg-6 justify-content-center">
-                  <div class="form-inline justify-content-center">
-                    <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i></a>
-                    <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i></a>
-                    <a><i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i></a>
-                    <a><i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i></a>
-
-                  </div>
-                  <div class="text-center">
-                    <label>To-Date</label>
-                  </div>
-                </div>
-              </div>
-              <div class="form-inline justify-content-center">
-              
-                <button type="submit" class="btn btn-default">GENERATE</button>
-                <a href=""><img src="../img/download.png"
-                  class="image-indicators" /></a> <a href=""><img
-                  src="../img/download.png" class="image-indicators" /></a> <a
-                  href=""><img src="../img/download.png"
-                  class="image-indicators" /></a> 
-              </div>
-            </form>
+            <select
+              class="form-control" id="allTeachers" name="allTeachers">
+              <option>All Products & Services</option>
+              <option>All Products & Services</option>
+              <option>All Products & Services</option>
+              <option>All Products & Services</option>
+            </select>
           </div>
-        </div>
+          <div class="row form-inline inline-flex  justify-content-center">
+            <label>Location</label> <select class="form-control" id="all"
+              name="all">
+              <option>All Locations</option>
+              <option>All Locations</option>
+              <option>All Locations</option>
+              <option>All Locations</option>
+            </select> <label for="stDate">Start Date</label> <input type="text"
+              class="date-input form-control" id="stDate" placeholder=""
+              name="stDate"> <label for="endDate">End Date:</label>
+            <input type="text" class="date-input form-control" id="endDate"
+              placeholder="" name="endDate">
+          </div>
+          <div class="row justify-content-center">
+            <div class="form-check">
+                <label class="form-check-label">
+               <input type="checkbox"
+                class="form-check-input" name="commission">Show $0 Commission:
+              </label>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 justify-content-center">
+              <div class="form-inline text-right">
+                <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i></a>
+                <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i></a>
+                <a><i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i></a>
+              <a>	<i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i></a>
+              </div>
+              <div class="text-right">
+                <label>Calendar Months</label>
+              </div>
+            </div>
+            <div class="col-lg-6 justify-content-center">
+              <div class="form-inline text-left">
+                <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i></a>
+                <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i></a>
+                <a><i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i></a>
+                <a><i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i></a>
+
+              </div>
+              <div class="text-left">
+                <label>To-Date</label>
+              </div>
+            </div>
+          </div>
+          <div class=" text-center">
+          
+            <button type="submit" class="btn btn-default">GENERATE</button>
+            <a href=""><img src="../img/download.png"
+              class="image-indicators" /></a> <a href=""><img
+              src="../img/download.png" class="image-indicators" /></a> <a
+              href=""><img src="../img/download.png"
+              class="image-indicators" /></a> 
+          </div>
+        </form>
       </div>
     </div>
-
   </div>
+</div>
 
 <app-footer></app-footer>

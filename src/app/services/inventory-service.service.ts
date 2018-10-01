@@ -17,4 +17,13 @@ export class InventoryServiceService {
 public getSelectedSupplier(id:any){
   return this.http.get(environment.host + 'suppliers/' +id);
 }
+
+public postPurchaseOrder(data:any){
+  console.log(data);
+return this.http.post(environment.host + 'pur-orders',data);
+}
+
+public getproduct(){
+  return this.http.get(environment.host + 'products')
+}
 } 

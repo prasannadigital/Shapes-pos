@@ -10,105 +10,82 @@
     </div>
     <div class="clear"></div>
   </div>
-
-  		<!-- Nav tabs -->
-      <div class="container mt-3">
-        <!-- Nav tabs -->
-      
-    
-        <!-- Tab panes -->
-        
-            <div class="row">
-              <div class="card cancellation-panel col-lg-12">
-                <div class="card-body">
-                  <form class="" action="/action_page.php">
-                    <div class="row form-inline justify-content-center">
-                      <label for="stDate">View</label> <select class="form-control"
-                        id="allLocations" name="allLocations">
-                        <option>All Staff Members-summary</option>
-                        <option>All Staff Members-summary</option>
-                        <option>All Staff Members-summary</option>
-                        <option>All Staff Members-summary</option>
-                      </select> 
-                      <div class="form-check">
-                          <label class="form-check-label"> Include Inactive Staff
-                         <input type="checkbox"
-                          class="form-check-input" name="clients">
-                        </label>
-                        </div>
-                      <div class="form-check">
-                          <label class="form-check-label"> Split Commission Detail
-                         <input type="checkbox"
-                          class="form-check-input" name="clients">
-                        </label>
-                        </div>
-                      <select
-                        class="form-control" id="allTeachers" name="allTeachers">
-                        <option>All Products & Services</option>
-                        <option>All Products & Services</option>
-                        <option>All Products & Services</option>
-                        <option>All Products & Services</option>
-                      </select>
-                    </div>
-                    <div class="row form-inline  justify-content-center">
-                      <label>Location</label> <select class="form-control" id="all"
-                        name="all">
-                        <option>All Locations</option>
-                        <option>All Locations</option>
-                        <option>All Locations</option>
-                        <option>All Locations</option>
-                      </select> <label for="stDate">Start Date</label> <input type="text"
-                        class="date-input form-control" id="stDate" placeholder=""
-                        name="stDate"> <label for="endDate">End Date:</label>
-                      <input type="text" class="date-input form-control" id="endDate"
-                        placeholder="" name="endDate">
-                    </div>
-                    <div class="row justify-content-center">
-                      <div class="form-check">
-                          <label class="form-check-label">
-                         <input type="checkbox"
-                          class="form-check-input" name="commission">Show $0 Commission:
-                        </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-6 justify-content-center">
-                        <div class="form-inline justify-content-center">
-                          <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i></a>
-                          <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i></a>
-                          <a><i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i></a>
-                        <a>	<i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i></a>
-                        </div>
-                        <div class="text-center">
-                          <label>Calendar Months</label>
-                        </div>
-                      </div>
-                      <div class="col-lg-6 justify-content-center">
-                        <div class="form-inline justify-content-center">
-                          <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i></a>
-                          <a><i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i></a>
-                          <a><i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i></a>
-                          <a><i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i></a>
-    
-                        </div>
-                        <div class="text-center">
-                          <label>To-Date</label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-inline justify-content-center">
-                    
-                      <button type="submit" class="btn btn-default">GENERATE</button>
-                      <a href=""><img src="../img/download.png"
-                        class="image-indicators" /></a> <a href=""><img
-                        src="../img/download.png" class="image-indicators" /></a> <a
-                        href=""><img src="../img/download.png"
-                        class="image-indicators" /></a> 
-                    </div>
-                  </form>
+  <div  class="container">
+    <br>
+    <div class="row">
+      <div class="card cancellation-panel col-lg-12">
+        <div class="card-body">
+          <form class="" action="/action_page.php">
+            <div class="form-inline justify-content-center">
+              <label for="stDate">Date Range: Start Date</label> <input
+                type="text" class="date-input form-control" id="stDate" placeholder=""
+                name="stDate"> <label for="endDate">End Date:</label> <input
+                type="text" class="date-input form-control" id="endDate" placeholder=""
+                name="endDate"> <select class="form-control" id="allLocations" name="allLocations">
+                <option>All Locations</option>
+                <option>All Locations</option>
+                <option>All Locations</option>
+                <option>All Locations</option>
+              </select> <select class="form-control" id="allTeachers" name="allTeachers">
+                <option>All Teachers</option>
+                <option>All Teachers</option>
+                <option>All Teachers</option>
+                <option>All Teachers</option>
+              </select>
+            </div>
+            <div class="form-inline  justify-content-center">
+              <select class="form-control" id="all" name="all">
+                <option>All</option>
+                <option>All</option>
+                <option>All</option>
+                <option>All</option>
+              </select> <select class="form-control" id="allView" name="allView">
+                <option>View All</option>
+                <option>View All</option>
+                <option>View All</option>
+                <option>View All</option>
+              </select > <label for="restore">Restore:</label> <select class="form-control" id="individualRecords" name="individualRecords">
+                <option>Individual Records</option>
+                <option>Individual Records</option>
+                <option>Individual Records</option>
+                <option>Individual Records</option>
+              </select>
+  
+            </div>
+            <div class="form-inline justify-content-center">
+              <div class="form-inline inline-flex-style">
+              <label class="form-check-label">Clients</label>
+                <div class="form-check">
+                  <label class="form-check-label"> <input type="radio"
+                    class="form-check-input" name="clients"><b>All</b>
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                 <input type="radio"
+                  class="form-check-input" name="clients"><b>Selected</b>
+                </label>
                 </div>
               </div>
+              <div class="form-inline">
+                <label for="restore">Cancelled Date:</label> <select class="form-control" id="cancelledDate" name="cancelledDate">
+                  <option>Cancelled Date</option>
+                  <option>Cancelled Date</option>
+                  <option>Cancelled Date</option>
+                  <option>Cancelled Date</option>
+                </select>
+              </div>
             </div>
-          </div>
+            <div class="form-inline justify-content-center">
+            <button type="submit" class="btn btn-default">GENERATE</button>
+            <img src="../img/download.png" class="image-indicators" />
+            <img src="../img/download.png" class="image-indicators" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  	
   
   <app-footer></app-footer>
