@@ -48,14 +48,18 @@
         <button class="btn-primary" (click)="viewNewAppiontment()">Create New Appointment</button>
       </div>
       <div *ngIf="createNew">
-         
+     
       <div class="row">
           <div class="form-group">
-            <label for="input" class="col-md-3 control-label">User Id</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" [(ngModel)]="appointments.user_id" />
+            <label for="input" class="col-md-5 control-label">Customer Name</label>
+        <div class="col-md-7">
+            <div class="input-group">
+                <input [(ngModel)]="model.user_id" [typeahead]="this.users" (ngModelChange)='customerSearch($event)' [typeaheadMinLength]="2"
+          typeaheadOptionField="name" (typeaheadOnSelect)="onSelect($event)" class="form-control">
+                <!-- <p-dropdown [options]="users" [(ngModel)]="appointments.user_id" [style]="{'width':'200px'}" ></p-dropdown> -->
+              <!-- <p-dropdown  [options]="users" [(ngModel)]="appointments.user_id"  [style]="{'width':'150px'}"  (ngModelChange)='customerSearch($event)' [filter]="true" ></p-dropdown> -->
             </div>
-          
+          </div>
           </div>
         </div>
       <div class="row">

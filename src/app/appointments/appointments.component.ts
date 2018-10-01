@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ElementRef, ViewChild, ViewEncapsulation } from "@angular/core";
 import "dhtmlx-scheduler";
+import { environment } from '../../environments/environment';
 import { } from "@types/dhtmlxscheduler";
 import { AppointmentsServiceService } from '../services/appointments-service.service';
 import { SheduleServiceService } from '../services/shedule-service.service';
 import * as moment from 'moment/moment';
 import {Message} from 'primeng/components/common/api';
 import {MessageService} from 'primeng/components/common/messageservice';
-
+import {DropdownModule} from 'primeng/dropdown';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { TypeaheadModule } from 'ngx-bootstrap';
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: 'appointments',
@@ -15,6 +18,12 @@ import {MessageService} from 'primeng/components/common/messageservice';
   styleUrls: ['./appointments.component.css']
 })
 export class AppointmentsComponent implements OnInit {
+  model = {
+    user_id: ''
+  }
+  temp: any[] = new Array();
+  selectedValue: string;
+  users= new Array();
   msgs: Message[] = [];
   createNew=false;
   public date1: any;
@@ -44,7 +53,7 @@ export class AppointmentsComponent implements OnInit {
   @ViewChild("scheduler_here") schedulerContainer: ElementRef;
 
 
-  constructor(private serviceData: SheduleServiceService,private service: AppointmentsServiceService,private messageService: MessageService) { }
+  constructor(private http: HttpClient,private serviceData: SheduleServiceService,private service: AppointmentsServiceService,private messageService: MessageService) { }
 
   ngOnInit() {
     this.serviceData.getAllLocations().subscribe(response => {
@@ -119,5 +128,21 @@ export class AppointmentsComponent implements OnInit {
     this.service.saveAppointment(this.appointments).subscribe(response => {
     });
     this.createNew=false;
+  }
+  customerSearch(val) {
+    if (val.length >= 3) {
+      this.http.get(environment.host + 'users/search/' + val).subscribe(data => {
+        //this.users.push(data);
+        this.temp.push(data);
+        console.log(this.temp);
+        this.users = this.temp.pop();  
+        console.log(this.users);
+       // this. = this.temp.pop();
+      });
+    }
+  }
+  onSelect($event){
+    this.appointments.user_id=this.selectedValue;
+    console.log(this.model.user_id);
   }
 }
