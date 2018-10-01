@@ -19,11 +19,18 @@ public getSelectedSupplier(id:any){
 }
 
 public postPurchaseOrder(data:any){
-  console.log(data);
+  
 return this.http.post(environment.host + 'pur-orders',data);
 }
 
 public getproduct(){
   return this.http.get(environment.host + 'products')
+}
+ public getSelectedProduct(id: number) {
+  return this.http.get(environment.host + 'products/' + id);
+}
+
+public saveInventoryTicket(data:any){
+return this.http.post(environment.host + 'inv-tkts',data)
 }
 } 

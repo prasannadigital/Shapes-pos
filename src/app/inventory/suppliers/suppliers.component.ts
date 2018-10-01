@@ -14,6 +14,7 @@ export class SuppliersComponent implements OnInit {
   supplier: any = {
     "supplier_id": '',
     "supplier_name": '',
+    "supplier_status": '',
     "supplier_contact_name": '',
     "supplier_title": '',
     "supplier_phone": "",
@@ -56,6 +57,7 @@ export class SuppliersComponent implements OnInit {
       this.supplier.supplier_id = selectedData.supplier_id;
       console.log(this.supplier.supplier_id);
       this.supplier.supplier_name = selectedData.supplier_name;
+      this.supplier.supplier_status = selectedData.supplier_status;
       this.supplier.supplier_contact_name = selectedData.supplier_contact_name;
       this.supplier.supplier_title = selectedData.supplier_title;
       this.supplier.supplier_phone = selectedData.supplier_phone;
@@ -73,16 +75,14 @@ export class SuppliersComponent implements OnInit {
       this.supplier.supplier_notes = selectedData.supplier_notes;
       this.editStyle = "visible";
     })
-
-    
   }
-
   updateSupplier(val) {
     console.log(val);
     console.log(val.supplier_id)
     var data = {
       supplier_id: val.supplier_id,
       supplier_name: val.supplier_name,
+      supplier_status: val.supplier_status,
       supplier_contact_name: val.supplier_contact_name,
       supplier_title: val.supplier_title,
       supplier_phone: val.supplier_phone,

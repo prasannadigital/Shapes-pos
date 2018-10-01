@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
 })
 export class InventoryTicketsComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
   backToInventory() {
     this.router.navigate(['inventory']);
   }
-  newInventory(){
+  newInventory() {
     this.router.navigate(['inventory/new-inventory-ticket']);
   }
 }

@@ -57,6 +57,10 @@
                     <option name="source" selected="">Select</option>
                     <option *ngFor="let data1 of this.productData" [ngValue]="data1.product_name">{{data1.product_name}}</option>
                   </select>
+
+                  <!-- <select name="show" class="form-control" (ngModelChange)="setStaff($event)" [(ngModel)]="shedule.employee_id">
+                    <option *ngFor="let data1 of this.productData" [ngValue]="data1.product_id">{{data1.product_name}}</option>
+                  </select> -->
                 </div>
                 <div class="clear"></div>
               </div>

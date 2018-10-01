@@ -19,6 +19,11 @@ export class PurchaseOrderSupplierComponent implements OnInit {
   deliveryDate = '';
   showItem = '';
   poNotes = '';
+
+  product:any={
+    'product_id':'',
+
+  }
   constructor(private router: Router, private service: InventoryServiceService) { }
 
   ngOnInit() {
@@ -60,4 +65,6 @@ export class PurchaseOrderSupplierComponent implements OnInit {
       console.log(res.json());
     })
   }
+
+  
 }
