@@ -36,12 +36,13 @@ export class AddNewSuppliersComponent implements OnInit {
   addSupplier() {
   let  inactiveCheckbox;
   console.log(this.supplierStatus);
-    if (this.supplierStatus.toString() == 'true') {
+    if (this.supplierStatus) {
       inactiveCheckbox = '0'
     } else {
       inactiveCheckbox = '1'
     }
-    if (this.supplierStatus.toString() == 'undefined') {
+
+    if (this.supplierStatus == undefined) {
       inactiveCheckbox = '1'
     }
     console.log(inactiveCheckbox);
@@ -88,6 +89,5 @@ export class AddNewSuppliersComponent implements OnInit {
     this.supplierPaymentmethod='';
     this.supplierNotes = '';
     this.supplierStatus='';
-
   }
 }
