@@ -12,3 +12,18 @@
   top: 0;
   right: 0;
   }
+  .searchParameters{
+    height: 200px;
+    background-color: aquamarine;
+    overflow: scroll;
+  }
+  .search-list{
+    display:inline-block;
+    background-color:antiquewhite;
+    width:100px;
+    height:70px;
+    margin:10px;
+}
+.search-list:hover{
+    cursor: pointer;
+}
