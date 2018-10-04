@@ -8,23 +8,23 @@ declare var $: any;
 })
 export class InventoryComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-  purchaseOrderClick(){
+  purchaseOrderClick() {
     this.router.navigate(['inventory/purchase-order']);
   }
-  supplierClick(){
+  supplierClick() {
     this.router.navigate(['inventory/suppliers']);
   }
-  inventoryTicketClick(){
+  inventoryTicketClick() {
     this.router.navigate(['inventory/inventory-tickets']);
   }
-  updateInventory(){
+  updateInventory() {
     this.router.navigate(['inventory/physical-inventory']);
   }
-  reportsClick(){
+  reportsClick() {
     this.router.navigate(['inventory/reports']);
   }
 

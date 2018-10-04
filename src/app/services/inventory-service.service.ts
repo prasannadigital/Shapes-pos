@@ -23,6 +23,14 @@ public postPurchaseOrder(data:any){
 return this.http.post(environment.host + 'pur-orders',data);
 }
 
+public getPurchaseOrder(){
+  return this.http.get(environment.host + 'pur-orders');
+}
+
+public getSelectedPurchaseOrder(id:any){
+ return this.http.get(environment.host + 'pur-orders/'+id);
+}
+
 public getproduct(){
   return this.http.get(environment.host + 'products')
 }
