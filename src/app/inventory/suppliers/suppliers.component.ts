@@ -29,9 +29,9 @@ export class SuppliersComponent implements OnInit {
     "supplier_zip": '',
     "supplier_taxrate": '',
     "supplier_paymentterms": '',
-    "supplier_notes": '',
+    "supplier_notes": ''
+   
   }
-
   editStyle = "hidden";
 
   constructor(private router: Router, private service: InventoryServiceService) { }
@@ -55,9 +55,11 @@ export class SuppliersComponent implements OnInit {
       this.selectedSupplierData = response.json();
       var selectedData = this.selectedSupplierData.pop();
       this.supplier.supplier_id = selectedData.supplier_id;
-      console.log(this.supplier.supplier_id);
       this.supplier.supplier_name = selectedData.supplier_name;
       this.supplier.supplier_status = selectedData.supplier_status;
+      if(this.supplier.supplier_status  == '1'){
+        this.supplier.supplier_status='';
+      }      
       this.supplier.supplier_contact_name = selectedData.supplier_contact_name;
       this.supplier.supplier_title = selectedData.supplier_title;
       this.supplier.supplier_phone = selectedData.supplier_phone;
@@ -77,12 +79,23 @@ export class SuppliersComponent implements OnInit {
     })
   }
   updateSupplier(val) {
+    var inactiveCheckbox;
     console.log(val);
     console.log(val.supplier_id)
+console.log(val.supplier_status)
+    if (val.supplier_status) {
+      inactiveCheckbox = '0'
+    } else {
+      inactiveCheckbox = '1'
+    }
+
+    if (val.supplier_status == undefined) {
+      inactiveCheckbox = '1'
+    }
     var data = {
       supplier_id: val.supplier_id,
       supplier_name: val.supplier_name,
-      supplier_status: val.supplier_status,
+      supplier_status: inactiveCheckbox,
       supplier_contact_name: val.supplier_contact_name,
       supplier_title: val.supplier_title,
       supplier_phone: val.supplier_phone,

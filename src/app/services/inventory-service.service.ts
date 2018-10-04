@@ -41,4 +41,9 @@ public getproduct(){
 public saveInventoryTicket(data:any){
 return this.http.post(environment.host + 'inv-tkts',data)
 }
+
+public getActiveSupplier(active:number){
+  console.log(active);
+ return this.http.get(environment.host + 'suppliers?active='+ active);
+}
 } 

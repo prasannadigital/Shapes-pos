@@ -15,7 +15,7 @@ export class NewPurchaseOrderComponent implements OnInit {
     "paymentTerms":'',
     "supplierAddress":'',
   }
-
+  selectDisable=true;
   constructor(private router:Router,private service:InventoryServiceService) { }
 
   ngOnInit() {
@@ -31,6 +31,7 @@ export class NewPurchaseOrderComponent implements OnInit {
  
   }
   purchaseSuppliers(supplier_id:any){
+    this.selectDisable=false;
     this.supplier.supplierId=supplier_id;
     this.service.getSelectedSupplier(this.supplier.supplierId).subscribe(response => {
       console.log(response.json());
