@@ -52,5 +52,15 @@ export class PurchaseOrderComponent implements OnInit {
     })
 
   }
+  PrintRecord = function() {  
+    this.printData();  
+}  
+  printData() {  
+var divToPrint = document.getElementById("tablerecords");  
+var  newWin = window.open("");  
+    newWin.document.write(divToPrint.outerHTML);  
+    newWin.print();  
+    newWin.close();  
+}  
 
 }

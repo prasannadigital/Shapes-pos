@@ -21,7 +21,7 @@
         </div>
         <div class="col-md-5">
           <div class="form-check pull-right">
-            <input class="form-check-input" type="checkbox" id="inlineFormCheck1">
+            <input class="form-check-input" type="checkbox" value="y" [(ngModel)]="supplierStatus" id="inlineFormCheck1">
             <label class="form-check-label" for="inlineFormCheck">
               Show Inactive Suppliers &nbsp;&nbsp;
             </label>
@@ -94,10 +94,10 @@
           </div>
         </div>
         <div class="row form-group">
-          <label class="col-sm-4 col-form-label required">Payment Terms:</label>
+          <label class="col-sm-4 col-form-label required">Payment Method:</label>
           <div class="col-sm-8">
             <div class="input-group">
-              <input type="text" name="terms" maxlength="50" class="form-control">
+              <input type="text" name="terms" maxlength="50" class="form-control" [(ngModel)]="supplierPaymentmethod">
             </div>
           </div>
         </div>
