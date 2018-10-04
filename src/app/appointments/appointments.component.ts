@@ -18,6 +18,7 @@ import { TypeaheadModule } from 'ngx-bootstrap';
   styleUrls: ['./appointments.component.css']
 })
 export class AppointmentsComponent implements OnInit {
+  searchCondition=false;
   model = {
     user_id: ''
   }
@@ -131,6 +132,7 @@ export class AppointmentsComponent implements OnInit {
   }
   customerSearch(val) {
     if (val.length >= 3) {
+      this.searchCondition=true;
       this.http.get(environment.host + 'users/search/' + val).subscribe(data => {
         //this.users.push(data);
         this.temp.push(data);
