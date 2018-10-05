@@ -8,7 +8,6 @@ import { InventoryServiceService } from '../../services/inventory-service.servic
   styleUrls: ['./suppliers.component.css']
 })
 export class SuppliersComponent implements OnInit {
-
   supplierData = new Array();
   selectedSupplierData: any = {}
   supplier: any = {
@@ -30,7 +29,6 @@ export class SuppliersComponent implements OnInit {
     "supplier_taxrate": '',
     "supplier_paymentterms": '',
     "supplier_notes": ''
-   
   }
   editStyle = "hidden";
 
@@ -47,7 +45,6 @@ export class SuppliersComponent implements OnInit {
   newSupplier() {
     this.router.navigate(['inventory/suppliers/new-suppliers']);
   }
-
   setSuppliers(supplier_id: any) {
     this.supplier.supplier_id = supplier_id;
     this.service.getSelectedSupplier(this.supplier.supplier_id).subscribe(response => {
@@ -57,9 +54,9 @@ export class SuppliersComponent implements OnInit {
       this.supplier.supplier_id = selectedData.supplier_id;
       this.supplier.supplier_name = selectedData.supplier_name;
       this.supplier.supplier_status = selectedData.supplier_status;
-      if(this.supplier.supplier_status  == '1'){
-        this.supplier.supplier_status='';
-      }      
+      if (this.supplier.supplier_status == '1') {
+        this.supplier.supplier_status = '';
+      }
       this.supplier.supplier_contact_name = selectedData.supplier_contact_name;
       this.supplier.supplier_title = selectedData.supplier_title;
       this.supplier.supplier_phone = selectedData.supplier_phone;
@@ -82,7 +79,7 @@ export class SuppliersComponent implements OnInit {
     var inactiveCheckbox;
     console.log(val);
     console.log(val.supplier_id)
-console.log(val.supplier_status)
+    console.log(val.supplier_status)
     if (val.supplier_status) {
       inactiveCheckbox = '0'
     } else {
