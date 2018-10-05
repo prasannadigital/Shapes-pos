@@ -8,3 +8,13 @@
 .search-list:hover{
     cursor: pointer;
 }
+
+.no-search{
+    display:inline-block;
+    background-color:antiquewhite;
+    width:150px;
+    height:30px;
+    font-size: 20px;
+    color:red;
+    
+}
