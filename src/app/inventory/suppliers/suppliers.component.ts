@@ -30,11 +30,33 @@ export class SuppliersComponent implements OnInit {
     "supplier_paymentterms": '',
     "supplier_notes": ''
   }
+
+  inactiveSupplier:'';
   editStyle = "hidden";
 
   constructor(private router: Router, private service: InventoryServiceService) { }
 
   ngOnInit() {
+    this.getAllSuppliers();
+  }
+  inactiveCheckbox(){
+    var inactiveCheckbox
+    console.log(this.inactiveSupplier);
+    if (this.inactiveSupplier == undefined || !this.inactiveSupplier ) {
+      inactiveCheckbox = '0'
+      console.log(inactiveCheckbox)
+      this.service.getInactiveSupplier(inactiveCheckbox).subscribe(res=>{
+        this.supplierData = res.json();
+        this.supplier.supplier_id=' ';
+      })
+    }
+    if(this.inactiveSupplier){
+      this.getAllSuppliers();
+    }
+this.editStyle = "hidden";
+  }
+
+  getAllSuppliers(){
     this.service.getSuppliers().subscribe(res => {
       this.supplierData = res.json();
     })

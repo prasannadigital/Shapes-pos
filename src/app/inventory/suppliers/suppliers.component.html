@@ -30,13 +30,14 @@
         <label for="input" class="col-md-2 control-label">Suppliers:</label>
         <div class="col-md-3">
           <select class="form-control" name="supplier" (ngModelChange)="setSuppliers($event)" [(ngModel)]="supplier.supplier_id">
+            <option value="0" disabled selected>Select</option>
             <option *ngFor="let data1 of this.supplierData" [ngValue]="data1.supplier_id">{{data1.supplier_name}}</option>
           </select>
         </div>
         <div class="col-md-5">
           <div class="form-check pull-right">
 
-            <input class="form-check-input" type="checkbox" value="y" id="inlineFormCheck1">
+            <input class="form-check-input" type="checkbox" value="y" id="inlineFormCheck1" [(ngModel)]="inactiveSupplier" (click)="inactiveCheckbox()">
             <label class="form-check-label" for="inlineFormCheck">
               Show Inactive Suppliers &nbsp;&nbsp;
             </label>

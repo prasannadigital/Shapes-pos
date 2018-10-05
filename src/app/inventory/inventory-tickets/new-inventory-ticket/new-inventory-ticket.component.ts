@@ -89,7 +89,8 @@ export class NewInventoryTicketComponent implements OnInit {
       item_qty: this.inventory.itemQuty,
       amt: this.amount,
       pos_status: this.inventory.poStatus,
-      status: 1
+      status: 1,
+      emp_id:7
     }
     if (data.source == '') {
       data.source = null;

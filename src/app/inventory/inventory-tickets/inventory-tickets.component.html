@@ -38,7 +38,7 @@
 			<label for="input" class="col-md-3 control-label">Start Date</label>
 			<div class="col-md-7">
 				<div class="input-group">
-					<p-calendar [(ngModel)]="date1" name="shedule.startdate" [showIcon]="true" (ngModelChange)="getStartDate($event)" dateFormat="yy-mm-dd"></p-calendar>
+					<p-calendar [(ngModel)]="date1"  name="startdate" [showIcon]="true" [(ngModel)]="startDate" (ngModelChange)="getStartDate($event)" dateFormat="yy-mm-dd"></p-calendar>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -49,7 +49,7 @@
 			<label for="input" class="col-md-3 control-label">End Date</label>
 			<div class="col-md-7">
 				<div class="input-group">
-					<p-calendar [(ngModel)]="date2" name="shedule.enddate" [showIcon]="true" (ngModelChange)="getEndDate($event)" dateFormat="yy-mm-dd"></p-calendar>
+					<p-calendar  [(ngModel)]="date2" name="enddate" [showIcon]="true" [(ngModel)]="endDate" (ngModelChange)="getEndDate($event)" dateFormat="yy-mm-dd"></p-calendar>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -60,12 +60,9 @@
 		<div class="form-group">
 			<label for="input" class="col-md-3 control-label">Source</label>
 			<div class="col-md-7">
-				<select name="shedule.emp_id" class="form-control">
-					<option name="source" selected="">select</option>
-					<option>All Locations</option>
-					<option>option 1</option>
-					<option>option 2</option>
-				</select>
+				<select class="form-control" name="supplier"  [(ngModel)]="supplier_id" >
+					<option *ngFor="let data1 of this.supplierData" [ngValue]="data1.supplier_id">{{data1.supplier_name}}</option>
+				  </select>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -74,12 +71,9 @@
 		<div class="form-group">
 			<label for="input" class="col-md-3 control-label">Destination</label>
 			<div class="col-md-7">
-				<select name="shedule.emp_id" class="form-control">
-					<option name="source" selected="">select</option>
-					<option>All Locations</option>
-					<option>option 1</option>
-					<option>option 2</option>
-				</select>
+				<select name="location.branchid" class="form-control"  [(ngModel)]="branch_id">
+					<option *ngFor="let data1 of this.locationData" [ngValue]="data1.branch_id">{{data1.branch_name}}</option>
+				  </select>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -111,7 +105,14 @@
 			<div class="clear"></div>
 		</div>
 	</div>
-
+	<div class="col-md-4 col-sm-4 col-xs-12"></div>
+	<div class="col-md-4 col-sm-4 col-xs-12"></div>
+	<div class="col-md-2 col-sm-4 col-xs-12">
+		<button type="submit" class="btn btn-primary" (click)=" filterInventory()">Submit</button>
+	</div>
+	<div class="col-md-2 col-sm-4 col-xs-12">
+		<button type="submit" class="btn btn-warning" (click)="inventoryReset()">Reset</button>
+	</div>
 	<div class="clear"></div>
 </div>
 <table width="100%">
@@ -129,18 +130,18 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>111</td>
-			<td>4/19/2018</td>
+		<tr *ngFor="let item of inventoryData">
+			<td>{{item.inv_ticket_id}}</td>
 			<td></td>
-			<td>city</td>
-			<td>96</td>
-			<td>0</td>
-			<td>$0.00</td>
-			<td>Logged</td>
+			<td>{{item.source}}</td>
+			<td>{{item.branch_name}}</td>
+			<td>{{item.product_id}}</td>
+			<td>{{item.item_qty}}</td>
+			<td>{{item.amt}}</td>
+			<td>{{item.pos_status}}</td>
 		</tr>
 	</tbody>
 
 </table>
-
+<div class="clear"></div>
 <app-footer></app-footer>
