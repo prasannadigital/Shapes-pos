@@ -63,16 +63,16 @@
           </div>
         </div>
         <div class="row searchParameters" *ngIf="searchCondition">
-          
-            <div class="search-list" *ngFor="let item of users " (click)="onSelect(item)">
+          {{this.message}}
+            <li class="search-list" *ngFor="let item of this.users " (click)="onSelect(item)">
                 <span>
                   <a href="#"></a>{{item.name}}</span>
-              </div>
+                </li>
       
           </div>
           <div class="row" *ngIf="noRecordsFound">
-          
-              <button (click)="createNewCustomer();"></button>
+          <div class="row"><h3 class="alertMessage">No Records Found</h3></div>
+              <button data-toggle="modal" data-target="#addCustomerModelPopup" (click)="createNewCustomer();">Add New Customer</button>
         
             </div>
       <div class="row">
@@ -133,7 +133,196 @@
  
 
 </div>
-
+<div class="modal fade" id="addCustomerModelPopup">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="customer-info">
+          <h2>Add New Customer</h2>
+        </div>
+        <div class="modal-body">
+          <div class="add-client">
+            <div class="client-form">
+              <div class="check-box-client">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input">
+                  <label class="form-check-label">Swipe ID to store Address</label>
+                </div>
+              </div>
+              <div class=" col-md-6 col-sm-6 col-xs-12 client-form-left container" novalidate>
+                <form>
+                  <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" name="fname" class="form-control" [(ngModel)]="firstName" ngModel required #fname="ngModel" placeholder="First Name">
+                    <div *ngIf="fname.errors?.required && submitted" style="color:red">First Name is required </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" name="lname" [(ngModel)]="lastName" ngModel required #lname="ngModel" placeholder="Last Name">
+                    <div *ngIf="lname.errors?.required && submitted" style="color:red">Last Name is required </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Birthday</label>
+                    <input type="date" class="form-control" name="DOB" [(ngModel)]="DOB" required placeholder="Birthday">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect2">Gender</label>
+                    <select [(ngModel)]="gender" name="firstName" class="form-control">
+                      <option value="" disabled selected>Select Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Phone</label>
+                    <input type="text" class="form-control" [(ngModel)]="mobileNo" name="mobile" placeholder="Home or Mobile" ngModel required
+                      #mobile="ngModel">
+                    <div *ngIf="mobile.errors?.required && submitted" style="color:red">Phone Number is required </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" [(ngModel)]="MailId" name="Mail" class="form-control" placeholder="name@example.com" ngmodel required
+                      #Mail="ngModel">
+                    <div *ngIf="Mail.errors?.required && submitted" style="color:red">Email is required </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Address</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                  </div>
+                </form>
+              </div>
+              <!----------------Form left side end---------------------------->
+              <div class="col-md-6 col-sm-6 col-xs-12 client-form-right">
+                <form>
+                  <div class="form-group">
+                    <label>Country</label>
+                    <select class="form-control">
+                      <option>Select Country</option>
+                      <option>Afghanistan</option>
+                      <option>Albania</option>
+                      <option>Algeria</option>
+                      <option>Andorra</option>
+                      <option>Angola</option>
+                      <option>Anguilla</option>
+                      <option>Antigua & Barbuda</option>
+                      <option>Argentina</option>
+                      <option>Armenia</option>
+                      <option>Australia</option>
+                      <option>Austria</option>
+                      <option>Azerbaijan</option>
+                      <option>Bahamas</option>
+                      <option>Bahrain</option>
+                      <option>Bangladesh</option>
+                      <option>Barbados</option>
+                      <option>Belarus</option>
+                      <option>Belgium</option>
+                      <option>Belize</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>State</label>
+                    <select class="form-control">
+                      <option>Select State</option>
+                      <option>Afghanistan</option>
+                      <option>Albania</option>
+                      <option>Algeria</option>
+                      <option>Andorra</option>
+                      <option>Angola</option>
+                      <option>Anguilla</option>
+                      <option>Antigua & Barbuda</option>
+                      <option>Argentina</option>
+                      <option>Armenia</option>
+                      <option>Australia</option>
+                      <option>Austria</option>
+                      <option>Azerbaijan</option>
+                      <option>Bahamas</option>
+                      <option>Bahrain</option>
+                      <option>Bangladesh</option>
+                      <option>Barbados</option>
+                      <option>Belarus</option>
+                      <option>Belgium</option>
+                      <option>Belize</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>City</label>
+                    <select class="form-control">
+                      <option>Select State</option>
+                      <option>Afghanistan</option>
+                      <option>Albania</option>
+                      <option>Algeria</option>
+                      <option>Andorra</option>
+                      <option>Angola</option>
+                      <option>Anguilla</option>
+                      <option>Antigua & Barbuda</option>
+                      <option>Argentina</option>
+                      <option>Armenia</option>
+                      <option>Australia</option>
+                      <option>Austria</option>
+                      <option>Azerbaijan</option>
+                      <option>Bahamas</option>
+                      <option>Bahrain</option>
+                      <option>Bangladesh</option>
+                      <option>Barbados</option>
+                      <option>Belarus</option>
+                      <option>Belgium</option>
+                      <option>Belize</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Postal Code</label>
+                    <input type="text" class="form-control" placeholder="enter your Postal Code">
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" checked>
+                    <label class="form-check-label">Subscribe to email notification</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" checked>
+                    <label class="form-check-label">Subscribe to our promotions</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">Prefers not to provide email</label>
+                  </div>
+                </form>
+                <div class="new-customer-footer">
+                  <div class="col-md-4 col-sm-6 col-xs-12 ncf-left">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Membership Card No</label>
+                      <input type="text" class="form-control" placeholder="enter Membership Card No">
+                    </div>
+                  </div>
+                  <div class="col-md-8 col-sm-6 col-xs-12 ncf-right">
+                    <ul>
+                      <li>
+                        <a data-dismiss="modal">
+                          <i class="fas fa-times"></i>
+                          <br>Cancel</a>
+                      </li>
+                      <li (click)="saveCustomer();showSuccessForCustomer();">
+                        <a data-dismiss="modal">
+                          <i class="fas fa-check"></i>
+                          <br>Save</a>
+                      </li>
+                      <li>
+                        <a>
+                          <i class="fas fa-save"></i>
+                          <br>Save & Use</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!----------------Form right side end---------------------------->
+              <div class="clear"></div>
+            </div>
+            <!--Client Profile-->
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 

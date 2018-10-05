@@ -27,3 +27,7 @@
 .search-list:hover{
     cursor: pointer;
 }
+.alertMessage{
+  color: red;
+  text-align: center;
+}

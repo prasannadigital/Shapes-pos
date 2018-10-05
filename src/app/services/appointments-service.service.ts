@@ -15,8 +15,8 @@ export class AppointmentsServiceService {
 
     constructor(private http: Http) {}
 
-    get() {
-      return this.http.get("http://ec2-54-88-194-105.compute-1.amazonaws.com:3001/apptest2");
+    get(id1:number,id2:number) {
+      return this.http.get("http://ec2-54-88-194-105.compute-1.amazonaws.com:3001/emp-branch-appt/"+id1+'/'+id2);
     }
    
     saveAppointment(data:any){

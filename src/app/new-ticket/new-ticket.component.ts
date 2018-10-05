@@ -127,7 +127,8 @@ export class NewTicketComponent implements OnInit {
         this.temp.push(data);
         this.states = this.temp.pop();
       });
-    } else{
+    } 
+    else{
       this.states=[];
     }
   }

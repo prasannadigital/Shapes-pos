@@ -10,7 +10,7 @@ import {Message} from 'primeng/components/common/api';
 import {MessageService} from 'primeng/components/common/messageservice';
 import {DropdownModule} from 'primeng/dropdown';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { TypeaheadModule } from 'ngx-bootstrap';
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: 'appointments',
@@ -18,6 +18,24 @@ import { TypeaheadModule } from 'ngx-bootstrap';
   styleUrls: ['./appointments.component.css']
 })
 export class AppointmentsComponent implements OnInit {
+  selectedOption: any;
+  searchValue:'';
+  firstName = '';
+  lastName = '';
+  DOB = '';
+  gender = '';
+  mobileNo = '';
+  MailId = '';
+  name = '';
+  custFirstName = '';
+  custLastName = '';
+  custGender = '';
+  custNo = '';
+  custEmail = '';
+  custStatus = '';
+  submitted = false;
+  noRecordsFound=false;
+  message:string;
   searchCondition=false;
   model = {
     user_id: ''
@@ -66,18 +84,43 @@ export class AppointmentsComponent implements OnInit {
     });
     scheduler.config.xml_date = "%Y-%m-%d %H:%i";
     scheduler.init(this.schedulerContainer.nativeElement);
-    this.service.get()
-      .subscribe((memberships) => {
-        this.locationData = memberships.json();
-        console.log(this.locationData);
-        scheduler.parse(this.locationData, "json");
-        console.log(this.locationData);
-      });
+   //this.appiontmentDisplay();
       
+  }
+  appiontmentDisplay(id1:any,id2:any){
+    this.service.get(this.shedule.employee_id,this.shedule.branch_id)
+    .subscribe((res) => {
+      this.appiontmentData = this.transformJsonToCustomFormat(res.json().data);
+      console.log(this.appiontmentData);
+      scheduler.parse(this.appiontmentData, "json");
+      console.log(this.appiontmentData);
+    });
+  }
+  transformJsonToCustomFormat(input: any[]) {
+    console.log(input);
+    const response = [];
+
+    input.forEach(item => {
+      response.push(
+        {
+          id: item.id,
+          start_date:  moment(item.start_date).format('YYYY-MM-DD HH:mm').toString(),
+          end_date:  moment(item.end_date).format('YYYY-MM-DD HH:mm').toString(),
+          text: item.firstname
+        }
+      );
+      
+    });
+
+    return response;
   }
   showSuccess() {
     this.msgs = [];
       this.msgs.push({severity:'info', summary:'You have sucessfully added availability of Beauty Advisor on '+this.appointments.start_date+' at your location '});
+  }
+  showSuccessForCustomer() {
+    this.msgs = [];
+      this.msgs.push({severity:'info', summary:'You have Added Customer sucessfully'});
   }
   viewNewAppiontment(){
     this.createNew=true;
@@ -112,11 +155,12 @@ export class AppointmentsComponent implements OnInit {
   }
   setStaffId(employee_id: any): void {
     this.shedule.employee_id = employee_id;
-    this.serviceData.getStaffAppointments(this.shedule.employee_id,this.shedule.branch_id).subscribe(res => {
-      this.appiontmentData = res.json().data;
-      console.log("hai"+this.appiontmentData);
-      alert("Appointments"+this.appiontmentData);
-    });
+    this.appiontmentDisplay(this.shedule.employee_id,this.shedule.branch_id);
+    //this.serviceData.getStaffAppointments(this.shedule.employee_id,this.shedule.branch_id).subscribe(res => {
+     // this.appiontmentData = res.json().data;
+      //console.log("hai"+this.appiontmentData);
+     // alert("Appointments"+this.appiontmentData);
+    //});
     
   }
   createAppointment(){
@@ -129,22 +173,51 @@ export class AppointmentsComponent implements OnInit {
     this.service.saveAppointment(this.appointments).subscribe(response => {
     });
     this.createNew=false;
+    this.appiontmentDisplay(this.shedule.employee_id,this.shedule.branch_id);
   }
   customerSearch(val) {
+    this.users.length=0;
+    this.temp.length=0;
+    this.searchCondition=false;
+    this.noRecordsFound = false;
     if (val.length >= 3) {
-      this.searchCondition=true;
       this.http.get(environment.host + 'users/search/' + val).subscribe(data => {
-        //this.users.push(data);
         this.temp.push(data);
+        this.searchCondition=true;
         console.log(this.temp);
-        this.users = this.temp.pop();  
-        console.log(this.users);
-       // this. = this.temp.pop();
+        if(this.temp[0]=== null){
+          this.searchCondition=false;
+          this.noRecordsFound = true;
+          
+        }
+       else{
+        this.users = this.temp.pop();
+       }
       });
+    } else{
+      this.users.length=0;
     }
   }
-  onSelect($event){
-    this.appointments.user_id=this.selectedValue;
-    console.log(this.model.user_id);
+  saveCustomer() {
+    this.submitted = true;
+    var data = {
+      firstname: this.firstName,
+      lastname: this.lastName,
+      email_id: this.MailId,
+      mobile: this.mobileNo,
+      gender: this.gender,
+      dob: this.DOB
+    }
+    this.http.post(environment.host + 'users', data).subscribe(data => {
+    });
+    this.firstName=this.searchValue;
+    this.customerSearch(this.searchValue);
   }
+  onSelect(item) {
+    this.selectedOption = item;
+    this.searchValue = this.selectedOption.firstname;
+    this.appointments.user_id=this.selectedOption.user_id;
+    this.searchCondition=false;
+  }
+
 }
