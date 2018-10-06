@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { InventoryServiceService } from '../../../services/inventory-service.service';
 @Component({
   selector: 'app-new-purchase-order',
@@ -16,7 +17,7 @@ export class NewPurchaseOrderComponent implements OnInit {
     "supplierAddress":'',
   }
   selectDisable=true;
-  constructor(private router:Router,private service:InventoryServiceService) { }
+  constructor(private router:Router,private _location: Location,private service:InventoryServiceService) { }
 
   ngOnInit() {
     this.service.getSuppliers().subscribe(res => {
@@ -24,7 +25,7 @@ export class NewPurchaseOrderComponent implements OnInit {
     })
   }
   backToInventory() {
-    this.router.navigate(['inventory']);
+    this._location.back();
   }
   orderSupplier(){
     this.router.navigate(['inventory/purchase-order-supplier']);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { InventoryServiceService } from '../../../services/inventory-service.service';
 @Component({
   selector: 'app-add-new-suppliers',
@@ -26,12 +27,12 @@ export class AddNewSuppliersComponent implements OnInit {
   supplierNotes: '';
   supplierStatus:'';
 
-  constructor(private router: Router, private service: InventoryServiceService) { }
+  constructor(private router: Router,private _location: Location, private service: InventoryServiceService) { }
 
   ngOnInit() {
   }
   backToInventory() {
-    this.router.navigate(['inventory']);
+    this._location.back();
   }
   addSupplier() {
   let  inactiveCheckbox;

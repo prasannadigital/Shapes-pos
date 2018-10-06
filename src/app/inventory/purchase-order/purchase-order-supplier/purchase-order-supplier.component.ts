@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as moment from 'moment/moment';
+import { Location } from '@angular/common';
 import { InventoryServiceService } from '../../../services/inventory-service.service';
 @Component({
   selector: 'app-purchase-order-supplier',
@@ -25,7 +26,7 @@ export class PurchaseOrderSupplierComponent implements OnInit {
     'product_id':'',
 
   }
-  constructor(private router: Router, private service: InventoryServiceService) { }
+  constructor(private router: Router,private _location: Location, private service: InventoryServiceService) { }
 
   ngOnInit() {
     this.retrieveData();
@@ -35,7 +36,7 @@ export class PurchaseOrderSupplierComponent implements OnInit {
 
   }
   backToInventory() {
-    this.router.navigate(['inventory']);
+    this._location.back();
   }
 
   retrieveData() {

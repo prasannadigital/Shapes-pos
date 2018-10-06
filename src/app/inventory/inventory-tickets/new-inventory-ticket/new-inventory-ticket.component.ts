@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { SheduleServiceService } from '../../../services/shedule-service.service';
 import { InventoryServiceService } from '../../../services/inventory-service.service';
 @Component({
@@ -41,7 +42,7 @@ export class NewInventoryTicketComponent implements OnInit {
     'poStatus': ''
   }
   amount: number;
-  constructor(private router: Router, private locationService: SheduleServiceService, private inventoryService: InventoryServiceService) { }
+  constructor(private router: Router,private _location: Location, private locationService: SheduleServiceService, private inventoryService: InventoryServiceService) { }
 
   ngOnInit() {
     this.locationService.getAllLocations().subscribe(response => {
@@ -55,7 +56,7 @@ export class NewInventoryTicketComponent implements OnInit {
     })
   }
   backToInventory() {
-    this.router.navigate(['inventory']);
+    this._location.back();
   }
   Transfer() {
     this.inventoryTranfer = true;
