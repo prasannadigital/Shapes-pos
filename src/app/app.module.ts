@@ -194,6 +194,7 @@ const routes: Routes = [
   { path: 'inventory/new-inventory-ticket', component: NewInventoryTicketComponent, canActivate: [AuthGuard] },
   { path: 'inventory/new-purchase-order', component: NewPurchaseOrderComponent, canActivate: [AuthGuard] },
   { path: 'inventory/purchase-order-supplier', component: PurchaseOrderSupplierComponent, canActivate: [AuthGuard] },
+  
 
   { path: 'setup', component: SetupComponent, canActivate: [AuthGuard] },
   { path: 'setup/business-settings', component: BusinessSettingsComponent, canActivate: [AuthGuard] },
@@ -442,7 +443,7 @@ const routes: Routes = [
 
     AppointmentMetricsComponent,
 
-    PayRatesComponent
+    PayRatesComponent,
 
   ],
   imports: [

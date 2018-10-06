@@ -19,6 +19,7 @@ export class PurchaseOrderSupplierComponent implements OnInit {
   deliveryDate = '';
   showItem = '';
   poNotes = '';
+  autoGeneratePo:any;
 
   product:any={
     'product_id':'',
@@ -53,11 +54,14 @@ export class PurchaseOrderSupplierComponent implements OnInit {
     console.log(this.deliveryDate);
   }
   savePurchaseOrder() {
+    this.autoGeneratePo=Math.floor(Math.random() * 899999 + 100000);
+    console.log(this.autoGeneratePo);
     var data: any = {
       supplier_id: this.supplierId,
       po_date: this.deliveryDate,
       po_items: this.showItem,
       po_remarks: this.poNotes,
+      po_invoice_no:this.autoGeneratePo,
       status: 1
     }
     console.log(data);

@@ -31,8 +31,8 @@ public postPurchaseOrder(data:any){
 return this.http.post(environment.host + 'pur-orders',data);
 }
 
-public getPurchaseOrder(){
-  return this.http.get(environment.host + 'pur-orders');
+public getPurchaseOrder(data:any){
+  return this.http.get(environment.host + 'pur-orders?' +data);
 }
 
 public getSelectedPurchaseOrder(id:any){

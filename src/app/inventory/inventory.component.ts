@@ -11,21 +11,75 @@ export class InventoryComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    if (sessionStorage.getItem('inventory-routing') == '"purchase"') {
+      this.purchaseOrderClick()
+    } else if (sessionStorage.getItem('inventory-routing') == '"supplier"') {
+      console.log("click here");
+      this.supplierClick();
+    } else if (sessionStorage.getItem('inventory-routing') == '"inventory"') {
+      this.inventoryTicketClick();
+    } else if (sessionStorage.getItem('inventory-routing') == '"update"') {
+      this.updateInventory();
+    } else if (sessionStorage.getItem('inventory-routing') == '"reports"') {
+      this.reportsClick();
+    }
   }
-  purchaseOrderClick() {
+  redirectToOrder() {
     this.router.navigate(['inventory/purchase-order']);
   }
-  supplierClick() {
+  redirectToSupplier() {
     this.router.navigate(['inventory/suppliers']);
   }
-  inventoryTicketClick() {
+  redirectToInventory() {
     this.router.navigate(['inventory/inventory-tickets']);
   }
-  updateInventory() {
+  redirectToUpdate() {
     this.router.navigate(['inventory/physical-inventory']);
   }
-  reportsClick() {
+  redirectToReportsInventory() {
     this.router.navigate(['inventory/reports']);
   }
+  purchaseOrderClick() {
+    sessionStorage.setItem('inventory-routing', JSON.stringify("purchase"));
+    $(".purchase-order").trigger("click");
+    this.removeClass();
+    $(".purchase-order").addClass("active");
 
+  }
+  supplierClick() {
+    sessionStorage.setItem('inventory-routing', JSON.stringify("supplier"));
+    $(".supplier-info").trigger("click");
+    this.removeClass();
+    $(".supplier-info").addClass("active");
+  }
+  inventoryTicketClick() {
+    sessionStorage.setItem('inventory-routing', JSON.stringify("inventory"));
+    $(".inventory-info").trigger("click");
+    this.removeClass();
+    $(".inventory-info").addClass("active");
+
+  }
+  updateInventory() {
+    sessionStorage.setItem('inventory-routing', JSON.stringify("update"));
+    $(".update-info").trigger("click");
+    this.removeClass();
+    $(".update-info").addClass("active");
+
+  }
+  reportsClick() {
+    sessionStorage.setItem('inventory-routing', JSON.stringify("reports"));
+    $(".reports-info").trigger("click");
+    this.removeClass();
+    $(".reports-info").addClass("active");
+
+  }
+
+  removeClass() {
+    $(".purchase-order").removeClass("active");
+    $(".supplier-info").removeClass("active");
+    $(".inventory-info").removeClass("active");
+    $(".update-info").removeClass("active");
+    $(".reports-info").removeClass("active");
+
+  }
 }
