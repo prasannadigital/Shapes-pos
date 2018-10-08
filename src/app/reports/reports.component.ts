@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+declare var $: any;
 @Component({
   selector: 'reports',
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.css']
 })
 export class ReportsComponent implements OnInit {
+  password = "";
+  mailId = "";
   staffContent = false;
   salesContent = false;
   clientsContent = false;
@@ -14,9 +17,12 @@ export class ReportsComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-
+    this.loginPopUp();
   }
+  loginPopUp() {
 
+    $('#myModal').modal('show');
+  }
   showStaffContent() {
     this.staffContent = true;
     this.salesContent = false;

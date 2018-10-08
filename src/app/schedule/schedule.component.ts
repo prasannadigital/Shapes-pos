@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { SheduleServiceService } from '../services/shedule-service.service';
 import * as moment from 'moment/moment';
+declare var $: any;
 @Component({
   selector: 'schedule',
   templateUrl: './schedule.component.html',
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit {
+  password = "";
+  mailId = "";
   public date1: any;
   public date2: any;
   cols: any[];
@@ -30,6 +33,7 @@ export class ScheduleComponent implements OnInit {
   constructor(private service: SheduleServiceService, private messageService: MessageService) { }
 
   ngOnInit() {
+    this.loginPopUp();
     this.service.getAllLocations().subscribe(response => {
       this.locationData = response.json();
       console.log("ghdsgfhdbfbdfbdfbdfbdfbdfbdfbgdfgsdhf"+this.locationData)
@@ -39,7 +43,10 @@ export class ScheduleComponent implements OnInit {
     });
 
   }
+  loginPopUp() {
 
+    $('#myModal').modal('show');
+  }
   showSuccess() {
     this.messageService.add({ key: 'tl', severity: 'success', summary: 'Success Message', detail: 'Order submitted' });
   }

@@ -2,18 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {SelectItem} from 'primeng/api';
 import { Router } from '@angular/router';
-
+declare var $: any;
 @Component({
   selector: 'setup',
   templateUrl: './setup.component.html',
   styleUrls: ['./setup.component.css']
 })
 export class SetupComponent implements OnInit {
- 
+  password = "";
+  mailId = "";
   constructor(private router:Router) {
   }
 
   ngOnInit() {
+    this.loginPopUp() ;
+  }
+  loginPopUp() {
+
+    $('#myModal').modal('show');
   }
   businessSettingsClick(){
     this.router.navigate(['setup/business-settings']);
