@@ -7,10 +7,11 @@ declare var $: any;
   styleUrls: ['./inventory.component.css']
 })
 export class InventoryComponent implements OnInit {
-
+  password = "";
+  mailId = "";
   constructor(private router: Router) { }
-
   ngOnInit() {
+    this.loginPopUp();
     if (sessionStorage.getItem('inventory-routing') == '"purchase"') {
       this.purchaseOrderClick()
     } else if (sessionStorage.getItem('inventory-routing') == '"supplier"') {
@@ -24,6 +25,10 @@ export class InventoryComponent implements OnInit {
       this.reportsClick();
     }
   }
+  loginPopUp() {
+
+    $('#myModal').modal('show');
+  } 
   redirectToOrder() {
     this.router.navigate(['inventory/purchase-order']);
   }

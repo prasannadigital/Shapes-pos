@@ -79,10 +79,10 @@ export class TimeClocksComponent implements OnInit {
     this.today = Date.now();
   }
 
-  loginPopUp() {
+ loginPopUp() {
 
     $('#myModal').modal('show');
-  }
+  } 
 
   backLocation() {
     this._location.back();

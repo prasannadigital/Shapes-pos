@@ -21,6 +21,8 @@ import { MessageService } from 'primeng/components/common/messageservice';
 })
 
 export class ManagerComponent implements OnInit {
+  password = "";
+  mailId = "";
   msgs: Message[] = [];
   addMembership: any = {
     'sub_cat_id': '',
@@ -207,6 +209,7 @@ export class ManagerComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loginPopUp();
     this.service.getCategoryList().subscribe(response => {
       this.catagroyData = response.json();
     });
@@ -282,7 +285,10 @@ export class ManagerComponent implements OnInit {
       "category_name": "Make Up"
     };
   }
+  loginPopUp() {
 
+    $('#myModal').modal('show');
+  }
   addMembershipClick() {
     this.service.saveMembershipDetails(this.addMembership).subscribe(response => {
     })

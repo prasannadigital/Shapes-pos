@@ -1,6 +1,51 @@
 <div class="tabs-services">
   <app-header></app-header>
 </div>
+<div id="myModal" class="modal fade" role="dialog" data-backdrop="static">
+
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form>
+          <div class="form-group">
+            <div class="col-md-4 col-sm-6 login_form-left">
+              <label>User Name</label>
+            </div>
+            <div class="col-md-8 col-sm-6 login_form-right">
+              <input type="text" class="form-control" [(ngModel)]="mailId" name="some" placeholder="Employee Id">
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-4 login_form-left">
+              <label>Password</label>
+            </div>
+            <div class="col-md-8 col-sm-6 login_form-right">
+              <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Employee Password">
+              <div *ngFor="let alert of alerts">
+                <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">
+                  <strong>{{ alert.msg }}</strong>
+                </alert>
+              </div>
+            </div>
+  
+            <div class="clear"></div>
+          </div>
+          <div class="login_form-submit">
+            <div class="row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-3">
+                <button type="submit" (click)="loginSubmite();" data-dismiss="modal" class="btn btn-primary submit-button">Sign In</button>
+              </div>
+              <div class="col-sm-2">
+                <button type="submit" (click)="backLocation()" data-dismiss="modal" class="btn btn-warning">Cancel</button>
+              </div>
+              <div class="col-sm-3"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 <div class="tab-pane " id="manager" role="tabpanel" aria-labelledby="manager-tab">
   <div class="manager-tap">
     <div class="col-md-3 col-sm-3 col-xs-12 manager-tap-left">
