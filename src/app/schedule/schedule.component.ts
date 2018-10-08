@@ -35,11 +35,11 @@ export class ScheduleComponent implements OnInit {
   ngOnInit() {
     this.loginPopUp();
     this.service.getAllLocations().subscribe(response => {
-      this.locationData = response.json();
+      this.locationData = response.json().result;
       console.log("ghdsgfhdbfbdfbdfbdfbdfbdfbdfbgdfgsdhf"+this.locationData)
     });
     this.service.getEmployee().subscribe(response => {
-      this.empData = response.json();
+      this.empData = response.json().result;
     });
 
   }
@@ -69,7 +69,7 @@ export class ScheduleComponent implements OnInit {
 
   getShedule() {
     this.service.getEmpAppointments(this.shedule.startdate, this.shedule.enddate, this.shedule.employee_id, this.shedule.branch_id).subscribe(response => {
-      this.appointmentsData = response.json();
+      this.appointmentsData = response.json().result;
       this.titleStyle = "visible";
     });
   }
@@ -77,7 +77,8 @@ export class ScheduleComponent implements OnInit {
   setStaff(employee_id: any, employee_firstname: any): void {
     this.shedule.employee_id = employee_id;
     this.service.getSelectedEmployee(this.shedule.employee_id).subscribe(response => {
-      this.selectedEmpData = response.json();
+      console.log(response.json().result);
+      this.selectedEmpData = response.json().result;
       var data = this.selectedEmpData.pop();
       this.selectedEmpName = data.employee_firstname;
     });

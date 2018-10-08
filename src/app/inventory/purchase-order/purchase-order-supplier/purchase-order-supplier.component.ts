@@ -31,7 +31,7 @@ export class PurchaseOrderSupplierComponent implements OnInit {
   ngOnInit() {
     this.retrieveData();
     this.service.getproduct().subscribe(res => {
-      this.productData = res.json();
+      this.productData = res.json().result;
     });
 
   }
@@ -69,7 +69,7 @@ export class PurchaseOrderSupplierComponent implements OnInit {
     }
     console.log(data);
     this.service.postPurchaseOrder(data).subscribe(res => {
-      console.log(res.json());
+      console.log(res.json().result);
     });
   }
 }

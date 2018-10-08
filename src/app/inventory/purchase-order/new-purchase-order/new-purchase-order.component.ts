@@ -21,7 +21,8 @@ export class NewPurchaseOrderComponent implements OnInit {
 
   ngOnInit() {
     this.service.getSuppliers().subscribe(res => {
-      this.supplierData = res.json();
+      console.log(res.json().result)
+      this.supplierData = res.json().result;
     })
   }
   backToInventory() {

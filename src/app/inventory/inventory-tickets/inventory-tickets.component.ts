@@ -27,11 +27,11 @@ export class InventoryTicketsComponent implements OnInit {
 
   ngOnInit() {
     this.http.get(environment.host + 'inv-tkts').subscribe(res => {
-      this.inventoryData = res.json();
+      this.inventoryData = res.json().result;
       console.log(this.inventoryData)
     });
     this.service.getSuppliers().subscribe(res => {
-      this.supplierData = res.json();
+      this.supplierData = res.json().result;
       this.supplier_id = '';
     });
     this.location.getAllLocations().subscribe(response => {
@@ -64,21 +64,21 @@ export class InventoryTicketsComponent implements OnInit {
       url = url + '&destination=' + this.branch_id
     }
     this.service.getInventoryTicket(url).subscribe(res => {
-      console.log(res.json());
+      console.log(res.json().result);
       console.log("*******")
-      console.log(res.json().status);
-      if (res.json().status == undefined) {
-        this.inventoryData = res.json();
+      console.log(res.json().result.status);
+      if (res.json().result.status == undefined) {
+        this.inventoryData = res.json().result;
         console.log(this.inventoryData)
       } else {
-        this.inventoryData = res.json()._body;
+        this.inventoryData = res.json().result._body;
       }
     })
   }
 
   inventoryReset() {
     this.http.get(environment.host + 'inv-tkts').subscribe(res => {
-      this.inventoryData = res.json();
+      this.inventoryData = res.json().result;
     });
     this.startDate = "";
     this.endDate = "";

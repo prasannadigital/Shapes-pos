@@ -46,7 +46,7 @@ export class EditPromotionsComponent implements OnInit {
 
   editPromotionGet() {
     this.service.editPromotionGet().subscribe(localData => {
-      this.localData = localData.json();
+      this.localData = localData.json().result;
 
     })
   }

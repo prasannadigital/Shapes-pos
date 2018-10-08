@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { Services } from '../services/common-services';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead/typeahead-match.class';
@@ -27,16 +27,16 @@ export class NewTicketNextButtonComponent implements OnInit {
   _membership = false;
   _package = false;
 
-  constructor(private http: HttpClient, private router: Router, private services: Services) {
+  constructor(private http: Http, private router: Router, private services: Services) {
     this.http.get(environment.host + 'categorys').subscribe(data => {
-      this.categories = data;
+      this.categories = data.json().result;
     });
 
     this.http.get(environment.host + 'memberships').subscribe(data => {
-      this.memberships = data;
+      this.memberships = data.json().result;
     });
     this.http.get(environment.host + 'packages').subscribe(data => {
-      this.packages = data;
+      this.packages = data.json().result;
     });
   }
 
@@ -54,7 +54,7 @@ export class NewTicketNextButtonComponent implements OnInit {
       this._membership = false;
       this._package = false;
       this.http.get(environment.host + 'services/category/' + event.item.cat_id).subscribe(data=> {
-        this.commonValues =data;
+        this.commonValues =data.json().result;
         
         
       });
@@ -158,7 +158,7 @@ export class NewTicketNextButtonComponent implements OnInit {
   catProdMemSearch(val) {
     if (val.length >= 3) {
       this.http.get(environment.host + 'sales/cat-mem-product/' + val).subscribe(data => {
-        this.temp.push(data);
+        this.temp.push(data.json().result);
         this.catProdMemResult = this.temp[0];
       });
     }
@@ -167,7 +167,7 @@ export class NewTicketNextButtonComponent implements OnInit {
   stylishSearch(val) {
     if (val.length >= 3) {
       this.http.get(environment.host + 'sales/stylist/' + val).subscribe(data => {
-        this.temp.push(data);
+        this.temp.push(data.json().result);
         this.stylishResult = this.temp[0];
       });
     }

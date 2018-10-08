@@ -211,7 +211,7 @@ export class ManagerComponent implements OnInit {
   ngOnInit() {
     this.loginPopUp();
     this.service.getCategoryList().subscribe(response => {
-      this.catagroyData = response.json();
+      this.catagroyData = response.json().result;
     });
     if (sessionStorage.getItem('manager-routing') == '"com&mar"') {
       this.commMarkClickInfo();
@@ -415,7 +415,7 @@ export class ManagerComponent implements OnInit {
   setSub_catagroy(cat_id: any): void {
     this.addMembership.cat_id = cat_id;
     this.service.getSub_CategoryList(this.addMembership.cat_id).subscribe(response => {
-      this.sub_catagroyData = response.json();
+      this.sub_catagroyData = response.json().result;
     });
 
   }

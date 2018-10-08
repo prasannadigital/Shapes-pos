@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Services } from '../services/common-services';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
 import * as _ from 'lodash';
 
@@ -37,11 +37,11 @@ export class NewTicketNextButtonInvoiceComponent implements OnInit {
   refundtextColor='#000';
 
 
-  constructor(private services: Services, private http: HttpClient, ) {
+  constructor(private services: Services, private http: Http, ) {
     this.selectResult = JSON.parse(sessionStorage.getItem('selectedServices'));
     this.titleName = 'Service';
     this.http.get(environment.host + 'categorys').subscribe(data => {
-      this.common = data;
+      this.common = data.json().result;
     });
     this.subTotal();
   }
@@ -111,7 +111,7 @@ textColorEnable(){
     this.titleName = 'Service';
     this.edited = true;
     this.http.get(environment.host + 'categorys').subscribe(data => {
-      this.common = data;
+      this.common = data.json().result;
     });
   }
   productClick() {
@@ -122,7 +122,7 @@ textColorEnable(){
     this.titleName = 'Product';
     this.edited = true;
     this.http.get(environment.host + 'products').subscribe(data => {
-      this.common = data;
+      this.common = data.json().result;
     });
   }
 
@@ -134,7 +134,7 @@ textColorEnable(){
     this.titleName = 'Package';
     this.edited = true;
     this.http.get(environment.host + 'packages').subscribe(data => {
-      this.common = data;
+      this.common = data.json().result;
     });
   }
 
@@ -146,7 +146,7 @@ textColorEnable(){
     this.titleName = 'Membership';
     this.edited = true;
     this.http.get(environment.host + 'memberships').subscribe(data => {
-      this.common = data;
+      this.common = data.json().result;
     });
   }
 
@@ -158,7 +158,7 @@ textColorEnable(){
     this.titleName = 'Promotions';
     this.edited = true;
     this.http.get(environment.host + 'promotions').subscribe(data => {
-      this.common = data;
+      this.common = data.json().result;
     });
   }
 
@@ -171,7 +171,7 @@ textColorEnable(){
     this.titleName = 'GiftCards';
     this.edited = true;
     this.http.get(environment.host + 'giftcards').subscribe(data => {
-      this.common = data;
+      this.common = data.json().result;
     });
   }
 
