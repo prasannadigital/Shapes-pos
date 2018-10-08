@@ -71,7 +71,7 @@ export class PurchaseOrderSupplierComponent implements OnInit {
     this.service.postPurchaseOrder(data).subscribe(res => {
       console.log(res.json());
     });
-    localStorage.clear();
+   
  
   }
 
