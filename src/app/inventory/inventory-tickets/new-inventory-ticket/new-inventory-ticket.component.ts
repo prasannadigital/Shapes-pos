@@ -22,7 +22,6 @@ export class NewInventoryTicketComponent implements OnInit {
     'employee_id': '',
     'employee_firstname': ''
   }
-
   product: any = {
     'product_id': '',
     'product_name': '',
@@ -107,5 +106,4 @@ export class NewInventoryTicketComponent implements OnInit {
   dispalyAmount(val) {
     this.amount = parseInt(this.productPrice) * parseInt(val)
   }
-
 }

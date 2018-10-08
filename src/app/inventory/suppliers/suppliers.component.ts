@@ -33,11 +33,11 @@ export class SuppliersComponent implements OnInit {
 
   inactiveSupplier:'';
   editStyle = "hidden";
-
   constructor(private router: Router, private service: InventoryServiceService) { }
 
   ngOnInit() {
     this.getAllSuppliers();
+    
   }
   inactiveCheckbox(){
     var inactiveCheckbox

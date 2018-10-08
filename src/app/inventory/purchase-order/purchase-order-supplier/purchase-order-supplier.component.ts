@@ -38,7 +38,9 @@ export class PurchaseOrderSupplierComponent implements OnInit {
   backToInventory() {
     this._location.back();
   }
-
+  redirectToEditSupplier(){
+    this.router.navigate(['inventory/suppliers']);
+  }
   retrieveData() {
     this.retrievedObject = JSON.parse(localStorage.getItem('supplierdata'));
     console.log(this.retrievedObject);
@@ -68,7 +70,9 @@ export class PurchaseOrderSupplierComponent implements OnInit {
     console.log(data);
     this.service.postPurchaseOrder(data).subscribe(res => {
       console.log(res.json());
-    })
+    });
+    localStorage.clear();
+ 
   }
 
   
