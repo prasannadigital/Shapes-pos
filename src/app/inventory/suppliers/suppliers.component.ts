@@ -31,32 +31,56 @@ export class SuppliersComponent implements OnInit {
     "supplier_notes": ''
   }
 
-  inactiveSupplier:'';
+  inactiveSupplier: '';
   editStyle = "hidden";
-
+  retrievedObject: any;
   constructor(private router: Router, private service: InventoryServiceService) { }
 
   ngOnInit() {
     this.getAllSuppliers();
+    this.retrievedObject = JSON.parse(localStorage.getItem('supplierdata'));
+    if (this.retrievedObject) {
+      this.editStyle = "visible";
+      console.log(this.retrievedObject);
+      console.log(this.retrievedObject[0].supplier_name);
+      this.supplier.supplier_id = this.retrievedObject[0].supplier_id;
+      this.supplier.supplier_name = this.retrievedObject[0].supplier_name;
+      this.supplier.supplier_status = this.retrievedObject[0].supplier_status;
+      this.supplier.supplier_address = this.retrievedObject[0].supplier_address;
+      this.supplier.supplier_city = this.retrievedObject[0].supplier_city;
+      this.supplier.supplier_state = this.retrievedObject[0].supplier_state;
+      this.supplier.supplier_zip = this.retrievedObject[0].supplier_zip;
+      this.supplier.supplier_taxrate = this.retrievedObject[0].supplier_taxrate;
+      this.supplier.supplier_paymentterms = this.retrievedObject[0].supplier_paymentterms;
+      this.supplier.supplier_supplier_notes = this.retrievedObject[0].supplier_notes;
+      this.supplier.supplier_contact_name = this.retrievedObject[0].supplier_contact_name;
+      this.supplier.supplier_title = this.retrievedObject[0].supplier_title;
+      this.supplier.supplier_phone = this.retrievedObject[0].supplier_phone;
+      this.supplier.supplier_ext = this.retrievedObject[0].supplier_ext;
+      this.supplier.supplier_fax = this.retrievedObject[0].supplier_fax;
+      this.supplier.supplier_homepage = this.retrievedObject[0].supplier_homepage;
+      this.supplier.supplier_email = this.retrievedObject[0].supplier_email;
+      this.supplier.supplier_rewardpoints = this.retrievedObject[0].supplier_rewardpoints;
+    }
   }
-  inactiveCheckbox(){
+  inactiveCheckbox() {
     var inactiveCheckbox
     console.log(this.inactiveSupplier);
-    if (this.inactiveSupplier == undefined || !this.inactiveSupplier ) {
+    if (this.inactiveSupplier == undefined || !this.inactiveSupplier) {
       inactiveCheckbox = '0'
       console.log(inactiveCheckbox)
-      this.service.getInactiveSupplier(inactiveCheckbox).subscribe(res=>{
+      this.service.getInactiveSupplier(inactiveCheckbox).subscribe(res => {
         this.supplierData = res.json();
-        this.supplier.supplier_id=' ';
+        this.supplier.supplier_id = ' ';
       })
     }
-    if(this.inactiveSupplier){
+    if (this.inactiveSupplier) {
       this.getAllSuppliers();
     }
-this.editStyle = "hidden";
+    this.editStyle = "hidden";
   }
 
-  getAllSuppliers(){
+  getAllSuppliers() {
     this.service.getSuppliers().subscribe(res => {
       this.supplierData = res.json();
     })
@@ -135,6 +159,7 @@ this.editStyle = "hidden";
     this.service.saveSuppliers(data).subscribe(res => {
       console.log(res.json())
     });
+    localStorage.clear();
     this.editStyle = "hidden";
   }
 
