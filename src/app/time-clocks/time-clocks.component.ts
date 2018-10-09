@@ -51,6 +51,9 @@ export class TimeClocksComponent implements OnInit {
   mailId = "";
   alerts: any[] = [];
   loginData: any[];
+  loginTest: any={
+    'user_type_id':''
+  };
   test: 'text';
   test1: any;
   data: any = {
@@ -110,6 +113,10 @@ export class TimeClocksComponent implements OnInit {
     }
     if (this.mailId && this.password) {
       this.loginService.saveLoginDetails(data).subscribe(loginData => {
+        this.loginTest=loginData.json().result[0];
+        console.log(this.loginTest);
+        console.log(this.loginTest.user_type_id);
+        
         if (loginData.json().status == true && loginData.json().result[0].user_type_id !== 4) {
           //console.log(loginData.json().result[0])
           sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
