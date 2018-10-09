@@ -21,13 +21,10 @@
             </div>
             <div class="col-md-8 col-sm-6 login_form-right">
               <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Employee Password">
-              <div *ngFor="let alert of alerts">
-                <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">
-                  <strong>{{ alert.msg }}</strong>
-                </alert>
-              </div>
             </div>
-  
+            <div class="form-group">
+              <label *ngIf="errorMessage" class="alertRed">Invalid Credentials</label>
+              </div>
             <div class="clear"></div>
           </div>
           <div class="login_form-submit">

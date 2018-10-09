@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
   showError() {
     this.msgs = [];
-    this.msgs.push({severity:'error', detail:'Validation failed'});
+    this.msgs.push({severity:'error', detail:'invalid credentials'});
   }
   loginSubmite() {
     var data = {

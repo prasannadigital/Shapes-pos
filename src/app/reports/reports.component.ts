@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 declare var $: any;
+import { LoginServiceService } from '../services/login-service.service';
 @Component({
   selector: 'reports',
   templateUrl: './reports.component.html',
@@ -14,7 +15,9 @@ export class ReportsComponent implements OnInit {
   clientsContent = false;
   paymentContent = false;
   inventoryContent = false;
-  constructor(private router: Router) { }
+  errorMessage = false;
+  titleStyle = "hidden";
+  constructor(private router: Router,private loginService: LoginServiceService) { }
 
   ngOnInit() {
     this.loginPopUp();
@@ -23,6 +26,33 @@ export class ReportsComponent implements OnInit {
 
     $('#myModal').modal('show');
   }
+
+  loginSubmite() {
+
+    if (sessionStorage.secondaryLoginData) {
+      
+      window.sessionStorage.removeItem('secondaryLoginData');
+      //console.log('secondaryLoginData')
+    }
+    var data = {
+      password: this.password,
+      email_id: this.mailId
+    }
+    if (this.mailId && this.password) {
+      this.loginService.saveLoginDetails(data).subscribe(loginData => {
+        if (loginData.json().status == true && loginData.json().result[0].user_type_id !== 4) {
+          //console.log(loginData.json().result[0])
+          sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
+          $('#myModal').modal('hide');
+          this.titleStyle = "visible";
+        } else {
+          this.errorMessage = true;
+        }
+      });
+    }
+  }
+
+
   showStaffContent() {
     this.staffContent = true;
     this.salesContent = false;
