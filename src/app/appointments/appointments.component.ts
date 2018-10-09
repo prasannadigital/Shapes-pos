@@ -18,6 +18,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
   styleUrls: ['./appointments.component.css']
 })
 export class AppointmentsComponent implements OnInit {
+  
   selectedOption: any;
   searchValue:'';
   firstName = '';
@@ -69,14 +70,16 @@ export class AppointmentsComponent implements OnInit {
     'rec_status': 1
   }
   branchData: any={};
+  userData: any;
   @ViewChild("scheduler_here") schedulerContainer: ElementRef;
-
 
   constructor(private http: HttpClient,private serviceData: SheduleServiceService,private service: AppointmentsServiceService,private messageService: MessageService) { }
 
   ngOnInit() {
+    this.userData=JSON.parse(sessionStorage.getItem('userSession'));
+    console.log(this.userData);
     this.serviceData.getAllLocations().subscribe(response => {
-      this.branchesData = response.json();
+      this.branchesData = response.json().result;
       console.log("ghdsgfhgsdhf"+this.branchesData)
     });
     this.serviceData.getEmployee().subscribe(response => {

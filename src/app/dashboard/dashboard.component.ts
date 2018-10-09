@@ -19,7 +19,6 @@ getItem(){
     this.userData=JSON.parse(sessionStorage.getItem('userSession'));
     console.log(this.userData.employee_id)
   }
-  
 }
   redirectToManager() {
     this.router.navigate(['management']);
