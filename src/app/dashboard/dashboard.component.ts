@@ -12,11 +12,11 @@ userData:any;
   constructor(private router: Router) { }
 
   ngOnInit() {
-this.getItem();
+this.getUser();
   }
-getItem(){
+  getUser(){
   if(sessionStorage){
-    this.userData=JSON.parse(sessionStorage.getItem('userSession'));
+    this.userData=JSON.parse(sessionStorage.getItem('primaryLoginData'));
     console.log(this.userData.employee_id)
   }
 }

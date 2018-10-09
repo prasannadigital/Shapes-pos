@@ -27,17 +27,20 @@
               </alert>
             </div>
           </div>
-
+          <div class="form-group">
+              <label *ngIf="errorMessage" class="alertRed">Invalid Credentials</label>
+              </div>
+              <p-growl [(value)]="msgs" ></p-growl>
           <div class="clear"></div>
         </div>
         <div class="login_form-submit">
           <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-3">
-              <button type="submit" (click)="loginSubmite();" data-dismiss="modal" class="btn btn-primary submit-button">Sign In</button>
+              <button type="submit" (click)="loginSubmite();"  class="btn btn-primary submit-button">Sign In</button>
             </div>
             <div class="col-sm-2">
-              <button type="submit" (click)="backLocation()" data-dismiss="modal" class="btn btn-warning">Cancel</button>
+              <button type="submit" (click)="backLocation()"  class="btn btn-warning">Cancel</button>
             </div>
             <div class="col-sm-3"></div>
           </div>
@@ -62,8 +65,10 @@
             <input type="password" class="form-control" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" placeholder="Employee Password">
           </div>
         </div>
+        
       </form>
       <div class="clear"></div>
+      <p-growl [(value)]="msgs" ></p-growl>
     </div>
 
     <div class="clock-in-services2">
