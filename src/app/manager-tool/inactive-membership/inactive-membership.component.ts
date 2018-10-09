@@ -16,7 +16,7 @@ export class InactiveMembershipComponent implements OnInit {
 
   ngOnInit() {
     this.service.getInactiveMembership().subscribe(inactivemembership => {
-      this.inactivemembership = inactivemembership.json();
+      this.inactivemembership = inactivemembership.json().result;
       this.cols = [
         { field: 'membership_name', header: 'Membership Name' },
         { field: 'membership_code', header: 'Membership Code' },

@@ -3,7 +3,7 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectItem } from 'primeng/api';
 import { environment } from '../../../environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { PackagesServiceService } from '../../services/packages-service.service';
 @Component({
   selector: 'app-add-packages',
@@ -20,13 +20,14 @@ export class AddPackagesComponent implements OnInit {
   marked = false;
   serviceId = '';
 
-  constructor(private router: Router, private http: HttpClient, private service: PackagesServiceService) {
+  constructor(private router: Router, private http: Http, private service: PackagesServiceService) {
 
   }
 
   ngOnInit() {
     this.http.get(environment.host + 'services').subscribe(data => {
-      this.serviceData = data;
+      console.log(data.json().result);
+      this.serviceData = data.json().result;
       console.log(this.serviceData.length);
       for (let i = 0; i < this.serviceData.length; i++) {
         this.packs.push({ label: this.serviceData[i].service_name, value: { service_id: this.serviceData[i].service_id, service_price: this.serviceData[i].service_price, service_name: this.serviceData[i].service_name } })

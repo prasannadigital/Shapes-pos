@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead/typeahead-match.class';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
@@ -33,7 +33,7 @@ export class NewTicketComponent implements OnInit {
   public userDetails: FormGroup;
   submitted = false;
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: Http, private router: Router) {
     setTheme('bs3');
     this.userDetails = new FormGroup({
       firstName: new FormControl(this.firstName, [Validators.required, Validators.minLength(6), Validators.maxLength(9)]),
@@ -92,7 +92,7 @@ export class NewTicketComponent implements OnInit {
   visitInfo() {
     if (this.selectedOption) {
       this.http.get(environment.host + 'sales/visit/' + this.selectedOption.user_id).subscribe(data => {
-        this.visits = data;
+        this.visits = data.json().result;
       });
     }
   }
@@ -100,7 +100,7 @@ export class NewTicketComponent implements OnInit {
   allInfo() {
     if (this.selectedOption) {
       this.http.get(environment.host + 'sales/all-history/' + this.selectedOption.user_id).subscribe(data => {
-        this.alls = data;
+        this.alls = data.json().result;
       });
     }
   }
@@ -108,7 +108,7 @@ export class NewTicketComponent implements OnInit {
   productInfo() {
     if (this.selectedOption) {
       this.http.get(environment.host + 'sales/product-history/' + this.selectedOption.user_id).subscribe(data => {
-        this.products = data;
+        this.products = data.json().result;
       });
     }
   }
@@ -116,7 +116,7 @@ export class NewTicketComponent implements OnInit {
   serviceInfo() {
     if (this.selectedOption) {
       this.http.get(environment.host + 'sales/service-history/' + this.selectedOption.user_id).subscribe(data => {
-        this.services = data;
+        this.services = data.json().result;
       });
     }
   }
@@ -124,7 +124,7 @@ export class NewTicketComponent implements OnInit {
   customerSearch(val) {
     if (val.length >= 3) {
       this.http.get(environment.host + 'users/search/' + val).subscribe(data => {
-        this.temp.push(data);
+        this.temp.push(data.json().result);
         this.states = this.temp.pop();
       });
     } 

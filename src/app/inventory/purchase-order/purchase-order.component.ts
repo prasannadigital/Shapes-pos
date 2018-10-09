@@ -36,14 +36,15 @@ export class PurchaseOrderComponent implements OnInit {
 
   ngOnInit() {
     this.http.get(environment.host + 'pur-orders').subscribe(res => {
-      this.purchaseOrderData = res.json();
-      console.log(res.json().po_date)
+      console.log(res.json().result);
+      this.purchaseOrderData = res.json().result;
+      
     });
     this.service.getSuppliers().subscribe(res => {
-      this.supplierData = res.json();
+      this.supplierData = res.json().result;
     });
     this.service.getproduct().subscribe(res => {
-      this.productData = res.json();
+      this.productData = res.json().result;
     });
   }
   backToInventory() {
@@ -65,7 +66,7 @@ export class PurchaseOrderComponent implements OnInit {
   selectedPurchaseOrder(purchase_order_id: any) {
     this.purchase.purchaseOrderId = purchase_order_id;
     this.service.getSelectedPurchaseOrder(this.purchase.purchaseOrderId).subscribe(res => {
-      this.purchaseOrderSelectedData = res.json();
+      this.purchaseOrderSelectedData = res.json().result;
       console.log(this.purchaseOrderSelectedData);
     })
 
@@ -92,21 +93,21 @@ export class PurchaseOrderComponent implements OnInit {
       url = url + '&source=' + this.supplier.supplier_id
     }
     this.service.getPurchaseOrder(url).subscribe(res => {
-      console.log(res.json());
+      console.log(res.json().result);
       console.log("*******")
-      console.log(res.json().status);
-      if (res.json().status == undefined) {
-        this.purchaseOrderData = res.json();
+      console.log(res.json().result.status);
+      if (res.json().result.status == undefined) {
+        this.purchaseOrderData = res.json().result;
         console.log(this.purchaseOrderData)
       } else {
-        this.purchaseOrderData = res.json()._body;
+        this.purchaseOrderData =res.json().result._body;
       }
     })
   }
 
   resetPurchaseOrder() {
     this.http.get(environment.host + 'pur-orders').subscribe(res => {
-      this.purchaseOrderData = res.json();
+      this.purchaseOrderData = res.json().result;
     });
     this.startDate = "";
     this.endDate = "";
@@ -121,7 +122,7 @@ export class PurchaseOrderComponent implements OnInit {
     }
     console.log(data);
     this.service.postPurchaseOrder(data).subscribe(res => {
-      console.log(res.json());
+      console.log(res.json().result);
     })
   }
   editPurchaseOrder(data,index){
@@ -148,7 +149,7 @@ export class PurchaseOrderComponent implements OnInit {
     }
     console.log(data);
     this.service.postPurchaseOrder(data).subscribe(res => {
-      console.log(res.json());
+      console.log(res.json().result);
     })
 
   }

@@ -82,7 +82,7 @@ export class SuppliersComponent implements OnInit {
 
   getAllSuppliers() {
     this.service.getSuppliers().subscribe(res => {
-      this.supplierData = res.json();
+      this.supplierData =res.json().result;
     })
   }
   backToInventory() {
@@ -157,7 +157,7 @@ export class SuppliersComponent implements OnInit {
     }
     console.log(data);
     this.service.saveSuppliers(data).subscribe(res => {
-      console.log(res.json())
+      console.log(res.json().result)
     });
     localStorage.clear();
     this.editStyle = "hidden";

@@ -48,10 +48,10 @@ export class NewInventoryTicketComponent implements OnInit {
       this.locationData = response.json();
     });
     this.inventoryService.getproduct().subscribe(res => {
-      this.productData = res.json();
+      this.productData =res.json().result;
     });
     this.inventoryService.getSuppliers().subscribe(res => {
-      this.supplierData = res.json();
+      this.supplierData =res.json().result;
     })
   }
   backToInventory() {
@@ -100,7 +100,7 @@ export class NewInventoryTicketComponent implements OnInit {
     }
     console.log(data);
     this.inventoryService.saveInventoryTicket(data).subscribe(res => {
-      console.log(res.json());
+      console.log(res.json().result);
     })
   }
   dispalyAmount(val) {

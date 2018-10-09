@@ -30,7 +30,7 @@ export class NewsEventsComponent implements OnInit {
 
   ngOnInit() {
     this.service.getTopMessage().subscribe(response => {
-      this.messageData = response.json();
+      this.messageData = response.json().result;
     })
   }
  showSuccess() {
@@ -53,7 +53,7 @@ updateSuccess(){
     }
     
     this.service.newsEventPost(data).subscribe(response => {
-      this.locationData = response.json();
+      this.locationData = response.json().result;
       this.eventTopMessage = '';
       this.eventName = '';
       this.eventDescription = '';

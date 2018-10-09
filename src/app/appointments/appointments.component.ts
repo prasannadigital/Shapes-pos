@@ -90,7 +90,7 @@ export class AppointmentsComponent implements OnInit {
   appiontmentDisplay(id1:any,id2:any){
     this.service.get(this.shedule.employee_id,this.shedule.branch_id)
     .subscribe((res) => {
-      this.appiontmentData = this.transformJsonToCustomFormat(res.json().data);
+      this.appiontmentData = this.transformJsonToCustomFormat(res.json().result.data);
       console.log(this.appiontmentData);
       scheduler.parse(this.appiontmentData, "json");
       console.log(this.appiontmentData);
@@ -147,7 +147,7 @@ export class AppointmentsComponent implements OnInit {
     })
     //this.shedule.branch_name = branch_name;
     this.serviceData.getStaffByLocation(this.shedule.branch_id).subscribe(res => {
-      this.empData = res.json().data;
+      this.empData = res.json().result.data;
       console.log("hai"+this.empData);
       
     });

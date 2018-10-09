@@ -21,7 +21,7 @@ export class MembershipComponent implements OnInit {
 
   ngOnInit() {
     this.service.getMembership().subscribe(memberships => {
-      this.memberships = memberships.json();
+      this.memberships = memberships.json().result;
 
     })
     this.getCategory();
@@ -55,7 +55,7 @@ export class MembershipComponent implements OnInit {
 
   getCategory() {
     this.service.getCategoryList().subscribe(response => {
-      this.catagroyData = response.json();
+      this.catagroyData = response.json().result;
     })
   }
 

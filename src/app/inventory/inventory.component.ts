@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 declare var $: any;
+import { Location } from '@angular/common';
 @Component({
   selector: 'inventory',
   templateUrl: './inventory.component.html',
@@ -9,7 +10,7 @@ declare var $: any;
 export class InventoryComponent implements OnInit {
   password = "";
   mailId = "";
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _location: Location) { }
   ngOnInit() {
     this.loginPopUp();
     if (sessionStorage.getItem('inventory-routing') == '"purchase"') {
@@ -28,7 +29,10 @@ export class InventoryComponent implements OnInit {
   loginPopUp() {
 
     $('#myModal').modal('show');
-  } 
+  }
+  backLocation() {
+    this._location.back();
+  }
   redirectToOrder() {
     this.router.navigate(['inventory/purchase-order']);
   }
@@ -69,7 +73,6 @@ export class InventoryComponent implements OnInit {
     $(".update-info").trigger("click");
     this.removeClass();
     $(".update-info").addClass("active");
-
   }
   reportsClick() {
     sessionStorage.setItem('inventory-routing', JSON.stringify("reports"));
@@ -78,7 +81,6 @@ export class InventoryComponent implements OnInit {
     $(".reports-info").addClass("active");
 
   }
-
   removeClass() {
     $(".purchase-order").removeClass("active");
     $(".supplier-info").removeClass("active");
