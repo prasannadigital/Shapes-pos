@@ -11185,3 +11185,6 @@ text-align: left;
 .inline-flex-style{
     display: inline-flex;
 }
+.alertRed{
+  color: red;
+}

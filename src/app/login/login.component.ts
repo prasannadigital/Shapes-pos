@@ -36,8 +36,8 @@ export class LoginComponent implements OnInit {
     if (this.mailId && this.password) {
       this.service.saveLoginDetails(data).subscribe(loginData => {
         if (loginData.json().status == true) {
-          //console.log(loginData.json().result[0])
-          sessionStorage.setItem('userSession', JSON.stringify(loginData.json().result[0]));
+          console.log(loginData.json().result[0])
+          sessionStorage.setItem('primaryLoginData', JSON.stringify(loginData.json().result[0]));
           this.router.navigate(['dashboard']);
         }else {
           this.showError();
