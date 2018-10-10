@@ -1,3 +1,149 @@
-<p>
-  pending-transaction works!
-</p>
+<div class="tabs-services">
+  <app-header></app-header>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-2">
+    <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="container">
+  <br/>
+  <br/>
+  <div class="row">
+    <form class="" action="/action_page.php">
+      <div class="card col-lg-12">
+        <div class="card-body">
+
+          <div class="row form-inline inline-flex align-items-baseline">
+            <select class="form-control" id="detailView" name="detailView">
+              <option>Detail View</option>
+            </select>
+            <label for="stDate">Start Date:</label>
+            <input type="text" class="date-input form-control" id="stDate" placeholder="" name="stDate">
+            <label for="endDate">End Date:</label>
+            <input type="text" class="date-input form-control" id="endDate" placeholder="" name="endDate">
+            <div class="form-check">
+              <label class="form-check-label">Tagged Clients Only (0):
+                <input type="checkbox" class="form-check-input" name="taggedClients">
+              </label>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-default">GENERATE</button>
+              <a href="">
+                <img src="../img/download.png" class="image-indicators" />
+              </a>
+              <a href="">
+                <img src="../img/download.png" class="image-indicators" />
+                <img src="../img/download.png" class="image-indicators" />
+                <img src="../img/download.png" class="image-indicators" />
+              </a>
+            </div>
+
+          </div>
+          <div>
+            <select class="form-control" id="allLocations" name="allLocations" style="width:auto;">
+              <option>All Locations</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <table class="table pending-table">
+              <thead>
+                <th></th>
+                <th>
+                  Appointment Date:/Time
+                </th>
+                <th>
+                  Client
+                </th>
+                <th>
+                  Account
+                </th>
+                <th>
+                  Sale
+                </th>
+                <th>
+                  Amount
+                </th>
+                <th>
+                  Auth.code | Order ID
+                </th>
+                <th>
+                  Transaction #
+                </th>
+                <th>
+                  Status
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>
+                    6/23/2018 12:13:35 PM
+                  </td>
+                  <td>
+                    Taney Batiste
+                  </td>
+                  <td>
+                    TANEY BATISTE Visa / Last4: 5047
+                  </td>
+                  <td>
+                    n/a
+                  </td>
+                  <td>
+                    12:50
+                  </td>
+                  <td>
+                    051315 | 1316256359
+                  </td>
+                  <td>
+                    836189
+                  </td>
+                  <td>
+                    open
+                  </td>
+                </tr>
+                <tr>
+                  <td>1.</td>
+                  <td>
+                    6/23/2018 12:13:35 PM
+                  </td>
+                  <td>
+                    Taney Batiste
+                  </td>
+                  <td>
+                    TANEY BATISTE Visa / Last4: 5047
+                  </td>
+                  <td>
+                    n/a
+                  </td>
+                  <td>
+                    12:50
+                  </td>
+                  <td>
+                    051315 | 1316256359
+                  </td>
+                  <td>
+                    836189
+                  </td>
+                  <td>
+                    open
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-default" style="margin-top:20px;">Refresh Stautses</button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>

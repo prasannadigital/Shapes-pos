@@ -1,3 +1,86 @@
-<p>
-  autopay-cc-expirations works!
-</p>
+<div class="tabs-services">
+  <app-header></app-header>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-2">
+    <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="container">
+  <br/>
+  <br/>
+  <div class="row">
+    <form class="" action="/action_page.php">
+      <div class="card col-lg-12">
+        <div class="card-body ">
+
+          <div class="row form-inline inline-flex justify-content-center align-items-baseline">
+            <label>Autopays Scheduled between-</label>
+            <label for="stDate">Start Date:</label>
+            <input type="text" class="date-input form-control" id="stDate" placeholder="" name="stDate">
+            <label for="endDate">End Date:</label>
+            <input type="text" class="date-input form-control" id="endDate" placeholder="" name="endDate">
+
+            <select class="form-control" id="allLocations" name="allLocations" style="width:auto;">
+              <option>All Locations</option>
+            </select>
+
+          </div>
+
+          <div class="row inline-flex justify-content-center align-items-baseline">
+            <div class="form-check">
+              <label class="form-check-label">Includes Autopays Charged POS:
+                <input type="checkbox" class="form-check-input" name="" checked>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-default">GENERATE</button>
+            <a href="">
+              <img src="../img/download.png" class="image-indicators" />
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <table class="table autopay-table" style="margin-top:15px;">
+
+        <thead>
+          <th>Scheduled Autopay Date</th>
+          <th>CC Expiration</th>
+          <th>Client</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.6/18/2018</td>
+            <td>06/18</td>
+            <td>Enriquez, Shanon</td>
+          </tr>
+          <tr>
+            <td>1.6/19/2018</td>
+            <td>12/17</td>
+            <td>MEDRANO, Honey</td>
+          </tr>
+          <tr>
+            <td>1.6/18/2018</td>
+            <td>04/18</td>
+            <td>Ortiz, Alegandra</td>
+          </tr>
+          <tr>
+            <td>1.6/20/2018</td>
+            <td>03/18</td>
+            <td>Ayala, Eva</td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+
+
+</div>
+
+<app-footer></app-footer>

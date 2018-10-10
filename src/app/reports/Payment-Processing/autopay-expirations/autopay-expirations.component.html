@@ -1,3 +1,70 @@
-<p>
-  autopay-expirations works!
-</p>
+<div class="tabs-services">
+  <app-header></app-header>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-2">
+    <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="container">
+  <br/>
+  <br/>
+  <div class="row">
+    <form class="" action="/action_page.php">
+      <div class="card col-lg-12">
+        <div class="card-body justify-content-center">
+
+          <div class="row form-inline inline-flex justify-content-center align-items-baseline">
+            <label>Latest Scheduled autopay between-</label>
+            <label for="stDate">Start Date:</label>
+            <input type="text" class="date-input form-control" id="stDate" placeholder="" name="stDate">
+            <label for="endDate">End Date:</label>
+            <input type="text" class="date-input form-control" id="endDate" placeholder="" name="endDate">
+
+            <select class="form-control" id="allLocations" name="allLocations" style="width:auto;">
+              <option>All Locations</option>
+            </select>
+
+          </div>
+
+
+          <div class="row  inline-flex justify-content-center align-items-baseline">
+            <label for="autoPays">Show:</label>
+            <div>
+              <select class="form-control" id="allAutopays" name="allAutopays" style="width:auto; margin-right: 15px;">
+                <option>All Autopays</option>
+              </select>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">Tagged Clients Only (0):
+                <input type="checkbox" class="form-check-input" name="">
+              </label>
+            </div>
+
+          </div>
+          <div class="row inline-flex justify-content-center align-items-baseline">
+
+            <button type="submit" class="btn btn-default">GENERATE</button>
+            <a href="">
+              <img src="../img/download.png" class="image-indicators" />
+            </a>
+            <a href="">
+              <img src="../img/download.png" class="image-indicators" />
+              <img src="../img/download.png" class="image-indicators" />
+              <img src="../img/download.png" class="image-indicators" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+ 
+</div>
+
+<app-footer></app-footer>
