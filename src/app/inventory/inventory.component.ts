@@ -31,8 +31,15 @@ export class InventoryComponent implements OnInit {
     }
   }
   loginPopUp() {
+if(sessionStorage.backBtnValue){
+  $('#myModal').modal('hide');
+  this.titleStyle = "visible";
+}
 
+  else{
     $('#myModal').modal('show');
+  }
+    
   }
 
   loginSubmite() {
@@ -56,6 +63,7 @@ export class InventoryComponent implements OnInit {
         if (loginData.json().status == true && this.loginTest.user_type_id !== 4) {
           //console.log(loginData.json().result[0])
           sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
+          sessionStorage.setItem('backBtnValue', 'Y');
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
         } else {
