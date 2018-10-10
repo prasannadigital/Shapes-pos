@@ -25,10 +25,25 @@ export class ReportsComponent implements OnInit {
 
   ngOnInit() {
     this.loginPopUp();
+     sessionStorage.removeItem('backBtnInventory');     
+     sessionStorage.removeItem('backBtnSetup');     
+     //sessionStorage.removeItem('backBtnReports');     
+     sessionStorage.removeItem('backBtnManager');     
+    // sessionStorage.removeItem('backBtnSales');     
+    // sessionStorage.removeItem('backBtnAppiontments');     
+     sessionStorage.removeItem('backBtnTimeclocks');     
+     sessionStorage.removeItem('backBtnShedule');//remove Back btn popup
   }
   loginPopUp() {
 
-    $('#myModal').modal('show');
+    if(sessionStorage.backBtnReports){
+      $('#myModal').modal('hide');
+      this.titleStyle = "visible";
+    }
+    
+      else{
+        $('#myModal').modal('show');
+      }
   }
   // backToDashboard(){
   //   this.router.navigate(['dashboard']);
@@ -54,6 +69,7 @@ export class ReportsComponent implements OnInit {
         if (loginData.json().status == true && this.loginTest.user_type_id !== 4) {
           //console.log(loginData.json().result[0])
           sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
+          sessionStorage.setItem('backBtnReports', 'Y');
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
         } else {

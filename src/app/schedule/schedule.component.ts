@@ -37,6 +37,14 @@ export class ScheduleComponent implements OnInit {
   constructor(private service: SheduleServiceService,private router: Router,private loginService: LoginServiceService, private messageService: MessageService) { }
 
   ngOnInit() {
+     sessionStorage.removeItem('backBtnInventory');     
+     sessionStorage.removeItem('backBtnSetup');     
+     sessionStorage.removeItem('backBtnReports');     
+     sessionStorage.removeItem('backBtnManager');     
+     //sessionStorage.removeItem('backBtnSales');    
+     //sessionStorage.removeItem('backBtnAppiontments');     
+     sessionStorage.removeItem('backBtnTimeclocks');     
+     //sessionStorage.removeItem('backBtnShedule');//remove Back btn popup
     this.loginPopUp();
     this.service.getAllLocations().subscribe(response => {
       this.locationData = response.json().result;
@@ -50,7 +58,14 @@ export class ScheduleComponent implements OnInit {
 
   loginPopUp() {
 
-    $('#myModal').modal('show');
+    if(sessionStorage.backBtnShedule){
+      $('#myModal').modal('hide');
+      this.titleStyle = "visible";
+    }
+    
+      else{
+        $('#myModal').modal('show');
+      }
   }
   showSuccess() {
     this.messageService.add({ key: 'tl', severity: 'success', summary: 'Success Message', detail: 'Order submitted' });
@@ -77,6 +92,7 @@ export class ScheduleComponent implements OnInit {
         if (loginData.json().status == true && this.loginTest.user_type_id !== 4) {
           //console.log(loginData.json().result[0])
           sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
+          sessionStorage.setItem('backBtnShedule', 'Y');
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
         } else {

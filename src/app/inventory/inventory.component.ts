@@ -16,6 +16,15 @@ export class InventoryComponent implements OnInit {
   titleStyle="hidden";
   constructor(private router: Router, private _location: Location, private loginService: LoginServiceService) { }
   ngOnInit() {
+    //sessionStorage.removeItem('backBtnInventory');
+    sessionStorage.removeItem('backBtnSetup');     
+    sessionStorage.removeItem('backBtnReports');     
+    sessionStorage.removeItem('backBtnManager');     
+    //sessionStorage.removeItem('backBtnSales');     
+    //sessionStorage.removeItem('backBtnAppiontments');     
+    sessionStorage.removeItem('backBtnTimeclocks');     
+    sessionStorage.removeItem('backBtnShedule');
+    //remove Back btn popup
     this.loginPopUp();
     if (sessionStorage.getItem('inventory-routing') == '"purchase"') {
       this.purchaseOrderClick()
@@ -31,7 +40,7 @@ export class InventoryComponent implements OnInit {
     }
   }
   loginPopUp() {
-if(sessionStorage.backBtnValue){
+if(sessionStorage.backBtnInventory){
   $('#myModal').modal('hide');
   this.titleStyle = "visible";
 }
@@ -63,7 +72,7 @@ if(sessionStorage.backBtnValue){
         if (loginData.json().status == true && this.loginTest.user_type_id !== 4) {
           //console.log(loginData.json().result[0])
           sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
-          sessionStorage.setItem('backBtnValue', 'Y');
+          sessionStorage.setItem('backBtnInventory', 'Y');
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
         } else {

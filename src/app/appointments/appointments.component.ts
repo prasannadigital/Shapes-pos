@@ -76,6 +76,14 @@ export class AppointmentsComponent implements OnInit {
   constructor(private http: HttpClient,private serviceData: SheduleServiceService,private service: AppointmentsServiceService,private messageService: MessageService) { }
 
   ngOnInit() {
+     sessionStorage.removeItem('backBtnInventory');     
+     sessionStorage.removeItem('backBtnSetup');     
+     sessionStorage.removeItem('backBtnReports');     
+     sessionStorage.removeItem('backBtnManager');     
+     //sessionStorage.removeItem('backBtnSales');     
+     //sessionStorage.removeItem('backBtnAppiontments');     
+     sessionStorage.removeItem('backBtnTimeclocks');     
+     sessionStorage.removeItem('backBtnShedule');//remove Back btn popup
     this.userData=JSON.parse(sessionStorage.getItem('userSession'));
     console.log(this.userData);
     this.serviceData.getAllLocations().subscribe(response => {

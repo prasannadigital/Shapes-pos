@@ -74,6 +74,14 @@ export class TimeClocksComponent implements OnInit {
   };
   msgs: Message[] = [];
   ngOnInit() {
+     sessionStorage.removeItem('backBtnInventory');     
+     sessionStorage.removeItem('backBtnSetup');     
+     sessionStorage.removeItem('backBtnReports');     
+     sessionStorage.removeItem('backBtnManager');     
+     //sessionStorage.removeItem('backBtnSales');     
+     //sessionStorage.removeItem('backBtnAppiontments');     
+     //sessionStorage.removeItem('backBtnTimeclocks');     
+     sessionStorage.removeItem('backBtnShedule');//remove Back btn popup
     this.loginPopUp();
     this.getTimeAndDate();
     setInterval(() => {
@@ -90,7 +98,14 @@ export class TimeClocksComponent implements OnInit {
 
   loginPopUp() {
 
-    $('#myModal').modal('show');
+    if(sessionStorage.backBtnTimeclocks){
+      $('#myModal').modal('hide');
+      this.titleStyle = "visible";
+    }
+    
+      else{
+        $('#myModal').modal('show');
+      }
   }
 
   backLocation() {
@@ -124,6 +139,7 @@ export class TimeClocksComponent implements OnInit {
         if (loginData.json().status == true) {
           //console.log(loginData.json().result[0])
           sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
+          sessionStorage.setItem('backBtnTimeclocks', 'Y');
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
         } else {

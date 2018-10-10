@@ -12,6 +12,14 @@ userData:any;
   constructor(private router: Router) { }
 
   ngOnInit() {
+     sessionStorage.removeItem('backBtnInventory');
+     sessionStorage.removeItem('backBtnSetup');     
+     sessionStorage.removeItem('backBtnReports');     
+     sessionStorage.removeItem('backBtnManager');     
+     //sessionStorage.removeItem('backBtnSales');     
+     //sessionStorage.removeItem('backBtnAppiontments');     
+     sessionStorage.removeItem('backBtnTimeclocks');     
+     sessionStorage.removeItem('backBtnShedule');//remove Back btn popup
 this.getUser();
   }
   getUser(){

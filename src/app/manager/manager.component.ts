@@ -121,6 +121,7 @@ export class ManagerComponent implements OnInit {
         if (loginData.json().status == true && this.loginTest.user_type_id !== 4) {
           //console.log(loginData.json().result[0])
           sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
+          sessionStorage.setItem('backBtnManager', 'Y');
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
         } else {
@@ -249,6 +250,15 @@ export class ManagerComponent implements OnInit {
   }
 
   ngOnInit() {
+     sessionStorage.removeItem('backBtnInventory');
+     sessionStorage.removeItem('backBtnSetup');     
+     sessionStorage.removeItem('backBtnReports');     
+    // sessionStorage.removeItem('backBtnManager');     
+     //sessionStorage.removeItem('backBtnSales');     
+     //sessionStorage.removeItem('backBtnAppiontments');     
+     sessionStorage.removeItem('backBtnTimeclocks');     
+     sessionStorage.removeItem('backBtnShedule');
+     //remove Back btn popup
     this.loginPopUp();
     this.service.getCategoryList().subscribe(response => {
       this.catagroyData = response.json().result;
@@ -326,8 +336,12 @@ export class ManagerComponent implements OnInit {
     };
   }
   loginPopUp() {
-
-    $('#myModal').modal('show');
+if(sessionStorage.backBtnManager){
+  $('#myModal').modal('hide');
+  this.titleStyle = "visible";
+}else{
+  $('#myModal').modal('show');
+}   
   }
   addMembershipClick() {
     this.service.saveMembershipDetails(this.addMembership).subscribe(response => {
