@@ -1,3 +1,85 @@
-<p>
-  autopay-details works!
-</p>
+<div class="tabs-services">
+  <app-header></app-header>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-2">
+    <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="container">
+  <br/>
+  <br/>
+  <div class="row">
+    <form class="" action="/action_page.php">
+      <div class="card col-lg-12">
+        <div class="card-body ">
+
+          <div class="row form-inline inline-flex justify-content-center align-items-baseline">
+            <label for="stDate">Start Date:</label>
+            <input type="text" class="date-input form-control" id="stDate" placeholder="" name="stDate">
+            <label for="endDate">End Date:</label>
+            <input type="text" class="date-input form-control" id="endDate" placeholder="" name="endDate">
+
+            <select class="form-control" id="allLocations" name="all" style="width:auto;">
+              <option>All</option>
+            </select>
+            <select class="form-control" id="allLocations" name="allLocations" style="width:auto;">
+              <option>All Locations</option>
+            </select>
+            <select class="form-control" id="allPaymentMethods" name="allPaymentMethods" style="width:auto;">
+              <option>All Payment Methods</option>
+            </select>
+
+          </div>
+
+
+          <div class="row  inline-flex justify-content-center align-items-baseline">
+
+            <div class="form-check">
+              <label class="form-check-label">Include aautopays charged at POS
+                <input type="checkbox" class="form-check-input" name="" CHECKED>
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">Only accounts autopays:
+                <input type="checkbox" class="form-check-input" name="">
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">Only Auto renewing:
+                <input type="checkbox" class="form-check-input" name="">
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">Tagged Clients Only (0):
+                <input type="checkbox" class="form-check-input" name="">
+              </label>
+            </div>
+          </div>
+          <div class="row inline-flex justify-content-center align-items-baseline">
+
+            <button type="submit" class="btn btn-default">GENERATE</button>
+            <a href="">
+              <img src="../img/download.png" class="image-indicators" />
+            </a>
+            <a href="">
+              <img src="../img/download.png" class="image-indicators" />
+              <img src="../img/download.png" class="image-indicators" />
+              <img src="../img/download.png" class="image-indicators" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+ 
+</div>
+
+
+<app-footer></app-footer>

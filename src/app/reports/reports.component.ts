@@ -155,24 +155,24 @@ export class ReportsComponent implements OnInit {
     this.router.navigate(['payment/approved-transactions']);
   }
   autopayDetailsClick(){
-
+    this.router.navigate(['payment/autopay-detail']);
   }
   settledClick(){
-
+    this.router.navigate(['payment/settled-transaction']);
   }
   autopaySummeryClick(){
-
+    this.router.navigate(['payment/autopay-summary']);
   }
   pendingClick(){
-
+    this.router.navigate(['payment/pending-transaction']);
   }
 rejectedClick(){
-
+  this.router.navigate(['payment/rejected-transaction']);
 }
 expirationClick(){
-
+  this.router.navigate(['payment/autopay-expirations']);
 }
 autopayCcClick(){
-
+  this.router.navigate(['payment/autopay-cc-expirations']);
 }
 }

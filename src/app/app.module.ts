@@ -192,9 +192,13 @@ const routes: Routes = [
   { path: 'staff/appointment-metrics', component: AppointmentMetricsComponent, canActivate: [AuthGuard] },
   { path: 'staff/pay-rates', component: PayRatesComponent, canActivate: [AuthGuard] },
   { path: 'payment/approved-transactions', component: ApprovedTransacationsComponent, canActivate: [AuthGuard] },
-
-
-
+  { path: 'payment/autopay-detail', component: AutopayDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'payment/settled-transaction', component: SettledTransactionComponent, canActivate: [AuthGuard] },
+  { path: 'payment/autopay-summary', component: AutopaySummaryComponent, canActivate: [AuthGuard] },
+  { path: 'payment/pending-transaction', component: PendingTransactionComponent, canActivate: [AuthGuard] },
+  { path: 'payment/rejected-transaction', component: VoidedorrejectedComponent, canActivate: [AuthGuard] },
+  { path: 'payment/autopay-expirations', component: AutopayExpirationsComponent, canActivate: [AuthGuard] },
+  { path: 'payment/autopay-cc-expirations', component: AutopayCcExpirationsComponent, canActivate: [AuthGuard] },
 
 
   { path: 'inventory', component: InventoryComponent, canActivate: [AuthGuard] },

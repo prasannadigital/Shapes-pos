@@ -1,3 +1,63 @@
-<p>
-  voidedorrejected works!
-</p>
+<div class="tabs-services">
+  <app-header></app-header>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-2">
+    <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="container">
+  <br/>
+  <br/>
+  <div class="row">
+    <div class="card col-lg-12  justify-content-center">
+      <div class="card-body">
+        <form class="" action="/action_page.php">
+          <div class="row form-inline inline-flex justify-content-center align-items-baseline">
+            <label for="stDate">Start Date:</label>
+            <input type="text" class="date-input form-control" id="stDate" placeholder="" name="stDate">
+            <label for="endDate">End Date:</label>
+            <input type="text" class="date-input form-control" id="endDate" placeholder="" name="endDate">
+            <div class="form-check">
+              <label class="form-check-label">Tagged Clients Only (0):
+                <input type="checkbox" class="form-check-input" name="taggedClients">
+              </label>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-default">GENERATE</button>
+              <a href="">
+                <img src="../img/download.png" class="image-indicators" />
+              </a>
+              <a href="">
+                <img src="../img/download.png" class="image-indicators" />
+                <img src="../img/download.png" class="image-indicators" />
+                <img src="../img/download.png" class="image-indicators" />
+              </a>
+            </div>
+
+          </div>
+          <div class="form-inline">
+            <select class="form-control" id="allLocations" name="allLocations">
+              <option>All Locations</option>
+              <option>All Locations</option>
+              <option>All Locations</option>
+              <option>All Locations</option>
+            </select>
+            <select class="form-control" id="allCreditCards" name="allCreditCards">
+              <option>All CreditCards</option>
+              <option>All CreditCards</option>
+              <option>All CreditCards</option>
+              <option>All CreditCards</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

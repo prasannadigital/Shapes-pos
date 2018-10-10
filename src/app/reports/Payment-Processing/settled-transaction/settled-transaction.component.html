@@ -1,3 +1,85 @@
-<p>
-  settled-transaction works!
-</p>
+<div class="tabs-services">
+  <app-header></app-header>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-2">
+    <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="container">
+  <br/>
+  <br/>
+  <div class="row">
+    <div class="card col-lg-12  justify-content-center">
+      <div class="card-body">
+        <form class="" action="/action_page.php">
+          <div class="row form-inline inline-flex justify-content-center align-items-baseline">
+            <select class="form-control" id="summerView" name="summerView">
+              <option>Summer View</option>
+              <option>Summer View</option>
+              <option>Summer View</option>
+              <option>Summer View</option>
+            </select>
+            <label for="stDate">Start Date:</label>
+            <input type="text" class="date-input form-control" id="stDate" placeholder="" name="stDate">
+            <label for="endDate">End Date:</label>
+            <input type="text" class="date-input form-control" id="endDate" placeholder="" name="endDate">
+            <div class="form-check">
+              <label class="form-check-label">Tagged Clients Only (0):
+                <input type="checkbox" class="form-check-input" name="taggedClients">
+              </label>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-default">GENERATE</button>
+              <a href="">
+                <img src="../img/download.png" class="image-indicators" />
+              </a>
+              <a href="">
+                <img src="../img/download.png" class="image-indicators" />
+                <img src="../img/download.png" class="image-indicators" />
+                <img src="../img/download.png" class="image-indicators" />
+              </a>
+            </div>
+
+          </div>
+          <div class="form-inline">
+            <select class="form-control" id="allPaymentMethods" name="allPaymentMethods">
+              <option>All Payment Methods</option>
+            </select>
+            <select class="form-control" id="allKeyed" name="allKeyed">
+              <option>All Keyed/Swiped</option>
+            </select>
+            <select class="form-control" id="allLocations" name="allLocations">
+              <option>All Locations</option>
+            </select>
+            <select class="form-control" id="allSettelments" name="allSettelments">
+              <option>All Settelments</option>
+            </select>
+          </div>
+          <div>
+            <br/>
+            <b>OR</b>
+            <br/>
+          </div>
+          <div class="row form-inline inline-flex justify-content-center align-items-baseline ">
+            <label for="sbSaleId">Search by Sale Id:</label>
+            <input type="text" class="date-input form-control md" id="sbSaleId" placeholder=""
+              name="sbSaleId">
+            <label for="sbCcAch">Search by CC/ACH Last 4:</label>
+            <input type="text" class="date-input form-control md" id="sbCcAch" placeholder=""
+              name="sbCcAch">
+
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
