@@ -33,5 +33,8 @@ export class FooterComponent implements OnInit {
     this.product=[];
   }
   }
-  
+  logOut(){
+    sessionStorage.clear();
+    this.router.navigate(['login']);
+  }
 }
