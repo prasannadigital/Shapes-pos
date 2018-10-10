@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { InventoryServiceService } from '../../services/inventory-service.service';
 import * as moment from 'moment/moment';
 import { Http } from '@angular/http';
+import { Location } from '@angular/common';
 import { environment } from '../../../environments/environment';
+declare var $: any;
 @Component({
   selector: 'app-purchase-order',
   templateUrl: './purchase-order.component.html',
@@ -32,7 +34,7 @@ export class PurchaseOrderComponent implements OnInit {
   productData = new Array();
   supplierSelectedData = new Array();
   purchaseOrderSelectedData = new Array()
-  constructor(private router: Router, private http: Http, private service: InventoryServiceService) { }
+  constructor(private router: Router,private _location: Location, private http: Http, private service: InventoryServiceService) { }
 
   ngOnInit() {
     this.http.get(environment.host + 'pur-orders').subscribe(res => {
@@ -48,7 +50,8 @@ export class PurchaseOrderComponent implements OnInit {
     });
   }
   backToInventory() {
-    this.router.navigate(['inventory']);
+    this._location.back();
+    
   }
   newPurchase() {
     this.router.navigate(['inventory/new-purchase-order']);

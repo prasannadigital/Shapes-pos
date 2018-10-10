@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { SheduleServiceService } from '../services/shedule-service.service';
 import * as moment from 'moment/moment';
+import { Router } from '@angular/router';
+import { LoginServiceService } from '../services/login-service.service';
 declare var $: any;
 @Component({
   selector: 'schedule',
@@ -9,6 +11,8 @@ declare var $: any;
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit {
+  errorMessage=false;
+  loginTest:any;
   password = "";
   mailId = "";
   public date1: any;
@@ -30,7 +34,7 @@ export class ScheduleComponent implements OnInit {
   empData = new Array();
   appointmentsData = new Array();
 
-  constructor(private service: SheduleServiceService, private messageService: MessageService) { }
+  constructor(private service: SheduleServiceService,private router: Router,private loginService: LoginServiceService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.loginPopUp();
@@ -43,6 +47,7 @@ export class ScheduleComponent implements OnInit {
     });
 
   }
+
   loginPopUp() {
 
     $('#myModal').modal('show');
@@ -51,6 +56,42 @@ export class ScheduleComponent implements OnInit {
     this.messageService.add({ key: 'tl', severity: 'success', summary: 'Success Message', detail: 'Order submitted' });
   }
 
+  loginSubmite() {
+    if (sessionStorage.secondaryLoginData) {
+      window.sessionStorage.removeItem('secondaryLoginData');
+      //console.log('secondaryLoginData')
+    }
+    var data = {
+      password: this.password,
+      email_id: this.mailId
+    }
+    if (this.mailId && this.password) {
+      this.loginService.saveLoginDetails(data).subscribe(loginData => {
+        if (loginData.json().status == false) {
+          this.errorMessage = true;
+        }
+        this.loginTest = loginData.json().result[0];
+        console.log(this.loginTest);
+        console.log(this.loginTest.user_type_id);
+
+        if (loginData.json().status == true && this.loginTest.user_type_id !== 4) {
+          //console.log(loginData.json().result[0])
+          sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
+          $('#myModal').modal('hide');
+          this.titleStyle = "visible";
+        } else {
+          this.errorMessage = true;
+
+        }
+      });
+    }
+  }
+  errorClear(){
+    this.errorMessage = false;
+  }
+  RedirectToHome() {
+    this.router.navigate(['dashboard']);
+  }
   getStartDate() {
     let day = this.date1.getDate();
     let month = this.date1.getMonth() + 1;

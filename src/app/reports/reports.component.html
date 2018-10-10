@@ -1,48 +1,51 @@
 <div class="tabs-services">
   <app-header></app-header>
 </div>
-<div id="myModal" class="modal fade" role="dialog" data-backdrop="static">
 
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form>
-          <div class="form-group">
-            <div class="col-md-4 col-sm-6 login_form-left">
-              <label>User Name</label>
-            </div>
-            <div class="col-md-8 col-sm-6 login_form-right">
-              <input type="text" class="form-control" [(ngModel)]="mailId" name="some" placeholder="Employee Id">
-            </div>
-            <div class="clear"></div>
+<div id="myModal" class="modal fade" role="dialog" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="form-group">
+          <div class="col-md-4 col-sm-6 login_form-left">
+            <label>User Name</label>
+          </div>
+          <div class="col-md-8 col-sm-6 login_form-right">
+            <input type="text" class="form-control" [(ngModel)]="mailId"  (ngModelChange)="errorClear()" name="some" placeholder="Employee Id">
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-4 login_form-left">
+            <label>Password</label>
+          </div>
+          <div class="col-md-8 col-sm-6 login_form-right">
+            <input type="password" class="form-control" [(ngModel)]="password" (ngModelChange)="errorClear()" name="password" placeholder="Employee Password">
           </div>
           <div class="form-group">
-            <div class="col-md-4 login_form-left">
-              <label>Password</label>
-            </div>
-            <div class="col-md-8 col-sm-6 login_form-right">
-              <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Employee Password">
-            </div>
-            <div class="form-group">
               <label *ngIf="errorMessage" class="alertRed">Invalid Credentials</label>
               </div>
-            <div class="clear"></div>
-          </div>
-          <div class="login_form-submit">
-            <div class="row">
-              <div class="col-sm-4"></div>
-              <div class="col-sm-3">
-                <button type="submit" (click)="loginSubmite();" data-dismiss="modal" class="btn btn-primary submit-button">Sign In</button>
-              </div>
-              <div class="col-sm-2">
-                <button type="submit"  data-dismiss="modal" class="btn btn-warning">Cancel</button>
-              </div>
-              <div class="col-sm-3"></div>
+           
+          <div class="clear"></div>
+        </div>
+        <div class="login_form-submit">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-3">
+              <button type="submit" (click)="loginSubmite();"  class="btn btn-primary submit-button">Sign In</button>
             </div>
+            <div class="col-sm-2">
+              <button type="submit" data-dismiss="modal"  class="btn btn-warning"  (click)="RedirectToHome()">Cancel</button>
+            </div>
+            <div class="col-sm-3"></div>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   </div>
+</div>
+
+  <div class="tableShow" [style.visibility]="titleStyle">
 <div class="row">
   <div class="col-sm-3" disabled="false">
     <div *ngIf="staffContent">
@@ -173,28 +176,28 @@
     </div>
     <div *ngIf="paymentContent">
       <div class="nav flex-column nav-pills rs-1-left-button" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link com-mark-info" id="v-pills-home-tab" data-toggle="pill" href="#Communications" role="tab" aria-controls="Communications"
+        <a class="nav-link com-mark-info" id="v-pills-home-tab" data-toggle="pill" href="#Communications" role="tab"  (click)="approvedClick()" aria-controls="Communications"
           aria-selected="true">Approved Transactions</a>
 
-        <a class="nav-link staff-info" id="v-pills-profile-tab" data-toggle="pill" href="#Staff" role="tab" aria-controls="Staff"
+        <a class="nav-link staff-info" id="v-pills-profile-tab" data-toggle="pill" href="#Staff" role="tab" aria-controls="Staff"(click)="autopayDetailsClick()"
           aria-selected="false"> Autopay Detail</a>
 
-        <a class="nav-link client-info" id="v-pills-messages-tab" data-toggle="pill" href="#Clients" role="tab" aria-controls="Clients"
+        <a class="nav-link client-info" id="v-pills-messages-tab" data-toggle="pill" href="#Clients" role="tab" aria-controls="Clients" (click)="settledClick()"
           aria-selected="false">Settled Transactions</a>
 
-        <a class="nav-link mem-info" id="v-pills-settings-tab" data-toggle="pill" href="#Memberships" role="tab" aria-controls="Memberships"
+        <a class="nav-link mem-info" id="v-pills-settings-tab" data-toggle="pill" href="#Memberships" role="tab" aria-controls="Memberships" (click)="autopaySummeryClick()"
           aria-selected="false">Autopay Summary</a>
 
-        <a class="nav-link package-info" id="v-pills-settings-tab" data-toggle="pill" href="#Packages" role="tab" aria-controls="Packages"
+        <a class="nav-link package-info" id="v-pills-settings-tab" data-toggle="pill" href="#Packages" role="tab" aria-controls="Packages"  (click)="pendingClick()"
           aria-selected="false">Pending Transactions</a>
 
-        <a class="nav-link promotion-info" id="v-pills-settings-tab" data-toggle="pill" href="#Promotions" role="tab" aria-controls="Promotions"
+        <a class="nav-link promotion-info" id="v-pills-settings-tab" data-toggle="pill" href="#Promotions" role="tab" aria-controls="Promotions" (click)="rejectedClick()"
           aria-selected="false">Voided/Rejected Transactions</a>
 
-        <a class="nav-link gift-card-info" id="v-pills-settings-tab" data-toggle="pill" href="#gift-cards" role="tab" aria-controls="v-pills-settings"
+        <a class="nav-link gift-card-info" id="v-pills-settings-tab" data-toggle="pill" href="#gift-cards" role="tab" aria-controls="v-pills-settings" (click)="expirationClick()"
           aria-selected="false">Autopay Expirations</a>
 
-        <a class="nav-link product-info" id="v-pills-settings-tab" data-toggle="pill" href="#Products" role="tab" aria-controls="v-pills-settings"
+        <a class="nav-link product-info" id="v-pills-settings-tab" data-toggle="pill" href="#Products" role="tab" aria-controls="v-pills-settings" (click)="autopayCcClick()"
           aria-selected="false">Autopay CC Expirations</a>
       </div>
     </div>
@@ -266,6 +269,7 @@
     </div>
   </div>
   <div class="clear"></div>
+</div>
 </div>
 <div class="clear"></div>
 <app-footer></app-footer>

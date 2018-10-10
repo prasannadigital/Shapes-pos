@@ -3,6 +3,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import {SelectItem} from 'primeng/api';
 import { Router } from '@angular/router';
 declare var $: any;
+import { LoginServiceService } from '../services/login-service.service';
 @Component({
   selector: 'setup',
   templateUrl: './setup.component.html',
@@ -11,7 +12,12 @@ declare var $: any;
 export class SetupComponent implements OnInit {
   password = "";
   mailId = "";
-  constructor(private router:Router) {
+  titleStyle = "hidden";
+  loginTest: any = {
+    'user_type_id': ''
+  };
+  errorMessage = false;
+  constructor(private router:Router, private loginService: LoginServiceService) {
   }
 
   ngOnInit() {
@@ -153,5 +159,42 @@ export class SetupComponent implements OnInit {
   releaseClick(){
     this.router.navigate(['setup/release'])
   }
+  loginSubmite() {
+    if (sessionStorage.secondaryLoginData) {
+      window.sessionStorage.removeItem('secondaryLoginData');
+      //console.log('secondaryLoginData')
+    }
+    var data = {
+      password: this.password,
+      email_id: this.mailId
+    }
+    if (this.mailId && this.password) {
+      this.loginService.saveLoginDetails(data).subscribe(loginData => {
+        if (loginData.json().status == false) {
+          this.errorMessage = true;
+        }
+        this.loginTest = loginData.json().result[0];
+        console.log(this.loginTest);
+        console.log(this.loginTest.user_type_id);
+
+        if (loginData.json().status == true && this.loginTest.user_type_id !== 4) {
+          //console.log(loginData.json().result[0])
+          sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
+          $('#myModal').modal('hide');
+          this.titleStyle = "visible";
+        } else {
+          this.errorMessage = true;
+
+        }
+      });
+    }
+  }
+  errorClear(){
+    this.errorMessage = false;
+  }
+  RedirectToHome() {
+    this.router.navigate(['dashboard']);
+  }
+
   
 }

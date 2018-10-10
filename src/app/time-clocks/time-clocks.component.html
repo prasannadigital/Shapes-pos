@@ -11,7 +11,7 @@
             <label>User Name</label>
           </div>
           <div class="col-md-8 col-sm-6 login_form-right">
-            <input type="text" class="form-control" [(ngModel)]="mailId" name="some" placeholder="Employee Id">
+            <input type="text" class="form-control" [(ngModel)]="mailId" (ngModelChange)="errorClear()" name="some" placeholder="Employee Id">
           </div>
           <div class="clear"></div>
         </div>
@@ -20,7 +20,7 @@
             <label>Password</label>
           </div>
           <div class="col-md-8 col-sm-6 login_form-right">
-            <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Employee Password">
+            <input type="password" class="form-control" [(ngModel)]="password" (ngModelChange)="errorClear()" name="password" placeholder="Employee Password">
           </div>
           <div class="form-group">
               <label *ngIf="errorMessage" class="alertRed">Invalid Credentials</label>
@@ -35,7 +35,7 @@
               <button type="submit" (click)="loginSubmite();"  class="btn btn-primary submit-button">Sign In</button>
             </div>
             <div class="col-sm-2">
-              <button type="submit" (click)="backLocation()"  class="btn btn-warning">Cancel</button>
+              <button type="submit" data-dismiss="modal"  class="btn btn-warning"  (click)="RedirectToHome()">Cancel</button>
             </div>
             <div class="col-sm-3"></div>
           </div>

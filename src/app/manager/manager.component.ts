@@ -10,6 +10,7 @@ import { GiftCardServiceService } from '../services/gift-card-service.service';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 declare var jsPDF: any;
 declare var $: any;
+import { LoginServiceService } from '../services/login-service.service';
 
 import { Message } from 'primeng/components/common/api';
 import { MessageService } from 'primeng/components/common/messageservice';
@@ -21,6 +22,9 @@ import { MessageService } from 'primeng/components/common/messageservice';
 })
 
 export class ManagerComponent implements OnInit {
+  errorMessage=false;
+  loginTest:any;
+  titleStyle = "hidden";
   password = "";
   mailId = "";
   msgs: Message[] = [];
@@ -67,7 +71,7 @@ export class ManagerComponent implements OnInit {
   selectedOption: any;
   states: any[] = [];
 
-  constructor(private service: MembershipServiceService, private messageService: MessageService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
+  constructor(private service: MembershipServiceService, private messageService: MessageService,private loginService: LoginServiceService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
 
     this.http.get(this.globals.api + 'categorys').subscribe(data => {
       this.temp.push([
@@ -95,6 +99,42 @@ export class ManagerComponent implements OnInit {
   showSuccess() {
     this.msgs = [];
     this.msgs.push({ severity: 'success', summary: 'GiftCard Added Successfully' });
+  }
+  loginSubmite() {
+    if (sessionStorage.secondaryLoginData) {
+      window.sessionStorage.removeItem('secondaryLoginData');
+      //console.log('secondaryLoginData')
+    }
+    var data = {
+      password: this.password,
+      email_id: this.mailId
+    }
+    if (this.mailId && this.password) {
+      this.loginService.saveLoginDetails(data).subscribe(loginData => {
+        if (loginData.json().status == false) {
+          this.errorMessage = true;
+        }
+        this.loginTest = loginData.json().result[0];
+        console.log(this.loginTest);
+        console.log(this.loginTest.user_type_id);
+
+        if (loginData.json().status == true && this.loginTest.user_type_id !== 4) {
+          //console.log(loginData.json().result[0])
+          sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
+          $('#myModal').modal('hide');
+          this.titleStyle = "visible";
+        } else {
+          this.errorMessage = true;
+
+        }
+      });
+    }
+  }
+  errorClear(){
+    this.errorMessage = false;
+  }
+  RedirectToHome() {
+    this.router.navigate(['dashboard']);
   }
 
   commMarkClickInfo() {

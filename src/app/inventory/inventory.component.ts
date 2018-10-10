@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 declare var $: any;
 import { Location } from '@angular/common';
+import { LoginServiceService } from '../services/login-service.service';
 @Component({
   selector: 'inventory',
   templateUrl: './inventory.component.html',
@@ -10,7 +11,10 @@ import { Location } from '@angular/common';
 export class InventoryComponent implements OnInit {
   password = "";
   mailId = "";
-  constructor(private router: Router, private _location: Location) { }
+  errorMessage=false;
+  loginTest:any;
+  titleStyle="hidden";
+  constructor(private router: Router, private _location: Location, private loginService: LoginServiceService) { }
   ngOnInit() {
     this.loginPopUp();
     if (sessionStorage.getItem('inventory-routing') == '"purchase"') {
@@ -30,9 +34,44 @@ export class InventoryComponent implements OnInit {
 
     $('#myModal').modal('show');
   }
-  backLocation() {
-    this._location.back();
+
+  loginSubmite() {
+    if (sessionStorage.secondaryLoginData) {
+      window.sessionStorage.removeItem('secondaryLoginData');
+      //console.log('secondaryLoginData')
+    }
+    var data = {
+      password: this.password,
+      email_id: this.mailId
+    }
+    if (this.mailId && this.password) {
+      this.loginService.saveLoginDetails(data).subscribe(loginData => {
+        if (loginData.json().status == false) {
+          this.errorMessage = true;
+        }
+        this.loginTest = loginData.json().result[0];
+        console.log(this.loginTest);
+        console.log(this.loginTest.user_type_id);
+
+        if (loginData.json().status == true && this.loginTest.user_type_id !== 4) {
+          //console.log(loginData.json().result[0])
+          sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
+          $('#myModal').modal('hide');
+          this.titleStyle = "visible";
+        } else {
+          this.errorMessage = true;
+
+        }
+      });
+    }
   }
+  errorClear(){
+    this.errorMessage = false;
+  }
+  RedirectToHome() {
+    this.router.navigate(['dashboard']);
+  }
+ 
   redirectToOrder() {
     this.router.navigate(['inventory/purchase-order']);
   }

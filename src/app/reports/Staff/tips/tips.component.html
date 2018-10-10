@@ -1,14 +1,117 @@
 <div class="tabs-services">
-    <app-header></app-header>
+  <app-header></app-header>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-2">
+    <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
   </div>
-  
+  <div class="clear"></div>
+</div>
+<div class="container">
   <div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-6"></div>
-    <div class="col-sm-2">
-      <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
+    <div class="card cancellation-panel col-lg-12">
+      <div class="card-body  text-center">
+        <form class="" action="/action_page.php">
+          <div class="inline-flex-style">
+            <div class="form-inline  justify-content-center">
+              <label for="restore">Seat Selecion:</label>
+              <select class="form-control " id="allStaffMembers" name="allStaffMembers">
+                <option>All Staff members</option>
+                <option>All Staff members</option>
+                <option>All Staff members</option>
+                <option>All Staff members</option>
+              </select>
+            </div>
+            <div class="form-inline  justify-content-center">
+              <label for="restore">Location:</label>
+              <select class="form-control" id="allLocations" name="allLocations">
+                <option>All Locations</option>
+                <option>All Locations</option>
+                <option>All Locations</option>
+                <option>All Locations</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-inline inline-flex-style justify-content-center">
+            <label for="stDate">Start Date:</label>
+            <input type="text" class="date-input form-control" id="stDate" placeholder="" name="stDate">
+            <label for="endDate">End Date:</label>
+            <input type="text" class="date-input form-control" id="endDate" placeholder="" name="endDate">
+            <div class="form-check">
+              <label class="form-check-label">Make Printer friendly:
+                <input type="checkbox" class="form-check-input" name="mpf">
+              </label>
+            </div>
+          </div>
+          <br />
+
+          <div class="form-inline inline-flex-style justify-content-center">
+            <label for="restore">Pay Type:</label>
+            <select class="form-control" id="allStaff" name="allStaff">
+              <option>All Staff</option>
+              <option>All Staff</option>
+              <option>All Staff</option>
+              <option>All Staff</option>
+            </select>
+            <div class="form-check">
+              <label class="form-check-label">Include Inactive Staff Members:
+                <input type="checkbox" class="form-check-input" name="iism">
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 text-right">
+              <div class="form-inline text-right">
+                <i class="fa fa-arrow-left" aria-hidden="true">
+                  <span>Y</span>
+                </i>
+                <i class="fa fa-arrow-left" aria-hidden="true">
+                  <span>Q</span>
+                </i>
+                <i class="fa fa-arrow-left" aria-hidden="true">
+                  <span>M</span>
+                </i>
+                <i class="fa fa-arrow-left" aria-hidden="true">
+                  <span>D</span>
+                </i>
+              </div>
+              <div class="text-right">
+                <label>Calendar Months</label>
+              </div>
+            </div>
+            <div class="col-lg-6 text-center">
+              <div class="form-inline text-left">
+                <i class="fa fa-arrow-left" aria-hidden="true">
+                  <span>Y</span>
+                </i>
+                <i class="fa fa-arrow-left" aria-hidden="true">
+                  <span>Q</span>
+                </i>
+                <i class="fa fa-arrow-left" aria-hidden="true">
+                  <span>M</span>
+                </i>
+                <i class="fa fa-arrow-left" aria-hidden="true">
+                  <span>D</span>
+                </i>
+
+              </div>
+              <div class="text-left">
+                <label>To-Date</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-inline justify-content-center">
+            <button type="submit" class="btn btn-default">GENERATE</button>
+            <img src="../img/download.png" class="image-indicators" />
+            <img src="../img/download.png" class="image-indicators" />
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="clear"></div>
   </div>
-  
-  <app-footer></app-footer>
+</div>
+
+<app-footer></app-footer>

@@ -135,6 +135,14 @@ import { StaffPerformanceComponent } from './reports/Staff/staff-performance/sta
 import { ClientPerStylistComponent } from './reports/Staff/client-per-stylist/client-per-stylist.component';
 import { AppointmentMetricsComponent } from './reports/Staff/appointment-metrics/appointment-metrics.component';
 import { PayRatesComponent } from './reports/Staff/pay-rates/pay-rates.component';
+import { ApprovedTransacationsComponent } from './reports/Payment-Processing/approved-transacations/approved-transacations.component';
+import { AutopayDetailsComponent } from './reports/Payment-Processing/autopay-details/autopay-details.component';
+import { SettledTransactionComponent } from './reports/Payment-Processing/settled-transaction/settled-transaction.component';
+import { AutopaySummaryComponent } from './reports/Payment-Processing/autopay-summary/autopay-summary.component';
+import { PendingTransactionComponent } from './reports/Payment-Processing/pending-transaction/pending-transaction.component';
+import { VoidedorrejectedComponent } from './reports/Payment-Processing/voidedorrejected/voidedorrejected.component';
+import { AutopayExpirationsComponent } from './reports/Payment-Processing/autopay-expirations/autopay-expirations.component';
+import { AutopayCcExpirationsComponent } from './reports/Payment-Processing/autopay-cc-expirations/autopay-cc-expirations.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -183,6 +191,11 @@ const routes: Routes = [
   { path: 'staff/client-per-stylist', component: ClientPerStylistComponent, canActivate: [AuthGuard] },
   { path: 'staff/appointment-metrics', component: AppointmentMetricsComponent, canActivate: [AuthGuard] },
   { path: 'staff/pay-rates', component: PayRatesComponent, canActivate: [AuthGuard] },
+  { path: 'payment/approved-transactions', component: ApprovedTransacationsComponent, canActivate: [AuthGuard] },
+
+
+
+
 
   { path: 'inventory', component: InventoryComponent, canActivate: [AuthGuard] },
   { path: 'inventory/purchase-order', component: PurchaseOrderComponent, canActivate: [AuthGuard] },
@@ -444,6 +457,22 @@ const routes: Routes = [
     AppointmentMetricsComponent,
 
     PayRatesComponent,
+
+    ApprovedTransacationsComponent,
+
+    AutopayDetailsComponent,
+
+    SettledTransactionComponent,
+
+    AutopaySummaryComponent,
+
+    PendingTransactionComponent,
+
+    VoidedorrejectedComponent,
+
+    AutopayExpirationsComponent,
+
+    AutopayCcExpirationsComponent,
 
   ],
   imports: [

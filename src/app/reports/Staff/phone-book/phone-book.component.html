@@ -1,14 +1,64 @@
 <div class="tabs-services">
-    <app-header></app-header>
+  <app-header></app-header>
+</div>
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-2">
+    <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
   </div>
-  
+  <div class="clear"></div>
+</div>
+
+<div class="container">
   <div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-6"></div>
-    <div class="col-sm-2">
-      <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
+    <div class="card cancellation-panel col-lg-12">
+      <div class="card-body">
+        <form class="" action="/action_page.php">
+          <div class="row form-inline justify-content-center" style="display: flex;">
+            <label for="view">View</label>
+            <select class="form-control" id="all" name="all">
+              <option>All</option>
+              <option>All</option>
+              <option>All</option>
+              <option>All</option>
+            </select>
+            <label for="locations">Locations</label>
+            <select class="form-control" id="all" name="all">
+              <option>All Locations</option>
+              <option>All Locations</option>
+              <option>All Locations</option>
+              <option>All Locations</option>
+            </select>
+            <label for="sortBy">Sort By</label>
+            <select class="form-control" id="sortBy" name="sortBy">
+              <option>First Name</option>
+              <option>Last Name</option>
+            </select>
+            <div class="form-check">
+              <label class="form-check-label"> Include Inactive ?
+                <input type="checkbox" class="form-check-input" name="includeInactive">
+              </label>
+            </div>
+
+          </div>
+          <div class="form-inline justify-content-center">
+            <button type="submit" class="btn btn-default">GENERATE</button>
+            <a href="">
+              <img src="../img/download.png" class="image-indicators" />
+            </a>
+            <a href="">
+              <img src="../img/download.png" class="image-indicators" />
+            </a>
+            <a href="">
+              <img src="../img/download.png" class="image-indicators" />
+            </a>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="clear"></div>
   </div>
-  
-  <app-footer></app-footer>
+</div>
+
+<app-footer></app-footer>

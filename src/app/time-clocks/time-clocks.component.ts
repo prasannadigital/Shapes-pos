@@ -100,9 +100,10 @@ export class TimeClocksComponent implements OnInit {
   RedirectToHome() {
     this.router.navigate(['dashboard']);
   }
-
+  errorClear(){
+    this.errorMessage = false;
+  }
   loginSubmite() {
-
     if (sessionStorage.secondaryLoginData) {
       window.sessionStorage.removeItem('secondaryLoginData');
       //console.log('secondaryLoginData')
@@ -113,18 +114,21 @@ export class TimeClocksComponent implements OnInit {
     }
     if (this.mailId && this.password) {
       this.loginService.saveLoginDetails(data).subscribe(loginData => {
+        if(loginData.json().status == false){
+          this.errorMessage = true;
+        }
         this.loginTest=loginData.json().result[0];
         console.log(this.loginTest);
         console.log(this.loginTest.user_type_id);
         
-        if (loginData.json().status == true && loginData.json().result[0].user_type_id !== 4) {
+        if (loginData.json().status == true) {
           //console.log(loginData.json().result[0])
           sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
         } else {
           this.errorMessage = true;
-          this.showError();
+    
         }
       });
     }

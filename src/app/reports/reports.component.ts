@@ -17,7 +17,11 @@ export class ReportsComponent implements OnInit {
   inventoryContent = false;
   errorMessage = false;
   titleStyle = "hidden";
-  constructor(private router: Router,private loginService: LoginServiceService) { }
+  loginStyle="visible"
+  loginTest: any = {
+    'user_type_id': ''
+  };
+  constructor(private router: Router, private loginService: LoginServiceService) { }
 
   ngOnInit() {
     this.loginPopUp();
@@ -26,11 +30,11 @@ export class ReportsComponent implements OnInit {
 
     $('#myModal').modal('show');
   }
-
+  // backToDashboard(){
+  //   this.router.navigate(['dashboard']);
+  // }
   loginSubmite() {
-
     if (sessionStorage.secondaryLoginData) {
-      
       window.sessionStorage.removeItem('secondaryLoginData');
       //console.log('secondaryLoginData')
     }
@@ -40,19 +44,31 @@ export class ReportsComponent implements OnInit {
     }
     if (this.mailId && this.password) {
       this.loginService.saveLoginDetails(data).subscribe(loginData => {
-        if (loginData.json().status == true && loginData.json().result[0].user_type_id !== 4) {
+        if (loginData.json().status == false) {
+          this.errorMessage = true;
+        }
+        this.loginTest = loginData.json().result[0];
+        console.log(this.loginTest);
+        console.log(this.loginTest.user_type_id);
+
+        if (loginData.json().status == true && this.loginTest.user_type_id !== 4) {
           //console.log(loginData.json().result[0])
           sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
         } else {
           this.errorMessage = true;
+
         }
       });
     }
   }
-
-
+  errorClear(){
+    this.errorMessage = false;
+  }
+  RedirectToHome() {
+    this.router.navigate(['dashboard']);
+  }
   showStaffContent() {
     this.staffContent = true;
     this.salesContent = false;
@@ -135,7 +151,28 @@ export class ReportsComponent implements OnInit {
   payRatesClick() {
     this.router.navigate(['staff/pay-rates']);
   }
+  approvedClick(){
+    this.router.navigate(['payment/approved-transactions']);
+  }
+  autopayDetailsClick(){
 
+  }
+  settledClick(){
 
+  }
+  autopaySummeryClick(){
 
+  }
+  pendingClick(){
+
+  }
+rejectedClick(){
+
+}
+expirationClick(){
+
+}
+autopayCcClick(){
+
+}
 }
