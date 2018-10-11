@@ -30,5 +30,8 @@ export class SheduleServiceService {
     return this.http.get(environment.host + 'orders/appointment?startdate=' + startdate + '&enddate=' + enddate + '&emp_id=' + emp_id + '&branchid=' + branchid);
     // http://ec2-54-88-194-105.compute-1.amazonaws.com:3001/orders/appointment?startdate=2018-01-01&enddate=2018-11-11&emp_id=1&branchid=1
   }
+  getCategroys(){
+    return this.http.get(environment.host + 'categorys');
+  }
 
 }

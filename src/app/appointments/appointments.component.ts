@@ -48,6 +48,7 @@ export class AppointmentsComponent implements OnInit {
   createNew=false;
   public date1: any;
   public date2: any;
+  categorysData = new Array();
   branchesData = new Array();
   locationData = new Array();
   empData = new Array();
@@ -58,7 +59,8 @@ export class AppointmentsComponent implements OnInit {
     'branch_id': '',
     'branch_name':'',
     'employee_id': '',
-    'employee_firstname': ''
+    'employee_firstname': '',
+    'services':''
   }
   appointments: any ={
     'start_date': '',
@@ -85,10 +87,14 @@ export class AppointmentsComponent implements OnInit {
      sessionStorage.removeItem('backBtnTimeclocks');     
      sessionStorage.removeItem('backBtnShedule');//remove Back btn popup
     this.userData=JSON.parse(sessionStorage.getItem('userSession'));
-    console.log(this.userData);
+   // console.log(this.userData);
     this.serviceData.getAllLocations().subscribe(response => {
       this.branchesData = response.json().result;
-      console.log("ghdsgfhgsdhf"+this.branchesData)
+     // console.log("ghdsgfhgsdhf"+this.branchesData)
+    });
+    this.serviceData.getCategroys().subscribe(response => {
+      this.categorysData = response.json().result;
+     // console.log("nanananan"+this.categorysData)
     });
     this.serviceData.getEmployee().subscribe(response => {
       //this.empData = response.json();
@@ -102,13 +108,13 @@ export class AppointmentsComponent implements OnInit {
     this.service.get(this.shedule.employee_id,this.shedule.branch_id)
     .subscribe((res) => {
       this.appiontmentData = this.transformJsonToCustomFormat(res.json().result.data);
-      console.log(this.appiontmentData);
+      //console.log(this.appiontmentData);
       scheduler.parse(this.appiontmentData, "json");
-      console.log(this.appiontmentData);
+     // console.log(this.appiontmentData);
     });
   }
   transformJsonToCustomFormat(input: any[]) {
-    console.log(input);
+    //console.log(input);
     const response = [];
 
     input.forEach(item => {
@@ -158,8 +164,8 @@ export class AppointmentsComponent implements OnInit {
     })
     //this.shedule.branch_name = branch_name;
     this.serviceData.getStaffByLocation(this.shedule.branch_id).subscribe(res => {
-      this.empData = res.json().result.data;
-      console.log("hai"+this.empData);
+      this.empData = res.json().data;
+      console.log("hai 123"+this.empData);
       
     });
     this.serviceData.getStaffAppointments(this.shedule.branch_id = branch_id,this.shedule.branch_id = branch_id)
@@ -180,7 +186,7 @@ export class AppointmentsComponent implements OnInit {
     this.appointments.rec_status=1;
     this.appointments.branch_id=this.shedule.branch_id;
     this.appointments.emp_id=this.shedule.employee_id;
-    console.log(this.appointments);
+    //console.log(this.appointments);
     this.service.saveAppointment(this.appointments).subscribe(response => {
     });
     this.createNew=false;
@@ -195,7 +201,7 @@ export class AppointmentsComponent implements OnInit {
       this.http.get(environment.host + 'users/search/' + val).subscribe(data => {
         this.temp.push(data);
         this.searchCondition=true;
-        console.log(this.temp);
+       // console.log(this.temp);
         if(this.temp[0]=== null){
           this.searchCondition=false;
           this.noRecordsFound = true;

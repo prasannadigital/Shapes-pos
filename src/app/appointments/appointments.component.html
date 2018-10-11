@@ -21,11 +21,9 @@
           <div class="form-group">
             <label for="input" class="col-md-3 control-label">Categories</label>
             <div class="col-md-9">
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option></select>
+                <select name="shedule.services" class="form-control" (ngModelChange)="setCatId($event)" [(ngModel)]="shedule.categorysData">
+                    <option *ngFor="let data2 of this.categorysData" [ngValue]="data2.category_name">{{data2.category_name}}</option>
+                  </select>
               <!-- <select name="shedule.branchid" class="form-control" (ngModelChange)="setBranch($event)" [(ngModel)]="shedule.branch_idv">
                 <option *ngFor="let data1 of this.locationData" [ngValue]="data1.branch_id">{{data1.branch_name}}</option>
               </select> -->
@@ -37,7 +35,7 @@
           <label for="input" class="col-md-3 control-label">Staff</label>
           <div class="col-md-9">
             <select name="shedule.emp_id" class="form-control" (ngModelChange)="setStaffId($event)" [(ngModel)]="shedule.employee_id">
-              <option *ngFor="let data1 of this.empData" [ngValue]="data1.employee_id">{{data1.employee_firstname}}</option>
+              <option *ngFor="let data3 of this.empData" [ngValue]="data3.emp_id">{{data3.employee_firstname}}</option>
             </select>
           </div>
         
