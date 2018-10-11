@@ -9398,7 +9398,7 @@ html {
       position:relative;
   }
   .tabs-services .nav-tabs > li > a {
-    
+    margin-right: 3px;
       line-height: 1.8;
       border: 1px solid #565656 !important;
       border-radius: 15px 15px 0 0;
@@ -10319,10 +10319,10 @@ html {
     font-size: 16px;
     margin-bottom: 20px;
 }
-.accountpayments {
+/* .accountpayments {
 	background: #fff;
     border: 5px solid #da8c42;
-}
+} */
 .accountpayments-button {
 	    border: 1px solid #ccc;
     display: block;
