@@ -26,6 +26,7 @@
     "core-js": "^2.5.4",
     "devextreme-angular": "^18.1.5",
     "dhtmlx-scheduler": "^5.0.1",
+    "file-saver": "^2.0.0-rc.3",
     "jspdf": "^1.4.1",
     "jspdf-autotable": "^2.3.4",
     "latest": "^0.2.0",
@@ -40,6 +41,7 @@
     "primeicons": "^1.0.0-beta.10",
     "primeng": "^6.0.2",
     "rxjs": "^6.0.0",
+    "xlsx": "^0.14.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

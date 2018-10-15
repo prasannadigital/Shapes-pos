@@ -31,3 +31,6 @@
   color: red;
   text-align: center;
 }
+.dhx_cal_event .dhx_cal_select_menu {
+  display: none;
+}

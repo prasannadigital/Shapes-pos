@@ -9,7 +9,7 @@ import * as moment from 'moment/moment';
 import {Message} from 'primeng/components/common/api';
 import {MessageService} from 'primeng/components/common/messageservice';
 import {DropdownModule} from 'primeng/dropdown';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -75,7 +75,7 @@ export class AppointmentsComponent implements OnInit {
   userData: any;
   @ViewChild("scheduler_here") schedulerContainer: ElementRef;
 
-  constructor(private http: HttpClient,private serviceData: SheduleServiceService,private service: AppointmentsServiceService,private messageService: MessageService) { }
+  constructor(private http: Http,private serviceData: SheduleServiceService,private service: AppointmentsServiceService,private messageService: MessageService) { }
 
   ngOnInit() {
      sessionStorage.removeItem('backBtnInventory');     
@@ -107,7 +107,7 @@ export class AppointmentsComponent implements OnInit {
   appiontmentDisplay(id1:any,id2:any){
     this.service.get(this.shedule.employee_id,this.shedule.branch_id)
     .subscribe((res) => {
-      this.appiontmentData = this.transformJsonToCustomFormat(res.json().result.data);
+      this.appiontmentData = this.transformJsonToCustomFormat(res.json().result);
       //console.log(this.appiontmentData);
       scheduler.parse(this.appiontmentData, "json");
      // console.log(this.appiontmentData);
@@ -158,13 +158,14 @@ export class AppointmentsComponent implements OnInit {
     this.shedule.enddate = newDate1;
   }
   setBranch(branch_id: any): void {
+    this.empData.length=0;
     this.shedule.branch_id = branch_id;
     this.serviceData.getBranchDetail(this.shedule.branch_id).subscribe(response =>{
       this.branchData = response.json();
     })
     //this.shedule.branch_name = branch_name;
     this.serviceData.getStaffByLocation(this.shedule.branch_id).subscribe(res => {
-      this.empData = res.json().data;
+      this.empData = res.json().result;
       console.log("hai 123"+this.empData);
       
     });
@@ -193,28 +194,31 @@ export class AppointmentsComponent implements OnInit {
     this.appiontmentDisplay(this.shedule.employee_id,this.shedule.branch_id);
   }
   customerSearch(val) {
-    this.users.length=0;
-    this.temp.length=0;
+    this.users=[];
+    this.temp=[];
     this.searchCondition=false;
     this.noRecordsFound = false;
     if (val.length >= 3) {
-      this.http.get(environment.host + 'users/search/' + val).subscribe(data => {
-        this.temp.push(data);
+      this.http.get(environment.host + 'users/search/'+ val).subscribe(res => {
+        this.temp.push(res.json().result);
+        this.users = this.temp.pop();
         this.searchCondition=true;
-       // console.log(this.temp);
+       console.log(this.users);
         if(this.temp[0]=== null){
           this.searchCondition=false;
           this.noRecordsFound = true;
           
         }
        else{
-        this.users = this.temp.pop();
+        //this.users = this.temp.pop();
        }
       });
-    } else{
-      this.users.length=0;
+    } 
+    else{
+     this.users=[];
     }
   }
+  
   saveCustomer() {
     this.submitted = true;
     var data = {

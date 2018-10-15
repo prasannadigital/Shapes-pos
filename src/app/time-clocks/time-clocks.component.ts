@@ -9,6 +9,7 @@ import { Location } from '@angular/common';
 import { LoginServiceService } from '../services/login-service.service';
 import { Message } from 'primeng/components/common/api';
 import { MessageService } from 'primeng/components/common/messageservice';
+import {ExcelService} from '../services/excel.service';
 @Component({
   selector: 'time-clocks',
   templateUrl: './time-clocks.component.html',
@@ -28,7 +29,7 @@ export class TimeClocksComponent implements OnInit {
   totalMin;
   finalHours;
 
-  constructor(private loginService: LoginServiceService, private service: TimeClokServiceService, private _location: Location, private http: HttpClient, private router: Router, private globals: Globals, private messageService: MessageService) { }
+  constructor(private excelService:ExcelService,private loginService: LoginServiceService, private service: TimeClokServiceService, private _location: Location, private http: HttpClient, private router: Router, private globals: Globals, private messageService: MessageService) { }
 
   emp_id = '';
   errorMessage = false;

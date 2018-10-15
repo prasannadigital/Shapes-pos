@@ -143,6 +143,19 @@ import { PendingTransactionComponent } from './reports/Payment-Processing/pendin
 import { VoidedorrejectedComponent } from './reports/Payment-Processing/voidedorrejected/voidedorrejected.component';
 import { AutopayExpirationsComponent } from './reports/Payment-Processing/autopay-expirations/autopay-expirations.component';
 import { AutopayCcExpirationsComponent } from './reports/Payment-Processing/autopay-cc-expirations/autopay-cc-expirations.component';
+import { SalesComponent } from './reports/Sales/sales/sales.component';
+import { DailyDiscountsComponent } from './reports/Sales/daily-discounts/daily-discounts.component';
+import { CashDrawerComponent } from './reports/Sales/cash-drawer/cash-drawer.component';
+import { SalesByServiceComponent } from './reports/Sales/sales-by-service/sales-by-service.component';
+import { SalesByCatagoryComponent } from './reports/Sales/sales-by-catagory/sales-by-catagory.component';
+import { SalesByProductComponent } from './reports/Sales/sales-by-product/sales-by-product.component';
+import { SalesByRepComponent } from './reports/Sales/sales-by-rep/sales-by-rep.component';
+import { SalesGiftCardsComponent } from './reports/Sales/sales-gift-cards/sales-gift-cards.component';
+import { AttendenceWithRevenueComponent } from './reports/Sales/attendence-with-revenue/attendence-with-revenue.component';
+import { SalesBySupliersComponent } from './reports/Sales/sales-by-supliers/sales-by-supliers.component';
+import { ManageOnlineOrdersComponent } from './reports/Sales/manage-online-orders/manage-online-orders.component';
+import { InvoiceComponent } from './reports/Sales/invoice/invoice.component';
+import { EarnedRevenueComponent } from './reports/Sales/earned-revenue/earned-revenue.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -477,6 +490,32 @@ const routes: Routes = [
     AutopayExpirationsComponent,
 
     AutopayCcExpirationsComponent,
+
+    SalesComponent,
+
+    DailyDiscountsComponent,
+
+    CashDrawerComponent,
+
+    SalesByServiceComponent,
+
+    SalesByCatagoryComponent,
+
+    SalesByProductComponent,
+
+    SalesByRepComponent,
+
+    SalesGiftCardsComponent,
+
+    AttendenceWithRevenueComponent,
+
+    SalesBySupliersComponent,
+
+    ManageOnlineOrdersComponent,
+
+    InvoiceComponent,
+
+    EarnedRevenueComponent,
 
   ],
   imports: [
