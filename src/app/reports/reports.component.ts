@@ -191,4 +191,43 @@ expirationClick(){
 autopayCcClick(){
   this.router.navigate(['payment/autopay-cc-expirations']);
 }
+slaesClick(){
+  this.router.navigate(['sales/sales-sales']);
+}
+Click2(){
+  this.router.navigate(['sales/daily-discounts']);
+}
+Click3(){
+  this.router.navigate(['ssales/cash-drawer']);
+}
+Click4(){
+  this.router.navigate(['sales/sales-by-service']);
+}
+Click5(){
+  this.router.navigate(['sales/sales-by-catagory']);
+}
+Click6(){
+  this.router.navigate(['sales/sales-by-product']);
+}
+Click7(){
+  this.router.navigate(['sales/sales-by-rep']);
+}
+Click8(){
+  this.router.navigate(['sales/sales-by-giftcards']);
+}
+Click9(){
+  this.router.navigate(['sales/attence-with-revenue']);
+}
+Click10(){
+  this.router.navigate(['sales/sales-by-supliers']);
+}
+Click11(){
+  this.router.navigate(['sales/manage-online-orders']);
+}
+Click12(){
+  this.router.navigate(['sales/invoice-sales']);
+}
+Click13(){
+  this.router.navigate(['sales/earned-revenue']);
+}
 }
