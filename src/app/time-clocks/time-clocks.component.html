@@ -75,7 +75,7 @@
           <h3></h3>
         </div>
         <div class="col-md-4 col-sm-4 date-time-right">
-          <h3>Employee Id: {{this.data.emp_id}}</h3>
+          <h3>Employee Id: {{this.loginTest.employee_id}}</h3>
         </div>
         <div class="clear"></div>
       </div>
@@ -188,16 +188,16 @@
       <div class="col-md-3 col-sm-4 clock-in-services2-right">
         <h4>Reports</h4>
         <div class="cisr-buttons" data-toggle="modal" data-target="#myModal1">
-          <a>Print Today's Appointment</a>
+          <a (click)="printTodayApp();">Print Today's Appointment</a>
         </div>
-        <div class="cisr-buttons">
-          <a href="#">Print Next Today's Appointment</a>
+        <div class="cisr-buttons" data-toggle="modal" data-target="#myModal1">
+          <a (click)="printNextDayApp();">Print Next Today's Appointment</a>
         </div>
-        <div class="cisr-buttons">
-          <a href="#">Print Month's Appointment</a>
+        <div class="cisr-buttons" data-toggle="modal" data-target="#myModal1">
+          <a (click)="printMonthApp();">Print Month's Appointment</a>
         </div>
-        <div class="cisr-buttons">
-          <a href="#">Print Mini Production Report</a>
+        <div class="cisr-buttons" data-toggle="modal" data-target="#myModal1">
+          <a (click)="printTodayApp1();">Print Mini Production Report</a>
         </div>
 
       </div>
@@ -208,33 +208,36 @@
                 <div class="container">
                     <h2 class="printOptions">
                       Todays Appointments
-                      <span class="printOptions" title="Export to Excel"><i class="far fa-file-excel"></i></span>
-                      <span class="printOptions" title="Export to PDF"><i class="fas fa-file-pdf"></i></span>
-                      <i class="fa fa-arrow-circle-left" data-dismiss="modal" style="font-size:36px;color:green; margin-left: 30%;"></i>
+                      <span (click)="xlDownload();" class="printOptions" title="Export to Excel"><i class="far fa-file-excel"></i></span>
+                      <span (click)="pdfDownload();" class="printOptions" title="Export to PDF"><i class="fas fa-file-pdf"></i></span>
+                      <i  class="fa fa-arrow-circle-left" data-dismiss="modal" style="font-size:36px;color:green; margin-left: 30%;"></i>
                     </h2>   
                     <table class="table-bordered">
                       <thead>
                         <tr>
-                          <th>Firstname</th>
-                          <th>Lastname</th>
-                          <th>Email</th>
+                          <th>Clients</th>
+                          <th>Mobile Phone</th>
+                          <th>Service</th>
+                          <th>Stylist</th>
+                          <th>Duration</th>
+                          <th>Start</th>
+                          <th>End</th>
+                          <th>Price</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>John</td>
-                          <td>Doe</td>
-                          <td>john@example.com</td>
+                        <tr *ngFor="let item of memberships">
+                          <td>{{item.name}}</td>
+                          <td>{{item.mobile}}</td>
+                          <td>{{item.servicename}}</td>
+                          <td>{{item.services}}</td>
+                          <td>{{item.difftime}}</td>
+                          <td>{{item.starttime}}</td>
+                          <td>{{item.endtime}}</td>
+                          <td>{{item.payable_amount}}</td>
                         </tr>
-                        <tr>
-                          <td>Mary</td>
-                          <td>Moe</td>
-                          <td>mary@example.com</td>
-                        </tr>
-                        <tr>
-                          <td>July</td>
-                          <td>Dooley</td>
-                          <td>july@example.com</td>
+                        <tr *ngIf="!memberships || memberships.length ==0">
+                          No Records Found
                         </tr>
                       </tbody>
                     </table>

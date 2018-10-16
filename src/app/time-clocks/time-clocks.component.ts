@@ -10,12 +10,17 @@ import { LoginServiceService } from '../services/login-service.service';
 import { Message } from 'primeng/components/common/api';
 import { MessageService } from 'primeng/components/common/messageservice';
 import {ExcelService} from '../services/excel.service';
+declare var jsPDF: any;
 @Component({
   selector: 'time-clocks',
   templateUrl: './time-clocks.component.html',
   styleUrls: ['./time-clocks.component.css']
 })
 export class TimeClocksComponent implements OnInit {
+  memberships: any = [];
+  temp: any[] = new Array();
+  userActivity: any[] = new Array();
+  textArray: any[] = new Array();
   disable_time_in = false;
   disable_break_out = true;
   disable_break_in = true;
@@ -53,7 +58,8 @@ export class TimeClocksComponent implements OnInit {
   alerts: any[] = [];
   loginData: any[];
   loginTest: any={
-    'user_type_id':''
+    'user_type_id':'',
+    'employee_id':''
   };
   test: 'text';
   test1: any;
@@ -88,6 +94,8 @@ export class TimeClocksComponent implements OnInit {
     setInterval(() => {
       this.getTimeAndDate();
     }, 1000);
+    //test
+   
   }
   getTimeAndDate() {
     this.today = Date.now();
@@ -134,7 +142,7 @@ export class TimeClocksComponent implements OnInit {
           this.errorMessage = true;
         }
         this.loginTest=loginData.json().result[0];
-        console.log(this.loginTest);
+        console.log("hai from 123"+this.loginTest);
         console.log(this.loginTest.user_type_id);
         
         if (loginData.json().status == true) {
@@ -357,5 +365,63 @@ export class TimeClocksComponent implements OnInit {
       this.buttonColorBreakOut = '#e4e9ef';
       return true;
     }
+  }
+  printTodayApp(){
+    this.memberships=[];
+  this.loginTest.employee_id;
+  this.service.getAppiontmentData(this.loginTest.employee_id).subscribe(memberships => {
+    this.memberships = memberships.json().result;
+    console.log( this.memberships);
+    //this.temp.push(data.json().result);
+    //console.log( this.temp);
+   // console.log( this.userActivity);
+    //this.textArray =this.userActivity;
+  })
+  }
+  printNextDayApp(){
+    this.memberships=[];
+    this.loginTest.employee_id;
+    console.log(  this.loginTest.employee_id);
+    this.service.getAppiontmentDataOfNextDay(this.loginTest.employee_id).subscribe(memberships => {
+      this.memberships = memberships.json().result;
+      console.log( this.memberships);
+    })
+    }
+    printMonthApp(){
+      this.memberships=[];
+      this.loginTest.employee_id;
+      this.service.getAppiontmentDataOfMonth(this.loginTest.employee_id).subscribe(memberships => {
+        this.memberships = memberships.json().result;
+        console.log( this.memberships);
+      })
+      }
+  pdfDownload() {
+    var columns = [
+      { title: "Name", dataKey: "name" },
+      { title: "Mobile", dataKey: "mobile" },
+      { title: "Service Name", dataKey: "servicename" },
+      { title: "Duration", dataKey: "difftime" },
+      { title: "starttime", dataKey: "starttime" },
+      { title: "endtime", dataKey: "endtime" },      
+      { title: "Price", dataKey: "payable_amount" }
+      
+    ];
+
+    var rows = this.memberships;
+    var doc = new jsPDF('');
+    doc.autoTable(columns, rows, {
+      styles: { fillColor: [100, 255, 255] },
+      columnStyles: {
+        id: { fillColor:[255,0,0] }
+      },
+      margin: { top: 50 },
+      addPageContent: function () {
+        doc.text("Appointments",  30,30);      
+      }
+    });
+    doc.save('Appointments.pdf');
+  }
+  xlDownload(){
+    this.excelService.exportAsExcelFile(this.memberships, 'User Activities');
   }
 }

@@ -22,7 +22,7 @@ export class MembershipComponent implements OnInit {
   ngOnInit() {
     this.service.getMembership().subscribe(memberships => {
       this.memberships = memberships.json().result;
-
+      console.log("mem"+this.memberships)
     })
     this.getCategory();
   }
