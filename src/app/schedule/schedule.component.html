@@ -106,42 +106,46 @@
     <div class="col-md-4 col-sm-4 col-xs-12">
       <div class="generate-cs" style="padding:0;">
         <button type="submit" class="btn btn-warning float-right" value="Save">Generate</button>
-        <span title="Export to PDF">
+        <a (click)="pdfDownload();" title="Export to PDF">
           <i class="fas fa-file-pdf"></i>
-        </span>
+        </a>
 
-        <span title="Export to Excel">
+        <a (click)="xlDownload();" title="Export to Excel">
           <i class="far fa-file-excel"></i>
-        </span>
-        <span title="Print this Report">
+        </a>
+        <!-- <span title="Print this Report">
           <i class="fas fa-print"></i>
-        </span>
+        </span> -->
       </div>
     </div>
     <div class="clear"></div>
   </div>
 </form>
-<div class="tableShow" [style.visibility]="titleStyle">
+<div class="tableShow" [style.visibility]="titleStyle1">
   <div class="tab-schedule2">
     <h3>Schedule For {{this.selectedEmpName}} </h3>
-    <table width="100%">
-      <thead>
-        <tr>
-          <th>Order Date</th>
-          <th>
-            Service </th>
-          <th>Locale</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of appointmentsData">
-          <td>{{item.order_date}}</td>
-          <td>{{item.services}}</td>
-          <td>{{item.locale}}</td>
-        </tr>
-      </tbody>
-
-    </table>
+    <div class="scrollableTable"><table width="100%" class="">
+        <thead>
+          <tr>
+            <th>Order Date</th>
+            <th>
+              Service </th>
+            <th>Locale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of appointmentsData">
+            <td>{{item.order_date}}</td>
+            <td>{{item.services}}</td>
+            <td>{{item.locale}}</td>
+          </tr>
+          <tr *ngIf="!appointmentsData || appointmentsData.length ==0">
+              No Records Found
+            </tr>
+        </tbody>
+  
+      </table></div>
+    
 
 
     <div class="clear"></div>

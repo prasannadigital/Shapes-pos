@@ -1,3 +1,7 @@
 .printOptions{
     margin: 10px;
 }
+.scrollableTable{
+    height: 200px;
+    overflow: auto;
+}

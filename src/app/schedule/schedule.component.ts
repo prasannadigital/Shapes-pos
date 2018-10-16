@@ -5,6 +5,8 @@ import * as moment from 'moment/moment';
 import { Router } from '@angular/router';
 import { LoginServiceService } from '../services/login-service.service';
 declare var $: any;
+import {ExcelService} from '../services/excel.service';
+declare var jsPDF: any;
 @Component({
   selector: 'schedule',
   templateUrl: './schedule.component.html',
@@ -20,6 +22,7 @@ export class ScheduleComponent implements OnInit {
   cols: any[];
   selectedEmpName: string;
   titleStyle = "hidden";
+  titleStyle1 = "hidden";
   shedule: any = {
     'startdate': '',
     'enddate': '',
@@ -34,7 +37,7 @@ export class ScheduleComponent implements OnInit {
   empData = new Array();
   appointmentsData = new Array();
 
-  constructor(private service: SheduleServiceService,private router: Router,private loginService: LoginServiceService, private messageService: MessageService) { }
+  constructor(private excelService:ExcelService,private service: SheduleServiceService,private router: Router,private loginService: LoginServiceService, private messageService: MessageService) { }
 
   ngOnInit() {
      sessionStorage.removeItem('backBtnInventory');     
@@ -94,7 +97,7 @@ export class ScheduleComponent implements OnInit {
           sessionStorage.setItem('secondaryLoginData', JSON.stringify(loginData.json().result[0]));
           sessionStorage.setItem('backBtnShedule', 'Y');
           $('#myModal').modal('hide');
-          this.titleStyle = "visible";
+          this.titleStyle= "visible";
         } else {
           this.errorMessage = true;
 
@@ -127,7 +130,7 @@ export class ScheduleComponent implements OnInit {
   getShedule() {
     this.service.getEmpAppointments(this.shedule.startdate, this.shedule.enddate, this.shedule.employee_id, this.shedule.branch_id).subscribe(response => {
       this.appointmentsData = response.json().result;
-      this.titleStyle = "visible";
+      this.titleStyle1 = "visible";
     });
   }
 
@@ -143,5 +146,34 @@ export class ScheduleComponent implements OnInit {
   
   setBranch(branch_id: any): void {
     this.shedule.branch_id = branch_id;
+  }
+  pdfDownload() {
+    var columns = [
+      { title: "Name", dataKey: "name" },
+      { title: "Mobile", dataKey: "mobile" },
+      { title: "Service Name", dataKey: "servicename" },
+      { title: "Duration", dataKey: "difftime" },
+      { title: "starttime", dataKey: "starttime" },
+      { title: "endtime", dataKey: "endtime" },      
+      { title: "Price", dataKey: "payable_amount" }
+      
+    ];
+
+    var rows = this.appointmentsData;
+    var doc = new jsPDF('');
+    doc.autoTable(columns, rows, {
+      styles: { fillColor: [100, 255, 255] },
+      columnStyles: {
+        id: { fillColor:[255,0,0] }
+      },
+      margin: { top: 50 },
+      addPageContent: function () {
+        doc.text("Appointments",  30,30);      
+      }
+    });
+    doc.save('Shedule.pdf');
+  }
+  xlDownload(){
+    this.excelService.exportAsExcelFile(this.appointmentsData, 'Satff Activities');
   }
 }
