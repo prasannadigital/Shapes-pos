@@ -149,13 +149,10 @@ export class ScheduleComponent implements OnInit {
   }
   pdfDownload() {
     var columns = [
-      { title: "Name", dataKey: "name" },
-      { title: "Mobile", dataKey: "mobile" },
-      { title: "Service Name", dataKey: "servicename" },
-      { title: "Duration", dataKey: "difftime" },
-      { title: "starttime", dataKey: "starttime" },
-      { title: "endtime", dataKey: "endtime" },      
-      { title: "Price", dataKey: "payable_amount" }
+      { title: "Day", dataKey: "apptdate" },
+      { title: "Start Time", dataKey: "starttime" },
+      { title: "End Time", dataKey: "endtime" },
+      { title: "Location", dataKey: "branch_name" }
       
     ];
 

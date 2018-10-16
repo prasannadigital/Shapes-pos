@@ -128,16 +128,17 @@
         <thead>
           <tr>
             <th>Order Date</th>
-            <th>
-              Service </th>
-            <th>Locale</th>
+            <th>Start Time </th>
+            <th>End Time</th>
+            <th>Location</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let item of appointmentsData">
-            <td>{{item.order_date}}</td>
-            <td>{{item.services}}</td>
-            <td>{{item.locale}}</td>
+            <td>{{item.apptdate}}</td>
+            <td>{{item.starttime}}</td>
+            <td>{{item.endtime}}</td>
+            <td>{{item.branch_name}}</td>
           </tr>
           <tr *ngIf="!appointmentsData || appointmentsData.length ==0">
               No Records Found
