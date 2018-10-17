@@ -11,6 +11,7 @@ import {MessageService} from 'primeng/components/common/messageservice';
 import {DropdownModule} from 'primeng/dropdown';
 import { Http } from '@angular/http';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+declare var $: any;
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: 'appointments',
@@ -98,9 +99,12 @@ export class AppointmentsComponent implements OnInit {
     });
     this.serviceData.getEmployee().subscribe(response => {
       //this.empData = response.json();
+     // $(document).scrollTop($(document).height());
     });
     scheduler.config.xml_date = "%Y-%m-%d %H:%i";
     scheduler.init(this.schedulerContainer.nativeElement);
+    var element = document.getElementById("customScroll");
+    element.scrollTop = element.scrollHeight;
    //this.appiontmentDisplay();
       
   }
