@@ -15857,6 +15857,330 @@ transition: all 0.2s ease-in;
 .general-setup-options {
   margin-top: 10px;
 }
+.gs-general-setup .nav-tabs > li > a {
+    font-size: 17px;
+    font-weight: bold;
+}
+.suppiers-1 {
+    background: #f1f1f1;
+    padding: 20px;
+}
+.suppiers-1 .form-group {
+    margin-bottom: 0 !important;
+}
+.suppiers {
+    padding-top: 2%;
+}
+.suppiers-2 {
+    margin-top: 20px;
+}
+
+.colors {
+    display: none;
+}
+.suppiers1 {
+    background: #e0e0e0;
+    padding: 10px;
+}
+.btn-payment {
+    color: #000;
+    background-color: #dbe0e6;
+    border-color: #dbe0e6;
+    padding: 6px 12px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.gereral-payment h4 {
+    background: #eac692;
+    margin: 0;
+    padding: 5px;
+    margin-bottom: 17px;
+}
+.gereral-payment {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding-bottom: 0px;
+}
+.gereral-payment1 h4 {
+    margin: 0;
+    background: #eac692;
+    text-align: center;
+    padding: 5px;
+}
+.gereral-payment1 {
+    margin-top: 30px;
+    border: 1px solid;
+}
+.gereral-payment1 h3 {
+    margin-top: 0;
+    text-align: center;
+    background: #e4e4e4;
+    font-size: 20px;
+    padding: 5px;
+}
+.ip-change label {
+    text-align: right;
+}
+.ip_change {
+    width: 50%;
+    margin: 0 auto;
+}
+.ip_change .form-group {
+    margin-bottom: 3px;
+}
+.ip_change input[type="checkbox"] {
+    margin: 10px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+.close-out-date1 {
+    background: #f3f2f0;
+    padding: 10px;
+    border: 1px solid;
+}
+.close-out-date2 {
+    margin-top: 20px;
+}
+.retail-payment .form-control {
+    display: inline-block;
+}
+.retail-payment tr:nth-child(odd) {
+    background: #f1f1f1 ;
+}
+.retail-payment td{
+    background: none;
+    text-align: left;
+}
+.retail-payment th{
+    text-align: left;
+}
+#Revenue-cat .panel-group .panel {
+		border-radius: 0;
+		box-shadow: none;
+		border-color: #EEEEEE;
+	}
+
+	#Revenue-cat .panel-default > .panel-heading {
+		padding: 0;
+		border-radius: 0;
+		color: #212121;
+		background: none;
+		border-color: #EEEEEE;
+	}
+
+	#Revenue-cat .panel-title {
+		font-size: 14px;
+	}
+
+	#Revenue-cat .panel-title > a {
+		display: block;
+		padding: 15px;
+        text-decoration: none;
+        font-size: 20px;
+	}
+
+	#Revenue-cat.more-less {
+		float: right;
+		color: #212121;
+	}
+
+	#Revenue-cat .panel-default > .panel-heading + .panel-collapse > .panel-body {
+		border-top-color: #EEEEEE;
+    }
+    #Revenue-cat .more-less.glyphicon.glyphicon-plus {
+        font-size: 15px;
+    }
+    .appointment-types-7 .form-check {
+        text-align: left;
+    }
+    .commision-rates .form-control {
+        display: inline-block;
+        width: 100px;
+    }
+    .appointment-type .nav-tabs > li {
+        float: left;
+        margin-bottom: 1px;
+        border-bottom: 1px solid #ccc;
+    }
+    .appointment-type .nav-tabs > li > a {
+        font-size: 18px;
+        padding: 7px 20px;
+
+    }
+    .appointment-type .nav-tabs {
+        border-bottom: 1px solid #ddd;
+        background: #f1f1f1;
+    }
+    .appointment-type .active a {
+        color: #000;
+        background: #fff;
+    }
+    .appointment-type .tab-pane {
+        padding-top: 10px;
+    }
+
+  /***************21-10-2018************/
+  .gs-general-setup .nav-tabs > li > a {
+    font-size: 17px;
+    font-weight: bold;
+}
+.suppiers-1 {
+    background: #f1f1f1;
+    padding: 20px;
+}
+.suppiers-1 .form-group {
+    margin-bottom: 0 !important;
+}
+.suppiers {
+    padding-top: 2%;
+}
+.suppiers-2 {
+    margin-top: 20px;
+}
+
+.colors {
+    display: none;
+}
+.suppiers1 {
+    background: #e0e0e0;
+    padding: 10px;
+}
+.btn-payment {
+    color: #000;
+    background-color: #dbe0e6;
+    border-color: #dbe0e6;
+    padding: 6px 12px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.gereral-payment h4 {
+    background: #eac692;
+    margin: 0;
+    padding: 5px;
+    margin-bottom: 17px;
+}
+.gereral-payment {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding-bottom: 0px;
+}
+.gereral-payment1 h4 {
+    margin: 0;
+    background: #eac692;
+    text-align: center;
+    padding: 5px;
+}
+.gereral-payment1 {
+    margin-top: 30px;
+    border: 1px solid;
+}
+.gereral-payment1 h3 {
+    margin-top: 0;
+    text-align: center;
+    background: #e4e4e4;
+    font-size: 20px;
+    padding: 5px;
+}
+.ip-change label {
+    text-align: right;
+}
+.ip_change {
+    width: 50%;
+    margin: 0 auto;
+}
+.ip_change .form-group {
+    margin-bottom: 3px;
+}
+.ip_change input[type="checkbox"] {
+    margin: 10px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+.close-out-date1 {
+    background: #f3f2f0;
+    padding: 10px;
+    border: 1px solid;
+}
+.close-out-date2 {
+    margin-top: 20px;
+}
+.retail-payment .form-control {
+    display: inline-block;
+}
+.retail-payment tr:nth-child(odd) {
+    background: #f1f1f1 ;
+}
+.retail-payment td{
+    background: none;
+    text-align: left;
+}
+.retail-payment th{
+    text-align: left;
+}
+#Revenue-cat .panel-group .panel {
+		border-radius: 0;
+		box-shadow: none;
+		border-color: #EEEEEE;
+	}
+
+	#Revenue-cat .panel-default > .panel-heading {
+		padding: 0;
+		border-radius: 0;
+		color: #212121;
+		background: none;
+		border-color: #EEEEEE;
+	}
+
+	#Revenue-cat .panel-title {
+		font-size: 14px;
+	}
+
+	#Revenue-cat .panel-title > a {
+		display: block;
+		padding: 15px;
+        text-decoration: none;
+        font-size: 20px;
+	}
+
+	#Revenue-cat.more-less {
+		float: right;
+		color: #212121;
+	}
+
+	#Revenue-cat .panel-default > .panel-heading + .panel-collapse > .panel-body {
+		border-top-color: #EEEEEE;
+    }
+    #Revenue-cat .more-less.glyphicon.glyphicon-plus {
+        font-size: 15px;
+    }
+    .appointment-types-7 .form-check {
+        text-align: left;
+    }
+    .commision-rates .form-control {
+        display: inline-block;
+        width: 100px;
+    }
+    .appointment-type .nav-tabs > li {
+        float: left;
+        margin-bottom: 1px;
+        border-bottom: 1px solid #ccc;
+    }
+    .appointment-type .nav-tabs > li > a {
+        font-size: 18px;
+        padding: 7px 20px;
+
+    }
+    .appointment-type .nav-tabs {
+        border-bottom: 1px solid #ddd;
+        background: #f1f1f1;
+    }
+    .appointment-type .active a {
+        color: #000;
+        background: #fff;
+    }
+    .appointment-type .tab-pane {
+        padding-top: 10px;
+    }
 
 
 
