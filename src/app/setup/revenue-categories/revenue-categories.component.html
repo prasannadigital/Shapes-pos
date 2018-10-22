@@ -1,168 +1,647 @@
 <div class="tabs-services">
   <app-header></app-header>
 </div>
-<div>
-  <div class="col-md-6">
-          <div class="form-group">
-                  <label for="input" class="col-md-5 control-label">Service categories</label>
-                  <div class="col-md-7">
-                      <select class="form-control" id="exampleFormControlSelect1">
-                              <option>All Service category type </option>
-                              <option>2</option>
-                              <option>3</option>
-                            
-                      </select>
-                  </div>
-                  <div class="clear"></div>
-              </div>
-              <div class="form-check pull-left">
-                      <label class="form-check-label" for="exampleCheck1">Include appointment types</label>
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1"><br>
-                      <label class="form-check-label" for="exampleCheck1">Show inactive lession types</label>
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    </div>
-                   
-  </div>
-  <div class="col-md-6">Please contact VINDBODY if you are unsure of any settings below services categorised are integration the working of your system and typically should not be change</div>
- 
-<div class="clear"></div>
-</div>
-<br>
-<h4>Add New</h4>
-<table widtg="100%">
-  <tr>
-          <th width="20%">Service category type</th>
-          <th width="20%">Service category name</th>
-          <th width="20%">allow online scheduling</th>
-          <th width="20%">Default capacity</th>
-          <th width="20%">Tab is service category is on</th>
-          <th width="20%">Color (RGB/HEX)</th>
-  </tr>
-  <tr>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><select class="form-control" id="exampleFormControlSelect1">
-                  <option>Appointment</option>
+<div class="appointment-type">
 
-          </select></td>
-          <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><select multiple="" class="form-control" id="exampleFormControlSelect2">
-                  <option>Appointment</option>
-                 
-                </select></td>
-         
-          <td><input type="color" class="form-control" id="exampleFormControlInput1" placeholder="" value="#336699"></td>
-  </tr>
-<table>
-      <div class="col-md-12">
-              <button type="button" class="btn btn-primary pull-right" style="margin-top:10px;">Add New</button>
-      </div>
-<br>
-<h4>Appointments</h4>
-<table width="100%">
-  <tbody><tr>
-          <th>Service category name</th>
-          <th>Active</th>
-          <th>Service category type</th>
-          <th>allow online scheduling</th>
-          <th>Default capacity</th>
-          <th>Tab is service category is on</th>
-          <th>Color (RGB/HEX)</th>
-  </tr>
-  <tr>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
-          <td><select class="form-control" id="exampleFormControlSelect1">
-                  <option>Appointment</option>
-                 
-                  
-          </select></td>
-          <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><select multiple="" class="form-control" id="exampleFormControlSelect2">
-                  <option>Appointment</option>
-                 
-                </select></td>
-         
-          <td><input type="color" class="form-control" id="exampleFormControlInput1" placeholder="" value="#e66465"></td>
-  </tr>
-  <tr>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
-          <td><select class="form-control" id="exampleFormControlSelect1">
-                  <option>Appointment</option>
-                 
-                  
-          </select></td>
-          <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><select multiple="" class="form-control" id="exampleFormControlSelect2">
-                  <option>Appointment</option>
-                 
-                </select></td>
-         
-          <td><input type="color" class="form-control" id="exampleFormControlInput1" placeholder="" value="#e66465"></td>
-  </tr>
-  <tr>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
-          <td><select class="form-control" id="exampleFormControlSelect1">
-                  <option>Appointment</option>
-                  <option>Threading Services</option>
-                  <option>BossLady</option>
-                  
-          </select></td>
-          <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><select multiple="" class="form-control" id="exampleFormControlSelect2">
-                  <option>Appointment</option>
-                
-                </select></td>
-         
-          <td><input type="color" class="form-control" id="exampleFormControlInput1" placeholder="" value="#e66465"></td>
-  </tr>
-  <tr>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
-          <td><select class="form-control" id="exampleFormControlSelect1">
-                  <option>Appointment</option>
-                 
-                  
-          </select></td>
-          <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><select multiple="" class="form-control" id="exampleFormControlSelect2">
-                  <option>Appointment</option>
-                 
-                </select></td>
-         
-          <td><input type="color" class="form-control" id="exampleFormControlInput1" placeholder="" value="#e66465"></td>
-  </tr>
-  <tr>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
-          <td><select class="form-control" id="exampleFormControlSelect1">
-                  <option>Appointment</option>
-                  <option>Threading Services</option>
-                  <option>BossLady</option>
-                  
-          </select></td>
-          <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
-          <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
-          <td><select multiple="" class="form-control" id="exampleFormControlSelect2">
-                  <option>Appointment</option>
-                  
-                </select></td>
-         
-          <td><input type="color" class="form-control" id="exampleFormControlInput1" placeholder="" value="#e66465"></td>
-  </tr>
-</tbody></table>
-<div class="row">
-  <div class="col-sm-4"></div>
-  <div class="col-sm-6"></div>
-  <div class="col-sm-2">
-    <button type="button" class="btn backBtn pull-right" (click)="backToSetup()">Back</button>
-  </div>
-  <div class="clear"></div>
-</div>  
+        <div>
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Service Categories</a></li>
+                  <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Revenue categories</a></li>
+                  <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Appointment Types</a></li>
+                  <li role="presentation"><a href="#Class-types" aria-controls="settings" role="tab" data-toggle="tab">Class types</a></li>
+                  <li role="presentation"><a href="#Manage-Schedules" aria-controls="settings" role="tab" data-toggle="tab">Manage Schedules</a></li>
+                </ul>
+              
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="home">
+                        <div>
+                                <div class="col-md-4">
+                                        <div class="form-group">
+                                                <label for="input" class="col-md-5 control-label">Service categories</label>
+                                                <div class="col-md-7">
+                                                    <select class="form-control" id="exampleFormControlSelect1">
+                                                            <option>Body arts</option>
+                                                            <option>Threading Services</option>
+                                                            <option>BossLady</option>
+                                                            <option>Brow + Fill</option>
+                                                            <option>Free Makeup service</option>
+                                                            <option>Free Mini Makeover kit</option>
+                                                            <option>Insta glam</option>
+                                                    </select>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="form-check pull-left">
+                                                    <label class="form-check-label" for="exampleCheck1">Include appointment types</label>
+                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1"><br>
+                                                    <label class="form-check-label" for="exampleCheck1">Show inactive lession types</label>
+                                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                  </div>
+                                                 
+                                </div>
+                                <div class="col-md-5">Please contact VINDBODY if you are unsure of any settings below services categorised are integration the working of your system and typically should not be change</div>
+                                <div class="col-md-3"><b><a href="#" style="color:#336699;">Add new service category</a></b></div>
+                        <div class="clear"></div>
+                         </div>
+                         <h4>Appointments</h4>
+                         <table width="100%">
+                                <tr>
+                                        <th>Service category name</th>
+                                        <th>Active</th>
+                                        <th>Service category type</th>
+                                        <th>allow online scheduling</th>
+                                        <th>Default capacity</th>
+                                        <th>Tab is service category is on</th>
+                                        <th>Color (RGB/HEX)</th>
+                                </tr>
+                                <tr>
+                                        <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                        <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                        <td><select class="form-control" id="exampleFormControlSelect1">
+                                                <option>Appointment</option>
+                                               
+                                                
+                                        </select></td>
+                                        <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                        <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                        <td><select multiple class="form-control" id="exampleFormControlSelect2">
+                                                <option>Appointment</option>
+                                               
+                                              </select></td>
+                                       
+                                        <td><input type="color" class="form-control" id="exampleFormControlInput1" placeholder="" value="#e66465"></td>
+                                </tr>
+                                <tr>
+                                        <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                        <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                        <td><select class="form-control" id="exampleFormControlSelect1">
+                                                <option>Appointment</option>
+                                               
+                                                
+                                        </select></td>
+                                        <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                        <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                        <td><select multiple class="form-control" id="exampleFormControlSelect2">
+                                                <option>Appointment</option>
+                                               
+                                              </select></td>
+                                       
+                                        <td><input type="color" class="form-control" id="exampleFormControlInput1" placeholder="" value="#e66465"></td>
+                                </tr>
+                                <tr>
+                                        <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                        <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                        <td><select class="form-control" id="exampleFormControlSelect1">
+                                                <option>Appointment</option>
+                                                <option>Threading Services</option>
+                                                <option>BossLady</option>
+                                                
+                                        </select></td>
+                                        <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                        <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                        <td><select multiple class="form-control" id="exampleFormControlSelect2">
+                                                <option>Appointment</option>
+                                              
+                                              </select></td>
+                                       
+                                        <td><input type="color" class="form-control" id="exampleFormControlInput1" placeholder="" value="#e66465"></td>
+                                </tr>
+                                <tr>
+                                        <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                        <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                        <td><select class="form-control" id="exampleFormControlSelect1">
+                                                <option>Appointment</option>
+                                               
+                                                
+                                        </select></td>
+                                        <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                        <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                        <td><select multiple class="form-control" id="exampleFormControlSelect2">
+                                                <option>Appointment</option>
+                                               
+                                              </select></td>
+                                       
+                                        <td><input type="color" class="form-control" id="exampleFormControlInput1" placeholder="" value="#e66465"></td>
+                                </tr>
+                                <tr>
+                                        <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                        <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                        <td><select class="form-control" id="exampleFormControlSelect1">
+                                                <option>Appointment</option>
+                                                <option>Threading Services</option>
+                                                <option>BossLady</option>
+                                                
+                                        </select></td>
+                                        <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                        <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                        <td><select multiple class="form-control" id="exampleFormControlSelect2">
+                                                <option>Appointment</option>
+                                                
+                                              </select></td>
+                                       
+                                        <td><input type="color" class="form-control" id="exampleFormControlInput1" placeholder="" value="#e66465"></td>
+                                </tr>
+                        </table>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="profile"> 
+                      <div>
+                            <div class="col-md-6">
+                                    <div class="form-check pull-left">
+                                            <label class="form-check-label" for="exampleCheck1">Show Inactive Categories</label>
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1"><br>
+                                          </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="pull-right"><a href="#" style="color:#336699;">Add New Category</a></h4>
+                            </div>
+
+                    </div>
+                    <br>
+                    <h4>Update current categories</h4>
+                    <table width="100%">
+                        <tr>
+                            <th>category Name</th>
+                            <th>Active?</th>
+                        </tr>
+                        <tr>
+                                <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                        </tr>
+                        <tr>
+                                <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                        </tr>
+                        <tr>
+                                <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                        </tr>
+                        <tr>
+                                <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                        </tr>
+                    </table>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="messages">
+                      <div>
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                        <label for="input" class="col-md-5 control-label">Service categories</label>
+                                        <div class="col-md-7">
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                    <option>Body arts</option>
+                                                    <option>Threading Services</option>
+                                                    <option>BossLady</option>
+                                                    <option>Brow + Fill</option>
+                                                    <option>Free Makeup service</option>
+                                                    <option>Free Mini Makeover kit</option>
+                                                    <option>Insta glam</option>
+                                            </select>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-cancel pull-right">+Add</button>
+                        </div>
+                        <div class="clear"></div>
+                        </div>
+                         <div class="col-md-6">
+                                <div class="form-group">
+                                        <div class="col-md-12">
+                                                <label for="input" class=" control-label">Show Inactive appointementtype</label>
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        </div>
+                                        <div class="clear"></div>
+                                </div>
+                         </div>   
+                        <div class="col-md-6">
+                            <b class="pull-right"> <a href="#" style="color: #23527c; margin-top: 10px;">Create a Pricing option</a></b>
+                        </div>
+                        <h4>Threading services</h4>
+                        <table width="100%">
+                            <tr>
+                                    <th>Appointment type</th>
+                                    <th>Active</th>
+                                    <th>Add On</th>
+                                    <th>Price</th>
+                                    <th>CA Tax</th>
+                                    <th>Tax 2</th>
+                                    <th>Tax 3</th>
+                                    <th>Tax 4</th>
+                                    <th>Tax 5</th>
+                                    <th>Back bar charge</th>
+                                    <th>Default booking view</th>
+                                    <th>Capacity</th>
+                                    <th>Revenue Categoery</th>
+                                    <th>Deducted</th>
+                                    <th>show consummer mode</th>
+                                    <th>Sort order</th>
+                                    <th>Action</th>
+                             </tr>
+                             <tr>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Body arts</option>
+                                            <option>Threading Services</option>
+                                            <option>BossLady</option>
+                                            <option>Brow + Fill</option>
+                                            <option>Free Makeup service</option>
+                                            <option>Free Mini Makeover kit</option>
+                                            <option>Insta glam</option>
+                                    </select></td>
+                                    <td>Shaping your brows is one of the quicked things <a href="#" style="color:#336699;">Edit</a></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td>
+                                            <a href="#" style="color:#336699;">Delete</a><br>
+                                            <a href="#" style="color:#336699;">Commission Setup</a><br>
+                                            <a href="#" style="color:#336699;">Create More Pricing options</a><br>
+                                    </td>
+
+                            </tr>
+                            <tr>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Body arts</option>
+                                            <option>Threading Services</option>
+                                            <option>BossLady</option>
+                                            <option>Brow + Fill</option>
+                                            <option>Free Makeup service</option>
+                                            <option>Free Mini Makeover kit</option>
+                                            <option>Insta glam</option>
+                                    </select></td>
+                                    <td>Shaping your brows is one of the quicked things <a href="#" style="color:#336699;">Edit</a></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td>
+                                            <a href="#" style="color:#336699;">Delete</a><br>
+                                            <a href="#" style="color:#336699;">Commission Setup</a><br>
+                                            <a href="#" style="color:#336699;">Create More Pricing options</a><br>
+                                    </td>
+
+                            </tr>
+                            <tr>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Body arts</option>
+                                            <option>Threading Services</option>
+                                            <option>BossLady</option>
+                                            <option>Brow + Fill</option>
+                                            <option>Free Makeup service</option>
+                                            <option>Free Mini Makeover kit</option>
+                                            <option>Insta glam</option>
+                                    </select></td>
+                                    <td>Shaping your brows is one of the quicked things <a href="#" style="color:#336699;">Edit</a></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td>
+                                            <a href="#" style="color:#336699;">Delete</a><br>
+                                            <a href="#" style="color:#336699;">Commission Setup</a><br>
+                                            <a href="#" style="color:#336699;">Create More Pricing options</a><br>
+                                    </td>
+
+                            </tr>
+                            <tr>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Body arts</option>
+                                            <option>Threading Services</option>
+                                            <option>BossLady</option>
+                                            <option>Brow + Fill</option>
+                                            <option>Free Makeup service</option>
+                                            <option>Free Mini Makeover kit</option>
+                                            <option>Insta glam</option>
+                                    </select></td>
+                                    <td>Shaping your brows is one of the quicked things <a href="#" style="color:#336699;">Edit</a></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td>
+                                            <a href="#" style="color:#336699;">Delete</a><br>
+                                            <a href="#" style="color:#336699;">Commission Setup</a><br>
+                                            <a href="#" style="color:#336699;">Create More Pricing options</a><br>
+                                    </td>
+
+                            </tr>
+                            <tr>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Body arts</option>
+                                            <option>Threading Services</option>
+                                            <option>BossLady</option>
+                                            <option>Brow + Fill</option>
+                                            <option>Free Makeup service</option>
+                                            <option>Free Mini Makeover kit</option>
+                                            <option>Insta glam</option>
+                                    </select></td>
+                                    <td>Shaping your brows is one of the quicked things <a href="#" style="color:#336699;">Edit</a></td>
+                                    <td><input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></td>
+                                    <td><input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"></td>
+                                    <td>
+                                            <a href="#" style="color:#336699;">Delete</a><br>
+                                            <a href="#" style="color:#336699;">Commission Setup</a><br>
+                                            <a href="#" style="color:#336699;">Create More Pricing options</a><br>
+                                    </td>
+
+                            </tr>
+                        </table>
+                        <div class="col-md-12">
+                                <button type="button" class="btn btn-primary pull-right" style="    font-size: 18px;
+                                margin: 8px;">Next</button>
+                           </div>
+
+                  </div><!--tab end--->
+
+
+                  <div role="tabpanel" class="tab-pane" id="Class-types">
+                      <div>
+                            <div class="col-md-4">
+                                    <div class="form-group">
+                                            <label for="input" class="col-md-5 control-label">Service categories</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                        <option>Body arts</option>
+                                                        <option>Threading Services</option>
+                                                        <option>BossLady</option>
+                                                        <option>Brow + Fill</option>
+                                                        <option>Free Makeup service</option>
+                                                        <option>Free Mini Makeover kit</option>
+                                                        <option>Insta glam</option>
+                                                </select>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="form-check pull-left">
+                                                <label class="form-check-label" for="exampleCheck1">Include appointment types</label>
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1"><br>
+                                                <label class="form-check-label" for="exampleCheck1">Show inactive lession types</label>
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                              </div>
+                                             
+                            </div>
+                            <div class="col-md-5">The iphone application, MB fincer uses the names of your service categories group lesson types and group lession to determines the categories of your services <a href="#" style="color:#336699;">Click here for more info</a></div>
+                            <div class="col-md-3"><b><a href="#" style="color:#336699;">Add New Group lesson type</a></b></div>
+                    <div class="clear"></div>
+                     </div>
+                    <h5><b>Category 1</b></h5>
+                    <table width="100%">
+                            <tr>
+                                <th>Name</th>
+                                <th>Active</th>
+                                <th>#Deducted</th>
+                                <th>Default booking time</th>
+                                <th>Sort order</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                    </table>
+                    <div class="col-md-12">
+                            <button type="button" class="btn btn-primary pull-right" style="margin-top:10px;">Save</button>
+                    </div>
+
+                    <h5><b>Category 2</b></h5>
+                    <table width="100%">
+                            <tr>
+                                <th>Name</th>
+                                <th>Active</th>
+                                <th>#Deducted</th>
+                                <th>Default booking time</th>
+                                <th>Sort order</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                    </table>
+                    <div class="col-md-12">
+                            <button type="button" class="btn btn-primary pull-right" style="margin-top:10px;">Save</button>
+                    </div>
+
+                    <h5><b>Category 3</b></h5>
+                    <table width="100%">
+                            <tr>
+                                <th>Name</th>
+                                <th>Active</th>
+                                <th>#Deducted</th>
+                                <th>Default booking time</th>
+                                <th>Sort order</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                    </table>
+                    <div class="col-md-12">
+                            <button type="button" class="btn btn-primary pull-right" style="margin-top:10px;">Save</button>
+                    </div>
+
+                    <h5><b>Category 4</b></h5>
+                    <table width="100%">
+                            <tr>
+                                <th>Name</th>
+                                <th>Active</th>
+                                <th>#Deducted</th>
+                                <th>Default booking time</th>
+                                <th>Sort order</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                    </table>
+                    <div class="col-md-12">
+                            <button type="button" class="btn btn-primary pull-right" style="margin-top:10px;">Save</button>
+                    </div>
+
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="Manage-Schedules"> 
+                        <div>
+                                <div class="col-md-6">
+                                    <b><span>Filters</span></b>
+                                    <div class="form-group">
+                                            <label for="input" class="col-md-5 control-label">Status</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                        <option>Current & Show to public</option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                     
+                                                </select>
+                                            </div>
+                                            <div class="clear"></div>
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="input" class="col-md-5 control-label">Service category</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                        <option>All service categories</option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                     
+                                                </select>
+                                            </div>
+                                            <div class="clear"></div>
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="input" class="col-md-5 control-label">Class type</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                        <option>All Class type</option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                     
+                                                </select>
+                                            </div>
+                                            <div class="clear"></div>
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="input" class="col-md-5 control-label">Teacher</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                        <option>All Teacher</option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                     
+                                                </select>
+                                            </div>
+                                            <div class="clear"></div>
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="input" class="col-md-5 control-label">Locations</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                        <option>All Locations</option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                     
+                                                </select>
+                                            </div>
+                                            <div class="clear"></div>
+                                    </div>
+                                    <div class="form-group">
+                                            <label for="input" class="col-md-5 control-label">Days</label>
+                                            <div class="col-md-7">
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                        <option>All Days</option>
+                                                        <option></option>
+                                                        <option></option>
+                                                        <option></option>
+                                                     
+                                                </select>
+                                            </div>
+                                            <div class="clear"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pull-right">
+                                        <b><span>Filters</span></b>
+                                        <ul style="margin-left:20px;" >
+                                                <li><b><a href="#">Add New Session / Event</a></b></li>
+                                                 <li><b><a href="#">Schedule a Session / Event</a></b></li>
+                                                <li><b><a href="#">Block Copy Session Schedules</a></b></li>
+                                                <li><b><a href="#"> BLock Cancel Sessions</a></b></li>
+                                        </ul>
+                                </div>
+                            <div class="clear"></div>
+                        </div>
+                        <br>
+                        <table width="100%">
+                            <tr>
+                                <th>Name</th>
+                                <th>Active</th>
+                                <th>Deducted</th>
+                                <th>Default booking time</th>
+                                <th>Sort Order</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                  </div>
+
+
+
+                </div><!--main tab end-->
+              
+              </div>
+</div>
 <app-footer></app-footer>

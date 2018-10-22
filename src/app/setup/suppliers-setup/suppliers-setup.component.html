@@ -1,9 +1,387 @@
 <div class="tabs-services">
   <app-header></app-header>
 </div>
-<p>
-  suppliers-setup works!
-</p>
+<div id="myModal-add-sup" class="modal fade" role="dialog" data-backdrop="static">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="suppiers">
+		
+        <div class="suppiers-1">
+          <div class="col-md-8">
+            <div class="form-group">
+            <label for="input" class="col-md-3 control-label">Supplier / Breand Name</label>
+            <div class="col-md-9">
+              <select class="form-control">
+                <option value="" selected>Trendz Beauty Group LLC</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+              </select>
+            </div>
+            <div class="clear"></div>
+          </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-check pull-right">
+            <label class="form-check-label" for="exampleCheck1">Active </label>
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              
+              </div>
+          </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="suppiers-2 general-settings">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Address</label>
+              <div class="col-md-9">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <div class="clear"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">City</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+              <div class="clear"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">State / Prov</label>
+              <div class="col-md-9">
+                <select class="form-control">
+                  <option value="" selected>State / Prov</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                  <option value="">4</option>
+                  <option value="">5</option>
+                </select>
+              </div>
+              <div class="clear"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Zip / Postal</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Tax Rate</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="0.00%">
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Payment Terms</label>
+              <div class="col-md-9">
+                <select class="form-control">
+                  <option value="" selected>Payment</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                  <option value="">4</option>
+                  <option value="">5</option>
+                </select>
+              </div>
+              <div class="clear"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Payment Terms</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+              <div class="clear"></div>
+            </div>
+            
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Supplier notes</label>
+              <div class="col-md-9">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <div class="clear"></div>
+            </div>
+            
+          </div>
+          
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Contact Name</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Contact Title</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Phone No</label>
+              <div class="col-md-5">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+              <label for="input" class="col-md-1 control-label">Ext</label>
+              <div class="col-md-3">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Fax</label>
+              <div class="col-md-5">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Home Page</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="form-group">
+              <label for="input" class="col-md-3 control-label">Email</label>
+              <div class="col-md-9">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="form-group">
+              <label for="input" class="col-md-7 control-label">Rewards points earned (per $1.00 spent)&nbsp;<i class="fa fa-info-circle" aria-hidden="true"></i></label>
+              <div class="col-md-5">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="">
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="pull-right">
+              <button type="submite" class="btn btn-primary">Add</button>
+            <button data-dismiss="modal" type="submite" class="btn btn-primary" style="background: #ffffff;color: #000;">Cancel</button>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="suppiers">
+  <div>
+  <div class="col-md-12">
+        <button  data-toggle="modal" data-target="#myModal-add-sup" type="button" class="btn btn-primary pull-right" style="margin-bottom:10px;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Add</button>
+    
+  </div>
+  <div class="clear"></div>
+  </div>
+    <div class="suppiers-1">
+      <div class="col-md-6">
+        <div class="form-group">
+        <label for="input" class="col-md-3 control-label">Suppliers:</label>
+        <div class="col-md-9">
+          <select id="colorselector" class="form-control">
+            <option selected>Select</option>
+            <option value="tbgl">Trendz Beauty Group LLC</option>
+            <option value="yellow">Trendz Beauty other products</option>
+            <option value="blue">Trendz Beauty supply</option>
+          </select>
+        </div>
+        <div class="clear"></div>
+      </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-check pull-left">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Show Inactive Suppliers</label>
+          </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="suppiers-3">
+      <div class="output">
+        <div id="tbgl" class="colors">
+        <div class="suppiers1">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="input" class="col-md-3 control-label">Suppliers:</label>
+                <div class="col-md-9">
+                  <select  class="form-control">
+                    <option>Select</option>
+                    <option value="" selected>Trendz Beauty Group LLC</option>
+                    <option value="">Trendz Beauty other products</option>
+                    <option value="">Trendz Beauty supply</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-check pull-right">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+                <label class="form-check-label" for="exampleCheck1">Active</label>
+                </div>
+            </div>
+          <div class="clear"></div>
+          <div class="suppiers-2 general-settings">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Address</label>
+          <div class="col-md-9">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="clear"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">City</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+          <div class="clear"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">State / Prov</label>
+          <div class="col-md-9">
+            <select class="form-control">
+              <option value="" selected>State / Prov</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+            </select>
+          </div>
+          <div class="clear"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Zip / Postal</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Tax Rate</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="0.00%">
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Payment Terms</label>
+          <div class="col-md-9">
+            <select class="form-control">
+              <option value="" selected>Payment</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+            </select>
+          </div>
+          <div class="clear"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Payment Terms</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+          <div class="clear"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Supplier notes</label>
+          <div class="col-md-9">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="clear"></div>
+        </div>
+        
+      </div>
+      
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Contact Name</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Contact Title</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Phone No</label>
+          <div class="col-md-5">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+          <label for="input" class="col-md-1 control-label">Ext</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Fax</label>
+          <div class="col-md-5">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Home Page</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="form-group">
+          <label for="input" class="col-md-3 control-label">Email</label>
+          <div class="col-md-9">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="form-group">
+          <label for="input" class="col-md-7 control-label">Rewards points earned (per $1.00 spent)&nbsp;<i class="fa fa-info-circle" aria-hidden="true"></i></label>
+          <div class="col-md-5">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="">
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="pull-right">
+          <button type="submite" class="btn btn-primary">Add</button>
+        <button type="submite" class="btn btn-primary" style="background: #ffffff;color: #000;">Cancel</button>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+        </div>
+        
+          
+          
+        </div>
+        <div id="yellow" class="colors yellow"> “Art is the lie that enables us to realize the truth” Pablo Picasso</div>
+        <div id="blue" class="colors blue"> “If I don't have red, I use blue” Pablo Picasso</div>
+      </div>
+    </div>
+  </div>
 <div class="row">
   <div class="col-sm-4"></div>
   <div class="col-sm-6"></div>
