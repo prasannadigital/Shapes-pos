@@ -12,6 +12,7 @@ import {MessageService} from 'primeng/components/common/messageservice';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  errorMessage=false;
   msgs: Message[] = [];
   password = "";
   mailId = "";
@@ -40,10 +41,15 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('primaryLoginData', JSON.stringify(loginData.json().result[0]));
           this.router.navigate(['dashboard']);
         }else {
-          this.showError();
+          this.errorMessage = true;
         }
       });
     } 
   }
-  
+  clearErrorMess(){
+    this.errorMessage = false;
+    //this.password="";
+    //this.mailId="";
+
+  }
 }

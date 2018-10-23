@@ -16181,7 +16181,9 @@ transition: all 0.2s ease-in;
     .appointment-type .tab-pane {
         padding-top: 10px;
     }
-
+.alertRed{
+  color: red;
+}
 
 
 

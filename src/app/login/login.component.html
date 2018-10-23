@@ -6,7 +6,7 @@
           <label>Employee Id</label>
         </div>
         <div class="col-md-8 col-sm-6 login_form-right">
-          <input type="text" class="form-control" [(ngModel)]="mailId" name="some" placeholder="Employee Id">
+          <input type="text" class="form-control" [(ngModel)]="mailId" name="some" placeholder="Employee Id" (ngModelChange)="clearErrorMess();">
         </div>
         <div class="clear"></div>
       </div>
@@ -15,14 +15,11 @@
           <label>Employee Password</label>
         </div>
         <div class="col-md-8 col-sm-6 login_form-right">
-          <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Employee Password">
-          <div *ngFor="let alert of alerts">
-            <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">
-              <strong>{{ alert.msg }}</strong>
-            </alert>
-          </div>
+          <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Employee Password"  (ngModelChange)="clearErrorMess();">
         </div>
-
+        <div class="form-group">
+          <label *ngIf="errorMessage" class="alertRed">Invalid Credentials</label>
+          </div>
         <div class="clear"></div>
       </div>
       <div class="login_form-submit">
@@ -33,7 +30,7 @@
           <a>Sign Up?</a>
         </div>
         <div class="col-md-6 col-sm-6 sign_form-right">
-          <a>Cancel</a>
+          <a (click)="clearErrorMess()">Cancel</a>
         </div>
         <div class="clear"></div>
       </div>
