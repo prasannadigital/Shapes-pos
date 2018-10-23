@@ -37,6 +37,7 @@ export class ScheduleComponent implements OnInit {
   locationData = new Array();
   empData = new Array();
   appointmentsData = new Array();
+  btnDisable=true;
 
   constructor(private spinner: NgxSpinnerService,private excelService:ExcelService,private service: SheduleServiceService,private router: Router,private loginService: LoginServiceService, private messageService: MessageService) { }
 
@@ -111,6 +112,9 @@ export class ScheduleComponent implements OnInit {
   }
   errorClear(){
     this.errorMessage = false;
+    if(this.password!=null && this.mailId!=null){
+      this.btnDisable=false;
+    }
   }
   RedirectToHome() {
     this.router.navigate(['dashboard']);

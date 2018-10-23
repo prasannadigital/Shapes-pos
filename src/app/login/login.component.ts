@@ -18,15 +18,10 @@ export class LoginComponent implements OnInit {
   password = "";
   mailId = "";
   alerts: any[] = [];
+  btnDisable=true;
   constructor(private spinner: NgxSpinnerService,private http: HttpClient, private router: Router,private service:LoginServiceService,private messageService: MessageService) {}
 
   ngOnInit() {
-    this.spinner.show();
- 
-    setTimeout(() => {
-        /** spinner ends after 5 seconds */
-        this.spinner.hide();
-    }, 3000);
   
   }
 
@@ -52,6 +47,7 @@ export class LoginComponent implements OnInit {
           this.spinner.hide();
         }else {
           this.errorMessage = true;
+          this.spinner.hide();
         }
       });
     } 
@@ -61,5 +57,11 @@ export class LoginComponent implements OnInit {
     //this.password="";
     //this.mailId="";
 
+  }
+  errorClear(){
+    this.errorMessage = false;
+    if(this.password!=null && this.mailId!=null){
+      this.btnDisable=false;
+    }
   }
 }

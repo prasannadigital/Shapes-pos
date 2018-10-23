@@ -22,6 +22,7 @@ export class ReportsComponent implements OnInit {
   loginTest: any = {
     'user_type_id': ''
   };
+  btnDisable=true;
   constructor(private spinner: NgxSpinnerService,private router: Router, private loginService: LoginServiceService) { }
 
   ngOnInit() {
@@ -78,13 +79,16 @@ export class ReportsComponent implements OnInit {
           this.spinner.hide();
         } else {
           this.errorMessage = true;
-
+         
         }
       });
     }
   }
   errorClear(){
     this.errorMessage = false;
+    if(this.password!=null && this.mailId!=null){
+      this.btnDisable=false;
+    }
   }
   RedirectToHome() {
     this.router.navigate(['dashboard']);

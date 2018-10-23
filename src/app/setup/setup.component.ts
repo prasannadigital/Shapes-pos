@@ -18,6 +18,7 @@ export class SetupComponent implements OnInit {
     'user_type_id': ''
   };
   errorMessage = false;
+  btnDisable=true;
   constructor(private spinner: NgxSpinnerService,private router:Router, private loginService: LoginServiceService) {
   }
 
@@ -213,6 +214,9 @@ export class SetupComponent implements OnInit {
   }
   errorClear(){
     this.errorMessage = false;
+    if(this.password!=null && this.mailId!=null){
+      this.btnDisable=false;
+    }
   }
   RedirectToHome() {
     this.router.navigate(['dashboard']);

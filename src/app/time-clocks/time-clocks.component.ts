@@ -18,6 +18,7 @@ declare var jsPDF: any;
   styleUrls: ['./time-clocks.component.css']
 })
 export class TimeClocksComponent implements OnInit {
+  btnDisable=true;
   memberships: any = [];
   temp: any[] = new Array();
   userActivity: any[] = new Array();
@@ -127,6 +128,9 @@ export class TimeClocksComponent implements OnInit {
   }
   errorClear() {
     this.errorMessage = false;
+    if(this.password!=null && this.mailId!=null){
+      this.btnDisable=false;
+    }
   }
   loginSubmite() {
     if (sessionStorage.secondaryLoginData) {

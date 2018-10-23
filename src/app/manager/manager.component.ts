@@ -71,6 +71,7 @@ export class ManagerComponent implements OnInit {
   selectedValue: string;
   selectedOption: any;
   states: any[] = [];
+  btnDisable=true;
 
   constructor(private spinner: NgxSpinnerService,private service: MembershipServiceService, private messageService: MessageService,private loginService: LoginServiceService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
 
@@ -137,6 +138,9 @@ export class ManagerComponent implements OnInit {
   }
   errorClear(){
     this.errorMessage = false;
+    if(this.password!=null && this.mailId!=null){
+      this.btnDisable=false;
+    }
   }
   RedirectToHome() {
     this.router.navigate(['dashboard']);

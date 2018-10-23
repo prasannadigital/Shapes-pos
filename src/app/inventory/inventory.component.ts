@@ -13,6 +13,7 @@ export class InventoryComponent implements OnInit {
   password = "";
   mailId = "";
   errorMessage=false;
+  btnDisable=true;
   loginTest:any;
   titleStyle="hidden";
   constructor(private spinner: NgxSpinnerService,private router: Router, private _location: Location, private loginService: LoginServiceService) { }
@@ -88,6 +89,9 @@ if(sessionStorage.backBtnInventory){
   }
   errorClear(){
     this.errorMessage = false;
+    if(this.password!=null && this.mailId!=null){
+      this.btnDisable=false;
+    }
   }
   RedirectToHome() {
     this.router.navigate(['dashboard']);
