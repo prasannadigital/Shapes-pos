@@ -18,6 +18,7 @@ import { ManagerComponent } from './manager/manager.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter'; //importing the module
 import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { NewTicketNextButtonComponent } from './new-ticket-next-button/new-ticket-next-button.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -441,6 +442,7 @@ const routes: Routes = [
     PaginatorModule,
     CalendarModule,
     DialogModule,
+    NgxSpinnerModule,
     ToastModule,
     AutoCompleteModule,
     MultiSelectModule,
