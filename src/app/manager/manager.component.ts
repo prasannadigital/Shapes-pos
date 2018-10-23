@@ -14,6 +14,7 @@ import { LoginServiceService } from '../services/login-service.service';
 
 import { Message } from 'primeng/components/common/api';
 import { MessageService } from 'primeng/components/common/messageservice';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-manager',
@@ -71,7 +72,7 @@ export class ManagerComponent implements OnInit {
   selectedOption: any;
   states: any[] = [];
 
-  constructor(private service: MembershipServiceService, private messageService: MessageService,private loginService: LoginServiceService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
+  constructor(private spinner: NgxSpinnerService,private service: MembershipServiceService, private messageService: MessageService,private loginService: LoginServiceService, private giftcard: GiftCardServiceService, private schedule: SheduleServiceService, private http: HttpClient, private globals: Globals, private router: Router) {
 
     this.http.get(this.globals.api + 'categorys').subscribe(data => {
       this.temp.push([
@@ -109,10 +110,12 @@ export class ManagerComponent implements OnInit {
       password: this.password,
       email_id: this.mailId
     }
+    this.spinner.show();
     if (this.mailId && this.password) {
       this.loginService.saveLoginDetails(data).subscribe(loginData => {
         if (loginData.json().status == false) {
           this.errorMessage = true;
+          this.spinner.hide();
         }
         this.loginTest = loginData.json().result[0];
         console.log(this.loginTest);
@@ -124,9 +127,10 @@ export class ManagerComponent implements OnInit {
           sessionStorage.setItem('backBtnManager', 'Y');
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
+          this.spinner.hide();
         } else {
           this.errorMessage = true;
-
+          this.spinner.hide();
         }
       });
     }

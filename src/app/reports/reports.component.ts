@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 declare var $: any;
 import { LoginServiceService } from '../services/login-service.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'reports',
   templateUrl: './reports.component.html',
@@ -21,7 +22,7 @@ export class ReportsComponent implements OnInit {
   loginTest: any = {
     'user_type_id': ''
   };
-  constructor(private router: Router, private loginService: LoginServiceService) { }
+  constructor(private spinner: NgxSpinnerService,private router: Router, private loginService: LoginServiceService) { }
 
   ngOnInit() {
     this.loginPopUp();
@@ -57,10 +58,12 @@ export class ReportsComponent implements OnInit {
       password: this.password,
       email_id: this.mailId
     }
+    this.spinner.show();
     if (this.mailId && this.password) {
       this.loginService.saveLoginDetails(data).subscribe(loginData => {
         if (loginData.json().status == false) {
           this.errorMessage = true;
+          this.spinner.hide();
         }
         this.loginTest = loginData.json().result[0];
         console.log(this.loginTest);
@@ -72,6 +75,7 @@ export class ReportsComponent implements OnInit {
           sessionStorage.setItem('backBtnReports', 'Y');
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
+          this.spinner.hide();
         } else {
           this.errorMessage = true;
 

@@ -4,6 +4,7 @@ import {SelectItem} from 'primeng/api';
 import { Router } from '@angular/router';
 declare var $: any;
 import { LoginServiceService } from '../services/login-service.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'setup',
   templateUrl: './setup.component.html',
@@ -17,7 +18,7 @@ export class SetupComponent implements OnInit {
     'user_type_id': ''
   };
   errorMessage = false;
-  constructor(private router:Router, private loginService: LoginServiceService) {
+  constructor(private spinner: NgxSpinnerService,private router:Router, private loginService: LoginServiceService) {
   }
 
   ngOnInit() {
@@ -184,10 +185,12 @@ export class SetupComponent implements OnInit {
       password: this.password,
       email_id: this.mailId
     }
+    this.spinner.show();
     if (this.mailId && this.password) {
       this.loginService.saveLoginDetails(data).subscribe(loginData => {
         if (loginData.json().status == false) {
           this.errorMessage = true;
+          this.spinner.hide();
         }
         this.loginTest = loginData.json().result[0];
         console.log(this.loginTest);
@@ -199,8 +202,10 @@ export class SetupComponent implements OnInit {
           sessionStorage.setItem('backBtnSetup', 'Y');
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
+          this.spinner.hide();
         } else {
           this.errorMessage = true;
+          this.spinner.hide();
 
         }
       });

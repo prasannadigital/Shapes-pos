@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { LoginServiceService } from '../services/login-service.service';
 declare var $: any;
 import {ExcelService} from '../services/excel.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 declare var jsPDF: any;
 @Component({
   selector: 'schedule',
@@ -37,7 +38,7 @@ export class ScheduleComponent implements OnInit {
   empData = new Array();
   appointmentsData = new Array();
 
-  constructor(private excelService:ExcelService,private service: SheduleServiceService,private router: Router,private loginService: LoginServiceService, private messageService: MessageService) { }
+  constructor(private spinner: NgxSpinnerService,private excelService:ExcelService,private service: SheduleServiceService,private router: Router,private loginService: LoginServiceService, private messageService: MessageService) { }
 
   ngOnInit() {
      sessionStorage.removeItem('backBtnInventory');     
@@ -83,10 +84,12 @@ export class ScheduleComponent implements OnInit {
       password: this.password,
       email_id: this.mailId
     }
+    this.spinner.show();
     if (this.mailId && this.password) {
       this.loginService.saveLoginDetails(data).subscribe(loginData => {
         if (loginData.json().status == false) {
           this.errorMessage = true;
+          this.spinner.hide();
         }
         this.loginTest = loginData.json().result[0];
         console.log(this.loginTest);
@@ -98,6 +101,7 @@ export class ScheduleComponent implements OnInit {
           sessionStorage.setItem('backBtnShedule', 'Y');
           $('#myModal').modal('hide');
           this.titleStyle= "visible";
+          this.spinner.hide();
         } else {
           this.errorMessage = true;
 

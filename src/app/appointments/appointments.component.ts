@@ -12,6 +12,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import { Http } from '@angular/http';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 declare var $: any;
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: 'appointments',
@@ -76,9 +77,16 @@ export class AppointmentsComponent implements OnInit {
   userData: any;
   @ViewChild("scheduler_here") schedulerContainer: ElementRef;
 
-  constructor(private http: Http,private serviceData: SheduleServiceService,private service: AppointmentsServiceService,private messageService: MessageService) { }
+  constructor(private spinner: NgxSpinnerService,private http: Http,private serviceData: SheduleServiceService,private service: AppointmentsServiceService,private messageService: MessageService) { }
 
   ngOnInit() {
+    this.spinner.show();
+ 
+    setTimeout(() => {
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+    }, 3000);
+  
      sessionStorage.removeItem('backBtnInventory');     
      sessionStorage.removeItem('backBtnSetup');     
      sessionStorage.removeItem('backBtnReports');     

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { getLocaleTimeFormat } from '@angular/common';
-
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,9 +9,16 @@ import { getLocaleTimeFormat } from '@angular/common';
 })
 export class DashboardComponent implements OnInit {
 userData:any;
-  constructor(private router: Router) { }
+  constructor(private spinner: NgxSpinnerService,private router: Router) { }
 
   ngOnInit() {
+    this.spinner.show();
+ 
+    setTimeout(() => {
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+    }, 3000);
+  
      sessionStorage.removeItem('backBtnInventory');
      sessionStorage.removeItem('backBtnSetup');     
      sessionStorage.removeItem('backBtnReports');     

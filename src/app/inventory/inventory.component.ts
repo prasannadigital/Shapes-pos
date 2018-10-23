@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 declare var $: any;
 import { Location } from '@angular/common';
 import { LoginServiceService } from '../services/login-service.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'inventory',
   templateUrl: './inventory.component.html',
@@ -14,7 +15,7 @@ export class InventoryComponent implements OnInit {
   errorMessage=false;
   loginTest:any;
   titleStyle="hidden";
-  constructor(private router: Router, private _location: Location, private loginService: LoginServiceService) { }
+  constructor(private spinner: NgxSpinnerService,private router: Router, private _location: Location, private loginService: LoginServiceService) { }
   ngOnInit() {
     //sessionStorage.removeItem('backBtnInventory');
     sessionStorage.removeItem('backBtnSetup');     
@@ -60,10 +61,12 @@ if(sessionStorage.backBtnInventory){
       password: this.password,
       email_id: this.mailId
     }
+    this.spinner.show();
     if (this.mailId && this.password) {
       this.loginService.saveLoginDetails(data).subscribe(loginData => {
         if (loginData.json().status == false) {
           this.errorMessage = true;
+          this.spinner.hide();
         }
         this.loginTest = loginData.json().result[0];
         console.log(this.loginTest);
@@ -75,9 +78,10 @@ if(sessionStorage.backBtnInventory){
           sessionStorage.setItem('backBtnInventory', 'Y');
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
+          this.spinner.hide();
         } else {
           this.errorMessage = true;
-
+          this.spinner.hide();
         }
       });
     }

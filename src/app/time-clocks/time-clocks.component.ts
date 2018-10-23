@@ -10,6 +10,7 @@ import { LoginServiceService } from '../services/login-service.service';
 import { Message } from 'primeng/components/common/api';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { ExcelService } from '../services/excel.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 declare var jsPDF: any;
 @Component({
   selector: 'time-clocks',
@@ -34,7 +35,7 @@ export class TimeClocksComponent implements OnInit {
   totalMin;
   finalHours;
 
-  constructor(private excelService: ExcelService, private loginService: LoginServiceService, private service: TimeClokServiceService, private _location: Location, private http: HttpClient, private router: Router, private globals: Globals, private messageService: MessageService) { }
+  constructor(private spinner: NgxSpinnerService,private excelService: ExcelService, private loginService: LoginServiceService, private service: TimeClokServiceService, private _location: Location, private http: HttpClient, private router: Router, private globals: Globals, private messageService: MessageService) { }
 
   emp_id = '';
   errorMessage = false;
@@ -136,6 +137,7 @@ export class TimeClocksComponent implements OnInit {
       password: this.password,
       email_id: this.mailId
     }
+    this.spinner.show();
     // if (this.mailId && this.password) {
     //   this.loginService.saveLoginDetails(data).subscribe(loginData => {
     //     if(loginData.json().status == false){
@@ -176,7 +178,7 @@ export class TimeClocksComponent implements OnInit {
         this.data.modified_by = this.test1.result.modified_by;
         this.data.remarks = this.test1.result.remarks;
         this.data.total_hours = this.test1.result.total_hours;
-
+        this.spinner.hide();
         if (this.test1.status == true) {
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
