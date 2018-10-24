@@ -7398,8 +7398,13 @@ html {
       padding-top: 25px;
   }
   .login-form {
-      padding: 100px;
+      /* padding: 100px; */
       height: 100%;
+  }
+  .backToApp{
+    position: fixed;
+    top:10%;
+    right: 3%;
   }
   .login-form:after {
       background: #ffe8b6;
@@ -10858,9 +10863,12 @@ html {
 }
 /********************Price Check Css************************/
 .modal-content{
-  border:  5px solid #da8c42;
+  border:  5px solid #da8c42 !important;
   background:#fff;
-  
+  margin-top: 25%;
+  padding:5%;
+
+
 }
  .price-info h2 {
     background: #f5c585;
