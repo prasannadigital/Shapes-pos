@@ -459,10 +459,10 @@
       <div class="sul-show-result">
         <br>
         <br>
-        <div class="search-list" *ngFor="let item of states " (click)="onSelect(item)">
+        <button class="btn btn-primary submit-button" *ngFor="let item of states " (click)="onSelect(item)">
           <span>
             <a href="#"></a>{{item.name}}</span>
-        </div>
+        </button>
         <div class="no-search" *ngIf="states == null">
          <h3>No records Found</h3>
         </div>

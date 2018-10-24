@@ -73,6 +73,7 @@ export class NewTicketComponent implements OnInit {
   temp: any[] = new Array();
 
   onSelect(item) {
+    
     this.selectedOption = item;
     this.custFirstName = this.selectedOption.firstname;
     this.custLastName = this.selectedOption.lastname;
@@ -80,6 +81,7 @@ export class NewTicketComponent implements OnInit {
     this.custNo = this.selectedOption.mobile;
     this.custEmail = this.selectedOption.email_id;
     this.custStatus = this.selectedOption.rec_status;
+    this.selectedValue= this.custFirstName;
   }
 
   membershipInfo() {
