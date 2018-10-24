@@ -8089,7 +8089,7 @@ html {
   }
   .clock-in-services{
       background: #ffe8b6;
-      border: 5px solid #da8c42;
+      /*border: 5px solid #da8c42;*/
       padding: 10px;
   }
   .clock-in-services1 label {

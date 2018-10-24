@@ -1,0 +1,10 @@
+.test{
+    position: fixed;
+    bottom: 0;
+    background-color: bisque;
+}
+.test1{
+    position: fixed;
+    top: 0;
+    background-color: bisque;
+}
