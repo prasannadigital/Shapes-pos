@@ -126,10 +126,13 @@ export class TimeClocksComponent implements OnInit {
   RedirectToHome() {
     this.router.navigate(['dashboard']);
   }
-  errorClear() {
+  errorClear(){
     this.errorMessage = false;
-    if(this.password!=null && this.mailId!=null){
+    if(this.password && this.mailId){
       this.btnDisable=false;
+    }
+    else{
+      this.btnDisable=true;
     }
   }
   loginSubmite() {

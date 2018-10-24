@@ -138,8 +138,11 @@ export class ManagerComponent implements OnInit {
   }
   errorClear(){
     this.errorMessage = false;
-    if(this.password!=null && this.mailId!=null){
+    if(this.password && this.mailId){
       this.btnDisable=false;
+    }
+    else{
+      this.btnDisable=true;
     }
   }
   RedirectToHome() {
