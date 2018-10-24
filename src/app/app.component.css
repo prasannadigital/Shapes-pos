@@ -1,10 +1,20 @@
-.test{
-    position: fixed;
-    bottom: 0;
-    background-color: bisque;
+.parentHeight{
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    height: 100%;
 }
-.test1{
-    position: fixed;
-    top: 0;
-    background-color: bisque;
+#fixedHeader{
+    height: 8%;
+}
+#fixedFooter{
+    height: 10%;
+}
+#scrollablePart{
+    height: 80%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.prasanna{
+    display: none;
 }

@@ -7,6 +7,7 @@ import { LoginServiceService } from '../services/login-service.service';
 import {Message} from 'primeng/components/common/api';
 import {MessageService} from 'primeng/components/common/messageservice';
 import { NgxSpinnerService } from 'ngx-spinner';
+declare var $: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
   constructor(private spinner: NgxSpinnerService,private http: HttpClient, private router: Router,private service:LoginServiceService,private messageService: MessageService) {}
 
   ngOnInit() {
-  
+  this.loginPopUp();
   }
 
   onClosed(dismissedAlert: AlertComponent): void {
@@ -43,8 +44,9 @@ export class LoginComponent implements OnInit {
         if (loginData.json().status == true) {
           console.log(loginData.json().result[0])
           sessionStorage.setItem('primaryLoginData', JSON.stringify(loginData.json().result[0]));
-          this.router.navigate(['dashboard']);
           this.spinner.hide();
+          this.router.navigate(['dashboard']);
+          $('#myModal').modal('hide');
         }else {
           this.errorMessage = true;
           this.spinner.hide();
@@ -67,4 +69,7 @@ export class LoginComponent implements OnInit {
       this.btnDisable=true;
     }
   }
+  loginPopUp() {
+      $('#myModal').modal('show');    
+      }
 }
