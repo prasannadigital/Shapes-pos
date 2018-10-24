@@ -43,7 +43,7 @@
       </div>
     
       <div class="row">
-        <button class="btn-primary" (click)="viewNewAppiontment()">Create New Appointment</button>
+        <button [disabled]="createAppointmentBtn1"  class="btn btn-primary submit-button" (click)="viewNewAppiontment()">Create New Appointment</button>
       </div>
       <div *ngIf="createNew">
      
@@ -68,7 +68,7 @@
           </div>
           <div class="row" *ngIf="noRecordsFound">
           <div class="row"><h3 class="alertMessage">No Records Found</h3></div>
-              <button data-toggle="modal" data-target="#addCustomerModelPopup" (click)="createNewCustomer();">Add New Customer</button>
+              <button class="btn btn-primary submit-button"data-toggle="modal" data-target="#addCustomerModelPopup" (click)="createNewCustomer();">Add New Customer</button>
         
             </div>
       <div class="row">
@@ -76,7 +76,7 @@
           <label for="input" class="col-md-5 control-label">Start Date</label>
           <div class="col-md-7">
             <div class="input-group">
-              <p-calendar [(ngModel)]="date1" [(ngModel)]="shedule.startdate" name="shedule.startdate" [showTime]="true" [showIcon]="true" (ngModelChange)="getStartDate($event)"
+              <p-calendar [(ngModel)]="date1"[(ngModel)]="shedule.startdate" name="shedule.startdate" [showTime]="true" [showIcon]="true" (ngModelChange)="getStartDate($event);createAppiontmentBtnDisable($event)"
               dateFormat="yy-mm-dd" ></p-calendar>
             </div>
           </div>
@@ -88,7 +88,7 @@
         <label for="input" class="col-md-5 control-label">End Date</label>
         <div class="col-md-7">
           <div class="input-group">
-            <p-calendar [(ngModel)]="date2" [(ngModel)]="shedule.enddate" name="shedule.enddate" [showTime]="true" [showIcon]="true" (ngModelChange)="getEndDate($event)"
+            <p-calendar [(ngModel)]="date2"  [(ngModel)]="shedule.enddate" name="shedule.enddate" [showTime]="true" [showIcon]="true" (ngModelChange)="getEndDate($event);createAppiontmentBtnDisable($event)"
               dateFormat="yy-mm-dd"></p-calendar>
           </div>
         </div>
@@ -105,7 +105,7 @@
     </div>
   </div>
   <div class="row">
-    <button class="btn-primary" (click)="createAppointment();showSuccess()">Create</button>
+    <button [disabled]="createAppointmentBtn2" class="btn btn-primary submit-button" (click)="createAppointment();showSuccess();">Create</button>
 
   </div>
   </div>

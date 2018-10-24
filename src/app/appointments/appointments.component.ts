@@ -20,7 +20,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./appointments.component.css']
 })
 export class AppointmentsComponent implements OnInit {
-  
+  createAppointmentBtn1=true;
+  createAppointmentBtn2=true;
   selectedOption: any;
   searchValue:'';
   firstName = '';
@@ -179,6 +180,7 @@ export class AppointmentsComponent implements OnInit {
   setStaffId(employee_id: any): void {
     this.shedule.employee_id = employee_id;
     this.appiontmentDisplay(this.shedule.employee_id,this.shedule.branch_id);
+    this.createAppointmentBtn1=false;
     //this.serviceData.getStaffAppointments(this.shedule.employee_id,this.shedule.branch_id).subscribe(res => {
      // this.appiontmentData = res.json().data;
       //console.log("hai"+this.appiontmentData);
@@ -223,7 +225,14 @@ export class AppointmentsComponent implements OnInit {
      this.users=[];
     }
   }
-  
+  createAppiontmentBtnDisable(){
+    if(this.shedule.startdate && this.shedule.enddate && this.shedule.branch_id && this.shedule.employee_id){
+     this.createAppointmentBtn2=false;
+    }
+    else{
+      this.createAppointmentBtn2=true; 
+    }
+  }
   saveCustomer() {
     this.submitted = true;
     var data = {
