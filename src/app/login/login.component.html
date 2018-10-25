@@ -9,7 +9,7 @@
                       <label>Employee Id</label>
                     </div>
                     <div class="col-md-8 col-sm-6 login_form-right">
-                      <input type="text" class="form-control" [(ngModel)]="mailId" (ngModelChange)="errorClear()" name="some" placeholder="Employee Id" (ngModelChange)="clearErrorMess();">
+                      <input type="text" class="form-control keyboardInput" [(ngModel)]="mailId" (ngModelChange)="errorClear()" name="some" placeholder="Employee Id" (ngModelChange)="clearErrorMess();">
                     </div>
                     <div class="clear"></div>
                   </div>
@@ -18,7 +18,7 @@
                       <label>Employee Password</label>
                     </div>
                     <div class="col-md-8 col-sm-6 login_form-right">
-                      <input type="password" class="form-control" [(ngModel)]="password" (ngModelChange)="errorClear()" name="password" placeholder="Employee Password"  (ngModelChange)="clearErrorMess();">
+                      <input type="password" class="form-control keyboardInput"  [(ngModel)]="password" (ngModelChange)="errorClear()" name="password" placeholder="Employee Password"  (ngModelChange)="clearErrorMess();">
                     </div>
                     <div class="form-group">
                       <label *ngIf="errorMessage" class="alertRed">Invalid Credentials</label>
