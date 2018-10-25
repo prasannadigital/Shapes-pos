@@ -61,7 +61,6 @@ import { ViewActiveGiftCardComponent } from './manager-tool/view-active-gift-car
 import { OnlineGiftCardsComponent } from './manager-tool/online-gift-cards/online-gift-cards.component';
 import { AutoCompleteModule } from 'primeng/autocomplete'
 import {GrowlModule} from 'primeng/growl';
-
 import {MultiSelectModule} from 'primeng/multiselect';
 import { WeekdaysPipe } from './pipe/weekdays.pipe';
 import { YesornoPipe } from './pipe/yesorno.pipe';

@@ -10343,10 +10343,6 @@ html {
     border-radius: 5px;
 	margin-bottom:20px;
 }
-.accountpayments1 .form-check-label {
-    font-size: 16px;
-    font-weight: 500;
-}
 .accountpayments1 .form-check {
     text-align: left;
     margin-top: 6px;
@@ -11974,46 +11970,11 @@ margin-bottom:30px;
 }
 .accountpayments {
 background: #fff;
-  border: 5px solid #da8c42;
-}
-.accountpayments-button {
-    border: 1px solid #ccc;
-  display: block;
-  text-align: left;
-  padding: 8px 10px;
-  font-size: 20px;
-  background: #e4e9ef;
-  text-decoration: none;
-  color: #000;
-  text-transform: uppercase;
-  line-height: 1.8;
-  font-weight: 600;
-  border-radius: 5px;
-margin-bottom:20px;
+  /* border: 5px solid #da8c42; */
 }
 .accountpayments1 .form-check-label {
   font-size: 16px;
   font-weight: 500;
-}
-.accountpayments1 .form-check {
-  text-align: left;
-  margin-top: 6px;
-  margin-bottom: 0;
-}
-.accountpayments2 {
-  text-align: center;
-  padding: 20px;
-}
-.accountpayments2 .btn-link {
-  border: 1px solid #ccc;
-  padding: 10px 20px;
-  width: 100px;
-  text-decoration: none;
-  font-weight: 600;
-  color: #000;
-  margin-right: 20px;
-  background: #f1f1f1;
-  font-size: 16px;
 }
 .addgiftcard {
 background: #fff;
@@ -14209,46 +14170,12 @@ margin-bottom:30px;
 }
 .accountpayments {
 background: #fff;
-  border: 5px solid #da8c42;
-}
-.accountpayments-button {
-    border: 1px solid #ccc;
-  display: block;
-  text-align: left;
-  padding: 8px 10px;
-  font-size: 20px;
-  background: #e4e9ef;
-  text-decoration: none;
-  color: #000;
-  text-transform: uppercase;
-  line-height: 1.8;
-  font-weight: 600;
-  border-radius: 5px;
-margin-bottom:20px;
-}
-.accountpayments1 .form-check-label {
-  font-size: 16px;
-  font-weight: 500;
+  /* border: 5px solid #da8c42; */
 }
 .accountpayments1 .form-check {
   text-align: left;
   margin-top: 6px;
   margin-bottom: 0;
-}
-.accountpayments2 {
-  text-align: center;
-  padding: 20px;
-}
-.accountpayments2 .btn-link {
-  border: 1px solid #ccc;
-  padding: 10px 20px;
-  width: 100px;
-  text-decoration: none;
-  font-weight: 600;
-  color: #000;
-  margin-right: 20px;
-  background: #f1f1f1;
-  font-size: 16px;
 }
 .addgiftcard {
 background: #fff;
