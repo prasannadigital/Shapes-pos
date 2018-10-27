@@ -1,632 +1,664 @@
+<div id="myModal-online" class="modal fade" role="dialog" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+          <div class="Locations-and-App-Listing">
+              <h3>Locations and App Listing</h3>
+              <div class="button2-content0">
+                <h4><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Online Store</h4>
+                <div class="button2-sec">
+                  <b>Business Location</b>
+                  <h4>This information will be used on your receipts and invoices</h4>
+                  <div class="form-group">
+                  <label for="input" class="col-md-4 control-label">Business address</label>
+                  <div class="col-md-8">
+                  <input type="text" [(ngModel)]="locations.loc_online_buss_address" name="locations.loc_online_buss_address" class="form-control"  placeholder="Shapes BrowBar">
+                  </div>
+                  <div class="clear"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="input" class="col-md-4 control-label">Phone</label>
+                    <div class="col-md-8">
+                    <input type="text" class="form-control"  [(ngModel)]="locations.loc_online_phone" name="locations.locations.loc_online_phone" placeholder="8779242769">
+                    </div>
+                  <div class="clear"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="input" class="col-md-4 control-label">Contact Name</label>
+                    <div class="col-md-8">
+                    <input type="text" class="form-control" [(ngModel)]="locations.loc_online_contact_name" name="locations.loc_online_contact_name" placeholder="full name">
+                    </div>
+                  <div class="clear"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="input" class="col-md-4 control-label">Shipping Address</label>
+                    <div class="col-md-8">
+                    <div class="form-check pull-left">
+                  <input class="form-check-input" type="checkbox" [(ngModel)]="locations.loc_online_shipping_address" name="locations.loc_online_shipping_address" >
+                    <label class="form-check-label" for="inlineFormCheck">Same as business address</label>
+                   </div>
+                    </div>
+                  <div class="clear"></div>
+                  </div>
+                  <div class="ci-button">
+                      <button type="button" class="btn btn-warning"  data-dismiss="modal" >Back</button>
+                  <button type="button" class="btn btn-link" style="color:#ccc;" (click)="saveBussinessAddress()">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="myModal-manage" class="modal fade" role="dialog" data-backdrop="static">
+ <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="Locations-and-App-Listing">
+          <h3>Locations and App Listing</h3>
+              <div class="lap-info1">
+          <div class="button1-content1">
+            <h4><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Shapes BrowBar</h4>
+            <div class="button1-sec1">
+              <b>1. Business Location</b>
+              <p>This information will be used on your receipts and invoices</p>
+                <div class="form-group">
+                <label for="input" class="col-md-4 control-label">Business address</label>
+                <div class="col-md-8">
+                <input type="text" class="form-control" [(ngModel)]="locations.loc_bussiness_address" name="locations.loc_bussiness_address" placeholder="Shapes BrowBar">
+                </div>
+                <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-4 control-label">Address Line 2</label>
+                  <div class="col-md-8">
+                  <input type="text" class="form-control" [(ngModel)]="locations.loc_address2" name="locations.loc_address2" placeholder="Optional">
+                  </div>
+                <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-4 control-label">City</label>
+                  <div class="col-md-8">
+                  <input type="text" class="form-control"[(ngModel)]="locations.loc_city" name="locations.loc_city" placeholder="Optional">
+                  </div>
+                <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-4 control-label">State / Province</label>
+                  <div class="col-md-8">
+                  <select class="form-control" [(ngModel)]="locations.loc_stateprovince" name="locations.loc_stateprovince">
+                  <option selected="">Select State/Province </option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                  </div>
+                <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-4 control-label">Postal Code</label>
+                  <div class="col-md-8">
+                  <input type="text" class="form-control" [(ngModel)]="locations.loc_postal_code" name="locations.loc_postal_code" placeholder="Postal Code">
+                  </div>
+                <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-4 control-label">Phone</label>
+                  <div class="col-md-8">
+                  <input type="text" class="form-control" [(ngModel)]="locations.loc_phone" name="locations.loc_phone" placeholder="8779242769">
+                  </div>
+                <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-4 control-label">Contact Name</label>
+                  <div class="col-md-8">
+                  <input type="text" class="form-control"  [(ngModel)]="locations.loc_contact_name" name="locations.loc_contact_name" placeholder="full name">
+                  </div>
+                <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-4 control-label">Shipping Address</label>
+                  <div class="col-md-8">
+                  <div class="form-check pull-left">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="locations.loc_shipping_address" name="locations.loc_shipping_address" checked="">
+                  <label class="form-check-label" for="inlineFormCheck">Same as business address</label>
+                 </div>
+                  </div>
+                <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-4 control-label">Region</label>
+                  <div class="col-md-8">
+                    <select class="form-control" [(ngModel)]="locations.loc_region" name="locations.loc_region">
+                  <option selected="">North & South America</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                  </div>
+                <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-4 control-label">Time</label>
+                  <div class="col-md-8">
+                    <select class="form-control"  [(ngModel)]="locations.loc_timezone" name="locations.loc_timezone">
+                  <option selected="">Please Select</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                  </div>
+                <div class="clear"></div>
+                </div>              
+              <!-- <button type="button" class="btn btn-secondary btn-sm pull-right" style="background:#f1f1f1" data-dismiss="modal">Next</button>      -->
+            </div>
+            <div class="col-md-12">
+              <h3>2. List your business on the shapes BrowBar App</h3>
+                            <p>Preview what your clients will see when they download the Shapes BrowBar App</p>
+                            <div class="form-group">
+                                <label for="input" class="col-md-3 control-label">Where do you meet your clients</label>
+                                <div class="col-md-9">
+                                  <div class="form-check pull-left">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"  value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                    Same as business address
+                                    </label>
+                                    <br>
+                                     <input class="form-check-input" type="radio" name="exampleRadios" value="option2">
+                                    <label class="form-check-label" for="exampleRadios2">
+                                    Different address or landmark
+                                    </label>
+                                    <div class="clear"></div>
+                                  </div>
+                                  
+                                  
+                                  <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="form-group">
+                              <label for="input" class="col-md-3 control-label">Business description (optional)</label>
+                              <div class="col-md-9">
+                              <textarea class="form-control" rows="3" [(ngModel)]="locations.loc_business_desc" name="locations.loc_business_desc" ></textarea>
+                              </div>
+                            <div class="clear"></div>
+                            </div>
+                            <div class="form-group">
+                              <label for="input" class="col-md-3 control-label" >Location description (optional)</label>
+                              <div class="col-md-9">
+                              <textarea class="form-control"  rows="3" [(ngModel)]="locations.loc_loc_desc" name="locations.loc_loc_desc"></textarea>
+                              </div>
+                            <div class="clear"></div>
+                            </div>
+                            
+                            <div class="ci-button">
+                                <button type="button" class="btn btn-warning"  data-dismiss="modal" >Back</button>
+                            <button type="button" class="btn btn-link" style="color:#ccc;"  (click)="saveBussinessAddress()">Save</button>
+                            </div>
+                            &nbsp;									
+            </div> 
+            <div class="clear"></div>
+          </div>    
+      </div>
+        </div> 
+            
+      </form>
+    </div>
+  </div>
+</div>
 <div class="accountpayments">
   <div class="new-bs-contract-information pb-20">
     <!-- <div class="col-md-12"> -->
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Schedule
-            a Business Day</a></li>
-        <li role="presentation"><a href="#Locations-and-App-Listing" aria-controls="profile" role="tab" data-toggle="tab">Locations
-            and App Listing</a></li>
-        <li role="presentation"><a href="#Contract-Information" aria-controls="messages" role="tab" data-toggle="tab">Contract
-            Information</a></li>
-        <li role="presentation"><a href="#logo-settings" aria-controls="logo-settings" role="tab" data-toggle="tab">Logo
-            & Color</a></li>
-        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Tax Rates</a></li>
-      </ul>
-<div >
-    
-  </div>
-  
-			<div class="new-bs-contract-information pb-20">
-				<div class="col-md-12">
-										<!-- Nav tabs -->
-						<ul class="nav nav-tabs" role="tablist">
-							<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Schedule a Business Day</a></li>
-							<li role="presentation"><a href="#Locations-and-App-Listing" aria-controls="profile" role="tab" data-toggle="tab">Locations and App Listing</a></li>
-							<li role="presentation"><a href="#Contract-Information" aria-controls="messages" role="tab" data-toggle="tab">Contract Information</a></li>
-							<li role="presentation"><a href="#logo-settings" aria-controls="logo-settings" role="tab" data-toggle="tab">Logo & Color</a></li>
-							<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Tax Rates</a></li>
-						</ul>
-
-										<!-- Tab panes -->
-							<div class="tab-content">
-								<div role="tabpanel" class="tab-pane active" id="home">
-                    <div class="col-md-12">
-                        <b><label>Schedule a New Closed Day / Holiday</label></b>
-                        <p>Scheduling closed business days does not automaticaly cancel existing services on those days. Any existing classes / appointment must be cancelled separately prior to scheduling the closes business day i.c both inform clients at the ancellations as well as free up any related appointment unavailability and resource schedulas. Scheduling closed business days prevenis new services from being scheduled on those days.</p>
-                        <form>
-                            <div class="form-group">
-                              <label for="input" class="col-md-3 control-label">Start Date</label>
-                                <div class="col-md-9">
-                                  <div class="input-group">
-                                    <input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
-                                  <span class="input-group-btn"><button type="button" class="btn btn1 btn-primary" data-toggle="datepicker"><i class="fa fa-calendar"></i></button></span>
-                                  </div>
-                                </div>
-                                &nbsp;&nbsp;<small> <sup>*</sup> Leave blank for single day</small>
-                            <div class="clear"></div>
-                            </div>
-                            <div class="form-group">
-                              <label for="input" class="col-md-3 control-label">End Date</label>
-                                <div class="col-md-9">
-                                  <div class="input-group">
-                                    <input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
-                                  <span class="input-group-btn"><button type="button" class="btn btn1 btn-primary" data-toggle="datepicker"><i class="fa fa-calendar"></i></button></span>
-                                  </div>
-                                </div>
-                            <div class="clear"></div>
-                            
-                            </div>
-                            <div class="form-group">
-                              <label for="input" class="col-md-3 control-label">Name of closed day / holiday</label>
-                                <div class="col-md-9">
-                                  <textarea class="form-control" rows="3" ></textarea>
-                                  &nbsp;&nbsp;<small><sup>*</sup> Name will display on class and appointment schedule for staff and clients</small>
-                                <div class="clear"></div>
-                                </div>
-                            </div>
-                            &nbsp;
-                            <div class="form-group">
-                              <label for="input" class="col-md-3 control-label">Service Categories</label>
-                                <div class="col-md-9">
-                                  <select multiple class="form-control">
-                                    <option>All / Business closed</option>
-                                    <option>Hair Styling packages</option>
-                                    <option>Makeup service packages</option>
-                                    <option>Members & package checkout</option>
-                                  </select>
-                                <div class="clear"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                <button type="button" class="btn pull-right" style="font-size:18px;margin-top:15px;">Submit</button>	
-                                <div class="clear"></div>
-                                </div>
-                            </div>
-                              
-                        </form>
-                        <b><label>Schedule closed days / Hoildays</label></b>
-                        <table width="100%">
-                          <tr>
-                            <th>Date</th>
-                            <th>Description</th>
-                            <th>Service catagories</th>
-                          </tr>
-                          <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                        </table>
-                        
-                      </div>
-                </div>
-											
-								<div role="tabpanel" class="tab-pane" id="Locations-and-App-Listing">
-									<div class="Locations-and-App-Listing">
-                      <div class="accountpayment">
-                          <div class="new-bs-contract-information pb-20">
-                            <div class="col-md-12">
-                              <h3>Locations and App Listing</h3>
-                              
-                              <button class="bi-button"><h3><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Shapes BrowBar <span>Mange your app listing here</span></h3></button>
-                              
-                              <button class="bi-button1"><h3><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Online Store</h3></button>
-                                            
-                                            
-                                            
-                                            
-                                            
-                                      
-                            </div>
-                                      
-                    
-                                    
-                                     
-                                     
-                                  
-                            </div>
-                            <div class="clear"></div>
-                          </div>
-									</div>
-									
-								</div>
-								
-							   <div role="tabpanel" class="tab-pane" id="Contract-Information">
-									<h3>Contact Information</h3>
-                  <div class="col-md-12">
-                      <b><label>How Will your clients get in touch?</label></b>
-                      <p>This info is displayed to your clients, when they receive an auto email or click a "Contact Us" Link</p>
-                      <form>
-                          <div class="form-group">
-                            <label for="input" class="col-sm-3 control-label">Business name for auto emails</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" id="input" placeholder="Shapes BrowBar">
-                            </div>
-                            <div class="clear"></div>
-                          </div>
-                          <div class="form-group">
-                            <label for="email" class="col-sm-3 control-label">Contact email</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" id="input" placeholder="info@shapesbrowbar.com">
-                            </div>
-                            <div class="clear"></div>
-                          </div>
-                          <div class="form-group">
-                            <label for="input" class="col-sm-3 control-label">Replay to address for auto</label>
-                            <div class="col-sm-9">
-                               <input type="checkbox" id="inlineCheckbox1" value="option1" checked> Same as business address
-                            </div>
-                            <div class="clear"></div>
-                          </div>
-                      </form>
-                      
-                      <b><label>How will Shapes BrowBar get in touch?</label></b>
-                      <p>Who should we email about new features and updates to the software?</p>
-                      <div class="form-group">
-                            <label for="email" class="col-sm-3 control-label">Contact email</label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" id="input" placeholder="info@shapesbrowbar.com">
-                            </div>
-                            <div class="clear"></div>
-                          </div>
-                      <button type="button" class="btn pull-right" style="font-size: 18px;">Next</button>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Schedule
+          a Business Day</a></li>
+      <li role="presentation"><a href="#Locations-and-App-Listing" aria-controls="profile" role="tab" data-toggle="tab">Locations
+          and App Listing</a></li>
+      <li role="presentation"><a href="#Contract-Information" aria-controls="messages" role="tab" data-toggle="tab">Contract
+          Information</a></li>
+      <li role="presentation"><a href="#logo-settings" aria-controls="logo-settings" role="tab" data-toggle="tab">Logo
+          & Color</a></li>
+      <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Tax Rates</a></li>
+    </ul>
+    <div>
+    </div>
+    <div class="new-bs-contract-information pb-20">
+      <div class="col-md-12">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="home">
+            <div class="col-md-12">
+              <b><label>Schedule a New Closed Day / Holiday</label></b>
+              <p>Scheduling closed business days does not automaticaly cancel existing services on those days.
+                Any
+                existing classes / appointment must be cancelled separately prior to scheduling the closes
+                business day
+                i.c both inform clients at the ancellations as well as free up any related appointment
+                unavailability and
+                resource schedulas. Scheduling closed business days prevenis new services from being scheduled
+                on those
+                days.</p>
+              <form>
+                <div class="form-group">
+                  <label for="input" class="col-md-3 control-label">Start Date</label>
+                  <div class="col-md-9">
+                    <div class="input-group">
+                      <p-calendar [(ngModel)]="date1" [(ngModel)]="startDate" name="startDate" [showIcon]="true"
+                        (ngModelChange)="getStartDate($event);" dateFormat="yy-mm-dd"></p-calendar>
                     </div>
-                    
-									
-							   </div>
-							   
-								<div role="tabpanel" class="tab-pane" id="logo-settings">
-                    <div class="accountpayment">
-                        <div class="new-bs-contract-information pb-20">
-                          <div class="col-md-12">	
-                            <h3>Logo and Colors</h3>
-                                    <h4 style="margin-top:0;">The Logo used in yourSHAPESBROWBAR site and within auto emails. Suggested logo size:300x70 pixels</h4>
-                                    <div class="lc-section">
-                                      <div class="lc-section-1">
-                                        <div class="col-md-6 col-sm-6 col-xs-12 lc-section-1-l">
-                                          <img src="../img/logo-300x70.jpg" alt="">
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12 lc-section-1-r">
-                                          <form class="form-inlinel">
-                                              <label class="sr-only" for="inlineFormInputName2">Name</label>
-                                              <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="user name">
-                                              <br>
-                                              <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-                                              <div class="input-group mb-2 mr-sm-2">
-                                              
-                                              <input type="password" class="form-control" id="passwprd" placeholder="Password">
-                                              </div>
-                    
-                                              <div class="form-check mb-2 mr-sm-2">
-                                              <label class="form-check-label" for="inlineFormCheck">
-                                                <a href="#">Create account</a> | <a href="#">Need password</a> | Remember me &nbsp;<input class="form-check-input" type="checkbox" id="inlineFormCheck">
-                                              </label>
-                    
-                                              </div>
-                    
-                                              <button type="submit" class="btn btn-primary mb-2">Login</button>
-                                            </form>
-                                            
-                                          <div class="user-ingo">
-                                            <ul>
-                                              <li><a href="#">My Info</a></li>
-                                              <li><a href="#">Online Store</a></li>
-                                              <li><a href="#">Appointments</a></li>
-                                              <li><a href="#">Classes</a></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                        <div class="clear"></div>
-                                      </div>
-                                      <div class="clear"></div>
-                                      <div class="lc-section-2">
-                                        <div class="col-md-3 col-sm-6 col-xs-12 logo-remove1"><button>Remove Logo </button></div>
-                                        <div class="col-md-4 col-sm-6 col-xs-12 color-picker">Header color in consumer mode&nbsp; <input type="color" value="#f1f1f1"></div>
-                                        <div class="col-md-2 col-sm-6 col-xs-12 color-picker">Test Color&nbsp; <input type="color" value="#ff4137"> </div>
-                                        <div class="col-md-3 col-sm-6 col-xs-12 color-picker"><a href="#">Revert to default colors</a></div>
-                                        <div class="clear"></div>
-                                      </div>
-                                      <div class="lc-section-3">
-                                        <h3>Mobile Logo</h3>
-                                        <h5>The logo used in SHAPESBROWBAR mobile apps. Suggested logo size:64x64 pixels.</h5>
-                                        <img src="../img/logo-300x70.jpg" style="width:160px;" alt="">
-                                        <button type="button" class="btn btn-secondary">Remove Logo</button>
-                                        <div class="clear"></div>
-                                      </div>
-                                      <div class="lc-section-3">
-                                        <h3>Gift Card Logo</h3>
-                                        <h5>The logo used in SHAPESBROWBAR mobile apps. Suggested logo size:200x50 pixels.</h5>
-                                        <img src="../img/logo-300x70.jpg" style="width:230px;" alt="">
-                                        <button type="button" class="btn btn-secondary">Remove Logo</button>
-                                        <div class="clear"></div>
-                                      </div>
-                                      <div class="clear"></div>
-                                    </div>
-                          </div>	
-
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">
-          <div class="col-md-12">
-            <b><label>Schedule a New Closed Day / Holiday</label></b>
-            <p>Scheduling closed business days does not automaticaly cancel existing services on those days. Any
-              existing classes / appointment must be cancelled separately prior to scheduling the closes business day
-              i.c both inform clients at the ancellations as well as free up any related appointment unavailability and
-              resource schedulas. Scheduling closed business days prevenis new services from being scheduled on those
-              days.</p>
-            <form>
-              <div class="form-group">
-                <label for="input" class="col-md-3 control-label">Start Date</label>
-                <div class="col-md-9">
-                  <div class="input-group">
-                      <p-calendar [(ngModel)]="date1"  [(ngModel)]="startDate" name="startDate"  [showIcon]="true" (ngModelChange)="getStartDate($event);"
-                      dateFormat="yy-mm-dd"></p-calendar>
-                   
                   </div>
-                </div>
-                &nbsp;&nbsp;<small> <sup>*</sup> Leave blank for single day</small>
-                <div class="clear"></div>
-              </div>
-              <div class="form-group">
-                <label for="input" class="col-md-3 control-label">End Date</label>
-                <div class="col-md-9">
-                  <div class="input-group">
-                      <p-calendar [(ngModel)]="date2"  [(ngModel)]="endDate" name="endDate"  [showIcon]="true" (ngModelChange)="getEndDate($event);"
-                      dateFormat="yy-mm-dd"></p-calendar>
-                  </div>
-                </div>
-                <div class="clear"></div>
-
-              </div>
-              <div class="form-group">
-                <label for="input" class="col-md-3 control-label">Name of closed day / holiday</label>
-                <div class="col-md-9">
-                  <textarea class="form-control" [(ngModel)]="holidayName" name="holidayName" rows="3"></textarea>
-                  &nbsp;&nbsp;<small><sup>*</sup> Name will display on class and appointment schedule for staff and
-                    clients</small>
+                  &nbsp;&nbsp;<small> <sup>*</sup> Leave blank for single day</small>
                   <div class="clear"></div>
                 </div>
-              </div>
-              &nbsp;
-              <div class="form-group">
-                <label for="input" class="col-md-3 control-label">Service Categories</label>
-                <div class="col-md-9">
-                    <p-multiSelect [options]="packs" defaultLabel="All Services" [(ngModel)]="selectedPack" [(ngModel)]="serviceData.cat_id"
-                    (ngModelChange)="onChange($event)" [panelStyle]="{minWidth:'12em'}" [ngModelOptions]="{standalone: true}"></p-multiSelect>
+                <div class="form-group">
+                  <label for="input" class="col-md-3 control-label">End Date</label>
+                  <div class="col-md-9">
+                    <div class="input-group">
+                      <p-calendar [(ngModel)]="date2" [(ngModel)]="endDate" name="endDate" [showIcon]="true"
+                        (ngModelChange)="getEndDate($event);" dateFormat="yy-mm-dd"></p-calendar>
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-3 control-label">Name of closed day / holiday</label>
+                  <div class="col-md-9">
+                    <textarea class="form-control" [(ngModel)]="holidayName" name="holidayName" rows="3"></textarea>
+                    &nbsp;&nbsp;<small><sup>*</sup> Name will display on class and appointment schedule for
+                      staff and
+                      clients</small>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+                &nbsp;
+                <div class="form-group">
+                  <label for="input" class="col-md-3 control-label">Service Categories</label>
+                  <div class="col-md-9">
+                    <p-multiSelect [options]="packs" defaultLabel="All Services" [(ngModel)]="selectedPack"
+                      [(ngModel)]="serviceData.cat_id" (ngModelChange)="onChange($event)" [panelStyle]="{minWidth:'12em'}"
+                      [ngModelOptions]="{standalone: true}"></p-multiSelect>
                     <p>Selected Cars: {{selectedPack | json}}</p>
                     <div class="clear"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <div class="col-md-12">
-                  <button (click)="saveHolidays();" type="button" class="btn pull-right" style="font-size:18px;margin-top:15px;">Submit</button>
-                  <div class="clear"></div>
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <button (click)="saveHolidays();" type="button" class="btn pull-right" style="font-size:18px;margin-top:15px;">Submit</button>
+                    <div class="clear"></div>
+                  </div>
                 </div>
-              </div>
-
-            </form>
-            <b><label>Schedule closed days / Hoildays</label></b>
-            <table width="100%">
-              <tr>
-                <th>Date</th>
-                <th>Description</th>
-                <th>Service catagories</th>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </table>
-
-          </div>
-        </div>
-
-        <div role="tabpanel" class="tab-pane" id="Locations-and-App-Listing">
-          <div class="Locations-and-App-Listing">
-            <div class="accountpayments">
-              <div class="new-bs-contract-information pb-20">
-                <div class="col-md-12">
-                  <h3>Locations and App Listing</h3>
-
-                  <button class="bi-button">
-                    <h3><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Shapes BrowBar <span>Mange
-                        your app listing here</span></h3>
-                  </button>
-
-                  <button class="bi-button1">
-                    <h3><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Online Store</h3>
-                  </button>
-
-
-
-
-
-
-                </div>
-
-
-
-
-
-
-              </div>
-              <div class="clear"></div>
+              </form>
+              <b><label>Schedule closed days / Hoildays</label></b>
+              <table width="100%">
+                <tr>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Service catagories</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
             </div>
           </div>
-
-        </div>
-
-        <div role="tabpanel" class="tab-pane" id="Contract-Information">
-          <h3>Contact Information</h3>
-          <div class="col-md-12">
-            <b><label>How Will your clients get in touch?</label></b>
-            <p>This info is displayed to your clients, when they receive an auto email or click a "Contact Us" Link</p>
-            <form>
-              <div class="form-group">
-                <label for="input" class="col-sm-3 control-label">Business name for auto emails</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control" placeholder="Shapes BrowBar">
+          <div role="tabpanel" class="tab-pane" id="Locations-and-App-Listing">
+            <div class="Locations-and-App-Listing">
+              <div class="accountpayment">
+                <div class="new-bs-contract-information pb-20">
+                  <div class="col-md-12">
+                    <h3>Locations and App Listing</h3>
+                    <button class="bi-button" (click)="getBussinessAddressForShapes()" data-toggle="modal" data-target="#myModal-manage">
+                      <h3><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Shapes BrowBar <span>Mange
+                          your app listing here</span></h3>
+                    </button>
+                    <button class="bi-button1" (click)="getBussinessAddressForShapes()" data-toggle="modal" data-target="#myModal-online">
+                      <h3><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Online Store</h3>
+                    </button>
+                  </div>
                 </div>
                 <div class="clear"></div>
               </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="Contract-Information">
+            <h3>Contact Information</h3>
+            <div class="col-md-12">
+              <b><label>How Will your clients get in touch?</label></b>
+              <p>This info is displayed to your clients, when they receive an auto email or click a "Contact Us" Link</p>
+              <form>
+                <div class="form-group">
+                  <label for="input" class="col-sm-3 control-label">Business name for auto emails</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control"  placeholder="Shapes BrowBar">
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="col-sm-3 control-label">Contact email</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" placeholder="info@shapesbrowbar.com">
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-sm-3 control-label">Replay to address for auto</label>
+                  <div class="col-sm-9">
+                    <input type="checkbox" value="option1" checked> Same as business address
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </form>
+              <b><label>How will Shapes BrowBar get in touch?</label></b>
+              <p>Who should we email about new features and updates to the software?</p>
               <div class="form-group">
                 <label for="email" class="col-sm-3 control-label">Contact email</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" placeholder="info@shapesbrowbar.com">
+                  <input type="text" class="form-control"  placeholder="info@shapesbrowbar.com">
                 </div>
                 <div class="clear"></div>
               </div>
-              <div class="form-group">
-                <label for="input" class="col-sm-3 control-label">Replay to address for auto</label>
-                <div class="col-sm-9">
-                  <input type="checkbox" id="inlineCheckbox1" value="option1" checked> Same as business address
-                </div>
-                <div class="clear"></div>
-              </div>
-            </form>
-
-            <b><label>How will Shapes BrowBar get in touch?</label></b>
-            <p>Who should we email about new features and updates to the software?</p>
-            <div class="form-group">
-              <label for="email" class="col-sm-3 control-label">Contact email</label>
-              <div class="col-sm-9">
-                <input type="text" class="form-control" placeholder="info@shapesbrowbar.com">
-              </div>
-              <div class="clear"></div>
+              <button type="button" class="btn pull-right" style="font-size: 18px;">Next</button>
             </div>
-            <button type="button" class="btn pull-right" style="font-size: 18px;">Next</button>
           </div>
+          <div role="tabpanel" class="tab-pane" id="logo-settings">
+            <div class="accountpayment">
+              <div class="new-bs-contract-information pb-20">
+                <div class="col-md-12">
+                  <h3>Logo and Colors</h3>
+                  <h4 style="margin-top:0;">The Logo used in yourSHAPESBROWBAR site and within auto emails. Suggested
+                    logo size:300x70 pixels</h4>
+                  <div class="lc-section">
+                    <div class="lc-section-1">
+                      <div class="col-md-6 col-sm-6 col-xs-12 lc-section-1-l">
+                        <img src="" alt="">
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-12 lc-section-1-r">
+                        <form class="form-inlinel">
+                          <label class="sr-only" for="inlineFormInputName2">Name</label>
+                          <input type="text" class="form-control mb-2 mr-sm-2"  placeholder="user name">
+                          <br>
+                          <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                          <div class="input-group mb-2 mr-sm-2">
 
+                            <input type="password" class="form-control"  placeholder="Password">
+                          </div>
 
-        </div>
-
-        <div role="tabpanel" class="tab-pane" id="logo-settings">
-          <div class="accountpayments">
-            <div class="new-bs-contract-information pb-20">
-              <div class="col-md-12">
-                <h3>Logo and Colors</h3>
-                <h4 style="margin-top:0;">The Logo used in yourSHAPESBROWBAR site and within auto emails. Suggested
-                  logo size:300x70 pixels</h4>
-                <div class="lc-section">
-                  <div class="lc-section-1">
-                    <div class="col-md-6 col-sm-6 col-xs-12 lc-section-1-l">
-                      <img src="" alt=" LOGO">
+                          <div class="form-check mb-2 mr-sm-2">
+                            <label class="form-check-label" for="inlineFormCheck">
+                              <a href="#">Create account</a> | <a href="#">Need password</a> | Remember me &nbsp;<input
+                                class="form-check-input" type="checkbox" >
+                            </label>
+                         </div>
+                          <button type="submit" class="btn btn-primary mb-2">Login</button>
+                        </form>
+                        <div class="user-ingo">
+                          <ul>
+                            <li><a href="#">My Info</a></li>
+                            <li><a href="#">Online Store</a></li>
+                            <li><a href="#">Appointments</a></li>
+                            <li><a href="#">Classes</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
                     </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12 lc-section-1-r">
-                      <form class="form-inlinel">
-                        <label class="sr-only" for="inlineFormInputName2">Name</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="user name">
-                        <br>
-                        <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-                        <div class="input-group mb-2 mr-sm-2">
-
-                          <input type="password" class="form-control" id="passwprd" placeholder="Password">
->>>>>>> 0098b33ff40531fff1aad03c41596a9a409dccc6
+                    <div class="clear"></div>
+                    <div class="lc-section-2">
+                      <div class="col-md-3 col-sm-6 col-xs-12 logo-remove1"><button>Remove Logo </button></div>
+                      <div class="col-md-4 col-sm-6 col-xs-12 color-picker">Header color in consumer mode&nbsp; <input
+                          type="color" value="#f1f1f1"></div>
+                      <div class="col-md-2 col-sm-6 col-xs-12 color-picker">Test Color&nbsp; <input type="color" value="#ff4137">
+                      </div>
+                      <div class="col-md-3 col-sm-6 col-xs-12 color-picker"><a href="#">Revert to default colors</a></div>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="lc-section-3">
+                      <h3>Mobile Logo</h3>
+                      <h5>The logo used in SHAPESBROWBAR mobile apps. Suggested logo size:64x64 pixels.</h5>
+                      <img src="" style="width:160px;" alt="">
+                      <button type="button" class="btn btn-secondary">Remove Logo</button>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="lc-section-3">
+                      <h3>Gift Card Logo</h3>
+                      <h5>The logo used in SHAPESBROWBAR mobile apps. Suggested logo size:200x50 pixels.</h5>
+                      <img src="" style="width:230px;" alt="">
+                      <button type="button" class="btn btn-secondary">Remove Logo</button>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane" id="Locations-and-App-Listing">
+                    <div class="Locations-and-App-Listing">
+                      <div class="accountpayments">
+                        <div class="new-bs-contract-information pb-20">
+                          <div class="col-md-12">
+                            <h3>Locations and App Listing</h3>
+                            <button class="bi-button">
+                              <h3><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Shapes BrowBar
+                                <span>Mange
+                                  your app listing here</span></h3>
+                            </button>
+                            <button class="bi-button1">
+                              <h3><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Online Store</h3>
+                            </button>
+                          </div>
                         </div>
-
-                        <div class="form-check mb-2 mr-sm-2">
-                          <label class="form-check-label" for="inlineFormCheck">
-                            <a href="#">Create account</a> | <a href="#">Need password</a> | Remember me &nbsp;<input
-                              class="form-check-input" type="checkbox" id="inlineFormCheck">
-                          </label>
-
-                        </div>
-
-                        <button type="submit" class="btn btn-primary mb-2">Login</button>
-                      </form>
-
-                      <div class="user-ingo">
-                        <ul>
-                          <li><a href="#">My Info</a></li>
-                          <li><a href="#">Online Store</a></li>
-                          <li><a href="#">Appointments</a></li>
-                          <li><a href="#">Classes</a></li>
-                        </ul>
+                        <div class="clear"></div>
                       </div>
                     </div>
-                    <div class="clear"></div>
+
                   </div>
-                  <div class="clear"></div>
-                  <div class="lc-section-2">
-                    <div class="col-md-3 col-sm-6 col-xs-12 logo-remove1"><button>Remove Logo </button></div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 color-picker">Header color in consumer mode&nbsp; <input
-                        type="color" value="#f1f1f1"></div>
-                    <div class="col-md-2 col-sm-6 col-xs-12 color-picker">Test Color&nbsp; <input type="color" value="#ff4137">
+
+                  <div role="tabpanel" class="tab-pane" id="Contract-Information">
+                    <h3>Contact Information</h3>
+                    <div class="col-md-12">
+                      <b><label>How Will your clients get in touch?</label></b>
+                      <p>This info is displayed to your clients, when they receive an auto email or click a "Contact
+                        Us" Link</p>
+                      <form>
+                        <div class="form-group">
+                          <label for="input" class="col-sm-3 control-label">Business name for auto emails</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="Shapes BrowBar">
+                          </div>
+                          <div class="clear"></div>
+                        </div>
+                        <div class="form-group">
+                          <label for="email" class="col-sm-3 control-label">Contact email</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="info@shapesbrowbar.com">
+                          </div>
+                          <div class="clear"></div>
+                        </div>
+                        <div class="form-group">
+                          <label for="input" class="col-sm-3 control-label">Replay to address for auto</label>
+                          <div class="col-sm-9">
+                            <input type="checkbox"  value="option1" checked> Same as business
+                            address
+                          </div>
+                          <div class="clear"></div>
+                        </div>
+                      </form>
+
+                      <b><label>How will Shapes BrowBar get in touch?</label></b>
+                      <p>Who should we email about new features and updates to the software?</p>
+                      <div class="form-group">
+                        <label for="email" class="col-sm-3 control-label">Contact email</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" placeholder="info@shapesbrowbar.com">
+                        </div>
+                        <div class="clear"></div>
+                      </div>
+                      <button type="button" class="btn pull-right" style="font-size: 18px;">Next</button>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 color-picker"><a href="#">Revert to default colors</a></div>
-                    <div class="clear"></div>
+
+
                   </div>
-                  <div class="lc-section-3">
-                    <h3>Mobile Logo</h3>
-                    <h5>The logo used in SHAPESBROWBAR mobile apps. Suggested logo size:64x64 pixels.</h5>
-                    <img src="" style="width:160px;" alt="">
-                    <button type="button" class="btn btn-secondary">Remove Logo</button>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="lc-section-3">
-                    <h3>Gift Card Logo</h3>
-                    <h5>The logo used in SHAPESBROWBAR mobile apps. Suggested logo size:200x50 pixels.</h5>
-                    <img src="" style="width:230px;" alt="">
-                    <button type="button" class="btn btn-secondary">Remove Logo</button>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="clear"></div>
-                </div>
-<<<<<<< HEAD
-                <div role="tabpanel" class="tab-pane" id="settings">
-                    <div class="accountpayment">
-                        <div class="new-bs-contract-information pb-20">
-                          <div class="col-md-12">	
-                            <h3>Tax Rates</h3>
-                                    <p >Set your sales tax rate, and any additional tax rates applicable to your business.</p>
-                                    <div class="tr-section">
-                                      <div class="table-responsive">
-                                         <table class="table">
-                                          <tr>
-                                            <th width="20%">Tax rate name</th>
-                                            <td width="10%"><input type="text" name="text" placeholder="CA Tax"></td>
-                                            <td width="10%"><input type="text" name="text" placeholder="Tax-2"></td>
-                                            <td width="10%"><input type="text" name="text" placeholder="Tax-3"></td>
-                                            <td width="10%"><input type="text" name="text" placeholder="Tax-4"></td>
-                                            <td width="10%"><input type="text" name="text" placeholder="Tax-5"></td>
-                                          </tr>
-                                          <tr>
-                                            <th>SBB</th>
-                                            <td><input type="text" name="text" placeholder=""></td>
-                                            <td><input type="text" name="text" placeholder=""></td>
-                                            <td><input type="text" name="text" placeholder=""></td>
-                                            <td><input type="text" name="text" placeholder=""></td>
-                                            <td><input type="text" name="text" placeholder=""></td>
-                                          </tr>
-                                          <tr>
-                                            <th>Online Store</th>
-                                            <td><input type="text" name="text" placeholder=""></td>
-                                            <td><input type="text" name="text" placeholder=""></td>
-                                            <td><input type="text" name="text" placeholder=""></td>
-                                            <td><input type="text" name="text" placeholder=""></td>
-                                            <td><input type="text" name="text" placeholder=""></td>
-                                          </tr>
-                                         </table>
-                                      </div>
+
+                  <div role="tabpanel" class="tab-pane" id="logo-settings">
+                    <div class="accountpayments">
+                      <div class="new-bs-contract-information pb-20">
+                        <div class="col-md-12">
+                          <h3>Logo and Colors</h3>
+                          <h4 style="margin-top:0;">The Logo used in yourSHAPESBROWBAR site and within auto emails.
+                            Suggested
+                            logo size:300x70 pixels</h4>
+                          <div class="lc-section">
+                            <div class="lc-section-1">
+                              <div class="col-md-6 col-sm-6 col-xs-12 lc-section-1-l">
+                                <img src="" alt=" LOGO">
+                              </div>
+                              <div class="col-md-6 col-sm-6 col-xs-12 lc-section-1-r">
+                                <form class="form-inlinel">
+                                  <label class="sr-only" for="inlineFormInputName2">Name</label>
+                                  <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
+                                    placeholder="user name">
+                                  <br>
+                                  <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                                  <div class="input-group mb-2 mr-sm-2">
+
+                                    <input type="password" class="form-control" id="passwprd" placeholder="Password">
+                                  </div>
+
+                                  <div class="form-check mb-2 mr-sm-2">
+                                    <label class="form-check-label" for="inlineFormCheck">
+                                      <a href="#">Create account</a> | <a href="#">Need password</a> | Remember me
+                                      &nbsp;<input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                                    </label>
+
+                                  </div>
+
+                                  <button type="submit" class="btn btn-primary mb-2">Login</button>
+                                </form>
+
+                                <div class="user-ingo">
+                                  <ul>
+                                    <li><a href="#">My Info</a></li>
+                                    <li><a href="#">Online Store</a></li>
+                                    <li><a href="#">Appointments</a></li>
+                                    <li><a href="#">Classes</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="lc-section-2">
+                              <div class="col-md-3 col-sm-6 col-xs-12 logo-remove1"><button>Remove Logo </button></div>
+                              <div class="col-md-4 col-sm-6 col-xs-12 color-picker">Header color in consumer mode&nbsp;
+                                <input type="color" value="#f1f1f1"></div>
+                              <div class="col-md-2 col-sm-6 col-xs-12 color-picker">Test Color&nbsp; <input type="color"
+                                  value="#ff4137">
+                              </div>
+                              <div class="col-md-3 col-sm-6 col-xs-12 color-picker"><a href="#">Revert to default
+                                  colors</a></div>
+                              <div class="clear"></div>
+                            </div>
+                            <div class="lc-section-3">
+                              <h3>Mobile Logo</h3>
+                              <h5>The logo used in SHAPESBROWBAR mobile apps. Suggested logo size:64x64 pixels.</h5>
+                              <img src="" style="width:160px;" alt="">
+                              <button type="button" class="btn btn-secondary">Remove Logo</button>
+                              <div class="clear"></div>
+                            </div>
+                            <div class="lc-section-3">
+                              <h3>Gift Card Logo</h3>
+                              <h5>The logo used in SHAPESBROWBAR mobile apps. Suggested logo size:200x50 pixels.</h5>
+                              <img src="" style="width:230px;" alt="">
+                              <button type="button" class="btn btn-secondary">Remove Logo</button>
+                              <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                          </div>
+
+                          <div role="tabpanel" class="tab-pane" id="settings">
+                            <div class="accountpayment">
+                              <div class="new-bs-contract-information pb-20">
+                                <div class="col-md-12">
+                                  <h3>Tax Rates</h3>
+                                  <p>Set your sales tax rate, and any additional tax rates applicable to your business.</p>
+                                  <div class="tr-section">
+                                    <div class="table-responsive">
+                                      <table class="table">
+                                        <tr>
+                                          <th width="20%">Tax rate name</th>
+                                          <td width="10%"><input type="text" name="text" placeholder="CA Tax"></td>
+                                          <td width="10%"><input type="text" name="text" placeholder="Tax-2"></td>
+                                          <td width="10%"><input type="text" name="text" placeholder="Tax-3"></td>
+                                          <td width="10%"><input type="text" name="text" placeholder="Tax-4"></td>
+                                          <td width="10%"><input type="text" name="text" placeholder="Tax-5"></td>
+                                        </tr>
+                                        <tr>
+                                          <th>SBB</th>
+                                          <td><input type="text" name="text" placeholder=""></td>
+                                          <td><input type="text" name="text" placeholder=""></td>
+                                          <td><input type="text" name="text" placeholder=""></td>
+                                          <td><input type="text" name="text" placeholder=""></td>
+                                          <td><input type="text" name="text" placeholder=""></td>
+                                        </tr>
+                                        <tr>
+                                          <th>Online Store</th>
+                                          <td><input type="text" name="text" placeholder=""></td>
+                                          <td><input type="text" name="text" placeholder=""></td>
+                                          <td><input type="text" name="text" placeholder=""></td>
+                                          <td><input type="text" name="text" placeholder=""></td>
+                                          <td><input type="text" name="text" placeholder=""></td>
+                                        </tr>
+                                      </table>
+                                    </div>
                                     <div class="tr-section1">
                                       <h4>Tax registration number</h4>
                                       <p>Your tax registration number will be used on invoices.</p>
                                       <div class="form-group">
-                                          <label for="input" class="col-md-4 control-label">SBB</label>
-                                          <div class="col-md-8">
-                                          <input type="text" class="form-control" id="exampleInputtext" placeholder="Shapes BrowBar">
-                                          </div>
-                                          <div class="clear"></div>
+                                        <label for="input" class="col-md-4 control-label">SBB</label>
+                                        <div class="col-md-8">
+                                          <input type="text" class="form-control"  placeholder="Shapes BrowBar">
                                         </div>
-                                        <div class="form-group">
-                                          <label for="input" class="col-md-4 control-label">Online store </label>
-                                          <div class="col-md-8">
-                                          <input type="text" class="form-control" id="exampleInputtext" placeholder="Shapes BrowBar">
-                                          </div>
-                                          <div class="clear"></div>
+                                        <div class="clear"></div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="input" class="col-md-4 control-label">Online store </label>
+                                        <div class="col-md-8">
+                                          <input type="text" class="form-control"  placeholder="Shapes BrowBar">
                                         </div>
-                                        <div class="ci-button">
-                                            <button type="button" class="btn btn-link" style="color:#ccc;">Save</button>
-                                  
-                                          </div>
-                                    <div class="clear"></div>
+                                        <div class="clear"></div>
+                                      </div>
+                                      <div class="ci-button">
+                                        <button type="button" class="btn btn-link" style="color:#ccc;">Save</button>
+
+                                      </div>
+                                      <div class="clear"></div>
                                     </div>
                                   </div>
-                          </div>	
+                                </div>
 
-              </div>
-            </div>
-            <div class="clear"></div>
-          </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="settings">
-          <div class="accountpayments">
-            <div class="new-bs-contract-information pb-20">
-              <div class="col-md-12">
-                <h3>Tax Rates</h3>
-                <p>Set your sales tax rate, and any additional tax rates applicable to your business.</p>
-                <div class="tr-section">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <tr>
-                        <th>Tax rate name</th>
-                        <td><input type="text" placeholder="CA Tax"></td>
-                        <td><input type="text" placeholder="Tax-2"></td>
-                        <td><input type="text" placeholder="Tax-3"></td>
-                        <td><input type="text" placeholder="Tax-4"></td>
-                        <td><input type="text" placeholder="Tax-5"></td>
-                      </tr>
-                      <tr>
-                        <th>SBB</th>
-                        <td><input type="text" placeholder=""></td>
-                        <td><input type="text" placeholder=""></td>
-                        <td><input type="text" placeholder=""></td>
-                        <td><input type="text" placeholder=""></td>
-                        <td><input type="text" placeholder=""></td>
-                      </tr>
-                      <tr>
-                        <th>Online Store</th>
-                        <td><input type="text" placeholder=""></td>
-                        <td><input type="text" placeholder=""></td>
-                        <td><input type="text" placeholder=""></td>
-                        <td><input type="text" placeholder=""></td>
-                        <td><input type="text" placeholder=""></td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="tr-section1">
-                    <h4>Tax registration number</h4>
-                    <p>Your tax registration number will be used on invoices.</p>
-                    <div class="form-group">
-                      <label for="input" class="col-md-4 control-label">SBB</label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control"  placeholder="Shapes BrowBar">
+                              </div>
+                            </div>
+                            <div class="clear"></div>
+                          </div>
+                        </div>
                       </div>
+                      <!-- </div> -->
                       <div class="clear"></div>
-                    </div>
-                    <div class="form-group">
-                      <label for="input" class="col-md-4 control-label">Online store </label>
-                      <div class="col-md-8">
-                        <input type="text" class="form-control"  placeholder="Shapes BrowBar">
-                      </div>
-<<<<<<< HEAD
-                </div>
-							</div>
-				</div>
-				<div class="clear"></div>
-			</div>
-			<div class="clear"></div>
-=======
-                      <div class="clear"></div>
-                    </div>
-                    <div class="ci-button">
-                      <button type="button" class="btn btn-link" style="color:#ccc;">Save</button>
->>>>>>> 0098b33ff40531fff1aad03c41596a9a409dccc6
-
                     </div>
                     <div class="clear"></div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="clear"></div>
-          </div>
-        </div>
-      </div>
-    <!-- </div> -->
-    <div class="clear"></div>
-  </div>
-  <div class="clear"></div>
-</div>
 
-<div class="row">
-  <div class="col-sm-4"></div>
-  <div class="col-sm-6"></div>
-  <div class="col-sm-2">
-    <button type="button" class="btn backBtn pull-right" (click)="backToSetup()">Back</button>
-  </div>
-  <div class="clear"></div>
-</div>
+                  <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-6"></div>
+                    <div class="col-sm-2">
+                      <button type="button" class="btn backBtn pull-right" (click)="backToSetup()">Back</button>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
