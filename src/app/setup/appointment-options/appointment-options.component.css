@@ -1,0 +1,9 @@
+.gs-general-setup .nav-tabs > li > a {
+    font-size: 17px;
+    font-weight: bold;
+    width: auto;
+}
+.gs-general-setup .active a {
+    color: #001931;
+    font-weight: 600;
+}

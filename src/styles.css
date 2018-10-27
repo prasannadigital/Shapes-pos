@@ -8756,6 +8756,7 @@ html {
       text-align:center;
       margin-bottom: 30px;
   }
+  /***test***/
   .average-revenue1 label {
       font-size: 18px;
       line-height: 1.8;
@@ -9552,7 +9553,7 @@ html {
   }
   .sales-tab2 {
       border-top: 1px solid #000;
-      padding-top: 6px;
+      padding-top: 0px;
   }
   .rs-1-left-button a {
       border: 1px solid #ccc;
@@ -10324,11 +10325,11 @@ html {
     font-size: 16px;
     margin-bottom: 20px;
 }
-/* .accountpayments {
+/* . {
 	background: #fff;
     border: 5px solid #da8c42;
 } */
-.accountpayments-button {
+.-button {
 	    border: 1px solid #ccc;
     display: block;
     text-align: left;
@@ -10343,20 +10344,20 @@ html {
     border-radius: 5px;
 	margin-bottom:20px;
 }
-.accountpayments1 .form-check-label {
+.accountpayment1 .form-check-label {
     font-size: 16px;
     font-weight: 500;
 }
-.accountpayments1 .form-check {
+.accountpayment1 .form-check {
     text-align: left;
     margin-top: 6px;
     margin-bottom: 0;
 }
-.accountpayments2 {
+.accountpayment2 {
     text-align: center;
     padding: 20px;
 }
-.accountpayments2 .btn-link {
+.accountpayment2 .btn-link {
     border: 1px solid #ccc;
     padding: 10px 20px;
     width: 100px;
@@ -11972,11 +11973,11 @@ margin-bottom:30px;
   font-size: 16px;
   margin-bottom: 20px;
 }
-.accountpayments {
+. {
 background: #fff;
   border: 5px solid #da8c42;
 }
-.accountpayments-button {
+.-button {
     border: 1px solid #ccc;
   display: block;
   text-align: left;
@@ -11991,20 +11992,20 @@ background: #fff;
   border-radius: 5px;
 margin-bottom:20px;
 }
-.accountpayments1 .form-check-label {
+.accountpayment1 .form-check-label {
   font-size: 16px;
   font-weight: 500;
 }
-.accountpayments1 .form-check {
+.accountpayment1 .form-check {
   text-align: left;
   margin-top: 6px;
   margin-bottom: 0;
 }
-.accountpayments2 {
+.accountpayment2 {
   text-align: center;
   padding: 20px;
 }
-.accountpayments2 .btn-link {
+.accountpayment2 .btn-link {
   border: 1px solid #ccc;
   padding: 10px 20px;
   width: 100px;
@@ -12599,7 +12600,7 @@ html, body {
       } */
 .sales-tab2 {
   border-top: 1px solid #000;
-  padding-top: 6px;
+  padding-top: 0x;
 }
 .sale-logo {
   text-align: center;
@@ -14207,11 +14208,11 @@ margin-bottom:30px;
   font-size: 16px;
   margin-bottom: 20px;
 }
-.accountpayments {
+. {
 background: #fff;
   border: 5px solid #da8c42;
 }
-.accountpayments-button {
+.-button {
     border: 1px solid #ccc;
   display: block;
   text-align: left;
@@ -14226,20 +14227,20 @@ background: #fff;
   border-radius: 5px;
 margin-bottom:20px;
 }
-.accountpayments1 .form-check-label {
+.accountpayment1 .form-check-label {
   font-size: 16px;
   font-weight: 500;
 }
-.accountpayments1 .form-check {
+.accountpayment1 .form-check {
   text-align: left;
   margin-top: 6px;
   margin-bottom: 0;
 }
-.accountpayments2 {
+.accountpayment2 {
   text-align: center;
   padding: 20px;
 }
-.accountpayments2 .btn-link {
+.accountpayment2 .btn-link {
   border: 1px solid #ccc;
   padding: 10px 20px;
   width: 100px;
@@ -14834,7 +14835,7 @@ html, body {
       } */
 .sales-tab2 {
   border-top: 1px solid #000;
-  padding-top: 6px;
+  padding-top: 0px;
 }
 .sale-logo {
   text-align: center;
@@ -16192,7 +16193,9 @@ transition: all 0.2s ease-in;
 .alertRed{
   color: red;
 }
-
+tr:nth-child(odd) {
+    background: #f1f1f1;
+}
 
 
 
