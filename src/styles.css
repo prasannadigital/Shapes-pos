@@ -9435,6 +9435,7 @@ html {
   .sales-tab-left {
       padding: 0;
   }
+  
   .stl-title {
       background: #f5c585;
       border: 1px solid #000;
@@ -10344,11 +10345,15 @@ html {
     border-radius: 5px;
 	margin-bottom:20px;
 }
+<<<<<<< HEAD
 .accountpayment1 .form-check-label {
     font-size: 16px;
     font-weight: 500;
 }
 .accountpayment1 .form-check {
+=======
+.accountpayments1 .form-check {
+>>>>>>> 0098b33ff40531fff1aad03c41596a9a409dccc6
     text-align: left;
     margin-top: 6px;
     margin-bottom: 0;
@@ -11975,6 +11980,7 @@ margin-bottom:30px;
 }
 . {
 background: #fff;
+<<<<<<< HEAD
   border: 5px solid #da8c42;
 }
 .-button {
@@ -11991,11 +11997,15 @@ background: #fff;
   font-weight: 600;
   border-radius: 5px;
 margin-bottom:20px;
+=======
+  /* border: 5px solid #da8c42; */
+>>>>>>> 0098b33ff40531fff1aad03c41596a9a409dccc6
 }
 .accountpayment1 .form-check-label {
   font-size: 16px;
   font-weight: 500;
 }
+<<<<<<< HEAD
 .accountpayment1 .form-check {
   text-align: left;
   margin-top: 6px;
@@ -12016,6 +12026,8 @@ margin-bottom:20px;
   background: #f1f1f1;
   font-size: 16px;
 }
+=======
+>>>>>>> 0098b33ff40531fff1aad03c41596a9a409dccc6
 .addgiftcard {
 background: #fff;
   border: 5px solid #da8c42;
@@ -14210,6 +14222,7 @@ margin-bottom:30px;
 }
 . {
 background: #fff;
+<<<<<<< HEAD
   border: 5px solid #da8c42;
 }
 .-button {
@@ -14230,12 +14243,16 @@ margin-bottom:20px;
 .accountpayment1 .form-check-label {
   font-size: 16px;
   font-weight: 500;
+=======
+  /* border: 5px solid #da8c42; */
+>>>>>>> 0098b33ff40531fff1aad03c41596a9a409dccc6
 }
 .accountpayment1 .form-check {
   text-align: left;
   margin-top: 6px;
   margin-bottom: 0;
 }
+<<<<<<< HEAD
 .accountpayment2 {
   text-align: center;
   padding: 20px;
@@ -14251,6 +14268,8 @@ margin-bottom:20px;
   background: #f1f1f1;
   font-size: 16px;
 }
+=======
+>>>>>>> 0098b33ff40531fff1aad03c41596a9a409dccc6
 .addgiftcard {
 background: #fff;
   border: 5px solid #da8c42;
