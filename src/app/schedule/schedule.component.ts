@@ -14,6 +14,7 @@ declare var jsPDF: any;
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit {
+  showXLandPdf=false;
   model: any = {};
   errorMessage=false;
   loginTest:any;
@@ -131,9 +132,11 @@ export class ScheduleComponent implements OnInit {
   }
 
   getShedule() {
+    this.showXLandPdf =false;
     this.service.getEmpAppointments(this.shedule.startdate, this.shedule.enddate, this.shedule.employee_id, this.shedule.branch_id).subscribe(response => {
       this.appointmentsData = response.json().result;
       this.titleStyle1 = "visible";
+      this.showXLandPdf =true;
     });
   }
 
