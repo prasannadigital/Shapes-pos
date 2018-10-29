@@ -1,48 +1,54 @@
-<div >
-  
-</div>
 <div id="myModal" class="modal fade" role="dialog" data-backdrop="static">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form>
-        <div class="form-group">
-          <div class="col-md-4 col-sm-6 login_form-left">
-            <label>User Name</label>
-          </div>
-          <div class="col-md-8 col-sm-6 login_form-right">
-            <input type="text" class="form-control" [(ngModel)]="mailId"  (ngModelChange)="errorClear()" name="some" placeholder="Employee Id">
-          </div>
-          <div class="clear"></div>
-        </div>
-        <div class="form-group">
-          <div class="col-md-4 login_form-left">
-            <label>Password</label>
-          </div>
-          <div class="col-md-8 col-sm-6 login_form-right">
-            <input type="password" class="form-control" [(ngModel)]="password" (ngModelChange)="errorClear()" name="password" placeholder="Employee Password">
-          </div>
-          <div class="form-group">
-              <label *ngIf="errorMessage" class="alertRed">Invalid Credentials</label>
+		<div class="modal-dialog">
+			<div class="modal-content">
+          <div class="login-form">
+              <div class="login_form">
+                  <form name="form" (ngSubmit)="f_shedule.form.valid && onSubmit()" #f_shedule="ngForm" novalidate>
+                  <div class="form-group">
+                    <div class="col-md-4 col-sm-6 login_form-left">
+                      <label>Employee Id</label>
+                    </div>
+                    <div class="col-md-8 col-sm-6 login_form-right">
+                      <input type="text" class="form-control" [(ngModel)]="model.email_id"  #email_id="ngModel"  name="email_id1" placeholder="Employee Id"  (ngModelChange)="errorClear()"  required>
+                      <div *ngIf="f_shedule.submitted && email_id.invalid" class="alertRed">
+                          <div *ngIf="email_id.errors.required" >User Name is required</div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-4 login_form-left">
+                      <label>Employee Password</label>
+                    </div>
+                    <div class="col-md-8 col-sm-6 login_form-right">
+                      <input type="password" class="form-control"  [(ngModel)]="model.password" #password="ngModel"  name="password1" placeholder="Employee Password"   (ngModelChange)="errorClear()" required minlength="6">
+                      <div *ngIf="f_shedule.submitted && password.invalid" class="alertRed">
+                          <div *ngIf="password.errors.required">Password is required</div>
+                          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                      </div>
+                    </div>
+                  <div class="form-group">
+
+
+                      <label *ngIf="errorMessage" class="alertRed">Invalid Credentials</label>
+                      </div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="login_form-submit">
+                    <button type="submit" class="btn btn-primary submit-button">Sign In</button>
+                  </div>
+                  <div class="sign_form">
+                    <div class="col-md-6 col-sm-6 sign_form-right">
+                      <!-- <a (click)="clearErrorMess()">Reset</a> -->
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </form>
               </div>
-           
-          <div class="clear"></div>
-        </div>
-        <div class="login_form-submit">
-          <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-3">
-              <button type="submit" [disabled]="btnDisable"  (click)="loginSubmite();"  class="btn btn-primary submit-button">Sign In</button>
             </div>
-            <div class="col-sm-2">
-              <button type="submit" data-dismiss="modal"  class="btn btn-warning"  (click)="RedirectToHome()">Cancel</button>
-            </div>
-            <div class="col-sm-3"></div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+			</div>
+		</div>
+	</div>
 <div class="tableShow" [style.visibility]="titleStyle">
 <form #form= ngForm ngValidate (submit)="getShedule()">
   <div class="tab-schedule1">

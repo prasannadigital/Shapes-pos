@@ -14,6 +14,7 @@ declare var jsPDF: any;
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit {
+  model: any = {};
   errorMessage=false;
   loginTest:any;
   password = "";
@@ -76,18 +77,15 @@ export class ScheduleComponent implements OnInit {
     this.messageService.add({ key: 'tl', severity: 'success', summary: 'Success Message', detail: 'Order submitted' });
   }
 
-  loginSubmite() {
+  onSubmit() {
     if (sessionStorage.secondaryLoginData) {
       window.sessionStorage.removeItem('secondaryLoginData');
       //console.log('secondaryLoginData')
     }
-    var data = {
-      password: this.password,
-      email_id: this.mailId
-    }
+
     this.spinner.show();
-    if (this.mailId && this.password) {
-      this.loginService.saveLoginDetails(data).subscribe(loginData => {
+    if (this.model.email_id && this.model.password) {
+      this.loginService.saveLoginDetails(this.model).subscribe(loginData => {
         if (loginData.json().status == false) {
           this.errorMessage = true;
           this.spinner.hide();
@@ -112,12 +110,6 @@ export class ScheduleComponent implements OnInit {
   }
   errorClear(){
     this.errorMessage = false;
-    if(this.password && this.mailId){
-      this.btnDisable=false;
-    }
-    else{
-      this.btnDisable=true;
-    }
   }
   RedirectToHome() {
     this.router.navigate(['dashboard']);
