@@ -16,60 +16,37 @@ declare var $: any;
 export class LoginComponent implements OnInit {
   errorMessage=false;
   msgs: Message[] = [];
-  password = "";
-  mailId = "";
   alerts: any[] = [];
   btnDisable=true;
   constructor(private spinner: NgxSpinnerService,private http: HttpClient, private router: Router,private service:LoginServiceService,private messageService: MessageService) {}
+  model: any = {};
 
-  ngOnInit() {
-  this.loginPopUp();
-  }
-
-  onClosed(dismissedAlert: AlertComponent): void {
-    this.alerts = this.alerts.filter(alert => alert !== dismissedAlert);
-  }
-  showError() {
-    this.msgs = [];
-    this.msgs.push({severity:'error', detail:'invalid credentials'});
-  }
-  loginSubmite() {
-    var data = {
-      password: this.password,
-      email_id: this.mailId
-    }
+  onSubmit() {
+    //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model));
     this.spinner.show();
-    if (this.mailId && this.password) {
-      this.service.saveLoginDetails(data).subscribe(loginData => {
-        if (loginData.json().status == true) {
+      if (this.model.email_id && this.model.password) {
+     this.service.saveLoginDetails(this.model).subscribe(loginData => {
+         if (loginData.json().status == true) {
           console.log(loginData.json().result[0])
-          sessionStorage.setItem('primaryLoginData', JSON.stringify(loginData.json().result[0]));
+         sessionStorage.setItem('primaryLoginData', JSON.stringify(loginData.json().result[0]));
           this.spinner.hide();
-          this.router.navigate(['dashboard']);
-          $('#myModal').modal('hide');
+         this.router.navigate(['dashboard']);
+           $('#myModal').modal('hide');
         }else {
           this.errorMessage = true;
-          this.spinner.hide();
-        }
+           this.spinner.hide();
+         }
       });
-    } 
   }
-  clearErrorMess(){
-    this.errorMessage = false;
-    //this.password="";
-    //this.mailId="";
-
-  }
-  errorClear(){
-    this.errorMessage = false;
-    if(this.password && this.mailId){
-      this.btnDisable=false;
-    }
-    else{
-      this.btnDisable=true;
-    }
+}
+errorClear(){
+  this.errorMessage = false;
+}
+  ngOnInit() {
+  this.loginPopUp();
   }
   loginPopUp() {
       $('#myModal').modal('show');    
       }
+      
 }
