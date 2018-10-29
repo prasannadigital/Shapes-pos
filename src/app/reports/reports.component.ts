@@ -76,7 +76,7 @@ export class ReportsComponent implements OnInit {
           this.spinner.hide();
         } else {
           this.errorMessage = true;
-         
+          this.spinner.hide();
         }
       });
     }

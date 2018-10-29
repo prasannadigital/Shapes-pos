@@ -104,7 +104,7 @@ export class ScheduleComponent implements OnInit {
           this.spinner.hide();
         } else {
           this.errorMessage = true;
-
+          this.spinner.hide();
         }
       });
     }
