@@ -23,6 +23,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 
 export class ManagerComponent implements OnInit {
+  model: any = {};
   errorMessage=false;
   loginTest:any;
   titleStyle = "hidden";
@@ -102,18 +103,14 @@ export class ManagerComponent implements OnInit {
     this.msgs = [];
     this.msgs.push({ severity: 'success', summary: 'GiftCard Added Successfully' });
   }
-  loginSubmite() {
+  onSubmit() {
     if (sessionStorage.secondaryLoginData) {
       window.sessionStorage.removeItem('secondaryLoginData');
       //console.log('secondaryLoginData')
     }
-    var data = {
-      password: this.password,
-      email_id: this.mailId
-    }
     this.spinner.show();
-    if (this.mailId && this.password) {
-      this.loginService.saveLoginDetails(data).subscribe(loginData => {
+    if (this.model.email_id && this.model.password) {
+      this.loginService.saveLoginDetails(this.model).subscribe(loginData => {
         if (loginData.json().status == false) {
           this.errorMessage = true;
           this.spinner.hide();
@@ -138,12 +135,6 @@ export class ManagerComponent implements OnInit {
   }
   errorClear(){
     this.errorMessage = false;
-    if(this.password && this.mailId){
-      this.btnDisable=false;
-    }
-    else{
-      this.btnDisable=true;
-    }
   }
   RedirectToHome() {
     this.router.navigate(['dashboard']);

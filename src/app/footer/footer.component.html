@@ -94,7 +94,7 @@
         <h2>Price Check</h2>
       </div>
       <div class="search">
-        <input type="text" name="search" style="padding:5px;" [(ngModel)]="selectedValue" (ngModelChange)='customerSearch($event)'
+        <input type="text" maxlength="50" name="search" style="padding:5px;" [(ngModel)]="selectedValue" (ngModelChange)='customerSearch($event)'
           [typeahead]="product" typeaheadOptionField="name" class="form-control">
 
         <div class="btn-search">

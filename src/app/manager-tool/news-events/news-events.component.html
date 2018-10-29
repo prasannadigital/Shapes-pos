@@ -32,9 +32,9 @@
 			<div class="form-group">
 				<label for="input" class="col-md-4 control-label">News / Event Name 1:</label>
 				<div class="col-md-8">
-					<!-- <input type="text" name="news" class="form-control" [(ngModel)]="eventName"  ngModel required #news="ngModel">
+					<!-- <input type="text" maxlength="50" name="news" class="form-control" [(ngModel)]="eventName"  ngModel required #news="ngModel">
 					<div *ngIf="news.errors?.required && submitted" style="color:red">Event Name is required </div> -->
-					<input type="text" name="news" class="form-control" [(ngModel)]="eventName" ngModel required #news="ngModel" placeholder="Event Name">
+					<input type="text" maxlength="50" name="news" class="form-control" [(ngModel)]="eventName" ngModel required #news="ngModel" placeholder="Event Name">
 					<div *ngIf="news.errors?.required  && (news.dirty ||news.touched )" style="color:red">Event Name is required </div>
 				</div>
 				<div class="clear"></div>

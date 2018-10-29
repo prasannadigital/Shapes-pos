@@ -15,7 +15,7 @@
 					<div class="form-group">
 						<label for="input" class="col-md-5 control-label">Package name</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" id="packNameId" placeholder="" required="" [(ngModel)]="packageName">
+							<input type="text" maxlength="50" class="form-control" id="packNameId" placeholder="" required="" [(ngModel)]="packageName">
 						</div>
 						<div class="clear"></div>
 					</div>
@@ -67,7 +67,7 @@
 			<div class="form-group">
 				<label for="input" class="col-md-2 control-label">Discount %</label>
 				<div class="col-md-10">
-					<input type="text" class="form-control" id="packageDiscountId" placeholder="Discount %">
+					<input type="text" maxlength="50" class="form-control" id="packageDiscountId" placeholder="Discount %">
 				</div>
 				<div class="clear"></div>
 			</div>

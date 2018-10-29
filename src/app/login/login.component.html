@@ -9,7 +9,7 @@
                       <label>Employee Id</label>
                     </div>
                     <div class="col-md-8 col-sm-6 login_form-right">
-                      <input type="text" class="form-control" [(ngModel)]="model.email_id"  #email_id="ngModel"  name="email_id1" placeholder="Employee Id"  (ngModelChange)="errorClear()"  required>
+                      <input type="text" maxlength="50" class="form-control" [(ngModel)]="model.email_id"  #email_id="ngModel"  name="email_id1" placeholder="Employee Id"  (ngModelChange)="errorClear()"  required>
                       <div *ngIf="f_login.submitted && email_id.invalid" class="alertRed">
                           <div *ngIf="email_id.errors.required" >User Name is required</div>
                       </div>
@@ -21,7 +21,7 @@
                       <label>Employee Password</label>
                     </div>
                     <div class="col-md-8 col-sm-6 login_form-right">
-                      <input type="password" class="form-control"  [(ngModel)]="model.password" #password="ngModel"  name="password1" placeholder="Employee Password"   (ngModelChange)="errorClear()" required minlength="6">
+                      <input type="password" maxlength="50" class="form-control"  [(ngModel)]="model.password" #password="ngModel"  name="password1" placeholder="Employee Password"   (ngModelChange)="errorClear()" required minlength="6">
                       <div *ngIf="f_login.submitted && password.invalid" class="alertRed">
                           <div *ngIf="password.errors.required">Password is required</div>
                           <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>

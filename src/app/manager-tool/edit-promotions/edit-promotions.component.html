@@ -68,7 +68,7 @@
             <div class="form-group">
               <label for="input" class="col-md-3 control-label">Promotion Name</label>
               <div class="col-md-9">
-                <input type="text" class="form-control" id="inputEmail3" placeholder="" [(ngModel)]="editData.promotion_name" name="promotion"
+                <input type="text" maxlength="50" class="form-control" id="inputEmail3" placeholder="" [(ngModel)]="editData.promotion_name" name="promotion"
                   ngModel required #promotion="ngModel">
                 <div *ngIf="promotion.errors?.required && submitted" style="color:red">Promotions Name is required </div>
               </div>
@@ -78,7 +78,7 @@
             <div class="form-group">
               <label for="input" class="col-md-3 control-label">Promotion Code</label>
               <div class="col-md-6">
-                <input type="text" class="form-control" id="editInputEmail2" placeholder="" [(ngModel)]="editData.promotion_code">
+                <input type="text" maxlength="50" class="form-control" id="editInputEmail2" placeholder="" [(ngModel)]="editData.promotion_code">
               </div>
               <div class="col-md-3">
                 <h3 class="margin0">
@@ -103,7 +103,7 @@
             <div class="form-group">
               <label for="input" class="col-md-3 control-label">Discount Amount</label>
               <div class="col-md-9">
-                <input type="text" class="form-control" id="editInputEmail3" placeholder="" [(ngModel)]="editData.promotion_price">
+                <input type="text" maxlength="50" class="form-control" id="editInputEmail3" placeholder="" [(ngModel)]="editData.promotion_price">
               </div>
               <div class="clear"></div>
             </div>
@@ -112,7 +112,7 @@
               <label for="input" class="col-md-3 control-label">Activation Date</label>
               <div class="col-md-9">
                 <div class="input-group">
-                  <!-- <input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
+                  <!-- <input type="text" maxlength="50" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
                 <span class="input-group-btn"><button type="button" class="btn btn-primary" data-toggle="datepicker"><i class="fa fa-calendar"></i></button></span> -->
                   <p-calendar [(ngModel)]="editData.promotion_start_date " name="promotionActivationDate" [showIcon]="true" (ngModelChange)="getActivationDate($event)"
                     dateFormat="yy-mm-dd"></p-calendar>
@@ -124,7 +124,7 @@
               <label for="input" class="col-md-3 control-label">Expiration Date</label>
               <div class="col-md-9">
                 <div class="input-group">
-                  <!-- <input type="text" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
+                  <!-- <input type="text" maxlength="50" class="form-control" name="date" id="date" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
                 <span class="input-group-btn"><button type="button" class="btn btn-primary" data-toggle="datepicker"><i class="fa fa-calendar"></i></button></span> -->
                   <p-calendar [(ngModel)]="editData.promotion_end_date" name="promotionExpirationDate" [showIcon]="true" (ngModelChange)="getExpirationDate($event)"
                     dateFormat="yy-mm-dd"></p-calendar>

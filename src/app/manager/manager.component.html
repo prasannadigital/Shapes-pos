@@ -1,46 +1,61 @@
-<body>
-	<div >
-		<!-- <app-header></app-header> -->
-	</div>
-	<div id="myModal" class="modal fade" role="dialog" data-backdrop="static">
+<div id="myModal" class="modal fade" role="dialog" data-backdrop="static" >
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form>
-					<div class="form-group">
-						<div class="col-md-4 col-sm-6 login_form-left">
-							<label>User Name</label>
-						</div>
-						<div class="col-md-8 col-sm-6 login_form-right">
-							<input type="text" class="form-control" [(ngModel)]="mailId" (ngModelChange)="errorClear()" name="some" placeholder="Employee Id">
-						</div>
-						<div class="clear"></div>
-					</div>
-					<div class="form-group">
-						<div class="col-md-4 login_form-left">
-							<label>Password</label>
-						</div>
-						<div class="col-md-8 col-sm-6 login_form-right">
-							<input type="password" class="form-control" [(ngModel)]="password" (ngModelChange)="errorClear()" name="password" placeholder="Employee Password">
-						</div>
-						<div class="form-group">
-							<label *ngIf="errorMessage" class="alertRed">Invalid Credentials</label>
-						</div>
+          <div class="login-form">
+              <div class="login_form">
+                  <form name="form" (ngSubmit)="f_manager.form.valid && onSubmit()" #f_manager="ngForm" novalidate>
+                  <div class="form-group">
+                    <div class="col-md-4 col-sm-6 login_form-left">
+                      <label>Employee Id</label>
+                    </div>
+                    <div class="col-md-8 col-sm-6 login_form-right">
+                      <input type="text" maxlength="50" class="form-control" [(ngModel)]="model.email_id"  #email_id="ngModel"  name="email_id1" placeholder="Employee Id"  (ngModelChange)="errorClear()"  required>
+                      <div *ngIf="f_manager.submitted && email_id.invalid" class="alertRed">
+                          <div *ngIf="email_id.errors.required" >User Name is required</div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-md-4 login_form-left">
+                      <label>Employee Password</label>
+                    </div>
+                    <div class="col-md-8 col-sm-6 login_form-right">
+                      <input type="password" maxlength="50" class="form-control"  [(ngModel)]="model.password" #password="ngModel"  name="password1" placeholder="Employee Password"   (ngModelChange)="errorClear()" required minlength="6">
+                      <div *ngIf="f_manager.submitted && password.invalid" class="alertRed">
+                          <div *ngIf="password.errors.required">Password is required</div>
+                          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                      </div>
+                    </div>
+                  <div class="form-group">
 
-						<div class="clear"></div>
-					</div>
-					<div class="login_form-submit">
+
+                      <label *ngIf="errorMessage" class="alertRed">Invalid Credentials</label>
+                      </div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="login_form-submit">
 						<div class="row">
-							<div class="col-sm-4"></div>
-							<div class="col-sm-3">
-								<button type="submit" [disabled]="btnDisable"  (click)="loginSubmite();" class="btn btn-primary submit-button">Sign In</button>
-							</div>
-							<div class="col-sm-2">
-								<button type="submit" data-dismiss="modal" class="btn btn-warning" (click)="RedirectToHome()">Cancel</button>
-							</div>
-							<div class="col-sm-3"></div>
-						</div>
-					</div>
-				</form>
+								<div class="col-sm-4"></div>
+								<div class="col-sm-3">
+								  <button type="submit" class="btn btn-primary submit-button">Sign In</button>
+								</div>
+								<div class="col-sm-2">
+								  <button data-dismiss="modal"  class="btn btn-warning"  (click)="RedirectToHome()">Cancel</button>
+								</div>
+								<div class="col-sm-3"></div>
+							  </div>
+                  </div>
+                  <div class="sign_form">
+                    <div class="col-md-6 col-sm-6 sign_form-right">
+					  <!-- <a (click)="clearErrorMess()">Reset</a> -->
+					  
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
 			</div>
 		</div>
 	</div>
@@ -420,7 +435,7 @@
 										<div class="form-group">
 											<label for="input" class="col-md-5 control-label">Gift card name</label>
 											<div class="col-md-7">
-												<input type="text" class="form-control" [(ngModel)]="cardName" id="inputEmail1" placeholder="All Location">
+												<input type="text" maxlength="50" class="form-control" [(ngModel)]="cardName" id="inputEmail1" placeholder="All Location">
 											</div>
 											<div class="clear"></div>
 										</div>
@@ -600,7 +615,7 @@
 															<div class="card-body">
 																<div class="form-group">
 																	<div class="col-md-8">
-																		<input type="text" class="form-control" id="inputEmail2" placeholder="What would you like to call this contract?">
+																		<input type="text" maxlength="50" class="form-control" id="inputEmail2" placeholder="What would you like to call this contract?">
 																	</div>
 																	<div class="clear"></div>
 																</div>
@@ -652,7 +667,7 @@
 																					<div class="input-group-prepend">
 																						<div class="input-group-text">Search / Check - In</div>
 																					</div>
-																					<input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
+																					<input type="text" maxlength="50" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
 																				</div>
 																			</div>
 																			<div class="col-md-4 ">
@@ -729,7 +744,7 @@
 																					<div class="input-group-prepend">
 																						<div class="input-group-text">Search / Check - In</div>
 																					</div>
-																					<input type="text" class="form-control" id="inlineFormInputGroupUsername3" placeholder="Username">
+																					<input type="text" maxlength="50" class="form-control" id="inlineFormInputGroupUsername3" placeholder="Username">
 																				</div>
 																			</div>
 																			<div class="col-md-4 ">
@@ -824,7 +839,7 @@
 																					<div class="input-group-prepend">
 																						<div class="input-group-text">Search / Check - In</div>
 																					</div>
-																					<input type="text" class="form-control" id="inlineFormInputGroupUsername4" placeholder="Username">
+																					<input type="text" maxlength="50" class="form-control" id="inlineFormInputGroupUsername4" placeholder="Username">
 																				</div>
 																			</div>
 																			<div class="col-md-4 ">
@@ -915,7 +930,7 @@
 																	<div class="form-group">
 																		<label for="input" class="col-md-5 control-label">Pricing option name</label>
 																		<div class="col-md-7">
-																			<input type="text" class="form-control" id="inputEmail3" placeholder="" required>
+																			<input type="text" maxlength="50" class="form-control" id="inputEmail3" placeholder="" required>
 																		</div>
 																		<div class="clear"></div>
 																	</div>
@@ -950,7 +965,7 @@
 																		<label for="input" class="col-md-5 control-label">Expires</label>
 																		<div class="col-md-7" style="padding:0;">
 																			<div class="col-md-6">
-																				<input type="text" class="form-control" id="inputEmail4" placeholder="1">
+																				<input type="text" maxlength="50" class="form-control" id="inputEmail4" placeholder="1">
 																			</div>
 																			<div class="col-md-6">
 																				<select class="form-control">
@@ -1029,7 +1044,7 @@
 																				<div class="input-group-prepend">
 																					<div class="input-group-text">$</div>
 																				</div>
-																				<input type="text" class="form-control" id="inlineFormInputGroupUsername5" placeholder="Price">
+																				<input type="text" maxlength="50" class="form-control" id="inlineFormInputGroupUsername5" placeholder="Price">
 																			</div>
 																		</div>
 																		<div class="clear"></div>
@@ -1186,7 +1201,7 @@
 																	<div class="form-group">
 																		<label for="input" class="col-md-5 control-label">Number of autopays</label>
 																		<div class="col-md-7">
-																			<input type="text" class="form-control" id="inputEmail5" placeholder="12">
+																			<input type="text" maxlength="50" class="form-control" id="inputEmail5" placeholder="12">
 																			<small>Total duration of contract 12 months</small>
 																		</div>
 																		<div class="clear"></div>
@@ -1258,7 +1273,7 @@
 																						<div class="input-group-prepend">
 																							<div class="input-group-text">$</div>
 																						</div>
-																						<input type="text" class="form-control" id="inlineFormInputGroupUsername6" placeholder="Price">
+																						<input type="text" maxlength="50" class="form-control" id="inlineFormInputGroupUsername6" placeholder="Price">
 																					</div>
 																				</div>
 																				<div class="clear"></div>
@@ -1296,7 +1311,7 @@
 																										<div class="input-group-prepend">
 																											<div class="input-group-text">$</div>
 																										</div>
-																										<input type="text" class="form-control" id="inlineFormInputGroupUsername7" placeholder="Deposit amount">
+																										<input type="text" maxlength="50" class="form-control" id="inlineFormInputGroupUsername7" placeholder="Deposit amount">
 																									</div>
 																								</div>
 																								<div class="clear"></div>
@@ -1341,7 +1356,7 @@
 																										<div class="input-group-prepend">
 																											<div class="input-group-text">$</div>
 																										</div>
-																										<input type="text" class="form-control" id="inlineFormInputGroupUsername8" placeholder="Deposit amount">
+																										<input type="text" maxlength="50" class="form-control" id="inlineFormInputGroupUsername8" placeholder="Deposit amount">
 																									</div>
 																								</div>
 																								<div class="clear"></div>
@@ -1443,7 +1458,7 @@
 																			<div class="form-group">
 																				<label for="input" class="col-md-5 control-label">Barcode Id</label>
 																				<div class="col-md-7">
-																					<input type="text" class="form-control" id="inputEmail6" placeholder="">
+																					<input type="text" maxlength="50" class="form-control" id="inputEmail6" placeholder="">
 																				</div>
 																				<div class="clear"></div>
 																			</div>
@@ -1700,4 +1715,3 @@ color="#f5c585"
 type="ball-scale-multiple">
 <p style="font-size: 20px; color: white">Loading...</p>
 </ngx-spinner>
-</body>

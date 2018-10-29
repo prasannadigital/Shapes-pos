@@ -44,7 +44,7 @@
               <label>Employee Id</label>
             </div>
             <div class="col-md-8 col-sm-6 login_form-right">
-              <input type="text" class="form-control" [(ngModel)]="mailId" name="some" placeholder="Employee Id">
+              <input type="text" maxlength="50" class="form-control" [(ngModel)]="mailId" name="some" placeholder="Employee Id">
             </div>
             <div class="clear"></div>
           </div>
@@ -53,7 +53,7 @@
               <label>Employee Password</label>
             </div>
             <div class="col-md-8 col-sm-6 login_form-right">
-              <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Employee Password">
+              <input type="password" maxlength="50" class="form-control" [(ngModel)]="password" name="password" placeholder="Employee Password">
               <div *ngFor="let alert of alerts">
                 <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">
                   <strong>{{ alert.msg }}</strong>

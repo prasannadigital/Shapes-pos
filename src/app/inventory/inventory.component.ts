@@ -57,7 +57,6 @@ if(sessionStorage.backBtnInventory){
   onSubmit() {
     if (sessionStorage.secondaryLoginData) {
       window.sessionStorage.removeItem('secondaryLoginData');
-      //console.log('secondaryLoginData')
     }
     this.spinner.show();
     if (this.model.email_id && this.model.password) {

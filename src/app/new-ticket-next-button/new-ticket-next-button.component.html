@@ -24,7 +24,7 @@
               <td>{{commonValue.service_name}}</td>
               <td>{{commonValue.service_price}}</td>
               <td>
-                <input type="text" name="valueselect" value="" [(ngModel)]="commonValue.selectedVal">
+                <input type="text" maxlength="50" name="valueselect" value="" [(ngModel)]="commonValue.selectedVal">
               </td>
               <td>
                 <a>
@@ -39,7 +39,7 @@
               <td>{{commonValue.membership_name}}</td>
               <td>{{commonValue.membership_price}}</td>
               <td>
-                <input type="text" name="valueselect" value="" [(ngModel)]="commonValue.selectedVal">
+                <input type="text" maxlength="50" name="valueselect" value="" [(ngModel)]="commonValue.selectedVal">
               </td>
               <td>
                 <a>
@@ -54,7 +54,7 @@
               <td>{{commonValue.package_name}}</td>
               <td>{{commonValue.package_price}}</td>
               <td>
-                <input type="text" name="valueselect" value="" [(ngModel)]="commonValue.selectedVal">
+                <input type="text" maxlength="50" name="valueselect" value="" [(ngModel)]="commonValue.selectedVal">
               </td>
               <td>
                 <a>
@@ -102,7 +102,7 @@
   <div class="modal-dialog">
     <div class="select-membership">
       <div class="select-membership-button">Select Service Category</div>
-      <input type="text" class="form-control" [(ngModel)]="search" name="some" placeholder="Search service Category">
+      <input type="text" maxlength="50" class="form-control" [(ngModel)]="search" name="some" placeholder="Search service Category">
       <div class="smc" style="height: 352px;overflow-y: scroll;">
         <div *ngFor="let categorie of categories | filter:search" class="sm-button" data-dismiss="modal" (click)="commonClick(categorie,'c')"
           data-toggle="modal" href="#selectedCategory">
@@ -146,7 +146,7 @@
   <div class="modal-dialog">
     <div class="select-membership">
       <div class="select-membership-button">Select Membership Category</div>
-      <input type="text" class="form-control" [(ngModel)]="search" name="some" placeholder="Search Membership Name">
+      <input type="text" maxlength="50" class="form-control" [(ngModel)]="search" name="some" placeholder="Search Membership Name">
       <div class="smc" style="height: 352px;overflow-y: scroll;">
         <div *ngFor="let membership of memberships | filter:search " class="sm-button" data-dismiss="modal" (click)="commonClick(membership,'m')"
           data-toggle="modal" href="#selectedCategory">
@@ -189,7 +189,7 @@
   <div class="modal-dialog">
     <div class="select-membership">
       <div class="select-membership-button">Select Package Category</div>
-      <input type="text" class="form-control" [(ngModel)]="search" name="some" placeholder="Search Package Name">
+      <input type="text" maxlength="50" class="form-control" [(ngModel)]="search" name="some" placeholder="Search Package Name">
       <div class="smc" style="height: 352px;overflow-y: scroll;">
         <div *ngFor="let package of packages | filter:search " class="sm-button" data-dismiss="modal" (click)="commonClick(package,'p')"
           data-toggle="modal" href="#selectedCategory">

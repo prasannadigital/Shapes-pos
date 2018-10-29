@@ -23,6 +23,7 @@ export class ReportsComponent implements OnInit {
     'user_type_id': ''
   };
   btnDisable=true;
+  model: any = {};
   constructor(private spinner: NgxSpinnerService,private router: Router, private loginService: LoginServiceService) { }
 
   ngOnInit() {
@@ -50,18 +51,14 @@ export class ReportsComponent implements OnInit {
   // backToDashboard(){
   //   this.router.navigate(['dashboard']);
   // }
-  loginSubmite() {
+  onSubmit() {
     if (sessionStorage.secondaryLoginData) {
       window.sessionStorage.removeItem('secondaryLoginData');
       //console.log('secondaryLoginData')
     }
-    var data = {
-      password: this.password,
-      email_id: this.mailId
-    }
     this.spinner.show();
-    if (this.mailId && this.password) {
-      this.loginService.saveLoginDetails(data).subscribe(loginData => {
+    if (this.model.email_id && this.model.password) {
+      this.loginService.saveLoginDetails(this.model).subscribe(loginData => {
         if (loginData.json().status == false) {
           this.errorMessage = true;
           this.spinner.hide();
@@ -86,12 +83,6 @@ export class ReportsComponent implements OnInit {
   }
   errorClear(){
     this.errorMessage = false;
-    if(this.password && this.mailId){
-      this.btnDisable=false;
-    }
-    else{
-      this.btnDisable=true;
-    }
   }
   RedirectToHome() {
     this.router.navigate(['dashboard']);

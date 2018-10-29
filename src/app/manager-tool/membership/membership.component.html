@@ -15,17 +15,17 @@
   <tbody>
     <tr *ngFor="let item of memberships">
       <td *ngIf="item.membership_id == editRowId">
-        <input type="text" [(ngModel)]="item.membership_name">
+        <input type="text" maxlength="50" [(ngModel)]="item.membership_name">
       </td>
       <td *ngIf="item.membership_id != editRowId" (click)="edit(item.membership_id)">{{item.membership_name}}</td>
 
       <td *ngIf="item.membership_id == editRowId">
-        <input type="text" [(ngModel)]="item.membership_code">
+        <input type="text" maxlength="50" [(ngModel)]="item.membership_code">
       </td>
       <td *ngIf="item.membership_id != editRowId" (click)="edit(item.membership_id)">{{item.membership_code}}</td>
 
       <td *ngIf="item.membership_id == editRowId">
-        <input type="text" [(ngModel)]="item.membership_price">
+        <input type="text" maxlength="50" [(ngModel)]="item.membership_price">
       </td>
       <td *ngIf="item.membership_id != editRowId" (click)="edit(item.membership_id)">{{item.membership_price}}</td>
 
