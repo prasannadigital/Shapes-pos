@@ -142,6 +142,7 @@ export class TimeClocksComponent implements OnInit {
         this.data.modified_by = this.test1.result.modified_by;
         this.data.remarks = this.test1.result.remarks;
         this.data.total_hours = this.test1.result.total_hours;
+        this.finalHours =this.data.total_hours;
         this.spinner.hide();
         if (this.test1.status == true) {
           $('#myModal').modal('hide');
@@ -231,6 +232,8 @@ export class TimeClocksComponent implements OnInit {
     }
     this.finalHours = this.totalHours + ":" + this.totalMin;
     this.disable_time_out=true;
+    this.disable_break_out=true;
+    this.disable_break_in=true;
   }
   getFormattedDate(_date) {
     var date = new Date(_date);
