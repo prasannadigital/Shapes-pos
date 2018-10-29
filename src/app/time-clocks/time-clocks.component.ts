@@ -34,6 +34,7 @@ export class TimeClocksComponent implements OnInit {
   totalHours;
   totalMin;
   finalHours;
+  model: any ={};
   constructor(private spinner: NgxSpinnerService, private excelService: ExcelService, private loginService: LoginServiceService, private service: TimeClokServiceService, private _location: Location, private http: HttpClient, private router: Router, private globals: Globals, private messageService: MessageService) { }
   emp_id = '';
   errorMessage = false;
@@ -115,24 +116,15 @@ export class TimeClocksComponent implements OnInit {
   }
   errorClear() {
     this.errorMessage = false;
-    if (this.password && this.mailId) {
-      this.btnDisable = false;
-    }
-    else {
-      this.btnDisable = true;
-    }
   }
-  loginSubmite() {
+  onSubmit() {
     if (sessionStorage.secondaryLoginData) {
       window.sessionStorage.removeItem('secondaryLoginData');
     }
-    var data = {
-      password: this.password,
-      email_id: this.mailId
-    }
+
     this.spinner.show();
-    if (this.mailId && this.password) {
-      this.http.post(this.globals.api + 'time-clocks/login', data).subscribe(response => {
+    if (this.model.email_id && this.model.password) {
+      this.http.post(this.globals.api + 'time-clocks/login', this.model).subscribe(response => {
         this.test1 = response;
         this.data.time_clock_id = this.test1.result.time_clock_id;
         this.data.emp_id = this.test1.result.emp_id;
@@ -238,6 +230,7 @@ export class TimeClocksComponent implements OnInit {
       this.totalMin = (60 * this.totalHours) - finaltotal;
     }
     this.finalHours = this.totalHours + ":" + this.totalMin;
+    this.disable_time_out=true;
   }
   getFormattedDate(_date) {
     var date = new Date(_date);
