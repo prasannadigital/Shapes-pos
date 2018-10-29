@@ -15,4 +15,18 @@ export class BussinessSettingsService {
   public getBussinessAddress() {
     return this.http.get(environment.host + 'locations');
   }
+  public editBussinessdays(data: any) {
+    return this.http.post(environment.host + 'business', data)
+  }
+
+  public getBussinessdays() {
+    return this.http.get(environment.host + 'business');
+  }
+  public editContactAddress(data: any) {
+    return this.http.post(environment.host + 'contact-logo-taxs', data)
+  }
+  public getContactAddress() {
+    return this.http.get(environment.host + 'contact-logo-taxs');
+  }
+  
 }

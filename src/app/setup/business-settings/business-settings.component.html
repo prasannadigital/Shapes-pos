@@ -2,210 +2,221 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <form>
-          <div class="Locations-and-App-Listing">
-              <h3>Locations and App Listing</h3>
-              <div class="button2-content0">
-                <h4><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Online Store</h4>
-                <div class="button2-sec">
-                  <b>Business Location</b>
-                  <h4>This information will be used on your receipts and invoices</h4>
-                  <div class="form-group">
-                  <label for="input" class="col-md-4 control-label">Business address</label>
-                  <div class="col-md-8">
-                  <input type="text" [(ngModel)]="locations.loc_online_buss_address" name="locations.loc_online_buss_address" class="form-control"  placeholder="Shapes BrowBar">
-                  </div>
-                  <div class="clear"></div>
-                  </div>
-                  <div class="form-group">
-                    <label for="input" class="col-md-4 control-label">Phone</label>
-                    <div class="col-md-8">
-                    <input type="text" class="form-control"  [(ngModel)]="locations.loc_online_phone" name="locations.locations.loc_online_phone" placeholder="8779242769">
-                    </div>
-                  <div class="clear"></div>
-                  </div>
-                  <div class="form-group">
-                    <label for="input" class="col-md-4 control-label">Contact Name</label>
-                    <div class="col-md-8">
-                    <input type="text" class="form-control" [(ngModel)]="locations.loc_online_contact_name" name="locations.loc_online_contact_name" placeholder="full name">
-                    </div>
-                  <div class="clear"></div>
-                  </div>
-                  <div class="form-group">
-                    <label for="input" class="col-md-4 control-label">Shipping Address</label>
-                    <div class="col-md-8">
-                    <div class="form-check pull-left">
-                  <input class="form-check-input" type="checkbox" [(ngModel)]="locations.loc_online_shipping_address" name="locations.loc_online_shipping_address" >
+        <div class="Locations-and-App-Listing">
+          <h3>Locations and App Listing</h3>
+          <div class="button2-content0">
+            <h4><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Online Store</h4>
+            <div class="button2-sec">
+              <b>Business Location</b>
+              <h4>This information will be used on your receipts and invoices</h4>
+              <div class="form-group">
+                <label for="input" class="col-md-4 control-label">Business address</label>
+                <div class="col-md-8">
+                  <input type="text" [(ngModel)]="locations.loc_online_buss_address" name="locations.loc_online_buss_address"
+                    class="form-control" placeholder="Shapes BrowBar">
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="form-group">
+                <label for="input" class="col-md-4 control-label">Phone</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" [(ngModel)]="locations.loc_online_phone" name="locations.locations.loc_online_phone"
+                    placeholder="8779242769">
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="form-group">
+                <label for="input" class="col-md-4 control-label">Contact Name</label>
+                <div class="col-md-8">
+                  <input type="text" class="form-control" [(ngModel)]="locations.loc_online_contact_name" name="locations.loc_online_contact_name"
+                    placeholder="full name">
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="form-group">
+                <label for="input" class="col-md-4 control-label">Shipping Address</label>
+                <div class="col-md-8">
+                  <div class="form-check pull-left">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="locations.loc_online_shipping_address"
+                      name="locations.loc_online_shipping_address">
                     <label class="form-check-label" for="inlineFormCheck">Same as business address</label>
-                   </div>
-                    </div>
-                  <div class="clear"></div>
-                  </div>
-                  <div class="ci-button">
-                      <button type="button" class="btn btn-warning"  data-dismiss="modal" >Back</button>
-                  <button type="button" class="btn btn-link" style="color:#ccc;" (click)="saveBussinessAddress()">Save</button>
                   </div>
                 </div>
+                <div class="clear"></div>
+              </div>
+              <div class="ci-button">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Back</button>
+                <button type="button" class="btn btn-link" style="color:#ccc;" (click)="saveBussinessAddress()">Save</button>
               </div>
             </div>
+          </div>
+        </div>
       </form>
     </div>
   </div>
 </div>
 <div id="myModal-manage" class="modal fade" role="dialog" data-backdrop="static">
- <div class="modal-dialog">
+  <div class="modal-dialog">
     <div class="modal-content">
       <form>
         <div class="Locations-and-App-Listing">
           <h3>Locations and App Listing</h3>
-              <div class="lap-info1">
-          <div class="button1-content1">
-            <h4><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Shapes BrowBar</h4>
-            <div class="button1-sec1">
-              <b>1. Business Location</b>
-              <p>This information will be used on your receipts and invoices</p>
+          <div class="lap-info1">
+            <div class="button1-content1">
+              <h4><i class="fa fa-chevron-right" aria-hidden="true"></i>&nbsp;&nbsp;Shapes BrowBar</h4>
+              <div class="button1-sec1">
+                <b>1. Business Location</b>
+                <p>This information will be used on your receipts and invoices</p>
                 <div class="form-group">
-                <label for="input" class="col-md-4 control-label">Business address</label>
-                <div class="col-md-8">
-                <input type="text" class="form-control" [(ngModel)]="locations.loc_bussiness_address" name="locations.loc_bussiness_address" placeholder="Shapes BrowBar">
-                </div>
-                <div class="clear"></div>
+                  <label for="input" class="col-md-4 control-label">Business address</label>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" [(ngModel)]="locations.loc_bussiness_address" name="locations.loc_bussiness_address"
+                      placeholder="Shapes BrowBar">
+                  </div>
+                  <div class="clear"></div>
                 </div>
                 <div class="form-group">
                   <label for="input" class="col-md-4 control-label">Address Line 2</label>
                   <div class="col-md-8">
-                  <input type="text" class="form-control" [(ngModel)]="locations.loc_address2" name="locations.loc_address2" placeholder="Optional">
+                    <input type="text" class="form-control" [(ngModel)]="locations.loc_address2" name="locations.loc_address2"
+                      placeholder="Optional">
                   </div>
-                <div class="clear"></div>
+                  <div class="clear"></div>
                 </div>
                 <div class="form-group">
                   <label for="input" class="col-md-4 control-label">City</label>
                   <div class="col-md-8">
-                  <input type="text" class="form-control"[(ngModel)]="locations.loc_city" name="locations.loc_city" placeholder="Optional">
+                    <input type="text" class="form-control" [(ngModel)]="locations.loc_city" name="locations.loc_city"
+                      placeholder="Optional">
                   </div>
-                <div class="clear"></div>
+                  <div class="clear"></div>
                 </div>
                 <div class="form-group">
                   <label for="input" class="col-md-4 control-label">State / Province</label>
                   <div class="col-md-8">
-                  <select class="form-control" [(ngModel)]="locations.loc_stateprovince" name="locations.loc_stateprovince">
-                  <option selected="">Select State/Province </option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                    <select class="form-control" [(ngModel)]="locations.loc_stateprovince" name="locations.loc_stateprovince">
+                      <option selected="">Select State/Province </option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
                   </div>
-                <div class="clear"></div>
+                  <div class="clear"></div>
                 </div>
                 <div class="form-group">
                   <label for="input" class="col-md-4 control-label">Postal Code</label>
                   <div class="col-md-8">
-                  <input type="text" class="form-control" [(ngModel)]="locations.loc_postal_code" name="locations.loc_postal_code" placeholder="Postal Code">
+                    <input type="text" class="form-control" [(ngModel)]="locations.loc_postal_code" name="locations.loc_postal_code"
+                      placeholder="Postal Code">
                   </div>
-                <div class="clear"></div>
+                  <div class="clear"></div>
                 </div>
                 <div class="form-group">
                   <label for="input" class="col-md-4 control-label">Phone</label>
                   <div class="col-md-8">
-                  <input type="text" class="form-control" [(ngModel)]="locations.loc_phone" name="locations.loc_phone" placeholder="8779242769">
+                    <input type="text" class="form-control" [(ngModel)]="locations.loc_phone" name="locations.loc_phone"
+                      placeholder="8779242769">
                   </div>
-                <div class="clear"></div>
+                  <div class="clear"></div>
                 </div>
                 <div class="form-group">
                   <label for="input" class="col-md-4 control-label">Contact Name</label>
                   <div class="col-md-8">
-                  <input type="text" class="form-control"  [(ngModel)]="locations.loc_contact_name" name="locations.loc_contact_name" placeholder="full name">
+                    <input type="text" class="form-control" [(ngModel)]="locations.loc_contact_name" name="locations.loc_contact_name"
+                      placeholder="full name">
                   </div>
-                <div class="clear"></div>
+                  <div class="clear"></div>
                 </div>
                 <div class="form-group">
                   <label for="input" class="col-md-4 control-label">Shipping Address</label>
                   <div class="col-md-8">
-                  <div class="form-check pull-left">
-                <input class="form-check-input" type="checkbox" [(ngModel)]="locations.loc_shipping_address" name="locations.loc_shipping_address" checked="">
-                  <label class="form-check-label" for="inlineFormCheck">Same as business address</label>
-                 </div>
+                    <div class="form-check pull-left">
+                      <input class="form-check-input" type="checkbox" [(ngModel)]="locations.loc_shipping_address" name="locations.loc_shipping_address"
+                        checked="">
+                      <label class="form-check-label" for="inlineFormCheck">Same as business address</label>
+                    </div>
                   </div>
-                <div class="clear"></div>
+                  <div class="clear"></div>
                 </div>
                 <div class="form-group">
                   <label for="input" class="col-md-4 control-label">Region</label>
                   <div class="col-md-8">
                     <select class="form-control" [(ngModel)]="locations.loc_region" name="locations.loc_region">
-                  <option selected="">North & South America</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                      <option selected="">North & South America</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
                   </div>
-                <div class="clear"></div>
+                  <div class="clear"></div>
                 </div>
                 <div class="form-group">
                   <label for="input" class="col-md-4 control-label">Time</label>
                   <div class="col-md-8">
-                    <select class="form-control"  [(ngModel)]="locations.loc_timezone" name="locations.loc_timezone">
-                  <option selected="">Please Select</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                    <select class="form-control" [(ngModel)]="locations.loc_timezone" name="locations.loc_timezone">
+                      <option selected="">Please Select</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
                   </div>
-                <div class="clear"></div>
-                </div>              
-              <!-- <button type="button" class="btn btn-secondary btn-sm pull-right" style="background:#f1f1f1" data-dismiss="modal">Next</button>      -->
+                  <div class="clear"></div>
+                </div>
+                <!-- <button type="button" class="btn btn-secondary btn-sm pull-right" style="background:#f1f1f1" data-dismiss="modal">Next</button>      -->
+              </div>
+              <div class="col-md-12">
+                <h3>2. List your business on the shapes BrowBar App</h3>
+                <p>Preview what your clients will see when they download the Shapes BrowBar App</p>
+                <div class="form-group">
+                  <label for="input" class="col-md-3 control-label">Where do you meet your clients</label>
+                  <div class="col-md-9">
+                    <div class="form-check pull-left">
+                      <input class="form-check-input" type="radio" name="exampleRadios" value="option1" checked>
+                      <label class="form-check-label" for="exampleRadios1">
+                        Same as business address
+                      </label>
+                      <br>
+                      <input class="form-check-input" type="radio" name="exampleRadios" value="option2">
+                      <label class="form-check-label" for="exampleRadios2">
+                        Different address or landmark
+                      </label>
+                      <div class="clear"></div>
+                    </div>
+
+
+                    <div class="clear"></div>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-3 control-label">Business description (optional)</label>
+                  <div class="col-md-9">
+                    <textarea class="form-control" rows="3" [(ngModel)]="locations.loc_business_desc" name="locations.loc_business_desc"></textarea>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="form-group">
+                  <label for="input" class="col-md-3 control-label">Location description (optional)</label>
+                  <div class="col-md-9">
+                    <textarea class="form-control" rows="3" [(ngModel)]="locations.loc_loc_desc" name="locations.loc_loc_desc"></textarea>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+
+                <div class="ci-button">
+                  <button type="button" class="btn btn-warning" data-dismiss="modal">Back</button>
+                  <button type="button" class="btn btn-link" style="color:#ccc;" (click)="saveBussinessAddress()">Save</button>
+                </div>
+                &nbsp;
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="col-md-12">
-              <h3>2. List your business on the shapes BrowBar App</h3>
-                            <p>Preview what your clients will see when they download the Shapes BrowBar App</p>
-                            <div class="form-group">
-                                <label for="input" class="col-md-3 control-label">Where do you meet your clients</label>
-                                <div class="col-md-9">
-                                  <div class="form-check pull-left">
-                                    <input class="form-check-input" type="radio" name="exampleRadios"  value="option1" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
-                                    Same as business address
-                                    </label>
-                                    <br>
-                                     <input class="form-check-input" type="radio" name="exampleRadios" value="option2">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                    Different address or landmark
-                                    </label>
-                                    <div class="clear"></div>
-                                  </div>
-                                  
-                                  
-                                  <div class="clear"></div>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="form-group">
-                              <label for="input" class="col-md-3 control-label">Business description (optional)</label>
-                              <div class="col-md-9">
-                              <textarea class="form-control" rows="3" [(ngModel)]="locations.loc_business_desc" name="locations.loc_business_desc" ></textarea>
-                              </div>
-                            <div class="clear"></div>
-                            </div>
-                            <div class="form-group">
-                              <label for="input" class="col-md-3 control-label" >Location description (optional)</label>
-                              <div class="col-md-9">
-                              <textarea class="form-control"  rows="3" [(ngModel)]="locations.loc_loc_desc" name="locations.loc_loc_desc"></textarea>
-                              </div>
-                            <div class="clear"></div>
-                            </div>
-                            
-                            <div class="ci-button">
-                                <button type="button" class="btn btn-warning"  data-dismiss="modal" >Back</button>
-                            <button type="button" class="btn btn-link" style="color:#ccc;"  (click)="saveBussinessAddress()">Save</button>
-                            </div>
-                            &nbsp;									
-            </div> 
-            <div class="clear"></div>
-          </div>    
-      </div>
-        </div> 
-            
+          </div>
+        </div>
+
       </form>
     </div>
   </div>
@@ -259,7 +270,7 @@
                   <div class="col-md-9">
                     <div class="input-group">
                       <p-calendar [(ngModel)]="date2" [(ngModel)]="endDate" name="endDate" [showIcon]="true"
-                        (ngModelChange)="getEndDate($event);" dateFormat="yy-mm-dd"></p-calendar>
+                        (ngModelChange)="getEndDate($event);" dateFormat="yy-mm-dd" ></p-calendar>
                     </div>
                   </div>
                   <div class="clear"></div>
@@ -278,9 +289,8 @@
                 <div class="form-group">
                   <label for="input" class="col-md-3 control-label">Service Categories</label>
                   <div class="col-md-9">
-                    <p-multiSelect [options]="packs" defaultLabel="All Services" [(ngModel)]="selectedPack"
-                      [(ngModel)]="serviceData.cat_id" (ngModelChange)="onChange($event)" [panelStyle]="{minWidth:'12em'}"
-                      [ngModelOptions]="{standalone: true}"></p-multiSelect>
+                    <p-multiSelect [options]="packs" defaultLabel="All Services" [(ngModel)]="selectedPack" [(ngModel)]="serviceData.cat_id"
+                      (ngModelChange)="onChange($event)" [panelStyle]="{minWidth:'12em'}" [ngModelOptions]="{standalone: true}"></p-multiSelect>
                     <p>Selected Cars: {{selectedPack | json}}</p>
                     <div class="clear"></div>
                   </div>
@@ -299,10 +309,10 @@
                   <th>Description</th>
                   <th>Service catagories</th>
                 </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                <tr *ngFor="let item of empData">
+                    <td>{{item.schedule_holiday_start_date}}</td>
+                    <td>{{item.schedule_holiday_holidayname}}</td>
+                    <td>{{item.services}}</td>
                 </tr>
               </table>
             </div>
@@ -335,21 +345,21 @@
                 <div class="form-group">
                   <label for="input" class="col-sm-3 control-label">Business name for auto emails</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control"  placeholder="Shapes BrowBar">
+                    <input type="text" [(ngModel)]="contactLogos.con_bussiness_name_auto_email" name="contactLogos.con_bussiness_name_auto_email" class="form-control" placeholder="Shapes BrowBar">
                   </div>
                   <div class="clear"></div>
                 </div>
                 <div class="form-group">
                   <label for="email" class="col-sm-3 control-label">Contact email</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" placeholder="info@shapesbrowbar.com">
+                    <input type="text" [(ngModel)]="contactLogos.con_contact_email" name="contactLogos.con_contact_email" class="form-control" placeholder="info@shapesbrowbar.com">
                   </div>
                   <div class="clear"></div>
                 </div>
                 <div class="form-group">
                   <label for="input" class="col-sm-3 control-label">Replay to address for auto</label>
                   <div class="col-sm-9">
-                    <input type="checkbox" value="option1" checked> Same as business address
+                    <input type="checkbox" [(ngModel)]="contactLogos.con_replay_address_auto_email" name="contactLogos.con_replay_address_auto_email" value="option1" checked> Same as business address
                   </div>
                   <div class="clear"></div>
                 </div>
@@ -359,11 +369,61 @@
               <div class="form-group">
                 <label for="email" class="col-sm-3 control-label">Contact email</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control"  placeholder="info@shapesbrowbar.com">
+                  <input type="text" [(ngModel)]="contactLogos.con_shapes_brow_email" name="contactLogos.con_shapes_brow_email" class="form-control" placeholder="info@shapesbrowbar.com">
                 </div>
                 <div class="clear"></div>
               </div>
-              <button type="button" class="btn pull-right" style="font-size: 18px;">Next</button>
+              <!-- <button type="button" class="btn pull-right" style="font-size: 18px;">Next</button> -->
+            </div>
+
+            <div class="col-md-12">
+              <b><label>Business listing</label></b>
+              <p>List your business on shapesbrowbar.com so that you can easily log into your software from
+                SHAPESBROWBAR website</p>
+              <form>
+                <div class="form-group">
+                  <label for="input" class="col-sm-3 control-label">Business listing</label>
+                  <div class="col-sm-9">
+                    <input type="radio"  name="inlineRadioOptions"  value="option1" selected> Yes, list
+                    my business (<a href="#">Show me</a>)<br>
+                    <input type="radio" name="inlineRadioOptions"  value="option1"> No, do not list my
+                    business
+                  </div>
+                  <div class="clear"></div>
+                </div>
+
+
+              </form>
+
+              <b><label>State / Province Settings</label></b>
+              <p>Autofill your state or province when adding clients or staff &nbsp; <span data-toggle="tooltip"
+                  data-placement="top" title="Tooltip on top"><i class="fas fa-info-circle" style="font-size: 18px;"></i></span>
+              </p>
+                <div class="form-group">
+                  <label for="email" class="col-sm-3 control-label">State / Province</label>
+                  <div class="col-sm-9">
+                    <select class="form-control" [(ngModel)]="contactLogos.con_state_province" name="contactLogos.con_state_province">
+                      <option selected>State / Province</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <b><label>Business Website Link</label></b>
+                <p>This link will be used in your SHAPEBROWBAR site to direct clients to your business's website
+                </p>
+                  <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Business website link</label>
+                    <div class="col-sm-9">
+                      <input type="url" class="form-control" [(ngModel)]="contactLogos.con_bussiness_website_link" name="contactLogos.con_bussiness_website_link"  placeholder="www.shapcsbrowbar.com">
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+
+                  <button type="button" (click)="saveContactLogos();" class="btn pull-right color-blue" style="font-size: 18px;">Save</button>
             </div>
           </div>
           <div role="tabpanel" class="tab-pane" id="logo-settings">
@@ -381,20 +441,20 @@
                       <div class="col-md-6 col-sm-6 col-xs-12 lc-section-1-r">
                         <form class="form-inlinel">
                           <label class="sr-only" for="inlineFormInputName2">Name</label>
-                          <input type="text" class="form-control mb-2 mr-sm-2"  placeholder="user name">
+                          <input type="text" class="form-control mb-2 mr-sm-2" placeholder="user name">
                           <br>
                           <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
                           <div class="input-group mb-2 mr-sm-2">
 
-                            <input type="password" class="form-control"  placeholder="Password">
+                            <input type="password" class="form-control" placeholder="Password">
                           </div>
 
                           <div class="form-check mb-2 mr-sm-2">
                             <label class="form-check-label" for="inlineFormCheck">
                               <a href="#">Create account</a> | <a href="#">Need password</a> | Remember me &nbsp;<input
-                                class="form-check-input" type="checkbox" >
+                                class="form-check-input" type="checkbox">
                             </label>
-                         </div>
+                          </div>
                           <button type="submit" class="btn btn-primary mb-2">Login</button>
                         </form>
                         <div class="user-ingo">
@@ -483,7 +543,7 @@
                         <div class="form-group">
                           <label for="input" class="col-sm-3 control-label">Replay to address for auto</label>
                           <div class="col-sm-9">
-                            <input type="checkbox"  value="option1" checked> Same as business
+                            <input type="checkbox" value="option1" checked> Same as business
                             address
                           </div>
                           <div class="clear"></div>
@@ -521,19 +581,19 @@
                               <div class="col-md-6 col-sm-6 col-xs-12 lc-section-1-r">
                                 <form class="form-inlinel">
                                   <label class="sr-only" for="inlineFormInputName2">Name</label>
-                                  <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
+                                  <input type="text" class="form-control mb-2 mr-sm-2" 
                                     placeholder="user name">
                                   <br>
                                   <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
                                   <div class="input-group mb-2 mr-sm-2">
 
-                                    <input type="password" class="form-control" id="passwprd" placeholder="Password">
+                                    <input type="password" class="form-control"  placeholder="Password">
                                   </div>
 
                                   <div class="form-check mb-2 mr-sm-2">
                                     <label class="form-check-label" for="inlineFormCheck">
                                       <a href="#">Create account</a> | <a href="#">Need password</a> | Remember me
-                                      &nbsp;<input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                                      &nbsp;<input class="form-check-input" type="checkbox" >
                                     </label>
 
                                   </div>
@@ -622,14 +682,14 @@
                                       <div class="form-group">
                                         <label for="input" class="col-md-4 control-label">SBB</label>
                                         <div class="col-md-8">
-                                          <input type="text" class="form-control"  placeholder="Shapes BrowBar">
+                                          <input type="text" class="form-control" placeholder="Shapes BrowBar">
                                         </div>
                                         <div class="clear"></div>
                                       </div>
                                       <div class="form-group">
                                         <label for="input" class="col-md-4 control-label">Online store </label>
                                         <div class="col-md-8">
-                                          <input type="text" class="form-control"  placeholder="Shapes BrowBar">
+                                          <input type="text" class="form-control" placeholder="Shapes BrowBar">
                                         </div>
                                         <div class="clear"></div>
                                       </div>

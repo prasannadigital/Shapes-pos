@@ -35,6 +35,27 @@ export class BusinessSettingsComponent implements OnInit {
     'loc_online_contact_name': '',
     'loc_online_shipping_address':''
   };
+  contactLogos: any = {
+    'contact_logo_tax_id': '',
+    'con_bussiness_name_auto_email': '',
+    'con_contact_email': '',
+    'con_replay_address_auto_email': '',
+    'con_shapes_brow_email': '',
+    'con_business_listen': '',
+    'con_state_province': '',
+    'con_bussiness_website_link': '',
+    'logo_shapesbrow_logo': '',
+    'logo_mobile_logo': '',
+    'logo_gitcard_logo': '',
+    'tax_rate_name': '',
+    'tax_sbb': '',
+    'tax_online_store': '',
+    'loc_business_desc': '',
+    'tax_registration_sbb': '',
+    'tax_registration_onlinestore': '',
+    'contact_logo_tax_status': ''
+  };
+  empData = new Array();
   packs: SelectItem[] = [];
   selectedPack: string[] = [];
   serviceData: any;
@@ -47,6 +68,7 @@ export class BusinessSettingsComponent implements OnInit {
   public date2: any;
   serviceId = '';
   bussinessAddressData: any;
+  contactLogoData: any;
   constructor(private http: Http,private service:BussinessSettingsService,private router:Router,private serviceData1: SheduleServiceService,) { }
 
   ngOnInit() {
@@ -59,6 +81,32 @@ export class BusinessSettingsComponent implements OnInit {
       }
     });
    this.getBussinessAddressForShapes();
+   this.getContactLogoForShapes();
+   this.getHolidays();
+  }
+  getContactLogoForShapes(){
+    this.service.getContactAddress().subscribe(res => {
+      this.contactLogoData = res.json().result;
+      console.log( this.contactLogoData)
+      this.contactLogos.contact_logo_tax_id=this.contactLogoData[0].contact_logo_tax_id;
+      this.contactLogos.con_bussiness_name_auto_email=this.contactLogoData[0].con_bussiness_name_auto_email;
+      this.contactLogos.con_replay_address_auto_email=this.contactLogoData[0].con_replay_address_auto_email;
+      this.contactLogos.con_contact_email=this.contactLogoData[0].con_contact_email;
+      this.contactLogos.con_shapes_brow_email=this.contactLogoData[0].con_shapes_brow_email;
+      this.contactLogos.con_business_listen=this.contactLogoData[0].con_business_listen;
+      this.contactLogos.con_state_province=this.contactLogoData[0].con_state_province;
+      this.contactLogos.con_bussiness_website_link=this.contactLogoData[0].con_bussiness_website_link;
+      this.contactLogos.logo_shapesbrow_logo=this.contactLogoData[0].logo_shapesbrow_logo;
+      this.contactLogos.logo_mobile_logo=this.contactLogoData[0].logo_mobile_logo;
+      this.contactLogos.logo_gitcard_logo=this.contactLogoData[0].logo_gitcard_logo;
+      this.contactLogos.tax_rate_name=this.contactLogoData[0].tax_rate_name;
+      this.contactLogos.tax_sbb=this.contactLogoData[0].tax_sbb;
+      this.contactLogos.tax_online_store=this.contactLogoData[0].tax_online_store;
+      this.contactLogos.loc_business_desc=this.contactLogoData[0].loc_business_desc;
+      this.contactLogos.tax_registration_sbb=this.contactLogoData[0].tax_registration_sbb;
+      this.contactLogos.tax_registration_onlinestore=this.contactLogoData[0].tax_registration_onlinestore;
+      this.contactLogos.contact_logo_tax_status=this.contactLogoData[0].contact_logo_tax_status;
+    })
   }
   getBussinessAddressForShapes(){
     this.service.getBussinessAddress().subscribe(res => {
@@ -84,48 +132,7 @@ export class BusinessSettingsComponent implements OnInit {
       this.locations.loc_online_shipping_address=this.bussinessAddressData[0].loc_online_shipping_address;
     })
   }
-  backToSetup(){
-    this.router.navigate(['setup']);
-  }
-  getStartDate() {
-    let newDate = moment(this.date1).format('YYYY-MM-DD HH:mm').toString();
-    this.startDate = newDate;
-  }
-
-  getEndDate() {
-    let newDate1 = moment(this.date2).format('YYYY-MM-DD HH:mm').toString();
-    this.endDate = newDate1;
-  }
-  saveHolidays() {
-   // this.submitted = true;
-    var data = {
-      buss_start_date: this.startDate,
-      buss_end_date: this.endDate,
-      buss_holidayname: this.holidayName,
-      buss_service_category:this.serviceId
-    }
-    //console.log(this.data)
-  }
-  getHolidays(){
-
-  }
-  deleteService(index) {
-    this.selectedPack.splice(index, 1);
-    this.getServiceId(this.selectedPack);
-  }
-
-  getServiceId(val) {
-    this.serviceId = '';
-    for (let i = 0; i < val.length; i++) {
-      this.serviceId = this.serviceId + val[i].cat_id + " , ";
-      console.log(this.serviceId);
-    }
-    this.serviceId = this.serviceId.substring(0, this.serviceId.length - 1);
-  }
-  onChange() {
-    console.log(this.selectedPack);
-    this.getServiceId(this.selectedPack);
-  }
+ 
   saveBussinessAddress(){
     var data = {
       location_id: this.locations.location_id,
@@ -149,6 +156,95 @@ export class BusinessSettingsComponent implements OnInit {
     }
     this.service.editBussinessAddress(data).subscribe(data => {
     });
+  }
+  saveContactLogos(){
+    var data = {
+      contact_logo_tax_id: this.contactLogos.contact_logo_tax_id,
+      con_bussiness_name_auto_email:this.contactLogos.con_bussiness_name_auto_email,
+      con_contact_email: this.contactLogos.con_contact_email,
+      con_replay_address_auto_email: this.contactLogos.con_replay_address_auto_email,
+      loc_city:this.contactLogos.loc_city,
+      con_shapes_brow_email: this.contactLogos.con_shapes_brow_email,
+      con_business_listen: this.contactLogos.con_business_listen,
+      con_state_province: this.contactLogos.con_state_province,
+      con_bussiness_website_link:this.contactLogos.con_bussiness_website_link,
+      logo_shapesbrow_logo: this.contactLogos.logo_shapesbrow_logo,
+      logo_mobile_logo: this.contactLogos.logo_mobile_logo,
+      logo_gitcard_logo: this.contactLogos.logo_gitcard_logo,
+      tax_rate_name:this.contactLogos.tax_rate_name,
+      tax_sbb: this.contactLogos.tax_sbb,
+      tax_online_store: this.contactLogos.tax_online_store,
+      loc_business_desc: this.contactLogos.loc_business_desc,
+      tax_registration_sbb:this.contactLogos.tax_registration_sbb,
+      tax_registration_onlinestore:this.contactLogos.tax_registration_onlinestore,
+      contact_logo_tax_status:this.locations.contactLogos.contact_logo_tax_status
+    }
+    this.service.editContactAddress(data).subscribe(data => {
+    });
+  }
+  backToSetup(){
+    this.router.navigate(['setup']);
+  }
+  getStartDate() {
+    let day = this.date1.getDate();
+    let month = this.date1.getMonth() + 1;
+    let year = this.date1.getFullYear();
+    let newDate = moment(this.date1).format('YYYY-MM-DD').toString();
+    this.startDate = newDate;
+    console.log( this.startDate)
+  }
+
+  getEndDate() {
+    let day1 = this.date2.getDate();
+    let month1 = this.date2.getMonth() + 1;
+    let year1 = this.date2.getFullYear();
+    let newDate1 = moment(this.date2).format('YYYY-MM-DD').toString();
+    this.endDate = newDate1;
+    console.log( this.endDate)
+  }
+  // getStartDate() {
+  //   let newDate = moment(this.date1).format('YYYY-MM-DD HH:mm').toString();
+  //   this.startDate = newDate;
+  // }
+
+  // getEndDate() {
+  //   let newDate1 = moment(this.date2).format('YYYY-MM-DD HH:mm').toString();
+  //   this.endDate = newDate1;
+  // }
+  saveHolidays() {
+   // this.submitted = true;
+    var data = {
+      schedule_holiday_start_date: this.startDate,
+      schedule_holiday_end_date: this.endDate,
+      schedule_holiday_holidayname: this.holidayName,
+      schedule_holiday_service_category:this.serviceId,
+      schedule_holiday_status:1
+    }
+    this.service.editBussinessdays(data).subscribe(data => {})
+    //console.log(this.data)
+  }
+  getHolidays(){
+  this.service.getBussinessdays().subscribe(res =>{
+    this.empData = res.json().result;
+    console.log(this.empData)
+  })
+  }
+  deleteService(index) {
+    this.selectedPack.splice(index, 1);
+    this.getServiceId(this.selectedPack);
+  }
+
+  getServiceId(val) {
+    this.serviceId = '';
+    for (let i = 0; i < val.length; i++) {
+      this.serviceId = this.serviceId + val[i].cat_id + ",";
+      console.log(this.serviceId);
+    }
+    this.serviceId = this.serviceId.substring(0, this.serviceId.length - 1);
+  }
+  onChange() {
+    console.log(this.selectedPack);
+    this.getServiceId(this.selectedPack);
   }
 }
 
