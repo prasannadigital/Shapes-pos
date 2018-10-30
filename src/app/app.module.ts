@@ -156,12 +156,14 @@ import { SalesBySupliersComponent } from './reports/Sales/sales-by-supliers/sale
 import { ManageOnlineOrdersComponent } from './reports/Sales/manage-online-orders/manage-online-orders.component';
 import { InvoiceComponent } from './reports/Sales/invoice/invoice.component';
 import { EarnedRevenueComponent } from './reports/Sales/earned-revenue/earned-revenue.component';
+import { TodaysSaleComponent } from './todays-sale/todays-sale.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'new-ticket', component: NewTicketComponent, canActivate: [AuthGuard] },
+  { path: 'todays-sale', component: TodaysSaleComponent, canActivate: [AuthGuard] },
   { path: 'new-ticket-next-button', component: NewTicketNextButtonComponent, canActivate: [AuthGuard] },
   { path: 'new-ticket-next-button-invoice', component: NewTicketNextButtonInvoiceComponent, canActivate: [AuthGuard] },
   { path: 'new-ticket-next-button-invoice-payment', component: NewTicketInvoicePaymentComponent, canActivate: [AuthGuard] },
@@ -419,6 +421,7 @@ const routes: Routes = [
     ManageOnlineOrdersComponent,
     InvoiceComponent,
     EarnedRevenueComponent,
+    TodaysSaleComponent,
 
   
     

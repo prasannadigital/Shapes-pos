@@ -16116,7 +16116,199 @@ transition: all 0.2s ease-in;
 tr:nth-child(odd) {
     background: #f1f1f1;
 }
+/**************24-10-2018**********************/
+.sale-services {
+  width: 80%;
+  margin: 10% auto 10%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.sale-services1 h4 {
+  margin: 0;
+  font-weight: 600;
+}
+.sale-services1 {
+  background: #77b4c5;
+  padding: 8px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.sale-services2 h4 {
+  margin: 0;
+  padding: 0;
+  
+}
+.sale-services2{
+background: #ffe959; 
+padding:5px;
+}
+.sale-services3 h5 {
+  margin-top: 9px;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.sale-services4 i {
+  font-size: 25px;
+  color: red;
+}
+.sale-services4 button {
+  padding: 5px 30px;
+  background: #77b4c7;
+  margin-top: 14px;
+}
+.sale-services4 {
+  text-align: center;
+}
+.button-middle i {
+  color: #fff;
+}
+.button-right i {
+  color: #336699;
+}
+.btn-sles i {
+  color: #fff;
+}
+.btn-sles1 i {
+  color: #336699;
+}
+.btn-sles2 i {
+  color: #00ff57;
+}
+.btn-sles2 {
+  margin-bottom: 15px;
+}
+.sales-tab-right {
+  padding: 0;
+  border-left: 1px solid #020202;
+}
+.sales-tab-right1{
+  padding:0;
+}
+.today-sale1 span {
+  font-size: 25px;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-weight: 600;
+}
+.today-sale1 {
+  background: #34afd2;
+  padding: 5px;
+  TEXT-ALIGN: CENTER;
+  COLOR: #FFF;
+}
+.btn-todaysale {
+  padding: 10px 20px;
+  background: #acd8e5;
+}
+.btn-todaysale i {
+  background: #0383a7;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  line-height: 29px;
+  font-size: 18px;
+}
+.today-sale2 h4 {
+  margin: 0;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
+  background: #97d6ea;
+  border: 1px solid #000;
+}
+.today-sale2-l {
+  padding: 0;
+  border-right: 1px solid #000;
+}
+.today-sale2-r {
+  padding: 0;
+}
+.today-sale2 th {
+  border: 1px solid #b7b2b2;
+  padding: 1px;
+  font-weight: 600;
+  background: #fff;
+  text-align: center;
+  font-size: 16px;
+  background: #97d6ea;
+}
+.today-sale2 td {
+  padding: 6px;
+  text-align: center;
+  border: 1px solid #ccc;
+  background: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #444444;
+}
+.today-sale2 tr:nth-child(odd) {background: #c1e7f3;}
+.today-sale3 {
+  background: #77b4c5;
+  text-align: center;
+  padding: 10px;
+}
+.today-sale3 h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.btn-todaysale I {
+  color: #FFF;
+}
+.today-sale4 th {
+  border: 1px solid #b7b2b2;
+  padding: 4px;
+  font-weight: bold;
+  background: #fff;
+  text-align: center;
+  font-size: 16px;
+  background: #97d6ea;
+}
+.today-sale4 {
+  margin-bottom: 5%;
+}
 
+@media screen and (max-width: 1024px) {
+.today-sale4 {
+  width: 100%;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+.tabs-services {
+  width: 100%;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+}
+@media screen and (max-width: 768px) {
+.tabs-services .nav-tabs > li > a {
+  margin-right: 3px;
+  line-height: 1.8;
+  border: 1px solid #565656 !important;
+  border-radius: 15px 15px 0 0;
+  font-size: 18px;
+  text-align: center;
+  background: #6c9caf;
+  padding: 5px 10px;
+  width: 100%;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+}
+@media screen and (max-width: 425px) {
+.today-sale1 span {
+  font-size: 19px;
+  margin-right: 2px;
+  margin-left: 2px;
+  font-weight: 600;
+}
+}
+.service-buttons1 .active {
+  background: #6c9caf;
+  color: #fff;
+}
 
 
 

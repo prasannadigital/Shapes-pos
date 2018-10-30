@@ -73,8 +73,9 @@ export class NewTicketComponent implements OnInit {
   temp: any[] = new Array();
 
   onSelect(item) {
-    
+  
     this.selectedOption = item;
+    console.log(this.selectedOption);
     this.custFirstName = this.selectedOption.firstname;
     this.custLastName = this.selectedOption.lastname;
     this.custGender = this.selectedOption.gender;
@@ -82,8 +83,19 @@ export class NewTicketComponent implements OnInit {
     this.custEmail = this.selectedOption.email_id;
     this.custStatus = this.selectedOption.rec_status;
     this.selectedValue= this.custFirstName;
+    var data = {
+      user_id: this.selectedOption.user_id,
+    }
+    this.http.post(environment.host + 'sales/last-user', data).subscribe(data => {
+    });
   }
-
+  lastSearch(){
+    this.states=[];
+    this.http.get(environment.host + 'sales/last-user').subscribe(data => {
+      this.temp.push(data.json().result);
+      this.states = this.temp.pop();
+    });
+  }
   membershipInfo() {
     if (this.selectedOption) {
       this.http.get(environment.host + 'sales/visit/' + this.selectedOption.user_id).subscribe(data => {

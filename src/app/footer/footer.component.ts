@@ -51,4 +51,7 @@ export class FooterComponent implements OnInit {
     sessionStorage.clear();
     this.router.navigate(['login']);
   }
+  redirectToTodaySale(){
+    this.router.navigate(['todays-sale']);
+  }
 }
