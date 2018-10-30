@@ -1,3 +1,11 @@
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-6"></div>
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-primary submit-button backToApp" (click)="backToReport();">Back</button>
+    </div>
+    <div class="clear"></div>
+  </div>
 <div id="myModal-online" class="modal fade" role="dialog" data-backdrop="static">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -291,7 +299,7 @@
                   <div class="col-md-9">
                     <p-multiSelect [options]="packs" defaultLabel="All Services" [(ngModel)]="selectedPack" [(ngModel)]="serviceData.cat_id"
                       (ngModelChange)="onChange($event)" [panelStyle]="{minWidth:'12em'}" [ngModelOptions]="{standalone: true}"></p-multiSelect>
-                    <p>Selected Cars: {{selectedPack | json}}</p>
+                    
                     <div class="clear"></div>
                   </div>
                 </div>

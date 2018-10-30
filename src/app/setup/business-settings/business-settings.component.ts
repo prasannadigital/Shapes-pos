@@ -84,6 +84,9 @@ export class BusinessSettingsComponent implements OnInit {
    this.getContactLogoForShapes();
    this.getHolidays();
   }
+  backToReport() {
+    this.router.navigate(['setup'])
+  }
   getContactLogoForShapes(){
     this.service.getContactAddress().subscribe(res => {
       this.contactLogoData = res.json().result;
