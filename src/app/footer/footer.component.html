@@ -99,13 +99,29 @@
 
         <div class="btn-search">
 
-          <i class="fas fa-search">
-            <span>Search</span>
-            <span style="color:red">[Enter]</span>
-          </i>
+         <a (click)="priceSearch()">
+            <i class="fas fa-search">
+                <span>Search</span>
+                <span style="color:red">[Enter]</span>
+              </i>
+         </a> 
 
         </div>
       </div>
+      <div class="sul-show-result">
+          <br>
+          <br>
+          <button class="btn btn-primary submit-button" *ngFor="let item of states " (click)="onSelect(item)">
+            <span>
+              <a href="#"></a>{{item.membership_name}}</span>
+              <span>
+                  <a href="#"></a>{{item.membership_price}}</span>
+          </button>
+          <div class="no-search" *ngIf="states == null">
+           <h3>No records Found</h3>
+          </div>
+  
+        </div>
       <hr>
       <div class="select-stylist-footer-right">
         <ul>

@@ -12,7 +12,7 @@ export class FooterComponent implements OnInit {
   selectedOption: any;
   product: any[] = [];
   temp: any[] = [];
-
+  states: any[] = new Array();
   constructor(private router: Router,private service:FooterServiceService) { }
 
   ngOnInit() {
@@ -22,17 +22,31 @@ export class FooterComponent implements OnInit {
     this.router.navigate(['new-ticket']);
   }
 
-  customerSearch(val) {
-    if(val.length >= 2){
-    this.service.searchPrice(val).subscribe(data => {
-      this.temp.push(data.json());
-      this.product = this.temp.pop();
-      console.log(this.product);
-    });
-  } else{
-    this.product=[];
+  customerSearch() {
+  //   if(val.length >= 2){
+  //   this.service.searchPrice(val).subscribe(data => {
+  //     this.temp.push(data.json());
+  //     this.product = this.temp.pop();
+  //     console.log(this.product);
+  //   });
+  // } else{
+  //   this.product=[];
+  // }
   }
-  }
+  priceSearch(){
+    this.states=[];
+  this.selectedValue;
+  this.service.searchPrice(this.selectedValue).subscribe(data => {
+    this.temp.push(data.json().result);
+        this.states = this.temp.pop();
+        console.log(this.states)
+      });
+    } 
+  //   else{
+  //     this.states=[];
+  //   }
+  // }
+
   logOut(){
     sessionStorage.clear();
     this.router.navigate(['login']);
