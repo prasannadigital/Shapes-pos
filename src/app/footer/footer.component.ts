@@ -37,8 +37,8 @@ export class FooterComponent implements OnInit {
     this.states=[];
   this.selectedValue;
   this.service.searchPrice(this.selectedValue).subscribe(data => {
-    this.temp.push(data.json().result);
-        this.states = this.temp.pop();
+    this.states =  data.json().result;
+      
         console.log(this.states)
       });
     } 

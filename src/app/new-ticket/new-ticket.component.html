@@ -461,7 +461,7 @@
         <br>
         <button class="btn btn-primary submit-button" *ngFor="let item of states " (click)="onSelect(item)">
           <span>
-            <a href="#"></a>{{item.name}}</span>
+            <a href="#"></a>{{item.firstname}}</span>
         </button>
         <div class="no-search" *ngIf="states == null">
          <h3>No records Found</h3>
@@ -480,11 +480,10 @@
               <i class="fas fa-search"></i>
               <br>Last Search</a>
           </li>
-          <li>
+          <li data-toggle="modal" data-target="#costomerInfo">
             <a>
               <i class="fas fa-user"></i>
-              <br>Customer Info</a>
-
+              <br>Customer Info</a>       
           </li>
           <li data-toggle="modal" data-target="#moreModal">
             <a>
@@ -498,7 +497,10 @@
     <div class="col-md-6 col-sm-6 col-xs-12 select-customer-right">
       <div class="sur-info" data-toggle="modal" data-target="#costomerInfo">
         <h3>Customer Info</h3>
-
+        <div class="custmerTabInfo" *ngIf="custFirstName">
+            <h3>First Name: {{custFirstName}}</h3>
+            <h3>Last Name: {{custLastName}}</h3>
+        </div>
       </div>
       <div class="sur-membership" data-toggle="modal" (click)="membershipInfo()" data-target="#membershipInfo">
         <h3>Membership / Package</h3>
