@@ -1,6 +1,3 @@
-<p>
-  client-reports-ratings-reviews works!
-</p>
 <div class="row">
   <div class="col-sm-4"></div>
   <div class="col-sm-6"></div>
@@ -8,4 +5,187 @@
     <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
   </div>
   <div class="clear"></div>
+</div>
+<div class="container">
+  <div class="row horizontal-row">
+    <div class="col-lg-12 h-r-h" >
+        <h2>RATING AND REVIEWS</h2>
+    </div>
+    </div>
+<div class="col-lg-12 row horizontal-row">
+    <div class="col-lg-3 verticle-section">
+        <h5>
+            <span class="badge badge-light">1</span>DATES
+        </h5>
+        <div class="input-group dates">
+            <label>Start Date: </label> <input type="text" value=""
+                                               id="datepicker1" name="date1" class="form-control">
+        </div>
+        <div class="input-group dates">
+            <label>End Date: </label> <input type="text" id="datepicker2"
+                                             class="form-control" value="" id="datepicker" name="date2">
+        </div>
+        <hr />
+        <h5>QUICK DATES</h5>
+        <div>
+            <label>Last</label>
+            <div class="form-inline">
+                <button type="" class="btn btn-default">YEAR</button>
+                <button type="" class="btn btn-default">QUARTER</button>
+            </div>
+            <div class="form-inline">
+                <button type="" class="btn btn-default">MONTH</button>
+                <button type="" class="btn btn-default">DAY</button>
+            </div>
+        </div>
+        <div>
+            <label>To Date</label>
+            <div class="form-inline">
+                <button type="button" class="btn btn-default">YEAR</button>
+                <button type="button" class="btn btn-default">QUARTER</button>
+            </div>
+            <div class="form-inline">
+                <button type="button" class="btn btn-default">MONTH</button>
+                <button type="button" class="btn btn-default">DAY</button>
+            </div>
+        </div>
+        <div>
+            <label>Previous</label>
+            <div class="form-inline">
+                <button type="button" class="btn btn-default">365 Days</button>
+                <button type="button" class="btn btn-default">90 Days</button>
+            </div>
+            <div class="form-inline">
+                <button type="button" class="btn btn-default">30 Days</button>
+                <button type="button" class="btn btn-default">7 Days</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 verticle-section filters">
+        <h5>
+            <span class="badge badge-light">2</span>FILTERS
+        </h5>
+        <div class="">
+            <input type="checkbox" id=""> <label>Show
+            clients only </label>
+        </div>
+        <div class="">
+            <input type="checkbox" id=""> <label style="font-size: 15px;">Show only settings that includes reviews</label>
+        </div>
+        <br/>
+        
+   
+
+        <hr />
+        <br /> <br />
+        <table class="filter-table">
+            <tr class="">
+                <td><label>Appointment Date</label></td>
+                <td><select class="form-control" id="appointmentDate">
+                    <option>Date of Invoice</option>
+                    </select></td>
+            </tr>
+             <tr class="">
+                <td><label>Location</label></td>
+                <td><select class="form-control" id="location">
+                    <option>All Locations</option>
+                    </select></td>
+            </tr>
+            <tr class="">
+                <td><label>Service Category</label></td>
+                <td><select class="form-control" id="serviceCategory">
+                    <option>All Service Categories</option>
+                    </select></td>
+            </tr>
+             <tr class="">
+                <td><label>Staff</label></td>
+                <td><select class="form-control" id="staff">
+                    <option>All Staff Members</option>
+                    </select></td>
+            </tr>
+
+            
+        </table>
+    </div>
+    <div class="col-lg-2 verticle-section">
+        <h5>
+            <span class="badge badge-light">3</span>OPTIONS
+        </h5>
+        <div class="">
+            <label>View</label>
+            <div class="form-check">
+                <label class="form-check-label"> <input type="radio"
+                                                        class="form-check-input" name="viewBy" ><b>Detail</b>
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label"> <input type="radio"
+                                                        class="form-check-input" name="viewBy" checked><b>Summary</b>
+                </label>
+            </div>
+        </div><br/>
+        <div class="">
+            <label>Group By</label>
+            <div class="form-check">
+                <label class="form-check-label"> <input type="radio"
+                                                        class="form-check-input" name="groupBy" checked><b>Staff</b>
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label"> <input type="radio"
+                                                        class="form-check-input" name="groupBy"><b>Service</b>
+                </label>
+            </div>
+            <hr/>
+                <div class="form-check">
+                            <label class="form-check-label inline-flex"> 
+                                 <input type="checkbox" class="form-check-input"
+                                name="scd"><p class="text-muted">Hide review comments</p>
+                            </label>
+                        </div>
+        </div>
+    </div>
+    <div class="col-lg-3 verticle-section">
+        <h5>
+            <span class="badge badge-light">4</span>GENERATE
+        </h5>
+        <div class="" style="margin-left: 25%;">
+            <button type="button" class="btn btn-default">GO</button>
+            <br /> <br />
+            <div class="">
+                <div>
+                    <a><span><img src="../img/download.png"
+                                  class="image-indicators" /><b>Export To Excel</b></span></a>
+                </div>
+                <div>
+                    <a><span><img src="../img/download.png"
+                                  class="image-indicators" /><b>Print This Report</b></span></a>
+                </div>
+                <div>
+                    <a><span><img src="../img/download.png"
+                                  class="image-indicators" /><b>Export to a PDF</b></span></a>
+                </div>
+                <div>
+                    <a><span><img src="../img/download.png"
+                                  class="image-indicators" /><b>Save this Report</b></span></a>
+                </div>
+            </div>
+            <br /> <br /> <br />
+            <div>
+                <div>
+                    <a><span><img src="../img/download.png"
+                                  class="image-indicators" /><b>Tag Add</b></span></a>
+                </div>
+                <div>
+                    <a><span><img src="../img/download.png"
+                                  class="image-indicators" /><b>Tag New</b></span></a>
+                </div>
+                <div>
+                    <a><span><img src="../img/download.png"
+                                  class="image-indicators" /><b>Untag Clients</b></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>

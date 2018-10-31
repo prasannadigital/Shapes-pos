@@ -1,6 +1,3 @@
-<p>
-  client-reports-account-balance works!
-</p>
 <div class="row">
   <div class="col-sm-4"></div>
   <div class="col-sm-6"></div>
@@ -8,4 +5,47 @@
     <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
   </div>
   <div class="clear"></div>
+</div>
+<div class="container">
+  <div class="card cancellation-panel col-lg-12">
+      <div class="card-body">
+          <form class="" action="/action_page.php">
+              <div class="row form-inline justify-content-center align-items-baseline">
+                  <label>Sort By</label><select
+                                                class="form-control" id="sortBy" name="sortBy">
+                  <option>Account Balance</option>
+                  </select>   <label>Show:</label><select class="form-control" id="show" name="show">
+                  <option>All Balances</option>
+                  </select>
+                  <select class="form-control" id="location" name="location">
+                      <option>All Home Locations:</option>
+                  </select>
+                  Show Event Balances Only:<input type="checkbox" class="form-check-input" name="">
+              </div><br/>
+              <div class="row form-inline justify-content-center align-items-baseline">
+                  <label> Show Clients Owing More Than $  </label>
+                  <input type="text" class="form-control" name="" style="width: 50px;">
+                  <label>Billing Information:</label><select
+                                                             class="form-control" id="billingInfo" name="billingInfo">
+                  <option>All Clients</option>
+                  </select>  
+                  Tagged Clients Only (0):<input type="checkbox" class="form-check-input" name="">
+              </div><br/>
+              <div class="form-inline justify-content-center align-items-baseline">
+                  <label>Statement Date:</label> <input
+                                                        type="text" class="date-input form-control" id="stDate"
+                                                        placeholder="" name="statementDate">
+
+                  <button type="submit" class="btn btn-default">Print</button>
+                  <button type="submit" class="btn btn-default">Generate</button>
+                  <button type="submit" class="btn btn-default">Schedule Autopays</button>
+                  <img src="../img/download.png" class="image-indicators" /> 
+                  <img src="../img/download.png" class="image-indicators" />
+                  <img src="../img/download.png" class="image-indicators" />
+                  <img src="../img/download.png" class="image-indicators" />
+              </div>
+          </form>
+      </div>
+  </div>
+
 </div>

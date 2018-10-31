@@ -178,6 +178,7 @@ import { ClientReportsAttendenceAnalysisComponent } from './reports/clients-repo
 import { ClientReportsPricingOptionsComponent } from './reports/clients-reports/client-reports-pricing-options/client-reports-pricing-options.component';
 import { ClientReportsNewMembersComponent } from './reports/clients-reports/client-reports-new-members/client-reports-new-members.component';
 import { InventoryChangeLogComponent } from './reports/clients/inventory-change-log/inventory-change-log.component';
+import { SalesByProductClientReportsComponent } from './reports/clients/sales-by-product-client-reports/sales-by-product-client-reports.component';
 
 
 const routes: Routes = [
@@ -257,7 +258,7 @@ const routes: Routes = [
   { path: 'clients/inventoty-on-hand', component: InventoryOnHandComponent, canActivate: [AuthGuard] },
   { path: 'clients/manage', component: ManageComponent, canActivate: [AuthGuard] },
   { path: 'clients/retails-sales-performance', component: RetailsSalesPerformanceComponent, canActivate: [AuthGuard] },
-  { path: 'clients/sales-by-product', component: SalesByProductComponent, canActivate: [AuthGuard] },
+  { path: 'clients/sales-by-product-client-reports', component: SalesByProductClientReportsComponent, canActivate: [AuthGuard] },
   { path: 'clients/sales-by-supliers', component: SalesBySupplierReportsComponent, canActivate: [AuthGuard] },
   { path: 'clients/inventory-change-log', component: InventoryChangeLogComponent, canActivate: [AuthGuard] },
 
@@ -488,6 +489,7 @@ const routes: Routes = [
     ClientReportsPricingOptionsComponent,
     ClientReportsNewMembersComponent,
     InventoryChangeLogComponent,
+    SalesByProductClientReportsComponent,
 
   
     

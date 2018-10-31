@@ -1,6 +1,3 @@
-<p>
-  cost-of-goods works!
-</p>
 <div class="row">
   <div class="col-sm-4"></div>
   <div class="col-sm-6"></div>
@@ -8,4 +5,106 @@
     <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
   </div>
   <div class="clear"></div>
+</div>
+<div class="container">
+  <div class="card cancellation-panel col-lg-12">
+      <div class="card-body">
+          <form class="" action="/action_page.php">
+              <div class="row form-inline justify-content-center align-items-baseline">
+                  <label>Initial Visit To:</label> 
+                  <select
+                          class="form-control" id="" name="">
+                      <option>All Locations</option>
+                  </select> 
+                  <label for="stDate">between</label> <input
+                                                                type="text" class="date-input form-control" id="stDate"
+                                                                placeholder="" name="stDate"> <label for="endDate">and</label> <input type="text" class="date-input form-control"
+                                      id="endDate" placeholder="" name="endDate">
+
+              </div>
+              <div class="row form-inline justify-content-center align-items-baseline">
+                  <label>Service Category</label> 
+                  <select class="form-control" id="services" multiple
+                          name="services" style="height: 80px;vertical-align: middle;">
+                      <option>All Service Categories</option>
+                      <option>Hair Styling Packages</option>
+                      <option>Makeup Service Packages</option>
+                      <option>Members and Package Checkout</option>
+                  </select>
+                  <label>with </label> 
+                  <select
+                          class="form-control" id="" name="">
+                      <option>Any Seat Selection</option>
+                  </select>
+
+              </div>
+              <div class="row form-inline justify-content-center align-items-baseline">
+                  <label>Client returned to</label> 
+                  <select
+                          class="form-control" id="" name="">
+                      <option>SBB-Culver City</option>
+                  </select> 
+                  <label>within</label> 
+                  <input type="text" class="form-control" style="width:60px;">
+                  <label>days with</label> 
+                  <select
+                          class="form-control" id="" name="">
+                      <option>Any Seat Selection</option>
+                  </select> 
+              </div>
+              <div class="row form-inline justify-content-center align-items-baseline">
+                  <label>Repeat Clients Based On</label> 
+                  <select
+                          class="form-control" id="" name="">
+                      <option>Any Seat Selection:Any Location</option>
+                  </select>
+                  <a href=""><img
+                                  src="../img/download.png" class="image-indicators" /></a>
+              </div>
+              <div class="row form-inline justify-content-center align-items-baseline">
+                  <select
+                          class="form-control" id="" name="">
+                      <option>Summary View</option>
+                  </select>
+                  <label class="form-check-label">Tagged Clients only (0):
+                      <input type="checkbox" class="form-check-input" name="clients">   </label>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6 text-right">
+                      <div class="form-inline text-right">
+                          <i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i>
+                          <i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i>
+                          <i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i>
+                          <i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i>
+                      </div>
+                      <div class="text-right">
+                          <label>Calendar Months</label>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 text-center">
+                      <div class="form-inline text-left">
+                          <i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i>
+                          <i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i>
+                          <i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i>
+                          <i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i>
+
+                      </div>
+                      <div class="text-left">
+                          <label>To-Date</label>
+                      </div>
+                  </div>
+              </div>
+              <div class="row form-inline justify-content-center align-items-baseline">
+                  <button type="submit" class="btn btn-default">GENERATE</button>
+                  <a href=""><img src="../img/download.png"
+                                  class="image-indicators" /></a> <a href=""><img
+                                                                                  src="../img/download.png" class="image-indicators" /></a> <a
+      href=""><img src="../img/download.png"
+                                   class="image-indicators" /></a> <a href=""><img
+                                                                                   src="../img/download.png" class="image-indicators" /></a>
+
+              </div>
+          </form>
+      </div>
+  </div>
 </div>

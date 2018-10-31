@@ -1,6 +1,4 @@
-<p>
-  client-reports-pricing-options works!
-</p>
+
 <div class="row">
   <div class="col-sm-4"></div>
   <div class="col-sm-6"></div>
@@ -8,4 +6,108 @@
     <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
   </div>
   <div class="clear"></div>
+</div>
+<div class="container">
+  <div class="container">
+      <div class="row"><br/><br/>
+          <div class="card cancellation-panel col-lg-12">
+              <div class="card-body">
+                  <form class="" action="/action_page.php">
+                      <div class="row form-inline justify-content-center align-items-baseline">
+                          <label>Dislay Pricing Options Expiring Between:
+                          </label>
+                          <input
+                                 type="text" class="date-input form-control" id="stDate"
+                                 placeholder="" name="stDate"> <label for="endDate">and</label> <input type="text" class="date-input form-control"
+                                                                                                       id="endDate" placeholder="" name="endDate">
+                          <label>from:</label> 
+                          <select
+                                  class="form-control" id="" name="">
+                              <option>All Locations</option>
+                          </select> 
+                      </div>
+                      <div class="row form-inline justify-content-center align-items-baseline">
+                          <select
+                                  class="form-control" id="" name="">
+                              <option>All Sales Rep</option>
+                          </select> 
+                          <select
+                                  class="form-control" id="" name="">
+                              <option>All pricing ptions & memberships</option>
+                          </select> 
+                          <label>Service Category:</label> 
+                          <select
+                                  class="form-control" id="" name="">
+                              <option>All Service Categories</option>
+                          </select> 
+                      </div>
+                      <div class="row form-inline justify-content-center align-items-baseline">
+                          <label class="form-check-label">Active Pricing Option Only:
+                              <input type="checkbox" class="form-check-input" name="clients">
+                          </label>
+                          <label class="form-check-label">Factor in On-Deck Pricing Options / Autopays:
+                              <a href=""><img
+                                              src="../img/download.png" class="image-indicators" /></a>
+                              <input type="checkbox" class="form-check-input" name="clients">
+                              
+                          </label>
+                          <label class="form-check-label">Filter Out Returned Pricing Options:
+                              <input type="checkbox" class="form-check-input" name="clients">
+                          </label>
+
+                      </div>
+                      <div class="row form-inline justify-content-center align-items-baseline">
+                          <label class="form-check-label">Tagged Clients Only:
+                              <input type="checkbox" class="form-check-input" name="clients">
+                          </label>
+                      </div>
+                      <div class="row">
+                          <div class="col-lg-6 text-right">
+                              <div class="form-inline text-right">
+                                  <i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i>
+                                  <i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i>
+                                  <i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i>
+                                  <i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i>
+                              </div>
+                              <div class="text-right">
+                                  <label>Calendar Months</label>
+                              </div>
+                          </div>
+                          <div class="col-lg-6 text-center">
+                              <div class="form-inline text-left">
+                                  <i class="fa fa-arrow-left" aria-hidden="true"><span>Y</span></i>
+                                  <i class="fa fa-arrow-left" aria-hidden="true"><span>Q</span></i>
+                                  <i class="fa fa-arrow-left" aria-hidden="true"><span>M</span></i>
+                                  <i class="fa fa-arrow-left" aria-hidden="true"><span>D</span></i>
+
+                              </div>
+                              <div class="text-left">
+                                  <label>To-Date</label>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row form-inline justify-content-center align-items-baseline">
+                          <label>Sort By:</label> 
+                          <select
+                                  class="form-control" id="" name="">
+                              <option>Next Billing Date / Expiration Date</option>
+                          </select> 
+                          <label class="form-check-label">Print Per One Page:
+                              <input type="checkbox" class="form-check-input" name="clients">
+                          </label>
+                          <button type="submit" class="btn btn-default">GENERATE</button>
+                          <a href=""><img src="../img/download.png"
+                                          class="image-indicators" /></a> <a href=""><img
+                                                                                          src="../img/download.png" class="image-indicators" /></a> <a
+      href=""><img src="../img/download.png"
+                                   class="image-indicators" /></a> <a href=""><img
+                                                                                   src="../img/download.png" class="image-indicators" /></a>
+                      </div>
+                  </form>
+              </div>
+          </div>
+
+      </div>
+  </div>
+
 </div>

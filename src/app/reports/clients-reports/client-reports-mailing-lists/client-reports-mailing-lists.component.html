@@ -1,6 +1,3 @@
-<p>
-  client-reports-mailing-lists works!
-</p>
 <div class="row">
   <div class="col-sm-4"></div>
   <div class="col-sm-6"></div>
@@ -8,4 +5,72 @@
     <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
   </div>
   <div class="clear"></div>
+</div>
+<div class="container">
+  <br>
+  <div class="row">
+      <div class="card cancellation-panel col-lg-12" style="background-color: #F3F2F0;">
+          <div class="card-body">
+              <form class="" action="/action_page.php">
+                  <div class="row form-inline justify-content-center align-items-baseline">
+
+                      <select class="form-control" id="location" name="list">
+                          <option>Email List</option>
+                      </select>
+                      <label>List Clients</label>  <select class="form-control" id="clientsList" name="clientsList">
+                      <option>All Clients</option>
+                      </select>
+                      <label>Clients's opt-in status</label>  <select class="form-control" id="location" name="location">
+                      <option>All Clients</option>
+                      </select>
+
+                  </div>
+                  <div class="row form-inline justify-content-center align-items-baseline">
+                      <label class="form-check-label">Tagged Clients only (0)
+                          <input type="checkbox" class="form-check-input" name="">
+                      </label>
+                      <select class="form-control" id="" name="">
+                          <option>All Clients</option>
+                      </select>
+                      <label>Sort By</label>
+                      <select class="form-control" id="" name="">
+                          <option>Client Name</option>
+                      </select>
+                  </div>
+                  <div class="row form-inline justify-content-center align-items-baseline">
+
+                      <button type="submit" class="btn btn-default">GENERATE</button>
+                      <a href=""><img src="../img/download.png"
+                                      class="image-indicators" /></a>
+                      <a href=""><img src="../img/download.png"
+                                      class="image-indicators" /></a> <a href=""><img
+                                                                                      src="../img/download.png" class="image-indicators" /></a> <a
+      href=""><img src="../img/download.png"
+                                   class="image-indicators" /></a> <a href=""><img
+                                                                                   src="../img/download.png" class="image-indicators" /></a>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <div class="row form-inline justify-content-center align-items-baseline">
+          <textarea style="    height: 150px;width: 250px;"></textarea>
+      </div>
+      <div class="row align-items-baseline">
+          <div class="col-lg-7 text-left inline-flex-style align-items-baseline">
+              <label>Change the delimiter</label>
+              <select class="form-control" id="" name="" style="width: auto;">
+                  <option>Semicoln</option>
+              </select>
+          </div>
+          <div class="col-lg-4">
+              <label>Follow these steps to generate an email from the list</label> 
+              <ul style="list-style: none;">
+                  <li>1.Click on box to the left</li>
+                  <li>2.Copy the contents to clipboard</li>
+                  <li>3.Click on this link to open a new email</li>
+                  <li>4.Paste into the address field</li>
+              </ul>
+          </div>
+      </div>
+  </div>
 </div>

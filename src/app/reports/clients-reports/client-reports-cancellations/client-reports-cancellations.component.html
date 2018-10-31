@@ -1,6 +1,3 @@
-<p>
-  client-reports-cancellations works!
-</p>
 <div class="row">
   <div class="col-sm-4"></div>
   <div class="col-sm-6"></div>
@@ -8,4 +5,81 @@
     <button type="button" class="btn backBtn pull-right" (click)="backToReport();">Back</button>
   </div>
   <div class="clear"></div>
+</div>
+<div class="container">
+  <br>
+  <div class="row">
+      <div class="card cancellation-panel col-lg-12">
+          <div class="card-body">
+              <form class="" action="/action_page.php">
+                  <div class="row form-inline justify-content-center align-items-baseline">
+                      <label for="stDate">Date Range: Start Date:</label> <input
+                                                                                 type="text" class="date-input form-control" id="stDate"
+                                                                                 placeholder="" name="stDate"> <label for="endDate">End
+                      Date:</label> <input type="text" class="date-input form-control"
+                                           id="endDate" placeholder="" name="endDate"> <select
+                                                                                               class="form-control" id="allLocations" name="allLocations">
+                      <option>All Locations</option>
+                      <option>All Locations</option>
+                      <option>All Locations</option>
+                      <option>All Locations</option>
+                      </select> <select class="form-control" id="allTeachers" name="allTeachers">
+                      <option>All Teachers</option>
+                      <option>All Teachers</option>
+                      <option>All Teachers</option>
+                      <option>All Teachers</option>
+                      </select>
+                  </div>
+                  <div class="row form-inline  justify-content-center align-items-baseline">
+                      <select class="form-control" id="all" name="all">
+                          <option>All</option>
+                          <option>All</option>
+                          <option>All</option>
+                          <option>All</option>
+                      </select> <select class="form-control" id="allView" name="allView">
+                      <option>View All</option>
+                      <option>View All</option>
+                      <option>View All</option>
+                      <option>View All</option>
+                      </select> <label for="restore">Restore:</label> <select
+                                                                              class="form-control" id="individualRecords"
+                                                                              name="individualRecords">
+                      <option>Individual Records</option>
+                      <option>Individual Records</option>
+                      <option>Individual Records</option>
+                      <option>Individual Records</option>
+                      </select>
+
+                  </div>
+                  <div class="row form-inline justify-content-center align-items-baseline">
+                      <div class="form-inline inline-flex-style">
+                          <label class="form-check-label">Clients</label>
+                          <div class="form-check">
+                              <label class="form-check-label"> <input type="radio"
+                                                                      class="form-check-input" name="clients" checked=""><b>All</b>
+                              </label>
+                          </div>
+                          <div class="form-check">
+                              <label class="form-check-label"> <input type="radio"
+                                                                      class="form-check-input" name="clients"><b>Selected</b>
+                              </label>
+                          </div>
+                      </div>
+                      <label for="restore">Sort By:</label> <select
+                                                                    class="form-control" id="sortBy" name="sortBy">
+                      <option>Cancelled Date</option>
+                      <option>Cancelled Date</option>
+                      <option>Cancelled Date</option>
+                      <option>Cancelled Date</option>
+                      </select>
+                  </div>
+                  <div class="row form-inline justify-content-center align-items-baseline">
+                      <button type="submit" class="btn btn-default">GENERATE</button>
+                      <img src="../img/download.png" class="image-indicators" /> <img
+                                                                                      src="../img/download.png" class="image-indicators" />
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
 </div>

@@ -233,7 +233,7 @@ Click13(){
   this.router.navigate(['sales/earned-revenue']);
 }
 salesByProduct(){
-  this.router.navigate(['clients/sales-by-product']);
+  this.router.navigate(['clients/sales-by-product-client-reports']);
 }
 inventoryOnHand(){
   this.router.navigate(['clients/inventoty-on-hand']);
