@@ -147,43 +147,43 @@
     </div>
     <div *ngIf="clientsContent">
       <div class="nav flex-column nav-pills rs-1-left-button" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link com-mark-info" id="v-pills-home-tab" data-toggle="pill" href="#Communications" role="tab" aria-controls="Communications"
+        <a class="nav-link com-mark-info" id="v-pills-home-tab" data-toggle="pill" href="#Communications" (click)="memberships()" role="tab" aria-controls="Communications"
           aria-selected="true">Memberships</a>
 
-        <a class="nav-link staff-info" id="v-pills-profile-tab" data-toggle="pill" href="#Staff" role="tab" aria-controls="Staff"
+        <a class="nav-link staff-info" id="v-pills-profile-tab" data-toggle="pill" href="#Staff" (click)="mailing()" role="tab" aria-controls="Staff"
           aria-selected="false">Mailing Lists</a>
 
-        <a class="nav-link client-info" id="v-pills-messages-tab" data-toggle="pill" href="#Clients" role="tab" aria-controls="Clients"
+        <a class="nav-link client-info" id="v-pills-messages-tab" data-toggle="pill" href="#Clients"(click)="ratings()" role="tab" aria-controls="Clients"
           aria-selected="false">Ratings And Reviews</a>
 
-        <a class="nav-link mem-info" id="v-pills-settings-tab" data-toggle="pill" href="#Memberships" role="tab" aria-controls="Memberships"
+        <a class="nav-link mem-info" id="v-pills-settings-tab" data-toggle="pill" href="#Memberships"(click)="account()" role="tab" aria-controls="Memberships"
           aria-selected="false">Account Balance</a>
 
-        <a class="nav-link package-info" id="v-pills-settings-tab" data-toggle="pill" href="#Packages" role="tab" aria-controls="Packages"
+        <a class="nav-link package-info" id="v-pills-settings-tab" data-toggle="pill" href="#Packages"(click)="contact()" role="tab" aria-controls="Packages"
           aria-selected="false">Contact Logs</a>
 
-        <a class="nav-link promotion-info" id="v-pills-settings-tab" data-toggle="pill" href="#Promotions" role="tab" aria-controls="Promotions"
+        <a class="nav-link promotion-info" id="v-pills-settings-tab" data-toggle="pill" href="#Promotions"(click)="entry()" role="tab" aria-controls="Promotions"
           aria-selected="false">Entry Logs</a>
 
-        <a class="nav-link gift-card-info" id="v-pills-settings-tab" data-toggle="pill" href="#gift-cards" role="tab" aria-controls="v-pills-settings"
+        <a class="nav-link gift-card-info" id="v-pills-settings-tab" data-toggle="pill" href="#gift-cards"(click)="cancellations()" role="tab" aria-controls="v-pills-settings"
           aria-selected="false"> Cancellations</a>
 
-        <a class="nav-link product-info" id="v-pills-settings-tab" data-toggle="pill" href="#Products" role="tab" aria-controls="v-pills-settings"
+        <a class="nav-link product-info" id="v-pills-settings-tab" data-toggle="pill" href="#Products" (click)="first()"role="tab" aria-controls="v-pills-settings"
           aria-selected="false">First Visit</a>
 
-        <a class="nav-link dailycheckout-info" id="v-pills-settings-tab" data-toggle="pill" href="#dailycheckout" role="tab" aria-controls="v-pills-settings"
+        <a class="nav-link dailycheckout-info" id="v-pills-settings-tab" data-toggle="pill" href="#dailycheckout" (click)="unpaid()" role="tab" aria-controls="v-pills-settings"
           aria-selected="false">Upaid Visits</a>
 
-        <a class="nav-link pricing-info" id="v-pills-settings-tab" data-toggle="pill" href="#Pricing" role="tab" aria-controls="v-pills-settings"
+        <a class="nav-link pricing-info" id="v-pills-settings-tab" data-toggle="pill" href="#Pricing" role="tab" (click)="last()" aria-controls="v-pills-settings"
           aria-selected="false">Last Visit</a>
 
-        <a class="nav-link discount-info" id="v-pills-settings-tab" data-toggle="pill" href="#discounts" role="tab" aria-controls="v-pills-settings"
+        <a class="nav-link discount-info" id="v-pills-settings-tab" data-toggle="pill" href="#discounts" role="tab" (click)="attendence()" aria-controls="v-pills-settings"
           aria-selected="false">Attendance Analysis</a>
 
-        <a class="nav-link discount-info" id="v-pills-settings-tab" data-toggle="pill" href="#discounts" role="tab" aria-controls="v-pills-settings"
+        <a class="nav-link discount-info" id="v-pills-settings-tab" data-toggle="pill" href="#discounts" role="tab" (click)="pricing()" aria-controls="v-pills-settings"
           aria-selected="false">Pricing Options Expirations</a>
 
-        <a class="nav-link discount-info" id="v-pills-settings-tab" data-toggle="pill" href="#discounts" role="tab" aria-controls="v-pills-settings"
+        <a class="nav-link discount-info" id="v-pills-settings-tab" data-toggle="pill" href="#discounts" role="tab" (click)="new_members()"aria-controls="v-pills-settings"
           aria-selected="false">New Members</a>
       </div>
     </div>
@@ -216,28 +216,28 @@
     </div>
     <div *ngIf="inventoryContent">
       <div class="nav flex-column nav-pills rs-1-left-button" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link com-mark-info" id="v-pills-home-tab" data-toggle="pill" href="#Communications" role="tab" aria-controls="Communications"
-          aria-selected="true">Sales By Product</a>
+        <a class="nav-link com-mark-info" id="v-pills-home-tab" data-toggle="pill" href="#Communications"(click)="salesByProduct()" role="tab" aria-controls="Communications"
+          aria-selected="true">Sales By Product qqq</a>
 
-        <a class="nav-link staff-info" id="v-pills-profile-tab" data-toggle="pill" href="#Staff" role="tab" aria-controls="Staff"
+        <a class="nav-link staff-info" id="v-pills-profile-tab" data-toggle="pill" href="#Staff" (click)="inventoryOnHand()" role="tab" aria-controls="Staff"
           aria-selected="false"> Inventory On Hand </a>
 
-        <a class="nav-link client-info" id="v-pills-messages-tab" data-toggle="pill" href="#Clients" role="tab" aria-controls="Clients"
+        <a class="nav-link client-info" id="v-pills-messages-tab" data-toggle="pill" href="#Clients" (click)="cost()" role="tab" aria-controls="Clients"
           aria-selected="false">Cost Of Goods Sale</a>
 
-        <a class="nav-link mem-info" id="v-pills-settings-tab" data-toggle="pill" href="#Memberships" role="tab" aria-controls="Memberships"
+        <a class="nav-link mem-info" id="v-pills-settings-tab" data-toggle="pill" href="#Memberships"  (click)="salesBySup()" role="tab" aria-controls="Memberships"
           aria-selected="false">Sales By supplier</a>
 
-        <a class="nav-link package-info" id="v-pills-settings-tab" data-toggle="pill" href="#Packages" role="tab" aria-controls="Packages"
+        <a class="nav-link package-info" id="v-pills-settings-tab" data-toggle="pill" href="#Packages" (click)="manage()" role="tab" aria-controls="Packages"
           aria-selected="false">Manage Online Orders</a>
 
-        <a class="nav-link promotion-info" id="v-pills-settings-tab" data-toggle="pill" href="#Promotions" role="tab" aria-controls="Promotions"
+        <a class="nav-link promotion-info" id="v-pills-settings-tab" data-toggle="pill" href="#Promotions"(click)="inventoryChange()" role="tab" aria-controls="Promotions"
           aria-selected="false">Inventory Change Log</a>
 
-        <a class="nav-link gift-card-info" id="v-pills-settings-tab" data-toggle="pill" href="#gift-cards" role="tab" aria-controls="v-pills-settings"
+        <a class="nav-link gift-card-info" id="v-pills-settings-tab" data-toggle="pill" href="#gift-cards"(click)="retail()" role="tab" aria-controls="v-pills-settings"
           aria-selected="false">Retail Sales Performance</a>
 
-        <a class="nav-link product-info" id="v-pills-settings-tab" data-toggle="pill" href="#Products" role="tab" aria-controls="v-pills-settings"
+        <a class="nav-link product-info" id="v-pills-settings-tab" data-toggle="pill" href="#Products"(click)="inventoryAge()" role="tab" aria-controls="v-pills-settings"
           aria-selected="false">Inventory Age</a>
       </div>
     </div>

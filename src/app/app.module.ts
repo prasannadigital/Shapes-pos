@@ -157,6 +157,28 @@ import { ManageOnlineOrdersComponent } from './reports/Sales/manage-online-order
 import { InvoiceComponent } from './reports/Sales/invoice/invoice.component';
 import { EarnedRevenueComponent } from './reports/Sales/earned-revenue/earned-revenue.component';
 import { TodaysSaleComponent } from './todays-sale/todays-sale.component';
+import { InventoryOnHandComponent } from './reports/clients/inventory-on-hand/inventory-on-hand.component';
+import { CostOfGoodsComponent } from './reports/clients/cost-of-goods/cost-of-goods.component';
+import { SalesBySupplierReportsComponent } from './reports/clients/sales-by-supplier-reports/sales-by-supplier-reports.component';
+import { ManageComponent } from './reports/clients/manage/manage.component';
+import { RetailsSalesPerformanceComponent } from './reports/clients/retails-sales-performance/retails-sales-performance.component';
+import { InventoryAgeComponent } from './reports/clients/inventory-age/inventory-age.component';
+import { InventoryReportsSalesComponent } from './reports/clients/inventory-reports-sales/inventory-reports-sales.component';
+import { ClientReportsMembershipsComponent } from './reports/clients-reports/client-reports-memberships/client-reports-memberships.component';
+import { ClientReportsMailingListsComponent } from './reports/clients-reports/client-reports-mailing-lists/client-reports-mailing-lists.component';
+import { ClientReportsRatingsReviewsComponent } from './reports/clients-reports/client-reports-ratings-reviews/client-reports-ratings-reviews.component';
+import { ClientReportsAccountBalanceComponent } from './reports/clients-reports/client-reports-account-balance/client-reports-account-balance.component';
+import { ClientReportsContactLogsComponent } from './reports/clients-reports/client-reports-contact-logs/client-reports-contact-logs.component';
+import { ClientReportsEntryLogsComponent } from './reports/clients-reports/client-reports-entry-logs/client-reports-entry-logs.component';
+import { ClientReportsCancellationsComponent } from './reports/clients-reports/client-reports-cancellations/client-reports-cancellations.component';
+import { ClientReportsFirstVisitComponent } from './reports/clients-reports/client-reports-first-visit/client-reports-first-visit.component';
+import { ClientReportsUnpaidVisitsComponent } from './reports/clients-reports/client-reports-unpaid-visits/client-reports-unpaid-visits.component';
+import { ClientReportsLastVisitComponent } from './reports/clients-reports/client-reports-last-visit/client-reports-last-visit.component';
+import { ClientReportsAttendenceAnalysisComponent } from './reports/clients-reports/client-reports-attendence-analysis/client-reports-attendence-analysis.component';
+import { ClientReportsPricingOptionsComponent } from './reports/clients-reports/client-reports-pricing-options/client-reports-pricing-options.component';
+import { ClientReportsNewMembersComponent } from './reports/clients-reports/client-reports-new-members/client-reports-new-members.component';
+import { InventoryChangeLogComponent } from './reports/clients/inventory-change-log/inventory-change-log.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -229,6 +251,29 @@ const routes: Routes = [
   { path: 'payment/autopay-expirations', component: AutopayExpirationsComponent, canActivate: [AuthGuard] },
   { path: 'payment/autopay-cc-expirations', component: AutopayCcExpirationsComponent, canActivate: [AuthGuard] },
 
+  { path: 'clients/cost-of-goods', component: CostOfGoodsComponent, canActivate: [AuthGuard] },
+  { path: 'clients/inventory-reports-sales', component: InventoryReportsSalesComponent, canActivate: [AuthGuard] },
+  { path: 'clients/inventory-age', component: InventoryAgeComponent, canActivate: [AuthGuard] },
+  { path: 'clients/inventoty-on-hand', component: InventoryOnHandComponent, canActivate: [AuthGuard] },
+  { path: 'clients/manage', component: ManageComponent, canActivate: [AuthGuard] },
+  { path: 'clients/retails-sales-performance', component: RetailsSalesPerformanceComponent, canActivate: [AuthGuard] },
+  { path: 'clients/sales-by-product', component: SalesByProductComponent, canActivate: [AuthGuard] },
+  { path: 'clients/sales-by-supliers', component: SalesBySupplierReportsComponent, canActivate: [AuthGuard] },
+  { path: 'clients/inventory-change-log', component: InventoryChangeLogComponent, canActivate: [AuthGuard] },
+
+  { path: 'client-reports/client-reports-account-balance', component: ClientReportsAccountBalanceComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-attendence-analysis', component: ClientReportsAttendenceAnalysisComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-cancellations', component: ClientReportsCancellationsComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-contact-logs', component: ClientReportsContactLogsComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-entry-logs', component: ClientReportsEntryLogsComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-first-visit', component: ClientReportsFirstVisitComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-last-visit', component: ClientReportsLastVisitComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-mailing-lists', component: ClientReportsMailingListsComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-memberships', component: ClientReportsMembershipsComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-new-members', component: ClientReportsNewMembersComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-pricing-options', component: ClientReportsPricingOptionsComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-ratings-reviews', component: ClientReportsRatingsReviewsComponent, canActivate: [AuthGuard] },
+  { path: 'client-reports/client-reports-unpaid-visits', component: ClientReportsUnpaidVisitsComponent, canActivate: [AuthGuard] },
 
   { path: 'inventory', component: InventoryComponent, canActivate: [AuthGuard] },
   { path: 'inventory/purchase-order', component: PurchaseOrderComponent, canActivate: [AuthGuard] },
@@ -422,6 +467,27 @@ const routes: Routes = [
     InvoiceComponent,
     EarnedRevenueComponent,
     TodaysSaleComponent,
+    InventoryOnHandComponent,
+    CostOfGoodsComponent,
+    SalesBySupplierReportsComponent,
+    ManageComponent,
+    RetailsSalesPerformanceComponent,
+    InventoryAgeComponent,
+    InventoryReportsSalesComponent,
+    ClientReportsMembershipsComponent,
+    ClientReportsMailingListsComponent,
+    ClientReportsRatingsReviewsComponent,
+    ClientReportsAccountBalanceComponent,
+    ClientReportsContactLogsComponent,
+    ClientReportsEntryLogsComponent,
+    ClientReportsCancellationsComponent,
+    ClientReportsFirstVisitComponent,
+    ClientReportsUnpaidVisitsComponent,
+    ClientReportsLastVisitComponent,
+    ClientReportsAttendenceAnalysisComponent,
+    ClientReportsPricingOptionsComponent,
+    ClientReportsNewMembersComponent,
+    InventoryChangeLogComponent,
 
   
     

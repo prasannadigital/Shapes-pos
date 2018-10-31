@@ -232,4 +232,64 @@ Click12(){
 Click13(){
   this.router.navigate(['sales/earned-revenue']);
 }
+salesByProduct(){
+  this.router.navigate(['clients/sales-by-product']);
+}
+inventoryOnHand(){
+  this.router.navigate(['clients/inventoty-on-hand']);
+}
+cost(){
+  this.router.navigate(['clients/cost-of-goods']);
+}
+salesBySup(){
+  this.router.navigate(['clients/sales-by-supliers']);
+}
+manage(){
+  this.router.navigate(['clients/manage']);
+}
+inventoryChange(){
+  this.router.navigate(['clients/inventory-change-log']);
+}
+retail(){
+  this.router.navigate(['clients/retails-sales-performance']);
+}
+inventoryAge(){
+  this.router.navigate(['clients/inventory-age']);
+}
+memberships(){
+  this.router.navigate(['client-reports/client-reports-memberships']);
+}
+mailing(){
+  this.router.navigate(['client-reports/client-reports-mailing-lists']);
+}
+ratings(){
+  this.router.navigate(['client-reports/client-reports-ratings-reviews']);
+}
+account(){
+  this.router.navigate(['client-reports/client-reports-account-balance']);
+}
+contact(){
+  this.router.navigate(['client-reports/client-reports-contact-logs']);
+}
+cancellations(){
+  this.router.navigate(['client-reports/client-reports-cancellations']);
+}
+first(){
+  this.router.navigate(['client-reports/client-reports-first-visit']);
+}
+unpaid(){
+  this.router.navigate(['client-reports/client-reports-unpaid-visits']);
+}
+last(){
+  this.router.navigate(['client-reports/client-reports-last-visit']);
+}
+attendence(){
+  this.router.navigate(['client-reports/client-reports-attendence-analysis']);
+}
+pricing(){
+  this.router.navigate(['client-reports/client-reports-pricing-options']);
+}
+new_members(){
+  this.router.navigate(['client-reports/client-reports-new-members']);
+}
 }
