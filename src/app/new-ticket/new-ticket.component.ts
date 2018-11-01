@@ -13,6 +13,7 @@ import { environment } from '../../environments/environment';
 })
 
 export class NewTicketComponent implements OnInit {
+  sucussfull=false;
   firstName = '';
   lastName = '';
   DOB = '';
@@ -56,7 +57,21 @@ export class NewTicketComponent implements OnInit {
       dob: this.DOB
     }
     this.http.post(environment.host + 'users', data).subscribe(data => {
+      console.log(data);
+      if (data.json().status == true) {
+        this.sucussfull=true;
+      }
     });
+    
+  }
+  resetCustomer(){
+    this.firstName="",
+    this.lastName="",
+    this.MailId="",
+    this.mobileNo="",
+    this.gender="",
+    this.DOB=""
+
   }
 
   backToDashboard() {
@@ -145,5 +160,17 @@ export class NewTicketComponent implements OnInit {
     else{
       this.states=[];
     }
+  }
+  omit_special_char(event) {
+    console.log('kay press')
+    var k;
+    k = event.charCode;  //         k = event.keyCode;  (Both can be used)
+    return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32);
+  }
+  omit_special_charWithoutNum(event) {
+    console.log('kay press')
+    var k;
+    k = event.charCode;  //         k = event.keyCode;  (Both can be used)
+    return ((k >= 48 && k <= 57));
   }
 }

@@ -97,12 +97,12 @@
               <form>
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text" maxlength="50" name="fname" class="form-control" [(ngModel)]="firstName" ngModel required #fname="ngModel" placeholder="First Name">
+                  <input type="text" maxlength="50" name="fname" (keypress)="omit_special_char($event)" class="form-control" [(ngModel)]="firstName" ngModel required #fname="ngModel" placeholder="First Name">
                   <div *ngIf="fname.errors?.required && submitted" style="color:red">First Name is required </div>
                 </div>
                 <div class="form-group">
                   <label>Last Name</label>
-                  <input type="text" maxlength="50" class="form-control" name="lname" [(ngModel)]="lastName" ngModel required #lname="ngModel" placeholder="Last Name">
+                  <input type="text" maxlength="50" class="form-control"  (keypress)="omit_special_char($event)" name="lname" [(ngModel)]="lastName" ngModel required #lname="ngModel" placeholder="Last Name">
                   <div *ngIf="lname.errors?.required && submitted" style="color:red">Last Name is required </div>
                 </div>
                 <div class="form-group">
@@ -119,14 +119,15 @@
                 </div>
                 <div class="form-group">
                   <label>Phone</label>
-                  <input type="text" maxlength="50" class="form-control" [(ngModel)]="mobileNo" name="mobile" placeholder="Home or Mobile" ngModel required
+                  <input type="text" maxlength="50" (keypress)="omit_special_charWithoutNum($event)" class="form-control" [(ngModel)]="mobileNo" name="mobile" placeholder="Home or Mobile" ngModel required
                     #mobile="ngModel">
                   <div *ngIf="mobile.errors?.required && submitted" style="color:red">Phone Number is required </div>
                 </div>
                 <div class="form-group">
                   <label>Email</label>
-                  <input type="email" [(ngModel)]="MailId" name="Mail" class="form-control" placeholder="name@example.com" ngmodel required
+                  <input type="email" [(ngModel)]="MailId" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" name="Mail" class="form-control" placeholder="name@example.com" ngmodel required
                     #Mail="ngModel">
+                    <div style="color:red" *ngIf="Mail.errors?.pattern">Email must be a valid email address</div>
                   <div *ngIf="Mail.errors?.required && submitted" style="color:red">Email is required </div>
                 </div>
                 <div class="form-group">
@@ -239,7 +240,7 @@
                 </div>
                 <div class="col-md-8 col-sm-6 col-xs-12 ncf-right">
                   <ul>
-                    <li>
+                    <li (click)="resetCustomer()">
                       <a data-dismiss="modal">
                         <i class="fas fa-times"></i>
                         <br>Cancel</a>
@@ -255,6 +256,10 @@
                         <br>Save & Use</a>
                     </li>
                   </ul>
+                 
+                </div>
+                <div *ngIf="sucussfull">
+                  <h3 style="color: green">Customer Saved Sucussfully.</h3>
                 </div>
               </div>
             </div>
@@ -263,6 +268,7 @@
           </div>
           <!--Client Profile-->
           <div class="clear"></div>
+          
         </div>
       </div>
     </div>
