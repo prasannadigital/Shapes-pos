@@ -10837,11 +10837,6 @@ html {
 	background: #fff;
     border: 5px solid #da8c42;
 }
-.manager-tap-left {
-    padding: 0;
-    overflow-x: hidden;
-    height: 100%;
-}
 #myTabContent {
     border: 1px solid #a5a3a3;
 }
@@ -12445,11 +12440,6 @@ font-weight:600;
 .view-time {
 background: #fff;
   border: 5px solid #da8c42;
-}
-.manager-tap-left {
-  padding: 0;
-  overflow-x: hidden;
-  height: 100%;
 }
 #myTabContent {
   border: 1px solid #a5a3a3;
@@ -14646,7 +14636,7 @@ background: #fff;
 .manager-tap-left {
   padding: 0;
   overflow-x: hidden;
-  height: 100%;
+  height: 500px;
 }
 #myTabContent {
   border: 1px solid #a5a3a3;
