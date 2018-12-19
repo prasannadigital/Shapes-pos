@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TimeClokServiceService } from '../services/time-clok-service.service'
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { Globals } from '../global/global-urls';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 declare var $: any;
 import { Location } from '@angular/common';
 import { LoginServiceService } from '../services/login-service.service';
@@ -11,11 +11,13 @@ import { MessageService } from 'primeng/components/common/messageservice';
 import { ExcelService } from '../services/excel.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 declare var jsPDF: any;
+
 @Component({
   selector: 'time-clocks',
   templateUrl: './time-clocks.component.html',
   styleUrls: ['./time-clocks.component.css']
 })
+
 export class TimeClocksComponent implements OnInit {
   btnDisable = true;
   memberships: any = [];
@@ -34,24 +36,8 @@ export class TimeClocksComponent implements OnInit {
   totalHours;
   totalMin;
   finalHours;
-  model: any ={};
-  constructor(private spinner: NgxSpinnerService, private excelService: ExcelService, private loginService: LoginServiceService, private service: TimeClokServiceService, private _location: Location, private http: HttpClient, private router: Router, private globals: Globals, private messageService: MessageService) { }
-  emp_id = '';
+  model: any = {};
   errorMessage = false;
-  check_in_time = null;
-  check_out_time = null;
-  break_in1 = null;
-  break_out1 = null;
-  break_in2 = null;
-  break_out2 = null;
-  break_in3 = null;
-  break_out3 = null;
-  break_in4 = null;
-  break_out4 = null;
-  check_in_date = '';
-  modified_by = '';
-  total_hours = '';
-  remarks = '';
   today: number;
   password = "";
   mailId = "";
@@ -62,11 +48,11 @@ export class TimeClocksComponent implements OnInit {
     'employee_id': ''
   };
   test: 'text';
-  test1: any;
   data: any = {
     'time_clock_id': '',
     'emp_id': '',
     'check_in_time': null,
+    'check_out_time': null,
     'break_in1': null,
     'break_out1': null,
     'break_in2': null,
@@ -80,25 +66,32 @@ export class TimeClocksComponent implements OnInit {
     'total_hours': ''
   };
   msgs: Message[] = [];
+
+  constructor(private spinner: NgxSpinnerService, private excelService: ExcelService, private loginService: LoginServiceService, private service: TimeClokServiceService, private _location: Location, private http: HttpClient, private router: Router, private globals: Globals, private messageService: MessageService) { }
+
   ngOnInit() {
     sessionStorage.removeItem('backBtnInventory');
     sessionStorage.removeItem('backBtnSetup');
     sessionStorage.removeItem('backBtnReports');
-    sessionStorage.removeItem('backBtnManager');   
+    sessionStorage.removeItem('backBtnManager');
     sessionStorage.removeItem('backBtnShedule');//remove Back btn popup
     this.loginPopUp();
+
     this.getTimeAndDate();
     setInterval(() => {
       this.getTimeAndDate();
     }, 1000);
   }
+
   getTimeAndDate() {
     this.today = Date.now();
   }
+
   showError() {
     this.msgs = [];
     this.msgs.push({ severity: 'error', detail: 'Validation failed' });
   }
+
   loginPopUp() {
     if (sessionStorage.backBtnTimeclocks) {
       $('#myModal').modal('hide');
@@ -108,43 +101,45 @@ export class TimeClocksComponent implements OnInit {
       $('#myModal').modal('show');
     }
   }
+
   backLocation() {
     this._location.back();
   }
+
   RedirectToHome() {
     this.router.navigate(['dashboard']);
   }
+
   errorClear() {
     this.errorMessage = false;
   }
+
   onSubmit() {
     if (sessionStorage.secondaryLoginData) {
       window.sessionStorage.removeItem('secondaryLoginData');
     }
-
     this.spinner.show();
     if (this.model.email_id && this.model.password) {
-      this.http.post(this.globals.api + 'time-clocks/login', this.model).subscribe(response => {
-        this.test1 = response;
-        this.data.time_clock_id = this.test1.result.time_clock_id;
-        this.data.emp_id = this.test1.result.emp_id;
-        this.data.check_in_time = this.test1.result.check_in_time;
-        this.data.check_out_time = this.test1.result.check_out_time;
-        this.data.break_in1 = this.test1.result.break_in1;
-        this.data.break_out1 = this.test1.result.break_out1;
-        this.data.break_in2 = this.test1.result.break_in2;
-        this.data.break_out2 = this.test1.result.break_out2;
-        this.data.break_in3 = this.test1.result.break_in3;
-        this.data.break_out3 = this.test1.result.break_out3;
-        this.data.break_in4 = this.test1.result.break_in4;
-        this.data.break_out4 = this.test1.result.break_out4;
-        this.data.check_in_date = this.test1.result.check_in_date;
-        this.data.modified_by = this.test1.result.modified_by;
-        this.data.remarks = this.test1.result.remarks;
-        this.data.total_hours = this.test1.result.total_hours;
-        this.finalHours =this.data.total_hours;
+      this.http.post(this.globals.api + 'time-clocks/login', this.model).subscribe(loginData => {
         this.spinner.hide();
-        if (this.test1.status == true) {
+        this.data.time_clock_id = loginData["result"].time_clock_id;
+        this.data.emp_id = loginData["result"].emp_id;
+        this.data.check_in_time = loginData["result"].check_in_time;
+        this.data.check_out_time = loginData["result"].check_out_time;
+        this.data.break_in1 = loginData["result"].break_in1;
+        this.data.break_out1 = loginData["result"].break_out1;
+        this.data.break_in2 = loginData["result"].break_in2;
+        this.data.break_out2 = loginData["result"].break_out2;
+        this.data.break_in3 = loginData["result"].break_in3;
+        this.data.break_out3 = loginData["result"].break_out3;
+        this.data.break_in4 = loginData["result"].break_in4;
+        this.data.break_out4 = loginData["result"].break_out4;
+        this.data.check_in_date = loginData["result"].check_in_date;
+        this.data.modified_by = loginData["result"].modified_by;
+        this.data.remarks = loginData["result"].remarks;
+        this.data.total_hours = loginData["result"].total_hours;
+        this.spinner.hide();
+        if (loginData["status"] == true) {
           $('#myModal').modal('hide');
           this.titleStyle = "visible";
         } else {
@@ -169,6 +164,7 @@ export class TimeClocksComponent implements OnInit {
   }
   time_in = this.data.check_in_time;
   first_break_out = this.data.break_out1
+
   clockInTime() {
     this.data.check_in_time = Date.now();
     this.service.saveInandOutTime(this.data).subscribe(response => {
@@ -182,6 +178,7 @@ export class TimeClocksComponent implements OnInit {
     this.buttonColorBreakIn = '#345465';
     this.buttonColorBreakOut = '#e4e9ef';
   }
+
   clockOutTime() {
     this.data.check_out_time = Date.now();
     this.service.saveInandOutTime(this.data).subscribe(response => {
@@ -192,166 +189,119 @@ export class TimeClocksComponent implements OnInit {
     this.buttonColorTimeOut = '#345465';
     this.buttonColorBreakIn = '#345465';
     this.buttonColorBreakOut = '#345465';
-    let BreakOut1 = this.getFormattedDate(this.data.break_out1);
-    let BreakIn1 = this.getFormattedDate(this.data.break_in1);
-    var dt1 = new Date(BreakOut1);
-    var dt2 = new Date(BreakIn1);
-    let difference1 = dt2.getTime() - dt1.getTime();
-    let resultInMinutes1 = Math.round(difference1 / 60000);
-    let BreakOut2 = this.getFormattedDate(this.data.break_out2);
-    let BreakIn2 = this.getFormattedDate(this.data.break_in2);
-    var dt3 = new Date(BreakOut2);
-    var dt4 = new Date(BreakIn2);
-    let difference2 = dt4.getTime() - dt3.getTime();
-    let resultInMinutes2 = Math.round(difference2 / 60000);
-    let BreakOut3 = this.getFormattedDate(this.data.break_out3);
-    let BreakIn3 = this.getFormattedDate(this.data.break_in3);
-    var dt5 = new Date(BreakOut3);
-    var dt6 = new Date(BreakIn3);
-    let difference3 = dt6.getTime() - dt5.getTime();
-    let resultInMinutes3 = Math.round(difference3 / 60000);
-    let BreakOut4 = this.getFormattedDate(this.data.break_out4);
-    let BreakIn4 = this.getFormattedDate(this.data.break_in4);
-    var dt7 = new Date(BreakOut4);
-    var dt8 = new Date(BreakIn4);
-    let difference4 = dt8.getTime() - dt7.getTime();
-    let resultInMinutes4 = Math.round(difference4 / 60000);
+
+    let resultInMinutes1 = Math.round((new Date(this.getFormattedDate(this.data.break_in1)).getTime() - new Date(this.getFormattedDate(this.data.break_out1)).getTime()) / 60000);
+    let resultInMinutes2 = Math.round((new Date(this.getFormattedDate(this.data.break_in2)).getTime() - new Date(this.getFormattedDate(this.data.break_out2)).getTime()) / 60000);
+    let resultInMinutes3 = Math.round((new Date(this.getFormattedDate(this.data.break_in3)).getTime() - new Date(this.getFormattedDate(this.data.break_out3)).getTime()) / 60000);
+    let resultInMinutes4 = Math.round((new Date(this.getFormattedDate(this.data.break_in4)).getTime() - new Date(this.getFormattedDate(this.data.break_out4)).getTime()) / 60000);
     var timeDiffTotal = resultInMinutes1 + resultInMinutes2 + resultInMinutes3 + resultInMinutes4;
-    let TimeIn = this.getFormattedDate(this.data.check_in_time);
-    let TimeOut = this.getFormattedDate(this.data.check_out_time);
-    var dt0 = new Date(TimeIn);
-    var dt9 = new Date(TimeOut);
-    let totaldiff = dt9.getTime() - dt0.getTime();
-    let resultInMinutes = Math.round(totaldiff / 60000);
+    let resultInMinutes = Math.round((new Date(this.getFormattedDate(this.data.check_out_time)).getTime() - new Date(this.getFormattedDate(this.data.check_in_time)).getTime()) / 60000);
+
     var finaltotal = resultInMinutes - timeDiffTotal;
     this.totalHours = Math.round(finaltotal / 60);
+
     if (this.totalHours == 0) {
       this.totalMin = finaltotal - (60 * this.totalHours);
     } else {
       this.totalMin = (60 * this.totalHours) - finaltotal;
     }
     this.finalHours = this.totalHours + ":" + this.totalMin;
-    this.disable_time_out=true;
-    this.disable_break_out=true;
-    this.disable_break_in=true;
+    this.disable_time_out = true;
+    this.disable_break_out = true;
+    this.disable_break_in = true;
   }
+
   getFormattedDate(_date) {
     var date = new Date(_date);
     var str = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     return str;
   }
+
+  commonBreakOutCode() {
+    this.service.saveInandOutTime(this.data).subscribe(response => {
+    });
+    this.disable_break_out = true;
+    this.disable_break_in = false;
+    this.buttonColorBreakIn = '#e4e9ef';
+    this.buttonColorBreakOut = '#345465';
+  }
+
   breakOutTime() {
-    console.log('#######')
-    console.log(this.data.break_out1);
     if (this.data.break_out1 === null) {
       this.data.break_out1 = Date.now();
-      console.log(this.data.break_out1);
-      this.service.saveInandOutTime(this.data).subscribe(response => {
-      });
-      this.disable_break_out = true;
-      this.disable_break_in = false;
-      this.buttonColorBreakIn = '#e4e9ef';
-      this.buttonColorBreakOut = '#345465';
+      this.commonBreakOutCode();
       return true;
     }
     if (this.data.break_out2 === null) {
       this.data.break_out2 = Date.now();
-      this.service.saveInandOutTime(this.data).subscribe(response => {
-      });
-      this.disable_break_out = true;
-      this.disable_break_in = false;
-      this.buttonColorBreakIn = '#e4e9ef';
-      this.buttonColorBreakOut = '#345465';
+      this.commonBreakOutCode();
       return true;
     }
     if (this.data.break_out3 === null) {
       this.data.break_out3 = Date.now();
-      this.service.saveInandOutTime(this.data).subscribe(response => {
-      });
-      this.disable_break_out = true;
-      this.disable_break_in = false;
-      this.buttonColorBreakIn = '#e4e9ef';
-      this.buttonColorBreakOut = '#345465';
+      this.commonBreakOutCode();
       return true;
     }
     if (this.data.break_out4 === null) {
       this.data.break_out4 = Date.now();
-      this.service.saveInandOutTime(this.data).subscribe(response => {
-      });
-      this.disable_break_out = true;
-      this.disable_break_in = false;
-      this.buttonColorBreakIn = '#e4e9ef';
-      this.buttonColorBreakOut = '#345465';
+      this.commonBreakOutCode();
       return true;
     }
   }
+
+  commonBreakInCode() {
+    this.service.saveInandOutTime(this.data).subscribe(response => {
+    });
+    this.disable_break_out = false;
+    this.disable_break_in = true;
+    this.buttonColorBreakIn = '#345465';
+    this.buttonColorBreakOut = '#e4e9ef';
+  }
+
   breakInTime() {
     if (this.data.break_in1 === null) {
       this.data.break_in1 = Date.now();
-      this.service.saveInandOutTime(this.data).subscribe(response => {
-      });
-      this.disable_break_out = false;
-      this.disable_break_in = true;
-      this.buttonColorBreakIn = '#345465';
-      this.buttonColorBreakOut = '#e4e9ef';
+      this.commonBreakInCode();
       return true;
     }
     if (this.data.break_in2 === null) {
       this.data.break_in2 = Date.now();
-      this.service.saveInandOutTime(this.data).subscribe(response => {
-      });
-      this.disable_break_out = false;
-      this.disable_break_in = true;
-      this.buttonColorBreakIn = '#345465';
-      this.buttonColorBreakOut = '#e4e9ef';
+      this.commonBreakInCode();
       return true;
     }
     if (this.data.break_in3 === null) {
       this.data.break_in3 = Date.now();
-      this.service.saveInandOutTime(this.data).subscribe(response => {
-      });
-      this.disable_break_out = false;
-      this.disable_break_in = true;
-      this.buttonColorBreakIn = '#345465';
-      this.buttonColorBreakOut = '#e4e9ef';
+      this.commonBreakInCode();
       return true;
     }
     if (this.data.break_in4 === null) {
       this.data.break_in4 = Date.now();
-      this.service.saveInandOutTime(this.data).subscribe(response => {
-      });
-      this.disable_break_out = false;
-      this.disable_break_in = true;
-      this.buttonColorBreakIn = '#345465';
-      this.buttonColorBreakOut = '#e4e9ef';
+      this.commonBreakInCode();
       return true;
     }
   }
+
   printTodayApp() {
     this.memberships = [];
-    this.data.emp_id;
     this.service.getAppiontmentData(this.data.emp_id).subscribe(memberships => {
       this.memberships = memberships.json().result;
-      console.log(this.memberships);
     })
   }
+
   printNextDayApp() {
     this.memberships = [];
-    this.data.emp_id
-    console.log(this.loginTest.employee_id);
     this.service.getAppiontmentDataOfNextDay(this.data.emp_id).subscribe(memberships => {
       this.memberships = memberships.json().result;
-      console.log(this.memberships);
     })
   }
+
   printMonthApp() {
     this.memberships = [];
-    this.data.emp_id
     this.service.getAppiontmentDataOfMonth(this.data.emp_id).subscribe(memberships => {
       this.memberships = memberships.json().result;
-      console.log(this.memberships);
     })
   }
+
   pdfDownload() {
     var columns = [
       { title: "Name", dataKey: "name" },
@@ -379,4 +329,5 @@ export class TimeClocksComponent implements OnInit {
   xlDownload() {
     this.excelService.exportAsExcelFile(this.memberships, 'User Activities');
   }
+
 }
